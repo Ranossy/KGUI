@@ -1,0 +1,75 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/skill/Map/主城安全区/主城安全区域.lh
+-- 更新时间:	2016/12/5 14:47:50
+-- 更新用户:	qinfupi
+-- 脚本说明:
+----------------------------------------------------------------------<
+
+--因为没有主城区域的接口，所以山寨了一下划分矩形区域
+ local tCityAndSafeArea =
+{
+	[15] = --老长安
+	{
+		["LU"] = {36250, 107393}, --左上角leftUp
+		["RB"] = {59042, 88648}, --右下角RightButtom
+	},
+	[108] = --成都
+	{
+		["LU"] = {54779, 76693}, --左上角
+		["RB"] = {73231, 58298}, --右下角
+	},
+	[194] = --太原
+	{
+		["LU"] = {12088, 78190}, --左上角
+		["RB"] = {40766, 49538}, --右下角
+	},
+	[5] = --扬州
+	{
+		["LU"] = {44039, 82468}, --左上角
+		["RB"] = {93856, 44255}, --右下角
+	},
+	[8] = --老洛阳
+	{
+		["LU"] = {10876, 100126}, --左上角
+		["RB"] = {42951, 76157}, --右下角
+	},
+	[172] = --长安内城
+	{
+		["LU"] = {45603, 53185}, --左上角
+		["RB"] = {81761, 26291}, --右下角
+	},
+}
+
+--判断是否在安全区
+function CheckIfCitySafeArea(player)
+	--获取玩家地图ID和XY坐标
+	local nMapID = player.GetScene().dwMapID
+	local nPosX = player.nX
+	local nPosY = player.nY
+
+	if not nMapID then
+		return false
+	end
+
+	if tCityAndSafeArea[nMapID] then
+		--[[
+			(LX,LY)----------------
+				|					|
+				|	   安全区		|
+				|					|
+				---------------(RX,RY)
+		--]]
+		local LX = tCityAndSafeArea[nMapID]["LU"][1]
+		local LY = tCityAndSafeArea[nMapID]["LU"][2]
+		local RX = tCityAndSafeArea[nMapID]["RB"][1]
+		local RY = tCityAndSafeArea[nMapID]["RB"][2]
+		if  nPosX < LX or nPosX > RX or nPosY > LY or nPosY < RY then
+			return false	--不在区域内
+		else
+			return true		--在指定区域内
+		end
+	end
+
+	return false
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

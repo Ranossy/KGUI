@@ -1,0 +1,39 @@
+Name	FilePath	Adjust	kingsoft	exp	snda
+		1	1	1	1
+UI	\UI	0			
+I18N	\i18n	0			
+Traits	\traits	0			
+SchemeElemColor	\UI\Scheme\Elem\color.txt				
+SchemeElemFont	\UI\Scheme\Elem\font.ini				
+SchemeElemNumber	\UI\Scheme\Elem\number.txt				
+SchemeElemCodePage	\UI\Scheme\Elem\codepage.txt				
+SchemeGlobalStringValuable	\UI\Scheme\Case\String.txt				
+FontList	\UI\Scheme\Elem\fontlist.ini				
+CursorList	\UI\Config\jx3_cursor.ini				
+MouseHover	\UI\Config\jx3_mousehover.ini				
+PopupMenu	\UI\Config\jx3_popupmenu.ini				
+PickDropBox	\UI\Config\jx3_pickdropbox.ini				
+PickDropBoxSetting	\UI\Config\jx3_box.xml				
+ConfigDefault	\UI\Config\Default	0			
+HotkeyBindingsFile	\UI\Hotkey\bindings.ini				
+HotkeyBindingSetPath	\UI\Hotkey\default.txt				
+IconImageDir	\UI\Image\Icon	0			
+IconImageTable	\UI\Scheme\Case\icon.txt				
+FrameList	\UI\Config\framellist.ini				
+FrameSetting	\UI\Config\framesetting.txt				
+AddOnScripLibDir	Interface	0			
+UserdataDir	Userdata	0			
+ScreenShotDir	ScreenShot	0			
+FontPathList	\UI\Scheme\Elem\fontpathlist.ini				
+DrawMgr	\UI\Scheme\Elem\drawmgr.ini				
+UIAnimation	\UI\Scheme\Elem\uianimation.txt				
+UIConfig	\UI\Scheme\Elem\uiconfig.ini				
+DefaultShapTexture	\UI\Image\Minimap\Sharp.dds				
+CxImageDLL	\plugin\kgcximage.dll				
+ModuleInfo	\ui\module_info.xml				
+FaceDataDir	FaceData				
+AddonRepo	\ui\addon.dat				
+AddonRepoKey	\ui\addon.key				
+RecodingBase	\ui\script\recording_base.lua				
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

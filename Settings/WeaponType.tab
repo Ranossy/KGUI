@@ -1,0 +1,19 @@
+ID	Name	WeaponGenre	Type1	Type2	Type3	Type4	Type5	Type6	Type7	Type8
+1	¹÷	swrtMeleeWeapon	wdtWand							
+2	Ç¹	swrtMeleeWeapon	wdtSpear							
+3	½£	swrtMeleeWeapon	wdtSword							
+4	È­ÕÆ	swrtMeleeWeapon	wdtFist							
+5	Ë«±ø	swrtMeleeWeapon	wdtDoubleWeapon							
+6	±Ê	swrtMeleeWeapon	wdtPen							
+7	°µÆ÷	swrtRangeWeapon	wdtDart	wdtMachDart	wdtSlingShot					
+8	ÖØ½£	swrtMeleeWeapon	wdtBigSword							
+9	½£ÓëÖØ½£	swrtMeleeWeapon	wdtSword	wdtBigSword						
+10	³æµÑ	swrtMeleeWeapon	wdtFlute							
+11	Ç§»úÏ»	swrtMeleeWeapon	wdtBow							
+12	Ë«µ¶	swrtMeleeWeapon	wdtKnife							
+13	¶Ì°ô	swrtMeleeWeapon	wdtStick							
+14	µ¶¶Ü	swrtMeleeWeapon	wdtBladeShield							
+15	ÇÙ	swrtMeleeWeapon	wdtHeptaChord							
+16	°ÁËªµ¶	swrtMeleeWeapon	wdtBroadSword							
+
+ -- by Ã¿ÌìÕÇÍ£@ÃÎ½­ÄÏ $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

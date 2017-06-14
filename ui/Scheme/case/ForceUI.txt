@@ -1,0 +1,17 @@
+force_id	fight_stat_color_image 战斗统计势力颜色	fight_stat_color_img_frame 战斗统计势力颜色	raid_color_image 团队势力颜色	raid_color_img_frame	target_avatar_image 目标头像图素	target_avatar_img_frame	force_avatar_tga(小头像选择面板头像)
+0	ui\Image\Common\Money.UITex	210	ui\Image\UICommon\RaidTotal.UITex	59	ui\Image\TargetPanel\Target.UITex	64	jianghu.tga
+1		203		60		59	shaolin.tga
+2		205		61		63	wanhua.tga
+3		206		54		62	tiance.tga
+4		209		57		49	chunyang.tga
+5		204		53		56	qixiu.tga
+6		208		56		107	wudu.tga
+7		207		58		108	tangmen.tga
+8		168		55		88	cangjian.tga
+9		234		79		110	gaibang.tga
+10		232		77		109	mingjiao.tga
+21		26		99		0	cangyun.tga
+22		30		98		1	changge.tga
+23		35		100		2	badao.tga
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,18 @@
+forceid	f1_image	f1_frame	f2_image	f2_frame	m1_image	m1_frame	m2_image	m2_frame
+0		-1		-1		-1		-1
+0	ui\Image\PlayerAvatar\JH_f1_001.tga	-1	ui\Image\PlayerAvatar\JH_f2_001.tga	-1	ui\Image\PlayerAvatar\JH_M1_001.tga	-1	ui\Image\PlayerAvatar\JH_m2_001.tga	-1
+1		-1		-1	ui\Image\PlayerAvatar\MP_SL_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_SL_m2_001.tga	-1
+2	ui\Image\PlayerAvatar\MP_WH_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_m2_001.tga	-1
+3	ui\Image\PlayerAvatar\MP_TC_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_TC_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_TC_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_TC_m1_001.tga	-1
+4	ui\Image\PlayerAvatar\MP_CY_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_m2_001.tga	-1
+5	ui\Image\PlayerAvatar\MP_QX_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_QX_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_QX_M1_001.tga	-1		-1
+6	ui\Image\PlayerAvatar\MP_WD_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_m1_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_m2_001.tga	-1
+7	ui\Image\PlayerAvatar\MP_TM_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_m2_001.tga	-1
+8	ui\Image\PlayerAvatar\MP_CJ_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_m2_001.tga	-1
+9	ui\Image\PlayerAvatar\MP_GB_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_m2_001.tga	-1
+10	ui\Image\PlayerAvatar\MP_MJ_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_001.tga	-1
+21	ui\Image\PlayerAvatar\MP_CAY_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M2_001.tga	-1
+22	ui\Image\PlayerAvatar\MP_CGM_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M2_001.tga	-1
+23	ui\Image\PlayerAvatar\MP_BD_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_M2_001.tga	-1
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

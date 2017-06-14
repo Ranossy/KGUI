@@ -1,0 +1,17 @@
+ID	Name	CraftType	ProfessionID	Hide	RecipeTabPath
+1	采金	1	1	1	Collection/MetalMining.tab
+2	神农	1	2	1	Collection/HerbalMedicine.tab
+3	庖丁术	1	3	0	Collection/Corpse.tab
+4	烹饪	2	4	0	Recipe/cooking.tab
+5	缝纫	2	5	0	Recipe/tailoring.tab
+6	铸造	2	6	0	Recipe/founding.tab
+7	医术	2	7	0	Recipe/medicine.tab
+8	读书	3	8	1	Read/Book.tab
+9	附魔	4	5	1	Enchant/EnchantRecipe.tab
+10	神农	5	2	0	
+11	采金	5	1	0	
+12	抄录	6	8	1	Read/Copy.tab
+13	装备拆解	7	12	0	
+14	淬炼	2	14	0	Recipe/recasting.tab
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

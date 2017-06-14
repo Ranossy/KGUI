@@ -1,0 +1,40 @@
+PQTemplateID	Name	BeginTime	EndTime	Expiration	KillNpcTemplateID_0	KillNpcTemplateID_1	KillNpcTemplateID_2	KillNpcTemplateID_3	KillNpcTemplateID_4	KillNpcTemplateID_5	KillNpcTemplateID_6	KillNpcTemplateID_7	PQValue_0	PQValue_1	PQValue_2	PQValue_3	PQValue_4	PQValue_5	PQValue_6	PQValue_7	Statistics	BindMapID	Script
+0	默认			856800																		0	
+1	五十级云湖天池		900										50	50							1		publicquest\battlefield\yunhutianchi\yunhutianchi.lua
+2	50突破收集·烹饪		315360000	315360000									5000	2500	2000	2000	1000	50000	25000				publicquest\world\playerlevellimitbreak\50to70\50to70gather_pengren.lua
+3	50突破收集·缝纫		315360000	315360000									12500	6000	3000	1500	1000						publicquest\world\playerlevellimitbreak\50to70\50to70gather_fengren.lua
+4	50突破收集·锻造		315360000	315360000									15500	7500	3500	1500	1500						publicquest\world\playerlevellimitbreak\50to70\50to70gather_duanzao.lua
+5	50突破收集·医术		315360000	315360000									12000	10000	4000	3000	2000						publicquest\world\playerlevellimitbreak\50to70\50to70gather_yishu.lua
+6	50突破收集·阅读		315360000	315360000									2000	1700	1100	500	400						publicquest\world\playerlevellimitbreak\50to70\50to70gather_yuedu.lua
+7	50突破收集·总集		315360000	315360000									1	1	1	1	1						publicquest\world\playerlevellimitbreak\50to70\50to70gather.lua
+8	70级神农洇		1620										3	3	0	0	0				1		publicquest\battlefield\shennongyin\shennongyin.lua
+9	金水野外boss		518400	520000	5834								1										publicquest\activity\wildeventoflevel70\level70bossofjinshuizhen.lua
+10	寇岛野外boss		518400	520000	5843								1										publicquest\activity\wildeventoflevel70\level70bossofkoudao.lua
+11	四十级云湖天池		900										50	50							1		publicquest\battlefield\yunhutianchi\level40yunhutianchi.lua
+12	70级九宫棋谷		1080										1000	1000							1		publicquest\battlefield\jiugongqigu\jiugongqigu.lua
+13	洛道野外boss		518400	520000	6612								1										publicquest\activity\wildeventoflevel70\level70bossofluodao.lua
+14	枫华谷野外boss		518400	520000	6610								1										publicquest\activity\wildeventoflevel70\level70bossoffenghuagu.lua
+15	七十级云湖天池		900										100	100							1		publicquest\battlefield\yunhutianchi\level70yunhutianchi.lua
+16	困龙岭_梅花桩												9999								1		publicquest\battlefield\meihuazhuang\meihuazhuang.lua
+17	邀星坪_夜射天狼												9999								1		publicquest\battlefield\yeshetianlang\yeshetianlang.lua
+18	70级丝绸之路		1620										1000	1000	1						1		publicquest\battlefield\sichouzhilu\sichouzhilu.lua
+19	守株围场_打猎												1500								1		publicquest\battlefield\dalie\dalie.lua
+20	陷空坳_宇文宝藏												9999								1		publicquest\battlefield\yuwenbaozang\yuwenbaozang.lua
+21	融天岭测试PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+22	成都测试PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+23	白龙口测试PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+24	黑龙沼测试PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+25	无量山测试PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+27	英雄神农洇		1620										500	500							1		publicquest\battlefield\yx_shennongyin\yx_shennongyin.lua
+29	天山碎冰谷		3600	4200									1	1							1		publicquest\Arena\天山碎冰谷\天山碎冰谷.lua
+30	80级三国古战场		1620										500	500							1		publicquest\battlefield\sanguoguzhanchang\sanguoguzhanchang.lua
+31	帮会约战_雪原争锋		2700										30000	30000	200000	200000	1	1			1		publicquest\battlefield\tongbattlefield\tongbattlefield.lua
+32	90级阵营日常																						
+33	长安·战乱PQ		315360000	315360000									100	50	40	20	50				1		publicquest\world\DLC_FivePoisonsPQ\融天岭\Test.lua
+34	齐物阁		1200	1600									10								1		publicquest\battlefield\qiwuge\qiwuge.lua
+35	狼影殿		2000	3000									10								1		publicquest\battlefield\langyingdian\langyingdian.lua
+36	PQ风雪稻香村		315360000	315360000												50	30						
+37	PQ秦皇陵		315360000	315360000												10							
+38	90级冷香丘		1620										600	600							1		publicquest\battlefield\lengxiangqiu\lengxiangqiu.lua
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

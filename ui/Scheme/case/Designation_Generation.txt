@@ -1,0 +1,97 @@
+Force	Generation	Name	Character	Desc
+0	0			
+1	1	道	Designation_Character_Shaolin	<text>text="少林第六代弟子，一道恒常。" font=100 </text>
+1	2	清	Designation_Character_Shaolin	<text>text="少林第七代弟子，清净如空。" font=100 </text>
+1	3	虚	Designation_Character_Shaolin	<text>text="少林第八代弟子，识智虚空。" font=100 </text>
+1	4	明	Designation_Character_Shaolin	<text>text="少林第九代弟子，明心见性。" font=100 </text>
+1	5	行	Designation_Character_Shaolin	<text>text="少林第十代弟子，行识缘灭。" font=100 </text>
+2	1	书墨		<text>text="书圣颜真卿门下，意气书生。" font=100 </text>
+2	2	天工		<text>text="工圣僧一行门下，天工妙手。" font=100 </text>
+2	3	杏林		<text>text="药圣孙思邈门下，杏林名医。" font=100 </text>
+2	4	芳主		<text>text="花圣宇晴门下，百花之主。" font=100 </text>
+2	5	丹青		<text>text="画圣林白轩门下，丹青妙笔。" font=100 </text>
+2	6	商羽		<text>text="琴圣苏雨鸾门下，清音灵动。" font=100 </text>
+2	7	星弈		<text>text="棋圣王积薪门下，弈林国手。" font=100 </text>
+3	1	如晦		<text>text="莱国公杜如晦所领之营，明断果敢。" font=100 </text>
+3	2	无忌		<text>text="赵国公长孙无忌所领之营，所向披靡。" font=100 </text>
+3	3	卫公		<text>text="卫国公李靖所领之营，雄才大略。" font=100 </text>
+3	4	叔宝		<text>text="胡国公秦琼所领之营，英勇非常。" font=100 </text>
+3	5	玄龄		<text>text="梁国公房玄龄所领之营，深谋远虑。" font=100 </text>
+3	6	尉迟		<text>text="鄂国公尉迟敬德所领之营，豪情意气。" font=100 </text>
+3	7	知节		<text>text="卢国公程知节营所领之营，刚烈威猛。" font=100 </text>
+4	1	清虚		<text>text="清虚子于睿门下，返璞归真。" font=100 </text>
+4	2	紫虚		<text>text="紫虚子祁进门下，诛恶辟邪。" font=100 </text>
+4	3	玉虚		<text>text="玉虚子李忘生门下，寻真问道。" font=100 </text>
+4	4	灵虚		<text>text="灵虚子上官博玉门下，金丹求仙。" font=100 </text>
+4	5	金虚		<text>text="金虚子卓凤鸣门下，伐魔卫道。" font=100 </text>
+4	6	静虚		<text>text="静虚子谢云流门下，见性明心。" font=100 </text>
+4	7	冲虚		<text>text="纯阳六脉护法，道门精华。" font=100 </text>
+5	1	绮秀		<text>text="绮秀叶芷青门下，雍容典雅。" font=100 </text>
+5	2	楚秀		<text>text="楚秀萧白胭门下，楚楚动人。" font=100 </text>
+5	3	琴秀		<text>text="琴秀高绛婷门下，琴瑟知心。" font=100 </text>
+5	4	燕秀		<text>text="燕秀小七门下，飞燕轻盈。" font=100 </text>
+5	5	昭秀		<text>text="昭秀曲云门下，知书达理。" font=100 </text>
+5	6	薇秀		<text>text="薇秀王维林门下，芳心蕙质。" font=100 </text>
+5	7	菡秀		<text>text="菡秀苏雨鸾门下，素颜清丽。" font=100 </text>
+6	1	玉蟾		<text>text="玉蟾使凤瑶门下，攀蟾折桂。" font=100 </text>
+6	2	天蛛		<text>text="天蛛使容夏门下，蛛游蜩化。" font=100 </text>
+6	3	风蜈		<text>text="风蜈使纳罗门下，百蜈挠心。" font=100 </text>
+6	4	圣蝎		<text>text="圣蝎使阿幼朵门下，剔蝎撩蜂。" font=100 </text>
+6	5	灵蛇		<text>text="灵蛇使玛索门下，龙蛇飞动。" font=100 </text>
+6	6	冰蟾		<text>text="右长老艾黎门下，冰蟾驾月。" font=100 </text>
+6	7	火鲤		<text>text="教主曲云门下，火鲤舞弦。" font=100 </text>
+7	1	天罗		<text>text="御堂唐怀信门下，形如魅影。" font=100 </text>
+7	2	九宫		<text>text="敏堂唐怀智门下，智若文曲。" font=100 </text>
+7	3	引羽		<text>text="药堂唐怀礼门下，迷魂夺魄。" font=100 </text>
+7	4	天绝		<text>text="力堂唐怀义门下，乾坤无色。" font=100 </text>
+7	5	穿杨		<text>text="唐傲侠门下，裂石穿云。" font=100 </text>
+7	6	飞星		<text>text="唐傲生门下，翩若惊鸿。" font=100 </text>
+7	7	鬼斧		<text>text="唐傲骨门下，箭惊鬼神。" font=100 </text>
+7	8	千机		<text>text="唐傲天门下，机变无穷。" font=100 </text>
+8	1	御神		<text>text="叶孟秋门下，御剑之神。" font=100 </text>
+8	2	正阳		<text>text="叶英门下，正天之阳。" font=100 </text>
+8	3	碎星		<text>text="叶晖门下，碎夜之星。" font=100 </text>
+8	4	无双		<text>text="叶炜门下，天下无双。" font=100 </text>
+8	5	流风		<text>text="叶蒙门下，流华之风。" font=100 </text>
+8	6	残雪		<text>text="叶凡门下，残冬之雪。" font=100 </text>
+8	7	长生		<text>text="叶婧衣门下，长元之生。" font=100 </text>
+9	1	霸下		<text>text="君山总舵弟子，重任在肩。" font=100 </text>
+9	2	宪章		<text>text="江陵分舵弟子，赏善锄奸。" font=100 </text>
+9	3	蒲牢		<text>text="长安分舵弟子，悬壶警世。" font=100 </text>
+9	4	睚眦		<text>text="洛阳分舵弟子，除恶平怨。" font=100 </text>
+9	5	囚牛		<text>text="扬州分舵弟子，精通杂艺。" font=100 </text>
+9	6	螭吻		<text>text="成都分舵弟子，为民消灾。" font=100 </text>
+9	7	椒图		<text>text="范阳分舵弟子，防范外敌。" font=100 </text>
+9	8	嘲风		<text>text="太原分舵弟子，险中求真。" font=100 </text>
+10	1	辉日		<text>text="右护法沈酱侠门下,我心恒明。" font=100 </text>
+10	2	影月		<text>text="墨衫夜帝卡卢比门下，灭诸魔法。" font=100 </text>
+10	3	妙火		<text>text="圣女陆烟儿门下，妙火常耀。" font=100 </text>
+10	4	洪水		<text>text="冰魄寒王丁君门下，百川湛然。" font=100 </text>
+10	5	琉金		<text>text="三心情王左思门下，金刚法身。" font=100 </text>
+10	6	星木		<text>text="左护法何方易门下，何欢一生。" font=100 </text>
+10	7	方土		<text>text="双头魔王克辛波门下,无量方土。" font=100 </text>
+21	1	轻眉		<text>text="长孙忘情门下,煞染轻眉。" font=100 </text>
+21	2	流缘		<text>text="风夜北门下，流缘何处。" font=100 </text>
+21	3	觅雪		<text>text="宋森雪门下，谁人觅雪。" font=100 </text>
+21	4	万劫		<text>text="王不空门下，万劫降秽。" font=100 </text>
+21	5	星河		<text>text="申屠远门下，弓挽星河。" font=100 </text>
+21	6	潋滟		<text>text="燕忆眉门下，潋滟无岸。" font=100 </text>
+21	7	引月		<text>text="薛直门下，引月雕云。" font=100 </text>
+22	1	流霆		<text>text="门主杨逸飞门下，静水流霆。" font=100 </text>
+22	2	折仙		<text>text="门主杨逸飞门下，仙凡折腰。" font=100 </text>
+22	3	道子		<text>text="道子杨青月门下，大道自然。" font=100 </text>
+22	4	真幻		<text>text="幻魔心韩非池门下，往生幻梦。" font=100 </text>
+22	5	遗音		<text>text="古脉弦歌赵宫商门下，大圣遗音。" font=100 </text>
+22	6	载川		<text>text="前缘相知张婉玉门下，文心载川。" font=100 </text>
+22	7	鸾翔		<text>text="闭目晓音康念门下，静夜听鸾。" font=100 </text>
+22	8	一心		<text>text="一气倾楼凤息颜门下，一心二意。" font=100 </text>
+22	9	惊雷		<text>text="九变玉徽崖牙门下，百变惊雷。" font=100 </text>
+23	1	归雁		<text>text="三庄主柳静海门下，雁归何处。" font=100 </text>
+23	2	命途		<text>text="三庄主柳静海门下，莫测命途。" font=100 </text>
+23	3	夕容		<text>text="三庄主柳静海门下，悠悠夕颜。" font=100 </text>
+23	4	惊澜		<text>text="大庄主柳惊涛门下，澜卷惊涛。" font=100 </text>
+23	5	吞吴		<text>text="二庄主柳浮云门下，力吞东吴。" font=100 </text>
+23	6	月痕		<text>text="柳弄痕门下，霜月秋痕。" font=100 </text>
+23	7	朝容		<text>text="柳夕门下，朝发花容。" font=100 </text>
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

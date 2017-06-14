@@ -1,0 +1,10 @@
+Include("scripts/Map/节日七夕/include/QiXi_GetLianLiID.lua")--2014年9月18日到期
+Include("scripts/Include/Table.lh")
+Include("scripts/Include/PlayerCustomValueName.lh")
+Include("scripts/Include/GlobalStrings.ls")
+Include("scripts/Include/forgetskill.lh")
+Include("scripts/Map/帮会领地/include/TongPay.lua")
+Include("scripts/Include/JJCEquipment_325.lua")
+Include("scripts/skill/天赋/Talent.lua")
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

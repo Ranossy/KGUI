@@ -1,0 +1,5 @@
+id	key	script
+0		
+1	ActivityFlop	{startYear=2014,startMonth=8,startDay=28,startHour=7,startMinute=0,startSecond=0,endYear=2014,endMonth=9,endDay=29,endHour=7,endMinute=0,endSecond=0,}
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

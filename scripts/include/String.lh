@@ -1,0 +1,127 @@
+Include("scripts/Include/PlayerCustomValueName.lh")
+
+-- 用来格式化字符串, 用参数替换字符串中的转义符
+-- local szText = "{2} {%21231232132131} {3} {4} {2} {test} {Test}."
+-- print((szText:gformat({1, 2, 3, test = 999}, 12, 13, 14, 15)))
+-- 如果第一个参数是 TABLE , 优先取得 TABLE 中的数据来做替换
+string.gformat = function(szString, ...)
+	local arg = {...}; arg.n = select('#', ...);
+	local tTabArgs = {}
+	if type(arg[1]) == "table" then
+		tTabArgs = arg[1]
+		arg[1] = tTabArgs[1]
+	end
+	local replfunc = function (matchValue)
+		if matchValue:sub(2, 2) == "%" then
+			return "{" .. matchValue:sub(3, #matchValue)
+		end
+		
+		local argKey = matchValue:sub(2, #matchValue - 1)
+		local argIndex = tonumber(argKey)
+		if tTabArgs[argIndex] then
+			return tTabArgs[argIndex]
+		elseif arg[argIndex] then
+			return arg[argIndex]
+		end
+		return tTabArgs[argKey]
+	end
+	return szString:gsub("%b{}", replfunc)
+end
+
+--添加按钮标签：
+--参数param可为任意类型数据，只处理string, number, table型，tagType控制标签类型
+--Written by Mati
+function AddButtonTag(param, tagType)
+	if type(param) == "string" or type(param) == "number" then
+		if tagType == 1 or tagType == nil then
+			return "<$C " .. param .. ">"
+		elseif tagType == 2 then
+			return "<Q" .. param .. ">"
+		end
+	elseif type(param) == "table" then
+		local tResult = {}
+		for k, v in pairs(param) do
+			tResult[k] = AddButtonTag(v, tagType)
+		end
+		return tResult
+	else
+		return param	
+	end
+end
+
+--传入一个字符串（数字也可以），一个次数，返回多值
+--Written by Mati, Inspired by Dannexx
+function GetMultiValue(szStr, nCount)
+	if nCount > 0 then
+		return szStr, GetMultiValue(szStr, nCount - 1)
+	else
+		return
+	end
+end
+
+--传入一个任务ID，添加任务标签。（用于item、doodad接任务）
+function QuestButtonTag(nQuestID)
+	if type(nQuestID) == "number" then
+		return string.format("<Q%d>", nQuestID)
+	else
+		return false
+	end
+end
+
+--用于所有问路类型，支持5层对话，每层99个选项。并且最后会更具npc昵称标记地图。
+function ShowNewWindow(player, npc, tOption)
+	local szOptionList = ""
+	local nButtonNum = 0
+	local tCasualTable = {} --一个临时的数组
+	local tLayerChoice = {} --一个用来储存在每一层选了第几个选项的数组。
+	local nChoiceNum = player.GetCustomUnsigned4(PLAYER_CUSTOM_VALUE.ASK_THE_WAY)
+	local nLayer = math.floor(nChoiceNum / 10 ^ 8) + 1
+	nChoiceNum = nChoiceNum % 10 ^ 8
+	for i = 1, math.huge do
+		if nChoiceNum <= 0 then
+			break
+		else
+			tLayerChoice[i] = nChoiceNum % 100
+			nChoiceNum = math.floor(nChoiceNum / 100)
+		end
+	end
+	if nLayer == 1 then
+		tLayerChoice = tOption[nLayer]
+	elseif nLayer == 2 then
+		tLayerChoice = tOption[nLayer][tLayerChoice[1]]
+	elseif nLayer == 3 then
+		tLayerChoice = tOption[nLayer][tLayerChoice[1]][tLayerChoice[2]]
+	elseif nLayer == 4 then
+		tLayerChoice = tOption[nLayer][tLayerChoice[1]][tLayerChoice[2]][tLayerChoice[3]]
+	elseif nLayer == 5 then
+		tLayerChoice = tOption[nLayer][tLayerChoice[1]][tLayerChoice[2]][tLayerChoice[3]][tLayerChoice[4]]
+	end
+	szOptionList = tLayerChoice["szOption0"] .. "\n"
+	if not tLayerChoice["szOption1"] then
+		local scene = player.GetScene()
+		if tLayerChoice["szNickName"] and scene then
+			local npc = scene.GetNpcByNickName(tLayerChoice["szNickName"])
+			if npc then
+				local nX, nY = npc.GetAbsoluteCoordinate()
+				player.AddMapMark(nX, nY, 0, 1, tLayerChoice["szName"])
+			end
+		end
+		player.OpenWindow(TARGET.NPC, npc.dwID,
+			szOptionList
+		);
+		return
+	end
+	for i = 1, math.huge do
+		if not tLayerChoice["szOption" .. i] then
+			break
+		else
+			szOptionList = szOptionList .. "\n" .. AddButtonTag(tLayerChoice["szOption" .. i])
+			nButtonNum = nButtonNum + 1
+		end
+	end
+	player.OpenWindow(TARGET.NPC, npc.dwID,
+		szOptionList,
+		GetMultiValue("ShowNewWindowReload", nButtonNum)
+	);
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,77 @@
+
+NPC_SEX_MALE	=	1;
+NPC_SEX_FEMALE	=	2;
+
+-- 判断目标身上是否有某种BUFF。
+-- nBuffType：0-无效；1-BUFF；2-DEBUFF；3-DOT；4-HOT；
+-- dwBuffID：各类型表里面的ID。
+function IsNpcHasBuff(target, nBuffType, dwBuffID)
+	if (not target) or (nBuffType < 1 and nBuffType > 4) then
+		return 0
+	end
+
+	local tBuffList
+	if nBuffType == 4 then
+		tBuffList = target.GetHotList()
+	elseif nBuffType == 3 then
+		tBuffList = target.GetDotList()
+	elseif nBuffType == 2 then
+		tBuffList = target.GetDebuffList()
+	else
+		tBuffList = target.GetBuffList()
+	end
+	
+	if not tBuffList then
+		return 0
+	end
+	
+	local nTableIndex = 1
+	while tBuffList[nTableIndex] do
+		if tBuffList[nTableIndex]["dwID"] == dwBuffID then
+			return tBuffList[nTableIndex]["nStackNum"]
+		end
+		nTableIndex = nTableIndex + 1
+	end
+	return 0
+end;
+
+--在NPC周围一定角度，一定距离，创建一个DOODAD
+--nAngel 需要创建DOODAD相对于NPC的角度，nDir创建出来的doodad的朝向,nR创建的doodad离NPC的距离
+function CreateDoodadByDirection(scene,dwDoodadTemplateID,npc,nAngel,nR,nDir)
+	if npc then
+		local nX,nY,nZ = npc.GetAbsoluteCoordinate()
+		if scene then
+			local dwAngel = (npc.nFaceDirection * 1.4 - 90)/180*3.14159265 + nAngel
+			local createddoodad = scene.CreateDoodad(dwDoodadTemplateID,nX + nR * math.cos(dwAngel),nY + nR * math.sin(dwAngel),nZ,nDir)
+			return createddoodad
+		end
+	end
+end
+
+--在NPC周围一定角度，一定距离，创建一个NPC
+--nAngel 需要创建NPC相对于原来NPC的角度，nDir创建出来的NPC的朝向,nR创建的NPC离原来NPC的距离
+--szNickName  创建出来的NPC别名，没有就不填，不要填0
+function CreateNpcByDirection(scene, dwNpcTemplateID, npc, nAngel, nR, nDir, nDisappearFrame, szNickName)
+	nDisappearFrame = nDisappearFrame or 9600
+	if npc then
+		local nX,nY,nZ = npc.GetAbsoluteCoordinate()
+		if scene then
+			local dwAngel = (npc.nFaceDirection * 1.4 - 90)/180*3.14159265 + nAngel
+            if szNickName then
+				local creatednpc = scene.CreateNpc(dwNpcTemplateID,nX + nR * math.cos(dwAngel),nY + nR * math.sin(dwAngel),nZ,nDir,nDisappearFrame,szNickName)
+				return creatednpc
+			else
+				local creatednpc = scene.CreateNpc(dwNpcTemplateID,nX + nR * math.cos(dwAngel),nY + nR * math.sin(dwAngel),nZ,nDir,nDisappearFrame)
+				return creatednpc
+			end
+		end
+	end
+end
+
+--NPC选择自身作为目标，AI测试函数 by 马蹄
+function SelectSelf(character, actionData)
+	character.SetTarget(TARGET.NPC, character.dwID);
+	return 1;
+end
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

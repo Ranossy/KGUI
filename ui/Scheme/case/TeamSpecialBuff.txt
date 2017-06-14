@@ -1,0 +1,4 @@
+Index	Name	BuffID	BuffLevel	IconID	Desc
+1	共战江湖	3219	10	2148	江湖贡献值、威望值和战阶积分的获取速度提高20%，击杀秘境首领获得侠义值提高20%。在某些秘境中可以增加秘境首领的装备掉落，某些团队秘境中可提高团队成员伤害和最大气血值。
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

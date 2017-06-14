@@ -1,0 +1,6 @@
+Index	szName	Tip
+0		
+1	风雨稻香村	<text>text="普通风雨稻香村入口请去新手镇车夫处；英雄风雨稻香村入口位于龙门荒漠李复处;"</text>
+2	持国天王回忆录	<text>text="持国天王回忆录入口请去少林寺澄正处;"</text>
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,16 @@
+dwID	szType	dwParam	dwFrame	szLinkFrame	szName
+0		0			
+1	Item	17049	11	ui\Image\OperationActivity\OperationAcitivty8.UITex	马驹·里飞沙
+2	Item	19885	4	ui\Image\OperationActivity\OperationAcitivty10.UITex	遗失的尊敬
+3	Item	20534	5	ui\Image\OperationActivity\OperationAcitivty12.UITex	虚空交椅
+4	Item	10334	7	ui\Image\OperationActivity\OperationAcitivty12.UITex	海誓山盟
+5	TongBao	10	3	ui\Image\OperationActivity\OperationAcitivty10.UITex	10通宝
+6	TongBao	50	3	ui\Image\OperationActivity\OperationAcitivty10.UITex	50通宝
+7	TongBao	100	3	ui\Image\OperationActivity\OperationAcitivty10.UITex	100通宝
+8	TongBao	300	3	ui\Image\OperationActivity\OperationAcitivty10.UITex	300通宝
+9	TongBao	500	4	ui\Image\OperationActivity\OperationAcitivty12.UITex	500通宝
+10	TongBao	1000	4	ui\Image\OperationActivity\OperationAcitivty12.UITex	1000通宝
+11	TongBao	5000	6	ui\Image\OperationActivity\OperationAcitivty12.UITex	5000通宝
+12	TongBao	10000	6	ui\Image\OperationActivity\OperationAcitivty12.UITex	10000通宝
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

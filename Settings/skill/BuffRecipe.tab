@@ -1,0 +1,115 @@
+RecipeName	RecipeDec	RecipeID	RecipeLevel	BuffID	BuffLevel	IntensityChange	CountAdd	IntervalFrameAdd	DamageAddPercent	BeginAttrib1	BeginValue1A	BeginValue1B	BeginAttrib2	BeginValue2A	BeginValue2B	BeginAttrib3	BeginValue3A	BeginValue3B	BeginAttrib4	BeginValue4A	BeginValue4B	ActiveAttrib1	ActiveValue1A	ActiveValue1B	EndTimeAttrib1	EndTimeValue1A	EndTimeValue1B	IntensityAdd
+Default	Buff秘笈描述	0	0	0	0	0	0	0	0																			0
+浮花浪蕊	增加持续时间	1	1	687		1		64																				1
+兰摧玉折	Buff秘笈描述	2	1	711	0	0	1	0	0																			1
+商阳指	Buff秘笈描述	3	1	666	0	0	1	0	0																			1
+凭虚御风	Buff秘笈描述	4	1	372	0	0	0	48	0																			1
+坐忘无我	Buff秘笈描述	5	1	134	0	0	0	403	0																			1
+绕足	移动速度降低10%	6	1	523	1	0	0	0	0	atMoveSpeedPercent	-102																	10
+上元点鬟	增加治疗效果7%	7	1	681	1	0	0	0	0													atCallTherapy	9		atCallTherapy	22		1
+天地低昂	增加持续时间	8	1	684	1	0	0	48	0																			1
+天地低昂	增加持续时间	9	1	684	1	0	0	48	0																			1
+上元点鬟	增加治疗效果7%	10	1	681	0	0	0	0	72																			1
+翔鸾舞柳	增加治疗效果5%	11	1	680	0	0	0	0	30																			1
+翔鸾舞柳	增加治疗效果7%	13	1	680	0	0	0	0	51																			1
+天策_疾如风	Buff秘笈描述	14	1	200	0	0	0	32	0																			1
+天策_守如山	Buff秘笈描述	15	1	367	0	0	0	48	0																			1
+天策_啸如虎	Buff秘笈描述	16	1	203	0	0	0	32	0																			1
+猛虎下山	Buff秘笈描述	17	1	344	0	0	0	64	0																			1
+春泥护花	Buff秘笈描述	18	1	122	0	0	0	0	0	atGlobalResistPercent	51																	1
+四象轮回	Buff秘笈描述	19	1	555	0	0	0	0	0	atMoveSpeedPercent	-102	0																10
+坐忘无我	Buff秘笈描述	20	1	134	0	0	0	0	0	atGlobalDamageAbsorb	50																	1
+抱残式	Buff秘笈描述	21	1	563	0	0	0	0	0	atMoveSpeedPercent	-102	0																102
+无相诀	Buff秘笈描述	22	1	399	0	0	0	0	0	atMoveSpeedPercent	412	0																1
+天策_破风	Buff秘笈描述	23	1	552	0	0	0	64	0																			1
+少林_抱残式	Buff秘笈描述	24	1	563	0	0	0	32	0																			1
+少林_抱残式	Buff秘笈描述	25	1	563	0	0	0	32	0																			1
+少林_横扫六合	增加持续时间6秒	26	1	743	0	0	3		0																			1
+钟林毓秀	钟林毓秀	27	1	714	0	0	1	0	0																			1
+钟林毓秀	Buff秘笈描述	28	1	674	0	0	1	0	0																			1
+坐忘无我_紫霞2	Buff秘笈描述	29	1	1376	0	0	0	0	0	atGlobalDamageAbsorb	50																	1
+藏剑_风吹荷1	Buff秘笈描述	30	1	1729	0	0	0	16	0																			0
+藏剑_云栖松闪躲	Buff秘笈描述	33	1	2065	0	0	0	32	0																			0
+藏剑_云栖松招架	Buff秘笈描述	34	1	2065	0	0	0	32	0																			0
+蝶弄足	Buff秘笈描述	35	1	213	0	0	0	32	0																			1
+少林镇派_罗汉金身15%	Buff秘笈描述	36	1	388	0	0	0	0	0																			0
+藏剑_梅隐香1	Buff秘笈描述	37	1	1739	0	0	0	0	0	atPhysicsCriticalStrikeBaseRate	100		atPhysicsCriticalStrikeBaseRate	50														0
+藏剑_梅隐香2	Buff秘笈描述	38	1	1739	0	0	0	0	0	atPhysicsCriticalStrikeBaseRate	200		atPhysicsCriticalStrikeBaseRate	100														0
+藏剑_梅隐香3	Buff秘笈描述	39	1	1739	0	0	0	0	0	atPhysicsCriticalStrikeBaseRate	300		atPhysicsCriticalStrikeBaseRate	150														0
+般若诀增强1	Buff秘笈描述	40	1	382	0	0	0	0	0	atPhysicsShieldBase	200		atMagicShield	8														0
+般若诀增强2	Buff秘笈描述	41	1	382	0	0	0	0	0	atPhysicsShieldBase	400		atMagicShield	15														0
+兰催玉折+2跳	Buff秘笈描述	42	1	711	0	0	2	0	0																			2
+兰摧玉折+1跳	Buff秘笈描述	43	1	711	0	0	1	0	0																			1
+钟林毓秀674+1跳	Buff秘笈描述	44	1	674	0	0	1	0	0																			1
+钟林毓秀674+2跳	Buff秘笈描述	45	1	674	0	0	2	0	0																			2
+钟林毓秀2738+1跳	Buff秘笈描述	46	1	2738	0	0	1	0	0																			1
+万花_无侣_清心1	Buff秘笈描述	47	1	112	0	0	0	0	0	atExecuteScript	skill\万花\镇派\万花_无侣_清心BUFF加强1.lua																	0
+万花_无侣_清心2	Buff秘笈描述	48	1	112	0	0	0	0	0	atExecuteScript	skill\万花\镇派\万花_无侣_清心BUFF加强2.lua																	0
+万花_好梦_春泥加减伤1	Buff秘笈描述	49	1	122	0	0	0	0	0	atGlobalResistPercent	100																	10
+万花_好梦_春泥加减伤2	Buff秘笈描述	50	1	122	0	0	0	0	0	atGlobalResistPercent	200		atSkillEventHandler	678														20
+万花_不舍_握针加1跳	Buff秘笈描述	51	1	631	0	0	1	0	0																			0
+万花_不舍_握针加2跳	Buff秘笈描述	52	1	631	0	0	2	0	0																			0
+万花_不舍_握针加3跳	Buff秘笈描述	53	1	631	0	0	3	0	0																			0
+钟林毓秀714+1跳	Buff秘笈描述	54	1	714	0	0	1	0	0																			1
+钟林毓秀714+2跳	Buff秘笈描述	55	1	714	0	0	2	0	0																			2
+金刚怒目17%段1	Buff秘笈描述	56	1	3863	0	0	0	0	0	atMagicAttackPowerPercent	51																	1
+金刚怒目17%段2	Buff秘笈描述	57	1	3864	0	0	0	0	0	atMagicAttackPowerPercent	102																	1
+金刚怒目17%段3	Buff秘笈描述	58	1	3865	0	0	0	0	0	atMagicAttackPowerPercent	153																	1
+金刚怒目33%段1	Buff秘笈描述	59	1	3863	0	0	0	0	0	atMagicAttackPowerPercent	102																	1
+金刚怒目33%段2	Buff秘笈描述	60	1	3864	0	0	0	0	0	atMagicAttackPowerPercent	205																	1
+金刚怒目33%段3	Buff秘笈描述	61	1	3865	0	0	0	0	0	atMagicAttackPowerPercent	307																	1
+钟林毓秀2738+2跳	Buff秘笈描述	62	1	2738	0	0	2	0	0																			2
+钟林毓秀2740+1跳	Buff秘笈描述	63	1	2740	0	0	1	0	0																			1
+钟林毓秀2740+2跳	Buff秘笈描述	64	1	2740	0	0	2	0	0																			2
+坐忘无我_紫霞1	Buff秘笈描述	65	1	2749	0	0	0	0	0	atGlobalDamageAbsorb	50																	1
+坐忘30%免1	Buff秘笈描述	66	1	134	0	0	0	0	0	atGlobalResistPercent	205																	1
+坐忘30%免2	Buff秘笈描述	67	1	2749	0	0	0	0	0	atGlobalResistPercent	205																	1
+坐忘30%免3	Buff秘笈描述	68	1	1376	0	0	0	0	0	atGlobalResistPercent	205																	1
+坐忘60%免1	Buff秘笈描述	69	1	134	0	0	0	0	0	atGlobalResistPercent	410																	1
+坐忘60%免2	Buff秘笈描述	70	1	2749	0	0	0	0	0	atGlobalResistPercent	410																	1
+坐忘60%免3	Buff秘笈描述	71	1	1376	0	0	0	0	0	atGlobalResistPercent	410																	1
+啸如虎加3秒	Buff秘笈描述	76	1	203	0	0	0	48	0	atBeTherapyCoefficient	256																	0
+啸如虎加6秒	Buff秘笈描述	77	1	203	0	0	0	96	0	atBeTherapyCoefficient	512																	0
+啸如虎加吸血1	Buff秘笈描述	78	1	203	0	0	0	0	0	atDamageToLifeForSelf	256																	0
+啸如虎加吸血2	Buff秘笈描述	79	1	203	0	0	0	0	0	atDamageToLifeForSelf	512																	0
+绛唇珠袖_加1秒	Buff秘笈描述	80	1	535	0	0	0	16	0																			0
+绛唇珠袖_加2秒	Buff秘笈描述	81	1	535	0	0	0	32	0																			0
+龙池乐减仇恨1	Buff秘笈描述	82	1	1987	0	0	0	0	0	atActiveThreatCoefficient	0	-205																0
+龙池乐减仇恨2	Buff秘笈描述	83	1	1987	0	0	0	0	0	atActiveThreatCoefficient	0	-410																0
+五毒_女娲补天1	Buff秘笈描述	84	1	2315	0	0	0	0	0																			0
+五毒_女娲补天2	Buff秘笈描述	85	1	2315	0	0	0	0	0																			0
+剑舞效果提升1	Buff秘笈描述	86	1	409	0	0	0	0	0	atLunarAttackPowerPercent	5	0	atTherapyPowerPercent	5	0													0
+剑舞效果提升2	Buff秘笈描述	87	1	409	0	0	0	0	0	atLunarAttackPowerPercent	10	0	atTherapyPowerPercent	10	0													0
+蝎毒减速加10%	Buff秘笈描述	88	1	2502	0	0	0	48	0																			0
+钟林毓秀	Buff秘笈描述	89	1	2738	0	0	1	0	0																			1
+钟林毓秀	Buff秘笈描述	90	1	2740	0	0	1	0	0																			1
+五毒_女娲补天_延长时间1	Buff秘笈描述	91	1	2315	0	0	0	16	0																			1
+五毒_女娲补天_延长时间2	Buff秘笈描述	92	1	2315	0	0	0	32	0																			1
+五毒_女娲补天_延长时间3	Buff秘笈描述	93	1	2315	0	0	0	48	0																			1
+五毒_蛇影_增加跳数	Buff秘笈描述	94	1	2296	0	0	1	0	0																			1
+天策_疾如风_白羽1	Buff秘笈描述	98	1	2759	0	0	0	32	0																			1
+天策_疾如风_白羽2	Buff秘笈描述	99	1	2760	0	0	0	32	0																			1
+天策_疾如风_白羽3	Buff秘笈描述	100	1	2761	0	0	0	32	0																			1
+唐门_化血镖_外功_加1跳	Buff秘笈描述	102	1	2237	0	0	1	0	0																			0
+唐门_化血镖_内功_加1跳	Buff秘笈描述	103	1	3221	0	0	1	0	0																			0
+唐门_毒蒺藜_加2秒	Buff秘笈描述	104	1	3226	0	0	0	32	0																			1
+唐门_穿心弩_加1跳	Buff秘笈描述	105	1	3195	0	0	1	0	0																			1
+唐门_惊鸿游龙_加1秒	Buff秘笈描述	106	1	1	0	0	0	0	0																			1
+唐门_荆天棘地_加1秒	Buff秘笈描述	107	1	3215	0	0	0	16	0																			1
+天策_破风2	Buff秘笈描述	108	1	661	0	0	2	0	0																			1
+唐门_穿心弩伤害_加1跳	Buff秘笈描述	109	1	3712	0	0	1	0	0																			1
+天策_破风_DOT	Buff秘笈描述	112	1	3442	0	0	2	0	0																			1
+明教_隐身消失后免控	Buff秘笈描述	114	1	4052	0	0	0	0	0	atExecuteScript	skill/明教/镇派/明教_隐身消失流光囚影_解控免控.lua																	1
+明教_秘籍_光明相延长	Buff秘笈描述	115	1	4423	0	0	0	32	0																			1
+明教_秘籍_贪魔体_加时间1	Buff秘笈描述	116	1	4439	0	0	0	16	0																			1
+明教_秘籍_贪魔体_加时间2	Buff秘笈描述	117	1	4033	0	0	0	16	0																			1
+明教_秘籍_生灭予夺_加时间	Buff秘笈描述	118	1	4056	0	0	0	16	0																			1
+明教_秘籍_渡厄力_加被疗伤	Buff秘笈描述	119	1	4244	0	0	0	0	0	atExecuteScript	skill/明教/明教_渡厄力.lua																	0
+唐门_心无旁骛_加5秒	Buff秘笈描述	120	1	3468	1	0	0	80	0	atHasteBasePercentAdd	205																	0
+唐门_浮光掠影移动_加5秒	Buff秘笈描述	121	1	1	1	0	0	0	0																			0
+五毒_圣手织天延长	Buff秘笈描述	122	1	2953	0	0	0	16	0																			1
+唐门_逐星箭	Buff秘笈描述	123	1	3202	0	0	1	0	0																			0
+唐门_逐星箭加3跳	Buff秘笈描述	124	1	3202	0	0	3	0	0																			0
+霸刀_闹须弥增加8跳	Buff秘笈描述	127	1	11447	0	0	8	0	0																			0
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

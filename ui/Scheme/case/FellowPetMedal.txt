@@ -1,0 +1,41 @@
+Index	ID	Name	IconID	ForceID	NotOpen	Des	Reward
+0	0			-1	0		
+1	1	狐假豹威	3566			<text>text="这次，狐狸没有借老虎的威风，而是借了豹子小诺的。" font=18</text>	
+2	2	蓝棋先锋	6111			<text>text="棋子蟹蓝棋阵营。" font=18</text>	
+3	3	红棋前寨	6110			<text>text="棋子蟹红棋阵营。" font=18</text>	
+4	4	咏鹅之篇	3558			<text>text="“鹅鹅鹅，曲项向天歌，白毛浮绿水，红掌拨清波。”——骆宾王" font=18</text>	
+5	5	无处下口	6098			<text>text="俗语有云：狗咬刺猬--无从下口。哈皮对此深有体会……" font=18</text>	
+6	6	按图索骥	1898			<text>text="伯乐之子执《马经》寻马，见大蟾蜍而返，谓其父：得一马，略与相同，但蹄不如累曲尔。" font=18</text>	
+7	7	龟兔赛跑	3559			<text>text="上次是乌龟赢了，猜猜这次谁会赢？" font=18</text>	
+8	8	龙宫部众	231			<text>text="传说中龙王座下文以龟丞相为首，武以蟹将军为首，统管东海十万水师……" font=18</text>	
+9	9	酗酒成性	4988			<text>text="自从蟹仔搬家住进酒坛子，它就少有清醒的时候。" font=18</text>	
+10	10	稻香村落	4989			<text>text="安逸恬静，自给自足，悠然自得，却也曾是一番太平的山村景象。" font=18</text>	
+11	11	不动如山	231			<text>text="动也不动，这俩能待一年……谁动，谁就输了。" font=18</text>	
+12	12	视物猜主	5385			<text>text="谁吃红果，谁穿红绸，谁顶绿叶？" font=18</text>	
+13	13	稳如泰山	8134			<text>text="说不动，就不动，不动稳如泰山。" font=18</text>	
+14	14	悬壶济世	8169	2		<text>text="万花门派宠物专属徽章" font=18</text>	<text>text="获取后可激活万花宠物表情包" font=164</text>
+15	15	天狼啸月	8163	3		<text>text="天策门派宠物专属徽章" font=18</text>	<text>text="获取后可激活天策宠物表情包" font=164</text>
+16	16	鹤鸣九皋	8152	4		<text>text="纯阳门派宠物专属徽章" font=18</text>	<text>text="获取后可激活纯阳宠物表情包" font=164</text>
+17	17	西子湖畔	8147	5		<text>text="七秀门派宠物专属徽章" font=18</text>	<text>text="获取后可激活七秀宠物表情包" font=164</text>
+18	18	孔雀开屏	8142	6		<text>text="五毒门派宠物专属徽章" font=18</text>	<text>text="获取后可激活五毒宠物表情包" font=164</text>
+19	19	机巧天工	8246	7		<text>text="唐门门派宠物专属徽章" font=18</text>	<text>text="获取后可激活唐门宠物表情包" font=164</text>
+20	20	君子如风	8157	8		<text>text="藏剑门派宠物专属徽章" font=18</text>	<text>text="获取后可激活藏剑宠物表情包" font=164</text>
+21	21	鹰击长空	4911	9		<text>text="丐帮门派宠物专属徽章" font=18</text>	<text>text="获取后可激活丐帮宠物表情包" font=164</text>
+22	22	雁门雄狮	6641	21		<text>text="苍云门派宠物专属徽章" font=18</text>	<text>text="获取后可激活苍云宠物表情包" font=164</text>
+23	23	呦呦鹿鸣	7923	22		<text>text="长歌门派宠物专属徽章" font=18</text>	<text>text="获取后可激活长歌宠物表情包" font=164</text>
+24	24	门派专属	572	0	1	<text>text="门派宠物专属徽章，需要加入门派才可获得" font=18</text>	<text>text="获取后可激活门派宠物表情包" font=164</text>
+25	25	大漠明月	3871	10		<text>text="明教门派宠物专属徽章" font=18</text>	<text>text="获取后可激活明教宠物表情包" font=164</text>
+26	26	参禅悟道	8137	1		<text>text="少林门派宠物专属徽章" font=18</text>	<text>text="获取后可激活少林宠物表情包" font=164</text>
+27	27	红棋中军	6805			<text>text="棋子蟹红棋阵营。" font=18</text>	
+28	28	蓝棋大营	6804			<text>text="棋子蟹蓝棋阵营。" font=18</text>	
+29	29	军中悍将	6802			<text>text="大统领和大将军，谁又更加厉害呢？" font=18</text>	
+30	30	鸡飞狗跳	6801			<text>text="这俩见面就要打架，简直“黑”“白”不容。" font=18</text>	
+31	31	猫和老鼠	8241			<text>text="并不真的想要抓刀豆，但小落墨很努力去试图抓住刀豆。" font=18</text>	
+32	32	好吃多吃	6631			<text>text="果果，嘟嘟是一对喜欢吃东西的好朋友，他们都有个填不满的小肚子。" font=18</text>	
+33	33	美味红果	4987			<text>text="小果采摘了很多好吃的红果子送给朋友，童心客的糖葫芦就是用这些果子做的。" font=18</text>	
+34	34	一醉方休	6994			<text>text="酒坛子和酒爵碰到一起会发生什么？会醉。" font=18</text>	
+35	35	花开两朵	6626			<text>text="小花和花客都是戏蝶的高手，因为身上的鲜花总会引来蝴蝶。" font=18</text>	
+36	36	枫叶晚霞	6803			<text>text="自从蟹仔看到枫叶晚霞的美景，它就决定在枫林里安个家。" font=18</text>	
+37	37	迅光疾电	8593	23		<text>text="霸刀门派宠物专属徽章" font=18</text>	<text>text="获取后可激活霸刀宠物表情包" font=164</text>
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

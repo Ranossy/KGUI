@@ -1,0 +1,5 @@
+VersionName	Enable	EnableUISound	EnableErrorSound	EnableSceneSound	EnableCharacterSound	EnableCharacterSpeak	EnableBgMusic	Enable3DSound	BgMusicLoop	TotalVolume	UIVolume	ErrorVolume	SceneVolume	ChVolume	SpeakVolume	BgVolume	EnableHelpSound	EnableTipSound	HelpVolume	TipVolume	Female	EnableLoseFocusPlay	WarningVolume
+zhcn	1	1	0	1	1	1	1	1	1	0.94	0.28	0.67	0.85	0.6	0.67	0.28	1	1	0.68	0.68	1	1	0.3
+vivn		0	0		0	0											0	0			0	1	0
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

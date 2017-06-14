@@ -1,0 +1,29 @@
+Include("scripts/Craft/Include/CraftData.ls")
+
+--完成技艺指引任务
+function FinishQuideQuest(npc, player, nProfessionID)
+	local scene = npc.GetScene()
+	if not scene then
+		return
+	end
+	
+	local nQuestID = g_CraftGuideQuest[scene.dwMapID]
+	if nQuestID and g_GuideQuestNpc[nQuestID] and 
+		npc.dwTemplateID == g_GuideQuestNpc[nQuestID][nProfessionID] then
+		local nQuestIndex = player.GetQuestIndex(nQuestID)
+		if nQuestIndex then
+			player.SetQuestValue(nQuestIndex, nProfessionID, 1)
+		end
+	end	
+end
+
+function GetMaterialTypeCount(recipe)
+	local szRecipeField = "dwRequireItemType"
+	
+	for i = 8, 1, -1 do
+		if recipe[szRecipeField .. i] ~= 0 then
+			return i
+		end
+	end
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

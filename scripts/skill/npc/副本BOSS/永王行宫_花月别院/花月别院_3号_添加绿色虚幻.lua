@@ -1,0 +1,49 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/skill/npc/副本BOSS/永王行宫_花月别院/花月别院_3号_添加绿色虚幻.lua
+-- 更新时间:	2015/6/2 11:38:19
+-- 更新用户:	zhangdongen
+-- 脚本说明:
+----------------------------------------------------------------------<
+function Apply(dwCharacterID)
+	local npctarget = GetNpc(dwCharacterID)
+	local scene
+	if npctarget and npctarget.nMoveState ~= MOVE_STATE.ON_DEATH then
+		scene = npctarget.GetScene()
+		if scene.dwMapID == 221 then
+			npctarget.AddBuff(0, 99, 8980, 1, 30)
+		end
+
+		if scene.dwMapID == 230 or scene.dwMapID == 233 then
+			npctarget.AddBuff(0, 99, 8980, 2, 60)
+		end
+
+		if scene.dwMapID == 235 then
+			npctarget.AddBuff(0, 99, 8980, 3, 60)
+		end
+
+		if scene.dwMapID == 237 then
+			npctarget.AddBuff(0, 99, 8980, 4, 60)
+		end
+	end
+
+	local playertarget = GetPlayer(dwCharacterID)
+	if playertarget and playertarget.nMoveState ~= MOVE_STATE.ON_DEATH then
+		scene = playertarget.GetScene()
+		if scene.dwMapID == 221 then
+			playertarget.AddBuff(0, 99, 8980, 1, 30)
+		end
+
+		if scene.dwMapID == 230 or scene.dwMapID == 233 then
+			playertarget.AddBuff(0, 99, 8980, 2, 60)
+		end
+
+		if scene.dwMapID == 235 then
+			playertarget.AddBuff(0, 99, 8980, 3, 60)
+		end
+
+		if scene.dwMapID == 237 then
+			playertarget.AddBuff(0, 99, 8980, 4, 60)
+		end
+	end
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

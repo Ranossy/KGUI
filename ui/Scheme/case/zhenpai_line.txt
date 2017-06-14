@@ -1,0 +1,16 @@
+ForceID	KungfuID	DefaultLine	TotalLine
+0	0	0	0
+1		1	1
+2		2	2
+3		3	3
+4	10014	10	10
+4	10015	4	4
+5		5	5
+6		6	6
+7	10224	7	7
+7	10225	11	11
+8		8	8
+9		0	0
+10		9	9
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

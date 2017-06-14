@@ -1,0 +1,17 @@
+ForceID	SchoolID
+0	0
+1	5
+2	2
+3	1
+4	3
+5	4
+6	9
+7	10
+8	6
+9	7
+10	8
+21	18
+22	19
+23	20
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

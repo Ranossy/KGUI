@@ -1,0 +1,8 @@
+Index	Mask	Frame	Name	Position
+1	1	25	输出(DPS)	Dps
+2	2	29	坦克(T)	T
+3	4	27	治疗(奶)	Heal
+4	8	26	指挥	Leader
+5	16	28	消费者	Pay
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

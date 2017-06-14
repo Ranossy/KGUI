@@ -1,0 +1,57 @@
+--Added by Mati
+--检查doodad.dwID是否已记录到玩家的任务变量中，nStartIndex和nEndIndex是玩家任务变量的编号
+function CheckDoodadMarkInQuestValue(doodad, player, nQuestID, nStartIndex, nEndIndex)
+	if nStartIndex < 0 then
+		Log("<KLUA><ERROR>: CheckDoodadMarkInQuestValue parameter nStartIndex < 0.")
+		return -1
+	end
+	
+	if nEndIndex > 7 then
+		Log("<KLUA><ERROR>: CheckDoodadMarkInQuestValue parameter nEndIndex > 7.")
+		return -1
+	end
+	
+	local nQuestIndex = player.GetQuestIndex(nQuestID)
+	if not nQuestIndex then
+		return 0
+	end
+	
+	local nQuestIndex = player.GetQuestIndex(nQuestID)
+	for i = nStartIndex, nEndIndex, 1 do
+		local nQuestValue = player.GetQuestValue(nQuestIndex, i)
+		if doodad.dwID == nQuestValue then
+			return 1
+		end
+	end
+	
+	return 0
+end
+
+--将doodad.dwID记录到玩家的任务变量中，nStartIndex和nEndIndex是玩家任务变量的编号
+function MarkDoodadInQuestValue(doodad, player, nQuestID, nStartIndex, nEndIndex)
+	if nStartIndex < 0 then
+		Log("<KLUA><ERROR>: MarkDoodadInQuestValue parameter nStartIndex < 0.")
+		return -1
+	end
+	
+	if nEndIndex > 7 then
+		Log("<KLUA><ERROR>: MarkDoodadInQuestValue parameter nEndIndex > 7.")
+		return -1
+	end
+	
+	local nQuestIndex = player.GetQuestIndex(nQuestID)
+	if not nQuestIndex then
+		return 0
+	end
+	
+	for i = nStartIndex, nEndIndex, 1 do
+		local nQuestValue = player.GetQuestValue(nQuestIndex, i)
+		if nQuestValue == 0 then
+			player.SetQuestValue(nQuestIndex, i, doodad.dwID)
+			return 1
+		end
+	end
+	
+	return 0
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

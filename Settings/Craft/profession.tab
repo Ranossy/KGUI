@@ -1,0 +1,16 @@
+ID	Name	ExpTab	RadarID	Price1	Price2	Price3	BranchCraft
+1	采金	ExpTab_Collection.tab	1	10	20	30	
+2	神农	ExpTab_Collection.tab	2	10	20	30	
+3	庖丁术	ExpTab_Collection.tab	0	10	20	30	
+4	烹饪	ExpTab_Manufacture.tab	0	10	20	30	
+5	缝纫	ExpTab_Manufacture.tab	0	10	20	30	BranchCraft\Tailoring.tab
+6	铸造	ExpTab_Manufacture.tab	0	10	20	30	BranchCraft\Founding.tab
+7	医术	ExpTab_Manufacture.tab	0	10	20	30	BranchCraft\Medicine.tab
+8	阅读	ExpTab_Read.tab	0	10	20	30	
+9	佛学	ExpTab_ReadFoxue.tab	0	10	20	30	
+10	道学	ExpTab_ReadDaoxue.tab	0	10	20	30	
+11	杂集	ExpTab_ReadZaji.tab	0	10	20	30	
+12	装备拆解	ExpTab_Fenjie.tab	0	10	20	30	
+14	淬炼	ExpTab_Manufacture.tab	0	10	20	30	
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

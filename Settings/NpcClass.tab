@@ -1,0 +1,375 @@
+ParentClassID	ClassID	ClassName	ClassDrop	UsefulnessClassID
+1	1	基类		1
+1	2	动物	ClassDrop\WorldDrop\gusui.tab	
+1	3	机械	ClassDrop\Beast\robot.tab	
+1	4	人型_药品	ClassDrop\Beast\world_medicine.tab	
+4	5	人型_装备	ClassDrop\Beast\Human_arm.tab	
+5	6	人型_生活技能_1	ClassDrop\Beast\humen_craft_1.tab	
+6	7	人型_包	ClassDrop\Beast\world_bag.tab	
+7	8	人型_阅读_1	ClassDrop\Beast\humen_read_craft1.tab	
+8	9	人型_阅读_2	ClassDrop\Beast\humen_read_craft2.tab	
+213	10	人型_缝纫2	ClassDrop\Beast\humen_craft_2.tab	
+2	11	Ani_狼_1	ClassDrop\Beast\bigbeast_craft.tab	
+11	12	Ani_狼_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+12	13	Ani_狼_3	ClassDrop\WorldDrop\roukuai.tab	
+13	14	Ani_狼_4		
+2	15	Ani_蛇_1		
+15	16	Ani_蛇_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+16	17	Ani_蛇_3	ClassDrop\WorldDrop\roukuai.tab	
+17	18	Ani_蛇_4		
+2	19	Ani_猪_1		
+19	20	Ani_猪_2	ClassDrop\WorldDrop\dupirou.tab	
+20	21	Ani_猪_3	ClassDrop\WorldDrop\tuigu.tab	
+21	22	Ani_猪_4	ClassDrop\Beast\pig_craft.tab	1
+2	23	Ani_鸡_1	ClassDrop\WorldDrop\niaohui.tab	
+23	24	Ani_鸡_2	ClassDrop\WorldDrop\cuzhua.tab	
+24	25	Ani_鸡_3		
+25	26	Ani_鸡_4		1
+2	27	Ani_狗_1	ClassDrop\Beast\bigbeast_craft.tab	
+27	28	Ani_狗_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+28	29	Ani_狗_3	ClassDrop\WorldDrop\roukuai.tab	
+29	30	Ani_狗_4		1
+2	31	Ani_鱼_1	ClassDrop\Beast\Fish_1.tab	
+31	32	Ani_鱼_2	ClassDrop\Beast\Fish_2.tab	
+32	33	Ani_鱼_3		
+33	34	Ani_鱼_4		1
+2	35	Ani_鹅_1	ClassDrop\WorldDrop\niaohui.tab	
+35	36	Ani_鹅_2	ClassDrop\WorldDrop\cuzhua.tab	
+36	37	Ani_鹅_3		
+37	38	Ani_鹅_4		1
+2	39	Ani_兔_1	ClassDrop\WorldDrop\dupirou.tab	
+39	40	Ani_兔_2	ClassDrop\WorldDrop\tuigu.tab	
+40	41	Ani_兔_3		
+41	42	Ani_兔_4		1
+10	43	山贼_2	ClassDrop\Beast\Cateran_2.tab	
+2	45	Ani_猿_1	ClassDrop\Beast\bigbeast_craft.tab	
+45	46	Ani_猿_2	ClassDrop\WorldDrop\dupirou.tab	
+46	47	Ani_猿_3	ClassDrop\WorldDrop\tuigu.tab	
+47	48	Ani_猿_4		1
+2	49	Ani_鹿_1	ClassDrop\Beast\bigbeast_craft.tab	
+49	50	Ani_鹿_2	ClassDrop\WorldDrop\dupirou.tab	
+50	51	Ani_鹿_3	ClassDrop\WorldDrop\tuigu.tab	
+51	52	Ani_鹿_4		1
+2	53	Ani_龟_1		
+53	54	Ani_龟_2	ClassDrop\WorldDrop\dupirou.tab	
+54	55	Ani_龟_3	ClassDrop\WorldDrop\tuigu.tab	
+55	56	Ani_龟_4		1
+2	57	Ani_鳄_1	ClassDrop\Beast\bigbeast_craft.tab	
+57	58	Ani_鳄_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+58	59	Ani_鳄_3	ClassDrop\WorldDrop\roukuai.tab	
+59	60	Ani_鳄_4		1
+10	65	万花_聋子_1	ClassDrop\Beast\deaf_1.tab	
+65	66	万花_聋子_2	ClassDrop\Beast\deaf_2.tab	
+3	69	机关人_1		
+69	70	机关人_2	ClassDrop\Beast\robot_2.tab	
+70	71	机关人_3	ClassDrop\Beast\robot_3.tab	
+71	72	机关人_4	ClassDrop\Beast\robot_4.tab	
+72	73	机关人_5		1
+2	75	Ani_猴子_1		
+75	76	Ani_猴子_2	ClassDrop\WorldDrop\dupirou.tab	
+76	77	Ani_猴子_3	ClassDrop\WorldDrop\tuigu.tab	
+77	78	Ani_猴子_4		
+4	79	少林_盗墓贼_2	ClassDrop\Beast\shaol_daomuzei_2.tab	
+79	80	少林_盗墓贼_1	ClassDrop\Beast\shaol_daomuzei_1.tab	
+2	81	Ani_蜘蛛_1	ClassDrop\Beast\araneid_craft.tab	
+81	82	Ani_蜘蛛_2	ClassDrop\WorldDrop\chongke.tab	
+82	83	Ani_蜘蛛_3	ClassDrop\WorldDrop\chongqu.tab	
+83	84	Ani_蜘蛛_4	ClassDrop\WorldDrop\chongtui.tab	1
+237	90	天竺僧_普通1_1	ClassDrop\Beast\tianzuseng_common_1.tab	
+90	91	天竺僧_普通1_2	ClassDrop\Beast\tianzuseng_common_2.tab	
+237	92	少林_智慧王	ClassDrop\Beast\shaol_zhihuiwang.tab	
+237	93	少林_无相护法	ClassDrop\Beast\shaol_wuxianghufa.tab	
+2	94	Ani_虎_1	ClassDrop\Beast\bigbeast_craft.tab	
+94	95	Ani_虎_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+95	96	Ani_虎_3	ClassDrop\WorldDrop\roukuai.tab	
+96	97	Ani_虎_4	ClassDrop\Beast\tiger_craft.tab	1
+2	98	Ani_豹_1	ClassDrop\Beast\bigbeast_craft.tab	
+98	99	Ani_豹_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+99	100	Ani_豹_3	ClassDrop\WorldDrop\roukuai.tab	
+100	101	Ani_豹_4		1
+2	102	Ani_熊_1	ClassDrop\Beast\bigbeast_craft.tab	
+102	103	Ani_熊_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+103	104	Ani_熊_3	ClassDrop\WorldDrop\roukuai.tab	
+104	105	Ani_熊_4	ClassDrop\Beast\beer_craft.tab	1
+2	106	Ani_秃鹫_1		
+106	107	Ani_秃鹫_2	ClassDrop\WorldDrop\niaohui.tab	
+107	108	Ani_秃鹫_3	ClassDrop\WorldDrop\cuzhua.tab	
+108	109	Ani_秃鹫_4		1
+2	110	Ani_骆驼_1		
+110	111	Ani_骆驼_2	ClassDrop\WorldDrop\dupirou.tab	
+111	112	Ani_骆驼_3	ClassDrop\WorldDrop\tuigu.tab	
+112	113	Ani_骆驼_4		1
+2	114	Ani_蝎子_1		
+114	115	Ani_蝎子_2	ClassDrop\WorldDrop\chongke.tab	
+115	116	Ani_蝎子_3	ClassDrop\WorldDrop\chongqu.tab	
+116	117	Ani_蝎子_4	ClassDrop\WorldDrop\chongtui.tab	1
+2	118	Ani_狐狸_1	ClassDrop\Beast\bigbeast_craft.tab	
+118	119	Ani_狐狸_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+119	120	Ani_狐狸_3	ClassDrop\WorldDrop\roukuai.tab	
+120	121	Ani_狐狸_4		1
+2	122	Ani_蝙蝠_1		
+122	123	Ani_蝙蝠_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+123	124	Ani_蝙蝠_3	ClassDrop\WorldDrop\roukuai.tab	
+124	125	Ani_蝙蝠_4		1
+2	126	Ani_狮子_1	ClassDrop\Beast\bigbeast_craft.tab	
+126	127	Ani_狮子_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+127	128	Ani_狮子_3	ClassDrop\WorldDrop\roukuai.tab	
+128	129	Ani_狮子_4		1
+2	130	Ani_蜥蜴_1		
+130	131	Ani_蜥蜴_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+131	132	Ani_蜥蜴_3	ClassDrop\WorldDrop\roukuai.tab	
+132	133	Ani_蜥蜴_4		1
+2	134	Ani_乌鸦_1		
+134	135	Ani_乌鸦_2	ClassDrop\WorldDrop\niaohui.tab	
+135	136	Ani_乌鸦_3	ClassDrop\WorldDrop\cuzhua.tab	
+136	137	Ani_乌鸦_4		1
+2	138	Ani_羚羊_1	ClassDrop\Beast\bigbeast_craft.tab	
+138	139	Ani_羚羊_2	ClassDrop\WorldDrop\dupirou.tab	
+139	140	Ani_羚羊_3	ClassDrop\WorldDrop\tuigu.tab	
+140	141	Ani_羚羊_4		1
+2	142	Ani_雪猿_1	ClassDrop\Beast\bigbeast_craft.tab	
+142	143	Ani_雪猿_2	ClassDrop\WorldDrop\dupirou.tab	
+143	144	Ani_雪猿_3	ClassDrop\WorldDrop\tuigu.tab	
+144	145	Ani_雪猿_4		1
+237	146	天竺僧_1		
+146	147	天竺僧_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+147	148	天竺僧_3	ClassDrop\WorldDrop\fozhu.tab	
+148	149	天竺僧_4	ClassDrop\WorldDrop\zhuozi.tab	
+149	150	天竺僧_5		1
+259	152	一刀流_1		
+152	153	一刀流_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+153	154	一刀流_3	ClassDrop\WorldDrop\peijian.tab	
+154	155	一刀流_4	ClassDrop\WorldDrop\shihuifen.tab	
+155	156	一刀流_5		1
+10	162	侠客岛_1		
+162	163	侠客岛_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+162	164	侠客岛_3	ClassDrop\WorldDrop\zishan.tab	
+162	165	侠客岛_4	ClassDrop\WorldDrop\jiansui.tab	
+165	301	侠客岛_5		1
+301	166	侠客岛_方仲归	ClassDrop\Beast\Penglai_fzg.tab	
+229	167	连环坞_1		
+167	168	连环坞_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+168	169	连环坞_3	ClassDrop\WorldDrop\laodayulu.tab	
+169	170	连环坞_4	ClassDrop\WorldDrop\saizi.tab	
+172	171	连环坞_5		1
+170	172	连环坞_6	ClassDrop\WorldDrop\biaoju.tab	
+10	179	恶霸&山贼1（包括声望掉落）		
+179	180	恶霸&山贼2	ClassDrop\WorldDrop\yiwusuipian.tab	
+180	181	恶霸&山贼3	ClassDrop\WorldDrop\laodayulu.tab	
+181	182	恶霸4	ClassDrop\WorldDrop\saizi.tab	1
+184	183	山贼5	ClassDrop\Beast\banditi_1.tab	1
+182	184	山贼6	ClassDrop\Beast\shanzei_craft.tab	
+190	187	红衣教_5		1
+192	189	红衣教_3	ClassDrop\WorldDrop\yiwusuipian.tab	
+189	190	红衣教_4	ClassDrop\WorldDrop\xinwu.tab	
+235	191	红衣教_1	ClassDrop\WorldDrop\sirenwupin.tab	
+191	192	红衣教_2		
+10	195	玩家门派_1		
+195	196	玩家门派_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+196	197	玩家门派_3	ClassDrop\WorldDrop\xinwu.tab	
+197	198	玩家门派_4	ClassDrop\WorldDrop\pancandai.tab	
+198	199	玩家门派_5		1
+2	203	Ani_螃蟹_1		
+203	204	Ani_螃蟹_2	ClassDrop\WorldDrop\chongke.tab	
+204	205	Ani_螃蟹_3	ClassDrop\WorldDrop\chongqu.tab	
+205	206	Ani_螃蟹_4	ClassDrop\WorldDrop\chongtui.tab	1
+265	213	世界_食品	ClassDrop\Beast\daoxiangcun_food.tab	
+10	214	少林_食品		
+10	215	七秀_食品		
+215	216	七秀_生活技能	ClassDrop\Beast\qixiu_craft.tab	
+10	217	万花_食品		
+10	218	纯阳_食品		
+10	219	天策_食品		
+10	220	枫林_食品		
+10	221	洛道_食品		
+10	222	金水_食品		
+10	223	琉球岛_食品		
+10	228	连环坞_食品	ClassDrop\Beast\lianhuanwu_food.tab	
+228	229	连环坞_生活技能	ClassDrop\Beast\lianhuanwu_craft.tab	
+199	230	浩气盟_食品	ClassDrop\Beast\haoqimen_food.tab	
+199	232	恶人谷_食品	ClassDrop\Beast\erengu_food.tab	
+232	233	恶人谷_生活技能_貂皮	ClassDrop\Beast\erengu_craft.tab	
+267	320	浩气盟_生活技能_酒	ClassDrop\Beast\haoqimeng_craft_alcohol.tab	1
+10	234	红衣教_食品	ClassDrop\Beast\hongyi_food.tab	
+234	235	红衣教_生活技能	ClassDrop\Beast\hongyijiao_craft.tab	
+10	236	天竺僧_食品	ClassDrop\Beast\tianzuseng_food.tab	
+236	237	天竺僧_生活技能	ClassDrop\Beast\tianzuseng_craft.tab	
+10	238	神策_配方		
+238	239	神策_生活技能_1	ClassDrop\Beast\shence_craft.tab	
+10	240	倭寇_食品		
+240	241	倭寇_生活技能	ClassDrop\Beast\yidaoliu_craft.tab	
+14	242	Ani_狼_生活技能	ClassDrop\Beast\wolf_craft.tab	1
+18	243	Ani_蛇_生活技能	ClassDrop\Beast\snake_craft.tab	1
+241	247	倭寇_1		
+247	248	倭寇_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+248	249	倭寇_3	ClassDrop\WorldDrop\dudou.tab	
+249	250	倭寇_4	ClassDrop\WorldDrop\chungongtu.tab	
+250	302	倭寇_5		1
+1	251	Ani_海鸥_1		
+251	252	Ani_海鸥_2	ClassDrop\WorldDrop\niaohui.tab	
+252	253	Ani_海鸥_3	ClassDrop\WorldDrop\cuzhua.tab	
+253	254	Ani_海鸥_4		1
+1	255	Ani_蜻蜓_1		
+255	256	Ani_蜻蜓_2	ClassDrop\WorldDrop\chongke.tab	
+256	257	Ani_蜻蜓_3	ClassDrop\WorldDrop\chongqu.tab	
+257	258	Ani_蜻蜓_4	ClassDrop\WorldDrop\chongtui.tab	1
+10	259	一刀流_生活技能	ClassDrop\Beast\yidaoliu_craft.tab	
+9	260	人型_阅读书页	ClassDrop\Beast\humen_read_craft3.tab	
+260	262	人型_泉水	ClassDrop\Beast\humen_craft_water.tab	
+262	263	人型_木材_1	ClassDrop\Beast\humen_craft_wood1.tab	
+263	264	人型_木材_2	ClassDrop\Beast\humen_craft_wood2.tab	
+264	322	人型_秘籍	ClassDrop\Beast\miji.tab	
+322	321	人型_缝纫_1	ClassDrop\Beast\fengren_craft.tab	
+321	265	人型_配方	ClassDrop\Beast\blueprint_craft.tab	
+230	266	浩气盟_生活技能_五彩石	ClassDrop\Beast\haoqimeng_craft.tab	
+266	267	浩气盟_生活技能_水	ClassDrop\Beast\haoqimeng_craft_water.tab	
+233	268	恶人谷_生活技能_水	ClassDrop\Beast\erengu_craft_water.tab	
+268	269	恶人谷_生活技能_酒	ClassDrop\Beast\erengu_craft_alcohol.tab	1
+239	270	神策_生活技能_酒	ClassDrop\Beast\shence_craft_2.tab	
+10	271	镖局_1		
+271	272	镖局_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+272	273	镖局_3	ClassDrop\WorldDrop\biaoyin.tab	
+273	274	镖局_4	ClassDrop\WorldDrop\saizi.tab	
+303	275	镖局_5		1
+274	303	镖局_6	ClassDrop\WorldDrop\biaoju.tab	
+10	276	商会_1		
+276	277	商会_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+277	278	商会_3	ClassDrop\WorldDrop\duanshan.tab	
+278	279	商会_4	ClassDrop\WorldDrop\xiyushangping.tab	
+279	280	商会_5		1
+10	281	叛军_1		
+281	282	叛军_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+282	283	叛军_3	ClassDrop\WorldDrop\junpai.tab	
+283	284	叛军_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+284	285	叛军_5		1
+10	286	天一_1	ClassDrop\WorldDrop\yiwusuipian.tab	
+286	287	天一_2	ClassDrop\WorldDrop\gudingqi.tab	
+287	288	天一_3	ClassDrop\WorldDrop\shichen.tab	
+288	289	天一_4		
+289	290	天一_5		1
+270	291	神策_1（包括声望掉落）		
+291	292	神策_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+292	293	神策_3	ClassDrop\WorldDrop\junpai.tab	
+293	294	神策_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+294	295	神策_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	296	狼牙_1		
+296	297	狼牙_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+297	298	狼牙_3	ClassDrop\WorldDrop\majiang.tab	
+298	299	狼牙_4	ClassDrop\WorldDrop\shuinang.tab	
+299	300	狼牙_5		1
+10	304	天南王家_1		
+301	305	天南王家_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+302	306	天南王家_3	ClassDrop\WorldDrop\junpai.tab	
+303	307	天南王家_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+304	308	天南王家_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	309	拜火教_1		
+306	310	拜火教_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+307	311	拜火教_3	ClassDrop\WorldDrop\junpai.tab	
+308	312	拜火教_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+309	313	拜火教_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	314	轩辕社_1		
+311	315	轩辕社_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+312	316	轩辕社_3	ClassDrop\WorldDrop\junpai.tab	
+313	317	轩辕社_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+314	318	轩辕社_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	323	蛮族_1		
+323	324	蛮族_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+324	325	蛮族_3	ClassDrop\WorldDrop\junpai.tab	
+325	326	蛮族_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+326	327	蛮族_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	328	塔纳_1		
+328	329	塔纳_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+329	330	塔纳_3	ClassDrop\WorldDrop\junpai.tab	
+330	331	塔纳_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+331	332	塔纳_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	333	段氏_1		
+333	334	段氏_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+334	335	段氏_3	ClassDrop\WorldDrop\junpai.tab	
+335	336	段氏_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+336	337	段氏_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	338	星宿_1		
+338	339	星宿_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+339	340	星宿_3	ClassDrop\WorldDrop\junpai.tab	
+340	341	星宿_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+341	342	星宿_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	343	南昆仑_1		
+343	344	南昆仑_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+344	345	南昆仑_3	ClassDrop\WorldDrop\junpai.tab	
+345	346	南昆仑_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+346	347	南昆仑_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	348	南诏_1		
+348	349	南诏_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+349	350	南诏_3	ClassDrop\WorldDrop\junpai.tab	
+350	351	南诏_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+351	352	南诏_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	353	霸刀_1		
+353	354	霸刀_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+354	355	霸刀_3	ClassDrop\WorldDrop\junpai.tab	
+355	356	霸刀_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+356	357	霸刀_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+10	358	五毒五圣兽_1		
+358	359	五毒五圣兽_2	ClassDrop\WorldDrop\yiwusuipian.tab	
+359	360	五毒五圣兽_3	ClassDrop\WorldDrop\junpai.tab	
+360	361	五毒五圣兽_4	ClassDrop\WorldDrop\qianglaidezhuozi.tab	
+361	362	五毒五圣兽_5	ClassDrop\Beast\shence_zhangge_force.tab	1
+2	363	Ani_犀牛_1	ClassDrop\Beast\bigbeast_craft.tab	
+363	364	Ani_犀牛_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+364	365	Ani_犀牛_3	ClassDrop\WorldDrop\roukuai.tab	
+365	366	Ani_犀牛_4		1
+2	367	Ani_大象_1	ClassDrop\Beast\bigbeast_craft.tab	
+367	368	Ani_大象_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+368	369	Ani_大象_3	ClassDrop\WorldDrop\roukuai.tab	
+369	370	Ani_大象_4		1
+2	371	Ani_蝴蝶_1		
+371	372	Ani_蝴蝶_2	ClassDrop\WorldDrop\chongke.tab	
+372	373	Ani_蝴蝶_3	ClassDrop\WorldDrop\chongqu.tab	
+373	374	Ani_蝴蝶_4	ClassDrop\WorldDrop\chongtui.tab	1
+2	375	Ani_鼠_1	ClassDrop\Beast\bigbeast_craft.tab	
+375	376	Ani_鼠_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+376	377	Ani_鼠_3	ClassDrop\WorldDrop\roukuai.tab	
+377	378	Ani_鼠_4		1
+2	379	Ani_蟾蜍_1		
+379	380	Ani_蟾蜍_2	ClassDrop\WorldDrop\chongke.tab	
+380	381	Ani_蟾蜍_3	ClassDrop\WorldDrop\chongqu.tab	
+381	382	Ani_蟾蜍_4	ClassDrop\WorldDrop\chongtui.tab	1
+2	383	Ani_蜈蚣_1		
+383	384	Ani_蜈蚣_2	ClassDrop\WorldDrop\chongke.tab	
+384	385	Ani_蜈蚣_3	ClassDrop\WorldDrop\chongqu.tab	
+385	386	Ani_蜈蚣_4	ClassDrop\WorldDrop\chongtui.tab	1
+2	500	温顺动物_无法庖丁_1		
+500	501	温顺动物_无法庖丁_2	ClassDrop\WorldDrop\dupirou.tab	
+501	502	温顺动物_无法庖丁_3	ClassDrop\WorldDrop\tuigu.tab	
+502	503	温顺动物_无法庖丁_4		1
+2	504	凶猛动物_无法庖丁_1		
+504	505	凶猛动物_无法庖丁_2	ClassDrop\WorldDrop\zhuahengpi.tab	
+505	506	凶猛动物_无法庖丁_3	ClassDrop\WorldDrop\roukuai.tab	
+506	507	凶猛动物_无法庖丁_4		1
+300	387	狼牙_战乱天策	ClassDrop\WorldDrop\LangYa_TianCe.tab	1
+300	388	狼牙_战乱洛阳	ClassDrop\WorldDrop\LangYa_LuoYang.tab	1
+300	389	狼牙_战乱长安	ClassDrop\WorldDrop\LangYa_ChangAn.tab	1
+300	390	狼牙_战乱枫华谷	ClassDrop\WorldDrop\LangYa_FengHuaGu.tab	1
+300	391	狼牙_马嵬驿	ClassDrop\WorldDrop\LangYa_MaWeiYi.tab	1
+300	392	狼牙_太原	ClassDrop\WorldDrop\LangYa_TaiYuan.tab	1
+10	400	长歌门_闲杂人等	ClassDrop\WorldDrop\95_changgemen.tab	1
+10	401	五台山_闲杂人等	ClassDrop\WorldDrop\95_wutaishan.tab	1
+10	402	千岛湖_闲杂人等	ClassDrop\WorldDrop\95_qiandaohu.tab	1
+10	403	大草原_闲杂人等	ClassDrop\WorldDrop\95_dachaoyuan.tab	1
+10	404	黑戈壁_闲杂人等	ClassDrop\WorldDrop\95_heigebi.tab	1
+10	405	95_狼牙	ClassDrop\WorldDrop\95_langya.tab	1
+10	406	95_一刀流	ClassDrop\WorldDrop\95_yidaoliu.tab	1
+10	407	95_连环坞包含马贼	ClassDrop\WorldDrop\95_lianhuanwu.tab	1
+10	408	95_天竺僧	ClassDrop\WorldDrop\95_tianzhuseng.tab	1
+10	409	95_吐蕃僧	ClassDrop\WorldDrop\95_tuboseng.tab	1
+10	410	95_天一教	ClassDrop\WorldDrop\95_tianyijiao.tab	1
+10	411	95_拜火教	ClassDrop\WorldDrop\95_baihuojiao.tab	1
+10	412	95_红衣教	ClassDrop\WorldDrop\95_hongyijiao.tab	1
+505	413	95_凶猛动物	ClassDrop\WorldDrop\95_xiongmengdongwu.tab	1
+10	414	95_突厥	ClassDrop\WorldDrop\95_tujue.tab	1
+10	415	95_蝙蝠帮	ClassDrop\WorldDrop\95_bianfubang.tab	1
+10	416	95_塔克族	ClassDrop\WorldDrop\95_takezu.tab	1
+10	417	95_霸刀	ClassDrop\WorldDrop\95_badao.tab	1
+10	418	95_龙图卫	ClassDrop\WorldDrop\95_longtuwei.tab	1
+260	419	人型_阅读书页	ClassDrop\Beast\humen_read_craft4.tab	
+10	420	洛阳城_闲杂人等	ClassDrop\WorldDrop\95_luoyangcheng.tab	1
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

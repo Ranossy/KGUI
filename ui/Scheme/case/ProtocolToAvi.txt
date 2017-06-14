@@ -1,0 +1,7 @@
+ID	AviPath
+0	
+1	ui/Video/cangshanerhai.avi
+2	ui/Video/secondmoive.avi
+3	ui/Video/firstmoive.avi
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

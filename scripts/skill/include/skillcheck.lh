@@ -1,0 +1,1135 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/skill/include/skillcheck.lh
+-- 更新时间:	2014/2/20 11:49:02
+-- 更新用户:	taoli
+-- 脚本说明:	
+----------------------------------------------------------------------<
+Include("scripts/Include/SkillRecipe.lh")
+Include("scripts/Include/SkillRecipeCost.lh")
+
+local tQuestLise = {
+	[1] = {{13428, 293, 0}, {13036, 290, 1}}, --少林
+	[2] = {{13429, 487, 0}, {13062, 486, 1}}, --万花
+	[3] = {{13430, 357, 0}, {13065, 355, 1}}, --天策
+	[4] = {{13431, 101, 0}, {13441, 20, 0}, {13919, 100, 1}, {13914, 19, 1}}, --纯阳
+	[5] = {{13432, 1638, 0}, {13071, 1637, 1}}, --七秀
+	[6] = {{13434, 1765, 0}, {13077, 1764, 1}, {13434, 792, 0}, {13077, 791, 1}}, --五毒
+	[7] = {{13435, 869, 0}, {13443, 844, 0}, {13924, 868, 1}, {13925, 843, 1}}, --唐门
+	[8] = {{13433, 568, 0}, {13074, 567, 1}}, --藏剑
+	[9] = {{13437, 1374, 0}, {13086, 1373, 1}, {13437, 1745, 0}, {13086, 1744, 1}}, --丐帮
+	[10] = {{13436, 1017, 0}, {13083, 1016, 1}}, --明教
+	[21] = {{13438, 1847, 0}, {13089, 1846, 1}}, --苍云
+	[22] = {{14689, 2042, 1}}, --长歌
+	[23] = {{16233, 4144, 1}}, --霸刀
+}
+
+
+---涉及技能替换，处理镜像秘籍学习
+local tIndexTable = 
+	{
+		{	-- 战八方
+			[427] = {407, 408, 409, 410, 411, 412, 413},
+			[6520] = {1715, 1716, 1717, 1718, 1719, 1720, 1721},
+			[9440] = {1805, 1806, 1807, 1808, 1809, 1810, 1811},
+			[9441] = {1812, 1813, 1814, 1815, 1816, 1817, 1818},
+		},
+		{	-- 暴雨梨花针
+			[3093] = {834, 835, 836, 837, 838, 839, 840, 841, 842},
+			[6444] = {1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730},
+		},
+		{	-- 冰蚕牵丝
+			[2232] = {739, 740, 741, 742, 743, 744, 745},
+			[6662] = {1731, 1732, 1733, 1734, 1735, 1736, 1737},
+		},
+		{	-- 亢龙
+			[5638] = {1372, 1373, 1374, 1375, 1376, 1377, 1378},
+			[8490] = {1743, 1744, 1745, 1746, 1747, 1748, 1749},
+		},
+		{	-- 蝎心
+			[2209] = {791, 792, 793, 794, 795, 796, 797},
+			[6621] = {1764, 1765, 1766, 1767, 1768, 1769, 1770}
+		},
+		{	-- 蛇影
+			[2211] = {762, 763, 764, 765, 766, 767, 768},
+			[13430] = {1945, 1946, 1947, 1948, 1949, 1950, 1951}
+		},
+		{	-- 醉舞九天
+			[2233] = {777, 778, 779, 780, 781, 782, 783},
+			[6675] = {1995, 1996, 1997, 1998, 1999, 2000, 2001}
+		},
+		{	-- 宫伤害
+			[14064] = {2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049},
+			[14302] = {2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135}
+		},
+
+		{	-- 宫治疗
+			[14137] = {2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057},
+			[14303] = {2184, 2185, 2186, 2187, 2188, 2189, 2190, 2191}
+		},
+		{	-- 彼针
+			[140] = {1685, 1686, 1687, 1688, 1689, 1690, 1691, 1692},
+			[14664] = {2270, 2271, 2272, 2273, 2274, 2275, 2276, 2277}
+		},
+		{	-- 九溪弥烟
+			[1579] = {560, 561, 562, 563, 564, 565, 566},
+			[15053] = {2374, 2375, 2376, 2377, 2378, 2379, 2380}
+		},
+		{	--雷走风切
+			[16598] = {4124, 4125, 4126, 4127, 4128, 4129, 4130, 4131},
+			[16629] = {4132, 4133, 4134, 4135, 4136, 4137, 4138, 4139}
+		},
+		{--人剑合一
+			[588] = {55, 56, 60, 61, 62, 57, 58, 59},
+			[17580] = {55, 56, 60, 61, 62, 57, 58, 59}
+			}
+	}
+
+local tLearnTable = 
+	{
+		{SkillID = 427, OriginalRecipeID = 407, SwitchRecipeID = 1715, SwitchRecipeID_1 = 1805, SwitchRecipeID_2 = 1812},
+		{SkillID = 427, OriginalRecipeID = 408, SwitchRecipeID = 1716, SwitchRecipeID_1 = 1806, SwitchRecipeID_2 = 1813},
+		{SkillID = 427, OriginalRecipeID = 409, SwitchRecipeID = 1717, SwitchRecipeID_1 = 1807, SwitchRecipeID_2 = 1814},
+		{SkillID = 427, OriginalRecipeID = 410, SwitchRecipeID = 1718, SwitchRecipeID_1 = 1808, SwitchRecipeID_2 = 1815},
+		{SkillID = 427, OriginalRecipeID = 411, SwitchRecipeID = 1719, SwitchRecipeID_1 = 1809, SwitchRecipeID_2 = 1816},
+		{SkillID = 427, OriginalRecipeID = 412, SwitchRecipeID = 1720, SwitchRecipeID_1 = 1810, SwitchRecipeID_2 = 1817},
+		{SkillID = 427, OriginalRecipeID = 413, SwitchRecipeID = 1721, SwitchRecipeID_1 = 1811, SwitchRecipeID_2 = 1818},
+		--战八方
+		{SkillID = 6520, OriginalRecipeID = 1715, SwitchRecipeID = 407, SwitchRecipeID_1 = 1805, SwitchRecipeID_2 = 1812},
+		{SkillID = 6520, OriginalRecipeID = 1716, SwitchRecipeID = 408, SwitchRecipeID_1 = 1806, SwitchRecipeID_2 = 1813},
+		{SkillID = 6520, OriginalRecipeID = 1717, SwitchRecipeID = 409, SwitchRecipeID_1 = 1807, SwitchRecipeID_2 = 1814},
+		{SkillID = 6520, OriginalRecipeID = 1718, SwitchRecipeID = 410, SwitchRecipeID_1 = 1808, SwitchRecipeID_2 = 1815},
+		{SkillID = 6520, OriginalRecipeID = 1719, SwitchRecipeID = 411, SwitchRecipeID_1 = 1809, SwitchRecipeID_2 = 1816},
+		{SkillID = 6520, OriginalRecipeID = 1720, SwitchRecipeID = 412, SwitchRecipeID_1 = 1810, SwitchRecipeID_2 = 1817},
+		{SkillID = 6520, OriginalRecipeID = 1721, SwitchRecipeID = 413, SwitchRecipeID_1 = 1811, SwitchRecipeID_2 = 1818},
+		--奇穴战八方
+		{SkillID = 3093, OriginalRecipeID = 834, SwitchRecipeID = 1722},
+		{SkillID = 3093, OriginalRecipeID = 835, SwitchRecipeID = 1723},
+		{SkillID = 3093, OriginalRecipeID = 836, SwitchRecipeID = 1724},
+		{SkillID = 3093, OriginalRecipeID = 837, SwitchRecipeID = 1725},
+		{SkillID = 3093, OriginalRecipeID = 838, SwitchRecipeID = 1726},
+		{SkillID = 3093, OriginalRecipeID = 839, SwitchRecipeID = 1727},
+		{SkillID = 3093, OriginalRecipeID = 840, SwitchRecipeID = 1728},
+		{SkillID = 3093, OriginalRecipeID = 841, SwitchRecipeID = 1729},
+		{SkillID = 3093, OriginalRecipeID = 842, SwitchRecipeID = 1730},
+		--暴雨梨花针
+		{SkillID = 6444, OriginalRecipeID = 1722, SwitchRecipeID = 834},
+		{SkillID = 6444, OriginalRecipeID = 1723, SwitchRecipeID = 835},
+		{SkillID = 6444, OriginalRecipeID = 1724, SwitchRecipeID = 836},
+		{SkillID = 6444, OriginalRecipeID = 1725, SwitchRecipeID = 837},
+		{SkillID = 6444, OriginalRecipeID = 1726, SwitchRecipeID = 838},
+		{SkillID = 6444, OriginalRecipeID = 1727, SwitchRecipeID = 839},
+		{SkillID = 6444, OriginalRecipeID = 1728, SwitchRecipeID = 840},
+		{SkillID = 6444, OriginalRecipeID = 1729, SwitchRecipeID = 841},
+		{SkillID = 6444, OriginalRecipeID = 1730, SwitchRecipeID = 842},
+		--奇穴暴雨梨花针
+		{SkillID = 2232, OriginalRecipeID = 739, SwitchRecipeID = 1731},
+		{SkillID = 2232, OriginalRecipeID = 740, SwitchRecipeID = 1732},
+		{SkillID = 2232, OriginalRecipeID = 741, SwitchRecipeID = 1733},
+		{SkillID = 2232, OriginalRecipeID = 742, SwitchRecipeID = 1734},
+		{SkillID = 2232, OriginalRecipeID = 743, SwitchRecipeID = 1735},
+		{SkillID = 2232, OriginalRecipeID = 744, SwitchRecipeID = 1736},
+		{SkillID = 2232, OriginalRecipeID = 745, SwitchRecipeID = 1737},
+		--冰蚕牵丝
+		{SkillID = 6662, OriginalRecipeID = 1731, SwitchRecipeID = 739},
+		{SkillID = 6662, OriginalRecipeID = 1732, SwitchRecipeID = 740},
+		{SkillID = 6662, OriginalRecipeID = 1733, SwitchRecipeID = 741},
+		{SkillID = 6662, OriginalRecipeID = 1734, SwitchRecipeID = 742},
+		{SkillID = 6662, OriginalRecipeID = 1735, SwitchRecipeID = 743},
+		{SkillID = 6662, OriginalRecipeID = 1736, SwitchRecipeID = 744},
+		{SkillID = 6662, OriginalRecipeID = 1737, SwitchRecipeID = 745},
+		--奇穴冰蚕牵丝
+		{SkillID = 5638, OriginalRecipeID = 1372, SwitchRecipeID = 1743},
+		{SkillID = 5638, OriginalRecipeID = 1373, SwitchRecipeID = 1744},
+		{SkillID = 5638, OriginalRecipeID = 1374, SwitchRecipeID = 1745},
+		{SkillID = 5638, OriginalRecipeID = 1375, SwitchRecipeID = 1746},
+		{SkillID = 5638, OriginalRecipeID = 1376, SwitchRecipeID = 1747},
+		{SkillID = 5638, OriginalRecipeID = 1377, SwitchRecipeID = 1748},
+		{SkillID = 5638, OriginalRecipeID = 1378, SwitchRecipeID = 1749},
+		--亢龙
+		{SkillID = 8490, OriginalRecipeID = 1743, SwitchRecipeID = 1372},
+		{SkillID = 8490, OriginalRecipeID = 1744, SwitchRecipeID = 1373},
+		{SkillID = 8490, OriginalRecipeID = 1745, SwitchRecipeID = 1374},
+		{SkillID = 8490, OriginalRecipeID = 1746, SwitchRecipeID = 1375},
+		{SkillID = 8490, OriginalRecipeID = 1747, SwitchRecipeID = 1376},
+		{SkillID = 8490, OriginalRecipeID = 1748, SwitchRecipeID = 1377},
+		{SkillID = 8490, OriginalRecipeID = 1749, SwitchRecipeID = 1378},
+		--奇穴亢龙
+		{SkillID = 2209, OriginalRecipeID = 791, SwitchRecipeID = 1764},
+		{SkillID = 2209, OriginalRecipeID = 792, SwitchRecipeID = 1765},
+		{SkillID = 2209, OriginalRecipeID = 793, SwitchRecipeID = 1766},
+		{SkillID = 2209, OriginalRecipeID = 794, SwitchRecipeID = 1767},
+		{SkillID = 2209, OriginalRecipeID = 795, SwitchRecipeID = 1768},
+		{SkillID = 2209, OriginalRecipeID = 796, SwitchRecipeID = 1769},
+		{SkillID = 2209, OriginalRecipeID = 797, SwitchRecipeID = 1770},
+		--蝎心
+		{SkillID = 6621, OriginalRecipeID = 1764, SwitchRecipeID = 791},
+		{SkillID = 6621, OriginalRecipeID = 1765, SwitchRecipeID = 792},
+		{SkillID = 6621, OriginalRecipeID = 1766, SwitchRecipeID = 793},
+		{SkillID = 6621, OriginalRecipeID = 1767, SwitchRecipeID = 794},
+		{SkillID = 6621, OriginalRecipeID = 1768, SwitchRecipeID = 795},
+		{SkillID = 6621, OriginalRecipeID = 1769, SwitchRecipeID = 796},
+		{SkillID = 6621, OriginalRecipeID = 1770, SwitchRecipeID = 797},
+		--奇穴蝎心
+
+		{SkillID = 2211, OriginalRecipeID = 762, SwitchRecipeID = 1945},
+		{SkillID = 2211, OriginalRecipeID = 763, SwitchRecipeID = 1946},
+		{SkillID = 2211, OriginalRecipeID = 764, SwitchRecipeID = 1947},
+		{SkillID = 2211, OriginalRecipeID = 765, SwitchRecipeID = 1948},
+		{SkillID = 2211, OriginalRecipeID = 766, SwitchRecipeID = 1949},
+		{SkillID = 2211, OriginalRecipeID = 767, SwitchRecipeID = 1950},
+		{SkillID = 2211, OriginalRecipeID = 768, SwitchRecipeID = 1951},
+		--蛇影
+		{SkillID = 13430, OriginalRecipeID = 1945, SwitchRecipeID = 762},
+		{SkillID = 13430, OriginalRecipeID = 1946, SwitchRecipeID = 763},
+		{SkillID = 13430, OriginalRecipeID = 1947, SwitchRecipeID = 764},
+		{SkillID = 13430, OriginalRecipeID = 1948, SwitchRecipeID = 765},
+		{SkillID = 13430, OriginalRecipeID = 1949, SwitchRecipeID = 766},
+		{SkillID = 13430, OriginalRecipeID = 1950, SwitchRecipeID = 767},
+		{SkillID = 13430, OriginalRecipeID = 1951, SwitchRecipeID = 768},
+		--奇穴蛇影
+
+		{SkillID = 2233, OriginalRecipeID = 777, SwitchRecipeID = 1995},
+		{SkillID = 2233, OriginalRecipeID = 778, SwitchRecipeID = 1996},
+		{SkillID = 2233, OriginalRecipeID = 779, SwitchRecipeID = 1997},
+		{SkillID = 2233, OriginalRecipeID = 780, SwitchRecipeID = 1998},
+		{SkillID = 2233, OriginalRecipeID = 781, SwitchRecipeID = 1999},
+		{SkillID = 2233, OriginalRecipeID = 782, SwitchRecipeID = 2000},
+		{SkillID = 2233, OriginalRecipeID = 783, SwitchRecipeID = 2001},
+		--醉舞九天
+		{SkillID = 6675, OriginalRecipeID = 1995, SwitchRecipeID = 777},
+		{SkillID = 6675, OriginalRecipeID = 1996, SwitchRecipeID = 778},
+		{SkillID = 6675, OriginalRecipeID = 1997, SwitchRecipeID = 779},
+		{SkillID = 6675, OriginalRecipeID = 1998, SwitchRecipeID = 780},
+		{SkillID = 6675, OriginalRecipeID = 1999, SwitchRecipeID = 781},
+		{SkillID = 6675, OriginalRecipeID = 2000, SwitchRecipeID = 782},
+		{SkillID = 6675, OriginalRecipeID = 2001, SwitchRecipeID = 783},
+		--奇穴醉舞九天
+
+
+		--宫伤害吟唱
+		{SkillID = 14064, OriginalRecipeID = 2042, SwitchRecipeID = 2128, SwitchRecipeID_1 = 2050, SwitchRecipeID_2 = 2184},
+		{SkillID = 14064, OriginalRecipeID = 2043, SwitchRecipeID = 2129, SwitchRecipeID_1 = 2051, SwitchRecipeID_2 = 2185},
+		{SkillID = 14064, OriginalRecipeID = 2044, SwitchRecipeID = 2130, SwitchRecipeID_1 = 2052, SwitchRecipeID_2 = 2186},
+		{SkillID = 14064, OriginalRecipeID = 2045, SwitchRecipeID = 2131},
+		{SkillID = 14064, OriginalRecipeID = 2046, SwitchRecipeID = 2132},
+		{SkillID = 14064, OriginalRecipeID = 2047, SwitchRecipeID = 2133, SwitchRecipeID_1 = 2055, SwitchRecipeID_2 = 2189},
+		{SkillID = 14064, OriginalRecipeID = 2048, SwitchRecipeID = 2134, SwitchRecipeID_1 = 2056, SwitchRecipeID_2 = 2190},
+		{SkillID = 14064, OriginalRecipeID = 2049, SwitchRecipeID = 2135, SwitchRecipeID_1 = 2057, SwitchRecipeID_2 = 2191},
+		--宫伤害dot
+		{SkillID = 14302, OriginalRecipeID = 2128, SwitchRecipeID = 2042, SwitchRecipeID_1 = 2050, SwitchRecipeID_2 = 2184},
+		{SkillID = 14302, OriginalRecipeID = 2129, SwitchRecipeID = 2043, SwitchRecipeID_1 = 2051, SwitchRecipeID_2 = 2185},
+		{SkillID = 14302, OriginalRecipeID = 2130, SwitchRecipeID = 2044, SwitchRecipeID_1 = 2052, SwitchRecipeID_2 = 2186},
+		{SkillID = 14302, OriginalRecipeID = 2131, SwitchRecipeID = 2045},
+		{SkillID = 14302, OriginalRecipeID = 2132, SwitchRecipeID = 2046},
+		{SkillID = 14302, OriginalRecipeID = 2133, SwitchRecipeID = 2047, SwitchRecipeID_1 = 2055, SwitchRecipeID_2 = 2189},
+		{SkillID = 14302, OriginalRecipeID = 2134, SwitchRecipeID = 2048, SwitchRecipeID_1 = 2056, SwitchRecipeID_2 = 2190},
+		{SkillID = 14302, OriginalRecipeID = 2135, SwitchRecipeID = 2049, SwitchRecipeID_1 = 2057, SwitchRecipeID_2 = 2191},
+		--宫治疗吟唱
+		{SkillID = 14137, OriginalRecipeID = 2050, SwitchRecipeID = 2184, SwitchRecipeID_1 = 2042, SwitchRecipeID_2 = 2128},
+		{SkillID = 14137, OriginalRecipeID = 2051, SwitchRecipeID = 2185, SwitchRecipeID_1 = 2043, SwitchRecipeID_2 = 2129},
+		{SkillID = 14137, OriginalRecipeID = 2052, SwitchRecipeID = 2186, SwitchRecipeID_1 = 2044, SwitchRecipeID_2 = 2130},
+		{SkillID = 14137, OriginalRecipeID = 2053, SwitchRecipeID = 2187},
+		{SkillID = 14137, OriginalRecipeID = 2054, SwitchRecipeID = 2188},
+		{SkillID = 14137, OriginalRecipeID = 2055, SwitchRecipeID = 2189, SwitchRecipeID_1 = 2047, SwitchRecipeID_2 = 2133},
+		{SkillID = 14137, OriginalRecipeID = 2056, SwitchRecipeID = 2190, SwitchRecipeID_1 = 2048, SwitchRecipeID_2 = 2134},
+		{SkillID = 14137, OriginalRecipeID = 2057, SwitchRecipeID = 2191, SwitchRecipeID_1 = 2049, SwitchRecipeID_2 = 2135},
+		--宫治疗hot
+		{SkillID = 14303, OriginalRecipeID = 2184, SwitchRecipeID = 2050, SwitchRecipeID_1 = 2042, SwitchRecipeID_2 = 2128},
+		{SkillID = 14303, OriginalRecipeID = 2185, SwitchRecipeID = 2051, SwitchRecipeID_1 = 2043, SwitchRecipeID_2 = 2129},
+		{SkillID = 14303, OriginalRecipeID = 2186, SwitchRecipeID = 2052, SwitchRecipeID_1 = 2044, SwitchRecipeID_2 = 2130},
+		{SkillID = 14303, OriginalRecipeID = 2187, SwitchRecipeID = 2053},
+		{SkillID = 14303, OriginalRecipeID = 2188, SwitchRecipeID = 2054},
+		{SkillID = 14303, OriginalRecipeID = 2189, SwitchRecipeID = 2055, SwitchRecipeID_1 = 2047, SwitchRecipeID_2 = 2133},
+		{SkillID = 14303, OriginalRecipeID = 2190, SwitchRecipeID = 2056, SwitchRecipeID_1 = 2048, SwitchRecipeID_2 = 2134},
+		{SkillID = 14303, OriginalRecipeID = 2191, SwitchRecipeID = 2057, SwitchRecipeID_1 = 2049, SwitchRecipeID_2 = 2135},
+		
+		--商伤害和治疗镜像关系
+		{SkillID = 14065, OriginalRecipeID = 2061, SwitchRecipeID = 2069},
+		{SkillID = 14065, OriginalRecipeID = 2062, SwitchRecipeID = 2070},
+		{SkillID = 14065, OriginalRecipeID = 2063, SwitchRecipeID = 2071},
+		{SkillID = 14065, OriginalRecipeID = 2064, SwitchRecipeID = 2072},
+		{SkillID = 14065, OriginalRecipeID = 2065, SwitchRecipeID = 2073},
+		
+		{SkillID = 14138, OriginalRecipeID = 2069, SwitchRecipeID = 2061},
+		{SkillID = 14138, OriginalRecipeID = 2070, SwitchRecipeID = 2062},
+		{SkillID = 14138, OriginalRecipeID = 2071, SwitchRecipeID = 2063},
+		{SkillID = 14138, OriginalRecipeID = 2072, SwitchRecipeID = 2064},
+		{SkillID = 14138, OriginalRecipeID = 2073, SwitchRecipeID = 2065},
+
+		--徵伤害和治疗镜像关系
+		{SkillID = 14067, OriginalRecipeID = 2076, SwitchRecipeID = 2084},
+		{SkillID = 14067, OriginalRecipeID = 2077, SwitchRecipeID = 2085},
+		{SkillID = 14067, OriginalRecipeID = 2078, SwitchRecipeID = 2086},
+		{SkillID = 14067, OriginalRecipeID = 2079, SwitchRecipeID = 2087},
+		
+		{SkillID = 14140, OriginalRecipeID = 2084, SwitchRecipeID = 2076},
+		{SkillID = 14140, OriginalRecipeID = 2085, SwitchRecipeID = 2077},
+		{SkillID = 14140, OriginalRecipeID = 2086, SwitchRecipeID = 2078},
+		{SkillID = 14140, OriginalRecipeID = 2087, SwitchRecipeID = 2079},
+
+		--羽伤害和治疗镜像关系
+		{SkillID = 14068, OriginalRecipeID = 2091, SwitchRecipeID = 2099},
+		{SkillID = 14068, OriginalRecipeID = 2092, SwitchRecipeID = 2100},
+		{SkillID = 14068, OriginalRecipeID = 2093, SwitchRecipeID = 2101},
+		{SkillID = 14068, OriginalRecipeID = 2094, SwitchRecipeID = 2102},
+		
+		{SkillID = 14141, OriginalRecipeID = 2099, SwitchRecipeID = 2091},
+		{SkillID = 14141, OriginalRecipeID = 2100, SwitchRecipeID = 2092},
+		{SkillID = 14141, OriginalRecipeID = 2101, SwitchRecipeID = 2093},
+		{SkillID = 14141, OriginalRecipeID = 2102, SwitchRecipeID = 2094},
+
+		--彼针自身小队
+		{SkillID = 140, OriginalRecipeID = 1685, SwitchRecipeID = 2270},
+		{SkillID = 140, OriginalRecipeID = 1686, SwitchRecipeID = 2271},
+		{SkillID = 140, OriginalRecipeID = 1687, SwitchRecipeID = 2272},
+		{SkillID = 140, OriginalRecipeID = 1688, SwitchRecipeID = 2273},
+		{SkillID = 140, OriginalRecipeID = 1689, SwitchRecipeID = 2274},
+		{SkillID = 140, OriginalRecipeID = 1690, SwitchRecipeID = 2275},
+		{SkillID = 140, OriginalRecipeID = 1691, SwitchRecipeID = 2276},
+		{SkillID = 140, OriginalRecipeID = 1692, SwitchRecipeID = 2277},
+		--彼针目标小队
+		{SkillID = 14664, OriginalRecipeID = 2270, SwitchRecipeID = 1685},
+		{SkillID = 14664, OriginalRecipeID = 2271, SwitchRecipeID = 1686},
+		{SkillID = 14664, OriginalRecipeID = 2272, SwitchRecipeID = 1687},
+		{SkillID = 14664, OriginalRecipeID = 2273, SwitchRecipeID = 1688},
+		{SkillID = 14664, OriginalRecipeID = 2274, SwitchRecipeID = 1689},
+		{SkillID = 14664, OriginalRecipeID = 2275, SwitchRecipeID = 1690},
+		{SkillID = 14664, OriginalRecipeID = 2276, SwitchRecipeID = 1691},
+		{SkillID = 14664, OriginalRecipeID = 2277, SwitchRecipeID = 1692},
+
+		--九溪弥烟
+		{SkillID = 1579, OriginalRecipeID = 560, SwitchRecipeID = 2374},
+		{SkillID = 1579, OriginalRecipeID = 561, SwitchRecipeID = 2375},
+		{SkillID = 1579, OriginalRecipeID = 562, SwitchRecipeID = 2376},
+		{SkillID = 1579, OriginalRecipeID = 563, SwitchRecipeID = 2377},
+		{SkillID = 1579, OriginalRecipeID = 564, SwitchRecipeID = 2378},
+		{SkillID = 1579, OriginalRecipeID = 565, SwitchRecipeID = 2379},
+		{SkillID = 1579, OriginalRecipeID = 566, SwitchRecipeID = 2380},
+		--九溪弥烟通道
+		{SkillID = 15053, OriginalRecipeID = 2374, SwitchRecipeID = 560},
+		{SkillID = 15053, OriginalRecipeID = 2375, SwitchRecipeID = 561},
+		{SkillID = 15053, OriginalRecipeID = 2376, SwitchRecipeID = 562},
+		{SkillID = 15053, OriginalRecipeID = 2377, SwitchRecipeID = 563},
+		{SkillID = 15053, OriginalRecipeID = 2378, SwitchRecipeID = 564},
+		{SkillID = 15053, OriginalRecipeID = 2379, SwitchRecipeID = 565},
+		{SkillID = 15053, OriginalRecipeID = 2380, SwitchRecipeID = 566},
+
+		--普通雷走风切
+		{SkillID = 16598, OriginalRecipeID = 4124, SwitchRecipeID = 4132},
+		{SkillID = 16598, OriginalRecipeID = 4125, SwitchRecipeID = 4133},
+		{SkillID = 16598, OriginalRecipeID = 4126, SwitchRecipeID = 4134},
+		{SkillID = 16598, OriginalRecipeID = 4127, SwitchRecipeID = 4135},
+		{SkillID = 16598, OriginalRecipeID = 4128, SwitchRecipeID = 4136},
+		{SkillID = 16598, OriginalRecipeID = 4129, SwitchRecipeID = 4137},
+		{SkillID = 16598, OriginalRecipeID = 4130, SwitchRecipeID = 4138},
+		{SkillID = 16598, OriginalRecipeID = 4131, SwitchRecipeID = 4139},
+
+		--大刀雷走风切
+		{SkillID = 16629, OriginalRecipeID = 4132, SwitchRecipeID = 4124},
+		{SkillID = 16629, OriginalRecipeID = 4133, SwitchRecipeID = 4125},
+		{SkillID = 16629, OriginalRecipeID = 4134, SwitchRecipeID = 4126},
+		{SkillID = 16629, OriginalRecipeID = 4135, SwitchRecipeID = 4127},
+		{SkillID = 16629, OriginalRecipeID = 4136, SwitchRecipeID = 4128},
+		{SkillID = 16629, OriginalRecipeID = 4137, SwitchRecipeID = 4129},
+		{SkillID = 16629, OriginalRecipeID = 4138, SwitchRecipeID = 4130},
+		{SkillID = 16629, OriginalRecipeID = 4139, SwitchRecipeID = 4131},
+	}
+
+local tMirrorSkillTable = 
+	{
+		{OriginalSkillID = 427, SwitchRecipeID = 6520}, --战八方换技能
+		{OriginalSkillID = 3093, SwitchRecipeID = 6444}, --暴雨梨花针换技能
+		{OriginalSkillID = 2232, SwitchRecipeID = 6662}, --暴雨梨花针换技能
+		{OriginalSkillID = 5638, SwitchRecipeID = 8490}, --亢龙
+		{OriginalSkillID = 2209, SwitchRecipeID = 6621}, --蝎心
+		{OriginalSkillID = 2211, SwitchRecipeID = 13430}, --蛇影
+		{OriginalSkillID = 2233, SwitchRecipeID = 6675}, --蛇影
+		{OriginalSkillID = 14064, SwitchRecipeID = 14302}, --宫伤害
+		{OriginalSkillID = 14137, SwitchRecipeID = 14303}, --宫治疗
+		{OriginalSkillID = 140, SwitchRecipeID = 14664}, --彼针
+		{OriginalSkillID = 1579, SwitchRecipeID = 15053}, --九溪弥烟
+		{OriginalSkillID = 16598, SwitchRecipeID = 16629}, --雷走风切
+		{OriginalSkillID = 588, SwitchRecipeID = 17580}, --人剑合一
+	}
+
+local tRepairTable = 
+	{
+		{SkillID = 427, OriginalRecipeID = 407, SwitchRecipeID = 1715},
+		{SkillID = 427, OriginalRecipeID = 408, SwitchRecipeID = 1716},
+		{SkillID = 427, OriginalRecipeID = 409, SwitchRecipeID = 1717},
+		{SkillID = 427, OriginalRecipeID = 410, SwitchRecipeID = 1718},
+		{SkillID = 427, OriginalRecipeID = 411, SwitchRecipeID = 1719},
+		{SkillID = 427, OriginalRecipeID = 412, SwitchRecipeID = 1720},
+		{SkillID = 427, OriginalRecipeID = 413, SwitchRecipeID = 1721},
+		--战八方
+		{SkillID = 6520, OriginalRecipeID = 1715, SwitchRecipeID = 407},
+		{SkillID = 6520, OriginalRecipeID = 1716, SwitchRecipeID = 408},
+		{SkillID = 6520, OriginalRecipeID = 1717, SwitchRecipeID = 409},
+		{SkillID = 6520, OriginalRecipeID = 1718, SwitchRecipeID = 410},
+		{SkillID = 6520, OriginalRecipeID = 1719, SwitchRecipeID = 411},
+		{SkillID = 6520, OriginalRecipeID = 1720, SwitchRecipeID = 412},
+		{SkillID = 6520, OriginalRecipeID = 1721, SwitchRecipeID = 413},
+		--奇穴战八方
+		{SkillID = 3093, OriginalRecipeID = 834, SwitchRecipeID = 1722},
+		{SkillID = 3093, OriginalRecipeID = 835, SwitchRecipeID = 1723},
+		{SkillID = 3093, OriginalRecipeID = 836, SwitchRecipeID = 1724},
+		{SkillID = 3093, OriginalRecipeID = 837, SwitchRecipeID = 1725},
+		{SkillID = 3093, OriginalRecipeID = 838, SwitchRecipeID = 1726},
+		{SkillID = 3093, OriginalRecipeID = 839, SwitchRecipeID = 1727},
+		{SkillID = 3093, OriginalRecipeID = 840, SwitchRecipeID = 1728},
+		{SkillID = 3093, OriginalRecipeID = 841, SwitchRecipeID = 1729},
+		{SkillID = 3093, OriginalRecipeID = 842, SwitchRecipeID = 1730},
+		--暴雨梨花针
+		{SkillID = 6444, OriginalRecipeID = 1722, SwitchRecipeID = 834},
+		{SkillID = 6444, OriginalRecipeID = 1723, SwitchRecipeID = 835},
+		{SkillID = 6444, OriginalRecipeID = 1724, SwitchRecipeID = 836},
+		{SkillID = 6444, OriginalRecipeID = 1725, SwitchRecipeID = 837},
+		{SkillID = 6444, OriginalRecipeID = 1726, SwitchRecipeID = 838},
+		{SkillID = 6444, OriginalRecipeID = 1727, SwitchRecipeID = 839},
+		{SkillID = 6444, OriginalRecipeID = 1728, SwitchRecipeID = 840},
+		{SkillID = 6444, OriginalRecipeID = 1729, SwitchRecipeID = 841},
+		{SkillID = 6444, OriginalRecipeID = 1730, SwitchRecipeID = 842},
+		--奇穴暴雨梨花针
+		{SkillID = 2232, OriginalRecipeID = 739, SwitchRecipeID = 1731},
+		{SkillID = 2232, OriginalRecipeID = 740, SwitchRecipeID = 1732},
+		{SkillID = 2232, OriginalRecipeID = 741, SwitchRecipeID = 1733},
+		{SkillID = 2232, OriginalRecipeID = 742, SwitchRecipeID = 1734},
+		{SkillID = 2232, OriginalRecipeID = 743, SwitchRecipeID = 1735},
+		{SkillID = 2232, OriginalRecipeID = 744, SwitchRecipeID = 1736},
+		{SkillID = 2232, OriginalRecipeID = 745, SwitchRecipeID = 1737},
+		--冰蚕牵丝
+		{SkillID = 6662, OriginalRecipeID = 1731, SwitchRecipeID = 739},
+		{SkillID = 6662, OriginalRecipeID = 1732, SwitchRecipeID = 740},
+		{SkillID = 6662, OriginalRecipeID = 1733, SwitchRecipeID = 741},
+		{SkillID = 6662, OriginalRecipeID = 1734, SwitchRecipeID = 742},
+		{SkillID = 6662, OriginalRecipeID = 1735, SwitchRecipeID = 743},
+		{SkillID = 6662, OriginalRecipeID = 1736, SwitchRecipeID = 744},
+		{SkillID = 6662, OriginalRecipeID = 1737, SwitchRecipeID = 745},
+		--奇穴冰蚕牵丝
+		{SkillID = 5638, OriginalRecipeID = 1372, SwitchRecipeID = 1743},
+		{SkillID = 5638, OriginalRecipeID = 1373, SwitchRecipeID = 1744},
+		{SkillID = 5638, OriginalRecipeID = 1374, SwitchRecipeID = 1745},
+		{SkillID = 5638, OriginalRecipeID = 1375, SwitchRecipeID = 1746},
+		{SkillID = 5638, OriginalRecipeID = 1376, SwitchRecipeID = 1747},
+		{SkillID = 5638, OriginalRecipeID = 1377, SwitchRecipeID = 1748},
+		{SkillID = 5638, OriginalRecipeID = 1378, SwitchRecipeID = 1749},
+		--亢龙
+		{SkillID = 8490, OriginalRecipeID = 1743, SwitchRecipeID = 1372},
+		{SkillID = 8490, OriginalRecipeID = 1744, SwitchRecipeID = 1373},
+		{SkillID = 8490, OriginalRecipeID = 1745, SwitchRecipeID = 1374},
+		{SkillID = 8490, OriginalRecipeID = 1746, SwitchRecipeID = 1375},
+		{SkillID = 8490, OriginalRecipeID = 1747, SwitchRecipeID = 1376},
+		{SkillID = 8490, OriginalRecipeID = 1748, SwitchRecipeID = 1377},
+		{SkillID = 8490, OriginalRecipeID = 1749, SwitchRecipeID = 1378},
+		--奇穴亢龙
+		{SkillID = 2209, OriginalRecipeID = 791, SwitchRecipeID = 1764},
+		{SkillID = 2209, OriginalRecipeID = 792, SwitchRecipeID = 1765},
+		{SkillID = 2209, OriginalRecipeID = 793, SwitchRecipeID = 1766},
+		{SkillID = 2209, OriginalRecipeID = 794, SwitchRecipeID = 1767},
+		{SkillID = 2209, OriginalRecipeID = 795, SwitchRecipeID = 1768},
+		{SkillID = 2209, OriginalRecipeID = 796, SwitchRecipeID = 1769},
+		{SkillID = 2209, OriginalRecipeID = 797, SwitchRecipeID = 1770},
+		--蝎心
+		{SkillID = 6621, OriginalRecipeID = 1764, SwitchRecipeID = 791},
+		{SkillID = 6621, OriginalRecipeID = 1765, SwitchRecipeID = 792},
+		{SkillID = 6621, OriginalRecipeID = 1766, SwitchRecipeID = 793},
+		{SkillID = 6621, OriginalRecipeID = 1767, SwitchRecipeID = 794},
+		{SkillID = 6621, OriginalRecipeID = 1768, SwitchRecipeID = 795},
+		{SkillID = 6621, OriginalRecipeID = 1769, SwitchRecipeID = 796},
+		{SkillID = 6621, OriginalRecipeID = 1770, SwitchRecipeID = 797},
+		--奇穴蝎心
+		{SkillID = 2233, OriginalRecipeID = 777, SwitchRecipeID = 1995},
+		{SkillID = 2233, OriginalRecipeID = 778, SwitchRecipeID = 1996},
+		{SkillID = 2233, OriginalRecipeID = 779, SwitchRecipeID = 1997},
+		{SkillID = 2233, OriginalRecipeID = 780, SwitchRecipeID = 1998},
+		{SkillID = 2233, OriginalRecipeID = 781, SwitchRecipeID = 1999},
+		{SkillID = 2233, OriginalRecipeID = 782, SwitchRecipeID = 2000},
+		{SkillID = 2233, OriginalRecipeID = 783, SwitchRecipeID = 2001},
+		--醉舞九天
+		{SkillID = 6675, OriginalRecipeID = 1995, SwitchRecipeID = 777},
+		{SkillID = 6675, OriginalRecipeID = 1996, SwitchRecipeID = 778},
+		{SkillID = 6675, OriginalRecipeID = 1997, SwitchRecipeID = 779},
+		{SkillID = 6675, OriginalRecipeID = 1998, SwitchRecipeID = 780},
+		{SkillID = 6675, OriginalRecipeID = 1999, SwitchRecipeID = 781},
+		{SkillID = 6675, OriginalRecipeID = 2000, SwitchRecipeID = 782},
+		{SkillID = 6675, OriginalRecipeID = 2001, SwitchRecipeID = 783},
+		--奇穴醉舞九天
+		{SkillID = 14064, OriginalRecipeID = 2042, SwitchRecipeID = 2128},
+		{SkillID = 14064, OriginalRecipeID = 2043, SwitchRecipeID = 2129},
+		{SkillID = 14064, OriginalRecipeID = 2044, SwitchRecipeID = 2130},
+		{SkillID = 14064, OriginalRecipeID = 2045, SwitchRecipeID = 2131},
+		{SkillID = 14064, OriginalRecipeID = 2046, SwitchRecipeID = 2132},
+		{SkillID = 14064, OriginalRecipeID = 2047, SwitchRecipeID = 2133},
+		{SkillID = 14064, OriginalRecipeID = 2048, SwitchRecipeID = 2134},
+		{SkillID = 14064, OriginalRecipeID = 2049, SwitchRecipeID = 2135},
+		--宫伤害
+		{SkillID = 14302, OriginalRecipeID = 2128, SwitchRecipeID = 2042},
+		{SkillID = 14302, OriginalRecipeID = 2129, SwitchRecipeID = 2043},
+		{SkillID = 14302, OriginalRecipeID = 2130, SwitchRecipeID = 2044},
+		{SkillID = 14302, OriginalRecipeID = 2131, SwitchRecipeID = 2045},
+		{SkillID = 14302, OriginalRecipeID = 2132, SwitchRecipeID = 2046},
+		{SkillID = 14302, OriginalRecipeID = 2133, SwitchRecipeID = 2047},
+		{SkillID = 14302, OriginalRecipeID = 2134, SwitchRecipeID = 2048},
+		{SkillID = 14302, OriginalRecipeID = 2135, SwitchRecipeID = 2049},
+		--奇穴宫伤害dot
+		--彼针自身小队
+		{SkillID = 140, OriginalRecipeID = 1685, SwitchRecipeID = 2270},
+		{SkillID = 140, OriginalRecipeID = 1686, SwitchRecipeID = 2271},
+		{SkillID = 140, OriginalRecipeID = 1687, SwitchRecipeID = 2272},
+		{SkillID = 140, OriginalRecipeID = 1688, SwitchRecipeID = 2273},
+		{SkillID = 140, OriginalRecipeID = 1689, SwitchRecipeID = 2274},
+		{SkillID = 140, OriginalRecipeID = 1690, SwitchRecipeID = 2275},
+		{SkillID = 140, OriginalRecipeID = 1691, SwitchRecipeID = 2276},
+		{SkillID = 140, OriginalRecipeID = 1692, SwitchRecipeID = 2277},
+		--彼针目标小队
+		{SkillID = 14664, OriginalRecipeID = 2270, SwitchRecipeID = 1685},
+		{SkillID = 14664, OriginalRecipeID = 2271, SwitchRecipeID = 1686},
+		{SkillID = 14664, OriginalRecipeID = 2272, SwitchRecipeID = 1687},
+		{SkillID = 14664, OriginalRecipeID = 2273, SwitchRecipeID = 1688},
+		{SkillID = 14664, OriginalRecipeID = 2274, SwitchRecipeID = 1689},
+		{SkillID = 14664, OriginalRecipeID = 2275, SwitchRecipeID = 1690},
+		{SkillID = 14664, OriginalRecipeID = 2276, SwitchRecipeID = 1691},
+		{SkillID = 14664, OriginalRecipeID = 2277, SwitchRecipeID = 1692},
+		--九溪弥烟
+		{SkillID = 1579, OriginalRecipeID = 560, SwitchRecipeID = 2374},
+		{SkillID = 1579, OriginalRecipeID = 561, SwitchRecipeID = 2375},
+		{SkillID = 1579, OriginalRecipeID = 562, SwitchRecipeID = 2376},
+		{SkillID = 1579, OriginalRecipeID = 563, SwitchRecipeID = 2377},
+		{SkillID = 1579, OriginalRecipeID = 564, SwitchRecipeID = 2378},
+		{SkillID = 1579, OriginalRecipeID = 565, SwitchRecipeID = 2379},
+		{SkillID = 1579, OriginalRecipeID = 566, SwitchRecipeID = 2380},
+		--九溪弥烟通道
+		{SkillID = 15053, OriginalRecipeID = 2374, SwitchRecipeID = 560},
+		{SkillID = 15053, OriginalRecipeID = 2375, SwitchRecipeID = 561},
+		{SkillID = 15053, OriginalRecipeID = 2376, SwitchRecipeID = 562},
+		{SkillID = 15053, OriginalRecipeID = 2377, SwitchRecipeID = 563},
+		{SkillID = 15053, OriginalRecipeID = 2378, SwitchRecipeID = 564},
+		{SkillID = 15053, OriginalRecipeID = 2379, SwitchRecipeID = 565},
+		{SkillID = 15053, OriginalRecipeID = 2380, SwitchRecipeID = 566},
+	}
+
+	local tRepairList = {	-- [玩家已经可能有的秘籍ID] = {需要学的对应的秘籍ID, ...}
+		[407] = {1715, 1805, 1812}, [1715] = {407, 1805, 1812},
+		[408] = {1716, 1806, 1813}, [1716] = {408, 1806, 1813},
+		[409] = {1717, 1807, 1814}, [1717] = {409, 1807, 1814},
+		[410] = {1718, 1808, 1815}, [1718] = {410, 1808, 1815},
+		[411] = {1719, 1809, 1816}, [1719] = {411, 1809, 1816},
+		[412] = {1720, 1810, 1817}, [1720] = {412, 1810, 1817},
+		[413] = {1721, 1811, 1818}, [1721] = {413, 1811, 1818},
+	}
+
+	---重置奇穴
+	local SLForgetSkill = {255, 259, 239, 240, 247, 249, 254, 237, 2589, 246, 248, 2581, 15165, 15195, 234, 251}
+	local SL_QX_Skill = {5896, 6594, 255, 5906, 6595, 239, 5915, 6578, 6577, 240, 5903, 5910, 5899, 5898, 5913, 5914,
+		6593, 5930, 6579, 5912, 5911, 247, 6586, 6587, 5905, 249, 6589, 6783, 5909, 254, 6788, 6596, 6580, 237, 6591,
+		5897, 6590, 259, 5941, 5923, 255, 5922, 5910, 6790, 5924, 5899, 5919, 2589, 5903, 5931, 5932, 240, 5926, 5939,
+		5921, 6783, 5927, 5929, 5938, 246, 5933, 5934, 5925, 248, 5930, 5935, 5936, 254, 6591, 6587, 5942, 237, 6789,
+		5901, 5940, 259, 14745, 14762, 14747, 14750, 14752, 14820, 14755, 14757, 14758, 14950, 14791, 14793, 14752, 14794,
+		14795, 14757, 14796, 14761, 16866, 16890, 16894, 16897, 16898, 16900, 16886, 16899}
+	
+	local TCForgetSkill = {402, 441, 405, 482, 480, 411, 2628, 2611, 2603, 2620, 15115, 15158}
+	local TC_QX_Skill = {5656, 5657, 402, 5660, 5659, 441, 5662, 5658, 5663, 405, 5652, 5658, 5663, 405, 5652, 5678, 5695, 482, 5669, 6523,
+		5694, 480, 5673, 5670, 6511, 2611, 6524, 6530, 5666, 5697, 6527, 6528, 6515, 6781, 6512, 6514, 5676, 2628, 6517, 6806, 5664, 2603,
+		5699, 5679, 402, 5688, 5680, 441, 5663, 5658, 5681, 405, 5652, 5682, 5695, 482, 5669, 6523, 6869, 480, 5696, 5701, 5693, 411, 5689, 5697,
+		5686, 5702, 5700, 5675, 6528, 5694, 6527, 5685, 6514, 2628, 6517, 6518, 5664, 2620, 14825, 14821, 14822, 14823, 14824, 14804, 15001,
+		14799, 14800, 14828, 14822, 14802, 14827, 14805, 14804, 14826}
+
+	local CYForgetSkill = {300, 314, 362, 310, 316, 361, 357, 360, 370, 316, 356, 359, 357, 15187, 15193}	--删除返本
+	local CY_QX_Skill = {5840, 5827, 300, 5828, 5823, 314, 5799, 5830, 5819, 359, 5846, 5837, 5826, 370, 5829, 6798, 5824, 316, 5842, 6906, 14041, 356,
+		5802, 6481, 6905, 360, 5843, 5813, 6796, 357, 6908, 5833, 6469, 6910, 6472, 5844, 6904, 6772, 5801, 5807, 300, 5810, 5811, 314, 5799, 5800, 5819,
+		362, 5817, 5818, 5816, 310, 5820, 5804, 5812, 316, 5802, 6756, 5821, 356, 6758, 6481, 5808, 361, 6757, 5813, 6460, 357, 5822, 6466, 6469,
+		6744, 6472, 6914, 5809, 6747, 14997, 14834, 14835, 14994, 14836, 14598, 14613, 14837, 14806, 14986, 14829, 14835, 14830, 14832, 14613, 14833,16901}
+
+	local QXForgetSkill = {563, 547, 548, 2733, 573, 571, 570, 567, 549, 2733, 566, 564, 14937, 14938}
+	local QX_QX_Skill = {5848, 5849, 548, 5869, 5868, 564, 5852, 5854, 5857, 563, 5855, 6571, 5861, 547, 5864, 6565, 5870, 5859, 6556, 6557, 6848, 5860,
+		6558, 6561, 6562, 571, 6847, 6566, 5866, 13678, 5847, 6567, 6569, 573, 6779, 6572, 6575, 6907, 5873, 5871, 570, 5876, 5879, 567, 5881, 5875, 5885,
+		549, 5884, 5885, 5892, 548, 5847, 5886, 5862, 5859, 5887, 5888, 6565, 5872, 5880, 5878, 5877, 571, 5874, 5889, 6562, 566, 6566, 6567, 5890,
+	573, 5891, 6572, 6575, 6907, 14723, 14940, 14711, 14726, 14710, 14728, 14730, 14939, 14938, 14705, 14727, 14934, 14726, 14710, 14713, 14715, 14937, 5882,15745}
+
+	local CJForgetSkill = {1665, 1610, 1647, 1940, 1655, 1667, 1663, 2750, 2768, 14910}	--删除断潮
+	local CJ_QX_Skill = {5944, 5953, 1665, 5951, 5954, 1610, 5955, 5960, 5956, 1647, 5958, 5959, 5963, 1940, 6533, 6540, 6541, 6799, 5952, 5948,
+		5957, 6544, 6537, 6534, 6535, 1655, 6542, 6543, 6545, 1667, 5965, 6547, 5964, 6548, 6549, 6802, 1663, 14600, 14814, 14605, 14604, 14602, 14607, 14603,
+		14601, 14910}
+
+	local WHForgetSkill = {133, 134, 2645, 143, 2654, 181, 183, 184, 188, 187, 2645, 14965, 14963}
+	local WH_QX_Skill = {5756, 5753, 181, 5773, 5759, 134, 5762, 5774, 5758, 133, 6691, 5757, 5767, 183, 5757, 5770, 5761, 5765, 6690, 6679, 6681, 5763,
+		5752, 5751, 5771, 2645, 6683, 6684, 6685, 184, 6686, 6682, 6773, 187, 5764, 5784, 5796, 188, 5777, 5785, 181, 5780, 5783, 134, 5782, 5776, 5794,
+		133, 5786, 5759, 5797, 183, 9145, 5770, 5779, 5765, 5790, 5787, 5789, 5763, 13384, 5791, 5792, 184, 5775, 6684, 6685, 13850, 5781, 5798, 5795,
+	2654, 6773, 5784, 5796, 143, 14654, 14634, 14637, 14635, 14640, 14643, 14645, 14641, 14965, 14659, 14662, 14661, 14666, 14645, 14641, 14963, 5754, 9145, 16853, 16854,16855,16857}
+
+	local WDForgetSkill = {2217, 2220, 3702, 2221, 2222, 2224, 2225, 2227, 3046, 2234, 2965, 15121, 15132}
+	local WD_QX_Skill = {6661, 6664, 6663, 6658, 6659, 6660, 6666, 6668, 6881, 2222, 6885, 6669, 6879, 2225, 6886, 6883, 6880, 2221, 6670, 6636, 6637, 2224,
+		6043, 6673, 6672, 3702, 6674, 6884, 6878, 2220, 6677, 6688, 6696, 2234, 6892, 6652, 6619, 2965, 6618, 6619, 6620, 6658, 6622, 6623, 6624, 6629, 6881,
+		2222, 6627, 6628, 6879, 2225, 6625, 6630, 6880, 2221, 6632, 6636, 6637, 2224, 6641, 6644, 6672, 3702, 6646, 6647, 6878, 2220, 6694, 6695, 6696, 2217,
+		6649, 6652, 6877, 2227, 14866, 14867, 14861, 14862, 14868, 14869, 14865, 14859, 14860, 14861, 14863, 14864, 14865}
+
+	local TMForgetSkill = {3088, 3092, 3113, 3115, 3116, 3117, 3099, 3100, 3104, 15131, 15070}
+	local TM_QX_Skill = {6436, 6437, 6733, 6438, 6473, 3088, 5721, 6439, 5722, 3115, 6888, 6775, 6443, 3092, 6887, 6446, 6449, 3113, 6874, 6451, 6452, 6454, 6776,
+		5719, 6455, 3116, 5703, 6891, 6457, 3099, 6459, 6461, 6464, 3117, 5715, 5709, 6468, 3100, 6490, 6491, 6870, 6492, 6493, 3088, 6495, 6498, 6499, 6443, 6888,
+		6506, 6507, 3092, 6441, 6504, 5728, 3113, 6778, 6451, 6452, 3115, 6510, 5719, 6455, 3116, 6890, 6891, 6457, 3104, 6889, 6461, 6464, 3117, 5715, 5709, 6468,
+		6508, 14811, 14856, 14851, 14852, 14853, 14857, 14858, 14811, 14850, 14854, 14855, 16903, 16953, 16902}
+	
+	
+	local MJForgetSkill = {3964, 3961, 3976, 3965, 3968, 3971, 3978, 3984, 3983, 14915, 14922}
+	local MJ_QX_Skill = {5969, 5972, 5974, 5971, 5970, 3964, 5967, 5978, 5976, 3961, 5982, 6717, 6732, 6893, 5988, 5989, 5990, 3976, 5968, 6718, 6719, 3971, 5980,
+		6720, 6721, 3968, 6722, 5984, 6723, 3965, 5979, 6724, 5985, 3978, 6725, 6726, 5977, 6727, 6740, 6741, 6742, 5971, 6743, 3964, 6745, 6748, 5976, 3961, 6749,
+		6751, 6753, 6000, 5988, 6898, 5990, 3983, 6755, 6718, 6719, 3971, 6760, 6899, 6763, 3968, 6722, 6764, 6895, 3965, 6766, 6768, 6897, 3984, 6770, 6771, 5977,
+		6896, 14818, 14697, 14695, 14694, 14819, 14698, 14699, 14915, 14677, 14676, 14675, 14674, 14680, 14678, 14679, 14922,16851}
+
+	local JHForgetSkill = {6215, 6216, 6217, 6218, 6219}
+	
+	local GBForgetSkill = {6337, 5360, 5272, 5649, 14927}
+	local GB_QX_Skill = {6809, 6812, 6811, 6810, 6813, 6845, 6815, 6816, 6833, 6337, 6819, 6820, 6821, 5360, 6823, 6836, 6834, 6826, 6855, 6828, 6829, 6822, 6831,
+		6832, 6857, 6830, 6818, 6824, 6837, 5272, 6839, 6840, 6838, 6843, 6842, 6814, 5649, 14633, 14625, 14816, 14629, 14626, 14631, 14628, 14927, 15211, 15212}
+
+	local CangYunForgetSkill = {13072, 15196, 15072}
+	local Cangyun_QX_Skill = {13317, 13056, 13318, 13087, 13121, 13091, 13089, 13090, 13088, 13372, 13120, 13278, 13086, 13321, 13103, 13414, 13109, 13111, 13132, 13133, 13374, 13397, 13124,
+		13152, 13153, 13181, 13097, 13071, 13418, 13126, 13304, 13073, 13072, 13172, 13366, 13395, 13420, 13386, 13338, 13320, 13318, 13122, 13121, 13136, 13089, 13356, 13141, 13357, 13120, 13360,
+		13138, 13321, 13421, 13422, 13361, 13113, 13132, 13133, 13368, 13397, 13124, 13363, 13364, 13181, 13098, 13071, 13418, 13126, 13304, 13073, 13072, 13134, 13366, 13163, 13171,
+		13367, 14903, 14838, 14839, 14840, 14841, 14842, 14843, 14844, 14845, 14846, 14847, 14848, 14849}
+
+	local CGForgetSkill = {14097, 14093, 14095, 14169, 15068}
+	local CG_QX_Skill = {14235, 14236, 14465, 14246, 14321, 14097, 14314, 14437, 14286, 14093, 14280, 14438, 14285, 14095, 14336, 14309, 14870, 14871, 14282,
+		14308, 14152, 14151, 14337, 14313, 14143, 14146, 14233, 14872, 14873, 14874, 14284, 14163, 14164, 14349, 14350, 14159, 14167, 14168, 14240, 14466, 14155,
+		14156, 14441, 14348, 14468, 14237, 14238, 14464, 14247, 14373, 14097, 14352, 14437, 14286, 14256, 14353, 14439, 14285, 14169, 14405, 14416, 14248, 14254,
+		14384, 14361, 14253, 14249, 14406, 14313, 14251, 14252, 14233, 14472, 14461, 14874, 14244, 14163, 14164, 14470, 14359, 14557, 14167, 14168, 14242, 14466,
+		14155, 14156, 14441, 14348, 14442, 15098}
+
+	local BD_QX_Skill = {16691, 16692, 16693, 17042, 16777, 17045, 16712, 16847, 16930, 17054, 16779, 16799, 16750, 16705, 16752, 16722, 16734, 16724, 17050, 16781, 16748, 16726, 16733, 17049, 16765,
+		17055, 16728, 16730, 16731, 17052, 16737, 17048, 16958, 16739, 17056, 17047, 16957, 16735, 16977, 16911, 16893, 16816, 16912, 16807, 16846, 16620, 16709, 16797, 16954, 16696, 16707, 16716, 16976,
+		16751, 16732, 16906}
+
+		
+function CheckSkillByForce(player)    
+	if not player then
+		return
+	end
+	local ForceID = player.dwForceID
+	if ForceID == 0 then
+		return
+	end
+	local SkillTable = GetSkillAutoLearnTableByForce(ForceID).SkillArray
+	if not SkillTable then
+		return
+	end
+	local lv
+	for i = 1, #(SkillTable) do
+		if player.nLevel >= SkillTable[i].nRequireLevel then
+			lv = player.GetSkillLevel(SkillTable[i].dwSkillID)
+			if lv < SkillTable[i].dwSkillLevel then
+				local nRet = player.LearnSkill(SkillTable[i].dwSkillID)
+				if nRet == false then
+					Log("LearnSkill failure when getting into the force")
+				end
+			end
+		end
+		
+	end
+end
+function CheckSkillByForceToMax(player)    
+	if not player then
+		return
+	end
+	local ForceID = player.dwForceID
+	if ForceID == 0 then
+		return
+	end
+	local SkillTable = GetSkillAutoLearnTableByForce(ForceID).SkillArray
+	if not SkillTable then
+		return
+	end
+	local lv
+	local maxlv
+	for i = 1, #(SkillTable) do
+		if player.nLevel >= SkillTable[i].nRequireLevel then
+			lv = player.GetSkillLevel(SkillTable[i].dwSkillID)
+			if lv < SkillTable[i].dwSkillLevel then
+				player.LearnSkill(SkillTable[i].dwSkillID)
+			end
+			maxlv = GetSkill(SkillTable[i].dwSkillID, 1).dwMaxLevel
+			if maxlv >= 2 then
+				player.LearnSkillLevel(SkillTable[i].dwSkillID, maxlv, player.dwID)
+			end
+		end
+		
+	end
+end
+
+-- 切换奇穴时调用。id为被换掉的技能ID，id2为切换后的技能ID
+function RecipeCopy(id, lv, player, id2)
+	local RecipeTable = player.GetSkillRecipeList(id, lv)
+	if not RecipeTable  then
+		return
+	end
+	local RecipeTable2 = player.GetSkillRecipeList(id2, lv)
+	if not RecipeTable2 then
+		return
+	end
+	
+	for k = 1, #RecipeTable2 do
+		if player.IsSkillRecipeActive(RecipeTable2[k].recipe_id, RecipeTable2[k].recipe_level) then
+			--print("Dst______", RecipeTable2[k].recipe_id, RecipeTable2[k].recipe_level)
+			player.DeactiveSKillRecipe(RecipeTable2[k].recipe_id, RecipeTable2[k].recipe_level)
+		end
+	end
+	
+	for _, tSkillInfo in pairs(tIndexTable) do
+		if tSkillInfo[id] then
+			for nRecipeIndex, dwRecipeID in pairs(tSkillInfo[id]) do
+				for i = 1, #RecipeTable do
+					
+					if RecipeTable[i].recipe_id == dwRecipeID then
+						if RecipeTable[i].active then
+							for dwSkillID_Check, _  in pairs(tSkillInfo) do
+								if player.GetSkillLevel(dwSkillID_Check) > 0 then
+									--print("Active========", tSkillInfo[dwSkillID_Check][nRecipeIndex], RecipeTable[i].recipe_level, RecipeTable[i].recipe_id, RecipeTable[i].recipe_level)
+									player.ActiveSkillRecipe(tSkillInfo[dwSkillID_Check][nRecipeIndex], RecipeTable[i].recipe_level)
+									player.DeactiveSKillRecipe(RecipeTable[i].recipe_id, RecipeTable[i].recipe_level)
+								end
+							end
+						end
+					end	
+				end
+			end			
+			return
+		end
+	end
+end
+
+function LearnMirrorRecipe(player, RecipeID, RecipeLV)
+	--print(555)
+	for i = 1, #tLearnTable do
+		--print(RecipeID,IndexTable[i].OriginalRecipeID)
+		if RecipeID == tLearnTable[i].OriginalRecipeID then
+			--print(666666)
+			--print(RecipeID)
+			--print(IndexTable[i].SwitchRecipeID)
+			player.AddSkillRecipe(tLearnTable[i].SwitchRecipeID, RecipeLV)
+			player.DeactiveSKillRecipe(tLearnTable[i].SwitchRecipeID, RecipeLV)
+			
+			if tLearnTable[i].SwitchRecipeID_1 then
+				player.AddSkillRecipe(tLearnTable[i].SwitchRecipeID_1, RecipeLV)
+				player.DeactiveSKillRecipe(tLearnTable[i].SwitchRecipeID_1, RecipeLV)
+			end
+			if tLearnTable[i].SwitchRecipeID_2 then
+				player.AddSkillRecipe(tLearnTable[i].SwitchRecipeID_2, RecipeLV)
+				player.DeactiveSKillRecipe(tLearnTable[i].SwitchRecipeID_2, RecipeLV)
+			end
+			
+		end
+	end
+end
+
+function IsMirrorSkillExist(SkillID, player)
+	local result = false
+	for i = 1, #(tMirrorSkillTable) do
+		--print(RecipeID)
+		if SkillID == tMirrorSkillTable[i].OriginalSkillID then
+			result = true
+		end
+	end
+	return result
+end
+
+function RepairRecipe(player)
+	for i = 1, #(tRepairTable) do
+		--print(RecipeID)
+		if player.IsSkillRecipeExist(tRepairTable[i].OriginalRecipeID, 1) and (not player.IsSkillRecipeExist(tRepairTable[i].SwitchRecipeID, 1))then
+			player.AddSkillRecipe(tRepairTable[i].SwitchRecipeID, 1)
+			--print(IndexTable[i].SwitchRecipeID)
+			player.DeactiveSKillRecipe(tRepairTable[i].SwitchRecipeID, 1)
+		end
+	end
+end
+
+-- 修复缺失秘籍（添加镜像秘籍）
+function RepairRecipe_New(player)
+	for k, v in pairs(tRepairList) do
+		if player.IsSkillRecipeExist(k, 1) then
+			for _, dwRecipeID in pairs(v) do
+				if not player.IsSkillRecipeExist(dwRecipeID, 1) then
+					player.AddSkillRecipe(dwRecipeID, 1)
+					player.DeactiveSKillRecipe(dwRecipeID, 1)
+				end
+			end
+		end
+	end
+end
+
+--重置奇穴
+function ResetNewSkillInfoByTaoli(player)
+	player.ClearNewTalent()
+	local forceid = player.dwForceID
+	local skillid
+	--local kungfuid
+	--if player.GetKungfuMount() then
+	--kungfuid = player.GetKungfuMount().dwSkillID
+	--end
+	for i, v in ipairs(JHForgetSkill) do
+		if player.GetSkillLevel(v) ~= 0 then
+			player.ForgetSkill(v)
+		end
+	end
+	
+	if forceid == 1 then	--少林
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10289 or GetSkill(skillid, 1).dwBelongKungfu == 10290)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(SLForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+
+		for i, v in ipairs(SL_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 2 then	--万花
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10281 or GetSkill(skillid, 1).dwBelongKungfu == 10282)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+
+		if player.GetSkillLevel(13850) == 1 then
+			player.ForgetSkill(13850)
+		end
+		
+		if player.GetSkillLevel(13982) == 1 then
+			player.ForgetSkill(13982)
+		end
+		
+		for i, v in ipairs(WHForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+
+		for i, v in ipairs(WH_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 3 then --天策
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10276 or GetSkill(skillid, 1).dwBelongKungfu == 10277)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(TCForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(TC_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 4 then --纯阳
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10284 or GetSkill(skillid, 1).dwBelongKungfu == 10285)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		
+		if player.GetSkillLevel(14041) == 1 then
+			player.ForgetSkill(14041)
+		end
+		
+		for i, v in ipairs(CYForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(CY_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 5 then --七秀
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10287 or GetSkill(skillid, 1).dwBelongKungfu == 10288)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+
+		if player.GetSkillLevel(13678) == 1 then
+			player.ForgetSkill(13678)
+		end
+		
+		for i, v in ipairs(QXForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(QX_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 6 then --五毒
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10280 or GetSkill(skillid, 1).dwBelongKungfu == 10283)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(WDForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(WD_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 7 then --唐门
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10278 or GetSkill(skillid, 1).dwBelongKungfu == 10279)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(TMForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(TM_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 8 then --藏剑
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10291 or GetSkill(skillid, 1).dwBelongKungfu == 10291)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(CJForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(CJ_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 9 then --丐帮
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10299 or GetSkill(skillid, 1).dwBelongKungfu == 10299)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(GBForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(GB_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 10 then --明教
+		for i = 0, 2000 do
+			skillid = 5000 + i
+			if player.GetSkillLevel(skillid) == 1 and (GetSkill(skillid, 1).dwBelongKungfu == 10292 or GetSkill(skillid, 1).dwBelongKungfu == 10293)  then
+				player.ForgetSkill(skillid)
+			end
+		end
+		for i, v in ipairs(MJForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(MJ_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	if forceid == 21 then --苍云
+		local forgetskill = {13418, 13126, 13072, 13172, 13134}
+		for i = 1, #forgetskill do
+			if player.GetSkillLevel(forgetskill[i]) == 1 then
+				player.ForgetSkill(forgetskill[i])
+			end
+		end
+
+		for i, v in ipairs(CangYunForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(Cangyun_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+
+	if forceid == 22 then --长歌
+		for i, v in ipairs(CGForgetSkill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+		for i, v in ipairs(CG_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+
+	if forceid == 23 then --霸刀
+		for i, v in ipairs(BD_QX_Skill) do
+			if player.GetSkillLevel(v) ~= 0 then
+				player.ForgetSkill(v)
+			end
+		end
+	end
+	--player.SendSystemMessage("重置成功，请重新配置奇穴招式。")
+end
+
+function LearnSkillToStopSwordDance(player)    
+	if not player then
+		return
+	end
+	local ForceID = player.dwForceID
+	if player.GetSkillLevel(537) ~= 0 then
+		player.LearnSkill(8670)
+	end
+end
+
+function CheckTalentRepetition(player)
+	--当前奇穴同层有冲突的，需要洗奇穴
+	--print(66666)
+	if not player.GetGiveRewardFlag(GetEditorString(10, 6456)) then
+		--print(55555555)
+		player.SetGiveRewardFlag(GetEditorString(10, 6456), true)
+		local tableNew = {
+			[1] = {10002,10003}, --少林
+			[2] = {10021,10028}, --万花
+			[3] = {10026,10062}, --天策
+			[4] = {10015,10014}, --纯阳
+			[5] = {10080,10081}, --七秀
+			[6] = {10175,10176}, --五毒
+			[7] = {10224,10225}, --唐门
+			[10] = {10242,10243}, --明教
+			[21] = {10389,10390}, --苍云
+			[22] = {10447,10448}, --长歌
+			}
+		local nForceID = player.dwForceID
+		--print(nForceID)
+		if not tableNew[nForceID] then
+			print("KungFu ID Error!")
+			return
+		else
+			local nLev_1 = player.GetSkillLevel(tableNew[nForceID][1])
+			local nLev_2 = player.GetSkillLevel(tableNew[nForceID][2])
+			if nLev_1 ~= 0 and nLev_2 ~= 0 then
+				if player.GetKungfuMount() ~= nil then
+					if player.GetKungfuMount().dwSkillID == tableNew[nForceID][1] then
+						--print(player.GetKungfuMount().dwSkillID)
+						player.UmountKungfu()
+						player.MountKungfu(tableNew[nForceID][2], nLev_2)
+						player.UmountKungfu()
+						player.MountKungfu(tableNew[nForceID][1], nLev_1)
+					elseif player.GetKungfuMount().dwSkillID == tableNew[nForceID][2] then
+						--print(player.GetKungfuMount().dwSkillID)
+						player.UmountKungfu()
+						player.MountKungfu(tableNew[nForceID][1], nLev_1)
+						player.UmountKungfu()
+						player.MountKungfu(tableNew[nForceID][2], nLev_2)
+					end
+				else
+					--print(3333)
+					player.MountKungfu(tableNew[nForceID][2], nLev_2)
+					player.UmountKungfu()
+					player.MountKungfu(tableNew[nForceID][1], nLev_1)
+				end
+			end
+		end
+	end
+end
+
+function AotoLearnRecipe(player, nSkillID, dwRecipeID, dwRecipeLevel, bFree)
+	--print(11111)
+	--print(nSkillID)
+	--print(dwRecipeID)
+	local key = string.format("%d,%d", dwRecipeID, dwRecipeLevel)
+	local examprint = tSkillRecipeCost[key]
+	if examprint == nil then
+		return
+	end
+
+	local ExamCount = player.nExamPrint
+
+	if ExamCount >= examprint or bFree then
+		if player.IsSkillRecipeExist(dwRecipeID, dwRecipeLevel) then
+			if not bFree then 
+				player.SendSystemMessage(GetEditorString(8, 5803))
+			end
+			return			
+		end
+
+		if player.GetSkillLevel(nSkillID) > 0 or IsMirrorSkillExist(nSkillID, player)  then
+			--print(1111)
+			local result = player.CanLearnSkillRecipe(dwRecipeID, dwRecipeLevel)
+			if result then
+				--print(222)
+				player.AddSkillRecipe(dwRecipeID, dwRecipeLevel)
+				if not bFree then 
+					player.AddExamPrint( - examprint, string.format("%d", dwRecipeID))
+				end
+				--print("++++++++++++", dwRecipeID)
+				LearnMirrorRecipe(player, dwRecipeID, dwRecipeLevel)
+				--同时学习奇穴中换技能的秘籍（马下战八方等）
+				--满级新手指引任务秘籍相关教学
+				if tQuestLise[player.dwForceID] then
+					for _, tb in pairs(tQuestLise[player.dwForceID]) do
+						local nQuestIndex = player.GetQuestIndex(tb[1])
+						local nQuestPhase = player.GetQuestPhase(tb[1])
+						if nQuestIndex and nQuestPhase == 1 then
+							local nReciper = tb[2]
+							if nReciper == dwRecipeID then
+								player.SetQuestValue(nQuestIndex, tb[3], 1)
+								break
+							end
+						end
+					end
+				end
+			end
+		end
+		--player.AddSkillRecipe(dwRecipeID, dwRecipeLevel)
+		--player.AddExamPrint(-examprint)
+	else
+		return
+	end
+
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

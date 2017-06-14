@@ -1,0 +1,507 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/Include/BattleField.lh
+-- 更新时间:	2017/5/15 19:37:44
+-- 更新用户:	qingfupei
+-- 脚本说明:
+----------------------------------------------------------------------<
+Include("scripts/Include/TodayZhanChang_Refresh.lua")
+Include("scripts/Map/好友系统/include/FriendPraise_data.lua")
+Include("scripts/Include/Time.lh")
+
+--字符串优化
+szHQ_ZC = GetEditorString(0, 2388)
+szER_ZC = GetEditorString(0, 5728)
+szHqFail_ZC = GetEditorString(1, 9387)
+szHqWin_ZC = GetEditorString(1, 6819)
+szErFail_ZC = GetEditorString(1, 9388)
+szErWin_ZC = GetEditorString(1, 6818)
+szTie_ZC = GetEditorString(1, 6813)
+szLazyMan_ZC = GetEditorString(11, 6326)
+szFirstWin_ZC = GetEditorString(5, 4377) 
+szExWeiWang_ZC = GetEditorString(1, 9381)
+szExTitlePoint_ZC = GetEditorString(1, 9385)
+szNeedCamp_ZC = GetEditorString(1, 9379)
+szYouKF_ZC = GetEditorString(6, 1814)
+--每日首胜标记buff
+local buffFirstWinID_ZC = 11962
+
+tBattleFunction = {}
+tBattleFunction.nBattlePlayerCount = 0
+tBattleFunction.dwUpdateTime = 0
+--[[
+local BF_ACT_LIST = { -- [activityID] = 人数
+	[70] =  15, -- 神农洇
+	[71] = 25, -- 九宫棋谷
+	[72] = 10, -- 70云湖天池
+	[75] = 25, -- 丝绸之路
+	[121] = 25, -- 三国古战场
+	--[84] = 25, -- 英雄珍珑棋谷
+	[246] = 15, -- 浮香丘
+}
+--]]
+local BF_ACT_LIST  = { -- [mapid] = 人数
+	[38] = 15, -- 神农洇
+	[48] = 25, -- 九宫棋谷
+	[52] = 10, -- 70云湖天池
+	[50] = 25, -- 丝绸之路
+	[135] = 15, -- 三国古战场
+	[186] = 15, -- 浮香丘
+}
+-- 战场匹配到
+function OnJoinBattlefield(player, nJoinCount)
+--print("OnJoinBattlefield", player.szName, nJoinCount)
+	local nMaxCount = tBattleFunction.GetFieldPlayerCount()
+	--print("OnJoinBattlefield", nMaxCount)
+--	nMaxCount = 1
+	if nJoinCount >= nMaxCount then
+		player.AddBuff(0, 99, 12015, 1) -- 40S检测一次 不在战场就删除buff
+	end
+end
+
+function tBattleFunction.GetFieldPlayerCount()
+
+	local tList = GetToday_ZhanchangList()
+	local nMapID = 52 -- -- 70云湖天池
+	for k, v in pairs(tList) do
+		if v then
+			nMapID = k
+			break 
+		end
+	end
+	return BF_ACT_LIST[nMapID] or 10
+--[[
+	local dwCurTime = GetCurrentTime()
+	local bUpdate = false
+	if tBattleFunction.dwUpdateTime == 0 then
+		bUpdate = true
+	else
+		local tOld = TimeToDate( tBattleFunction.dwUpdateTime )
+	--	local tNow = TimeToDate(tBattleFunction.dwUpdateTime )
+		if tOld.hour < 1 then
+			local dwUpdateTime = DateToTime(tOld.year, tOld.month, tOld.day, 1, 0, 5)
+			if dwCurTime >= dwUpdateTime then
+				bUpdate = true
+			end
+		else
+			local dwUpdateTime = DateToTime(tOld.year, tOld.month, tOld.day, 1, 0, 5) + 3600 * 24
+			if dwCurTime >= dwUpdateTime then
+				bUpdate = true
+			end
+		end
+	end
+
+	if bUpdate then
+		tBattleFunction.dwUpdateTime = dwCurTime
+		tBattleFunction.nBattlePlayerCount = 0
+		for k, v in pairs(BF_ACT_LIST) do 
+			local StateInfo = GetActivityState(k)
+			if StateInfo then
+				if StateInfo == ACTIVITY_STATE.NORMAL_ON or StateInfo == ACTIVITY_STATE.RECOVER_ON then
+					tBattleFunction.nBattlePlayerCount = v
+					break
+				end
+			end
+		end
+	end
+	
+	return  tBattleFunction.nBattlePlayerCount
+	--]]	
+end
+-- 战场结束标准流程。包括计分、奖励、关闭战场。
+function CloseBattleField(dwPQTemplateID, dwPQID, BattleResult, AwardFormula, parameter1)
+	local pq = GetPQ(dwPQID)
+	if not pq then
+		return
+	end
+	local scene = pq.GetScene()
+	if not scene then
+		return
+	end
+	local tResult = BattleResult(pq, scene)
+	local tStatisticsTable = pq.GetStatisticsTable()
+	local tWinPlayer = {}
+	for k, v in pairs(tStatisticsTable) do
+		local player = GetPlayer(k)
+		if player then
+			--local tPlayerPQID = player.GetPQIDTable(dwPQTemplateID)
+			--if tPlayerPQID then
+			--for k1, v1 in pairs(tPlayerPQID) do
+			--if v1["PQID"] == dwPQID then
+			-- 玩家死亡处理
+			--if player.nMoveState == MOVE_STATE.ON_DEATH then
+			--player.Revive()
+			--end
+			--player.AddBuff(0, 99, 772, 1, 1, 480)
+			--AwardFormula(pq, player, tResult[player.nBattleFieldSide + 1], v, parameter1)
+			--break
+			--end
+			--end
+			--end
+			if player.IsPQExist(dwPQTemplateID, dwPQID) then		--PQ新方法
+				if player.nMoveState == MOVE_STATE.ON_DEATH then
+					player.Revive()
+				end
+				player.AddBuff(0, 99, 772, 1, 1, 480)
+				AwardFormula(pq, player, tResult[player.nBattleFieldSide + 1], v, parameter1)
+			end
+			if tResult[player.nBattleFieldSide + 1] == 1 then
+				--	local player
+				table.insert(tWinPlayer, player)
+			end
+		end
+	end
+	
+	-- 点赞
+	local player = tWinPlayer[1]
+	if player.IsInParty()  then
+		local playerLeader = GetPlayer(player.GetPartyLeaderID())
+		if playerLeader and playerLeader.GetBuff(12015, 1) then
+			AddBePraisedBuff(playerLeader.dwID, tFriendPraiseData.tFriendPraiseType.eWarLeader)
+			local tPraiseInfo = { {dwID = playerLeader.dwID, szName = playerLeader.szName, dwForceID = playerLeader.dwForceID, nRoleType = playerLeader.nRoleType, dwMiniAvatarID = playerLeader.dwMiniAvatarID} }
+			for i = 1, #tWinPlayer do
+				--if tWinPlayer[i].dwID ~= playerLeader.dwID then 
+					AddPraiseBuff(tWinPlayer[i].dwID, tFriendPraiseData.tFriendPraiseType.eWarLeader)--BOTTOMCENTER
+					RemoteCallToClient(tWinPlayer[i].dwID, "CallUIGlobalFunction", "OpenFriendPraise", tPraiseInfo, tFriendPraiseData.tFriendPraiseType.eWarLeader, false, {s = "BOTTOMCENTER", r = "BOTTOMCENTER", x = 0, y = -15
+}, 25 * 1000)
+				--end
+			end
+		end
+	end
+	
+	BattleFieldEnd(pq.dwOwnerID1, pq.dwOwnerID2)
+end
+
+-- 战场强退加入黑名单
+function OnAddBattlefieldBlackList(player)
+	if not player.GetBuff(5982, 1) then
+		player.AddBuff(0, 99, 5982, 1, 30)
+	end
+end
+
+-- 计算这个首胜buff要加多久
+function GetBuffFirstWinLife()
+	local nHour = GetCurrentHour()
+	local nLife = 31 - nHour	--我将第二天的7点标记为31:00
+	if nLife > 24 then	--凌晨0:00之后打战场，时间要多减掉24
+		nLife = nLife - 24
+	end
+	return nLife * 60	--首胜buff一分钟一跳，小时转换为buff跳数，反正战场中午12点才开，误差点跳数也无所谓
+end
+
+--检查是否战场首胜，是的话给标记并发奖励
+function CheckIfDailyFirstWin(player)
+	if not player.GetBuff(buffFirstWinID_ZC, 1) then
+		player.SendSystemMessage(szFirstWin_ZC)--"今天，你是首次获得战场胜利，可额外获得奖励。"
+		player.SendSystemMessage(szExWeiWang_ZC .. 3000)--"额外获得威望奖励："
+		player.SendSystemMessage(szExTitlePoint_ZC .. 1000)--"额外获得战阶积分："
+		-- 额外奖励
+		player.AddPrestige(3000, "BATTLE0")
+		player.AddTitlePoint(1000, "BATTLE0")
+		--添加首胜buff标记
+		local nLifeCount = GetBuffFirstWinLife()
+		player.AddBuff(0, 99, buffFirstWinID_ZC, 1, nLifeCount)
+		ActivityMark(player, 4122)
+		SendFirstWinPrestigeReminSpace(player)
+	end
+end
+
+local tAchivment = {	--[战场pqID]={伤害第一成就ID，治疗第一成就ID}
+	[8] = {203, 203}, --神农洇
+	[18] = {2483, 2483}, --丝绸
+	[15] = {187, 188}, --70级云湖
+	[38] = {4217, 4217}, --浮香丘
+	[12] = {1223, 1224}, --九宫棋局
+	[30] = {215, 215}, --三国古战场
+}
+function CheckHarmThreatAchivement(dwPQTemplateID, dwPQID)
+	if not tAchivment[dwPQTemplateID] then	--传过来的战场PQ模板ID不存在
+		return
+	end
+
+	local pq = GetPQ(dwPQID)
+	-- 找出伤害、治疗第一人。
+	if pq then
+		local tStatisticsTable = pq.GetStatisticsTable()
+		local nHarmFirst = 0
+		local nTreatFirst = 0
+		local dwHarmFirstPlayerID = 0
+		local dwTreatFirstPlayerID = 0
+		for k, v in pairs(tStatisticsTable) do
+			local player = GetPlayer(k)
+			if player then
+				local nHarm = v[PQ_STATISTICS_INDEX.HARM_OUTPUT]
+				local nTreat = v[PQ_STATISTICS_INDEX.TREAT_OUTPUT]
+
+				if nHarm > 0 then
+					player.SetFellowshipRankDataMaximum(5, nHarm)
+					if nHarm >= nTreat then
+						if IsRemotePlayer(player.dwID) == true then
+							player.SendSystemMessage(szYouKF_ZC)--"当前正在跨服状态，退出后可查看好友排名。"
+						else
+							RemoteCallToClient(player.dwID, "CallUIGlobalFunction", "OnGetFriendEffortCheck", 5)
+						end
+					end
+				end
+
+				if nTreat > 0 then
+					player.SetFellowshipRankDataMaximum(6, nTreat)
+					if nTreat > nHarm then
+						if IsRemotePlayer(player.dwID) == true then
+							player.SendSystemMessage(szYouKF_ZC)--"当前正在跨服状态，退出后可查看好友排名。"
+						else
+							RemoteCallToClient(player.dwID, "CallUIGlobalFunction", "OnGetFriendEffortCheck", 6)
+						end
+					end
+				end
+
+				--九宫棋局额外处理一些成就
+				if dwPQTemplateID == 12 then
+					local nKillMember = v[PQ_STATISTICS_INDEX.DECAPITATE_COUNT]
+					--一场战斗中击杀人头数达到15个，则给予成就
+					if nKillMember >= 15 then
+						player.AcquireAchievement (1228)
+					end
+
+					--在一场战斗中，在不重伤的情况下亲手击杀20个玩家
+					if nKillMember >= 20 and v[PQ_STATISTICS_INDEX.DEATH_COUNT] == 0 then
+						player.AcquireAchievement (1230)
+					end
+
+					--在一场战斗中我方打开了7个或以上的大宝箱
+					if v[PQ_STATISTICS_INDEX.SPECIAL_OP_1] >= 7 then
+						player.AcquireAchievement (1229)
+					end
+
+					--在一场战斗中拾取了15个或以上的得分豆子
+					if v[PQ_STATISTICS_INDEX.SPECIAL_OP_2] >= 15 then
+						player.AcquireAchievement (1227)
+					end
+				end
+			end
+			if v[PQ_STATISTICS_INDEX.HARM_OUTPUT] >= nHarmFirst then
+				nHarmFirst = v[PQ_STATISTICS_INDEX.HARM_OUTPUT]
+				dwHarmFirstPlayerID = k
+			end
+			if v[PQ_STATISTICS_INDEX.TREAT_OUTPUT] >= nTreatFirst then
+				nTreatFirst = v[PQ_STATISTICS_INDEX.TREAT_OUTPUT]
+				dwTreatFirstPlayerID = k
+			end
+		end
+		-- 如果玩家在战场中输出第一则获得成就。
+		local player = GetPlayer(dwHarmFirstPlayerID)
+		if player and player.IsPQExist(dwPQTemplateID, dwPQID) then		--PQ新方法
+			player.AcquireAchievement (tAchivment[dwPQTemplateID][1])
+		end
+		-- 如果玩家在战场中治疗第一则获得成就
+		player = GetPlayer(dwTreatFirstPlayerID)
+		if player and player.IsPQExist(dwPQTemplateID, dwPQID) then		--PQ新方法
+			player.AcquireAchievement (tAchivment[dwPQTemplateID][2])
+		end
+	end
+end
+
+
+
+tBattleFunction.tQuest = {
+	[52] = {--云湖
+		{16448, },
+		{16449, 16451, },
+	},
+	[38] = {--神农
+		{16465},
+		{16466, 16467, },
+	},
+	[186] = {--冷香丘
+		{16452, 16471, 16454, },
+		{16453},
+	},
+	[135] = {--三国
+		{16455, 16472},
+		{16457},
+	},
+	[48] = {--九宫
+		{16458},
+		{16459, 16460, },
+	},
+	[50] = {--丝绸
+		{16462, 16473, 16461, },
+		{16464},
+	},
+}
+
+-- 7点的BUFF时间到和每次过图时调用
+function tBattleFunction.CancelQuest(player)
+	local buff = player.GetBuff(11614, 1)
+	if buff then
+		return
+	end
+	for _, tQuestlist in pairs(tBattleFunction.tQuest) do
+		for _, tQuestID in pairs(tQuestlist) do
+			for _, nQuestID in pairs(tQuestID) do
+				local nQuestIndex = player.GetQuestIndex(nQuestID)
+				if nQuestIndex then
+					player.CancelQuest(nQuestIndex)
+				end
+			end
+		end
+	end
+end
+-- 随机接取战场任务，过图时调用
+function tBattleFunction.AddRandomQuest(player)
+	local tPlayerQuest = tBattleFunction.tQuest[player.GetMapID()]
+	if not tPlayerQuest then
+		return
+	end
+
+	if player.GetBuff(11614, 1) then
+		return
+	end
+	local nQ1 = Random(#tPlayerQuest[1])
+	local nQ2 = Random(#tPlayerQuest[2])
+
+	player.AcceptQuest(1, 1, tPlayerQuest[1][nQ1], 1)
+	player.AcceptQuest(1, 1, tPlayerQuest[2][nQ2], 1)
+	local dwTime = OnGetNextSevenPassTime()
+	player.AddBuff(0, 99, 11614, 1, math.ceil(dwTime / 3600))
+	local buff = player.GetBuff(11614, 1)
+	if buff then
+		buff.nCustomValue = player.GetMapID()--没用了
+	end
+end
+
+-- 击杀/协杀计数任务更新
+function tBattleFunction.UpdateQuestKillCount(pq, nQuestID, nNeedCount)
+	--print("----UpdateQuestKillCount-------pq", pq, nQuestID, nNeedCount)
+	nQuestID = nQuestID or 0
+	nNeedCount = nNeedCount or 0
+	if not pq then
+		return
+	end
+	local tStatisticsTable = pq.GetStatisticsTable()
+	for dwID, v in pairs(tStatisticsTable) do
+		local player = GetPlayer(dwID)
+		if player then
+			local nKillCount = v[PQ_STATISTICS_INDEX.KILL_COUNT]
+			local nHelpCount = v[PQ_STATISTICS_INDEX.DECAPITATE_COUNT]
+			local nCurCount = nKillCount + nHelpCount
+			local nQuestIdx = player.GetQuestIndex(nQuestID)
+			if nQuestIdx then
+				local nCount = player.GetQuestValue(nQuestIdx, 0)
+				local nPhaseCount = player.GetQuestValue(nQuestIdx, 1)
+				if nCurCount > nPhaseCount then
+					-- nCount = math.min(nCount + nCurCount - nPhaseCount, nNeedCount)
+					nCount = math.min(nCount + 1, nNeedCount) -- 坑爹，击杀时协助击杀也计数。。
+					player.SetQuestValue(nQuestIdx, 0, nCount)
+					player.SetQuestValue(nQuestIdx, 1, nCurCount)
+					if nCount >= nNeedCount then
+						player.ForceFinishQuest(nQuestID)
+					end
+				end
+			end
+		end
+	end
+end
+
+-- 重置某任务的某VALUE值
+function tBattleFunction.ClearQuestValue(pq, nQuestID, nValueIdx)
+	if not pq then
+		return
+	end
+	local tStatisticsTable = pq.GetStatisticsTable()
+	for dwID, v in pairs(tStatisticsTable) do
+		local player = GetPlayer(dwID)
+		if player then
+			local nQuestIdx = player.GetQuestIndex(nQuestID)
+			if nQuestIdx then
+				player.SetQuestValue(nQuestIdx, nValueIdx, 0)
+			end
+		end
+	end
+end
+
+-- 设置nBattleFieldSide方的任务变量，nBattleFieldSide为nil表示双方都设
+function tBattleFunction.SetQuestValue(pq, nQuestID, nValueIdx, nValue, nFinishValue, nBattleFieldSide)
+	if not pq then
+		return
+	end
+	local tStatisticsTable = pq.GetStatisticsTable()
+	for dwID, v in pairs(tStatisticsTable) do
+		local player = GetPlayer(dwID)
+		if player then
+			local nQuestIdx = player.GetQuestIndex(nQuestID)
+			if nQuestIdx then
+				if not nBattleFieldSide or player.nBattleFieldSide == nBattleFieldSide then
+					player.SetQuestValue(nQuestIdx, nValueIdx, nValue)
+					if nValue >= nFinishValue then
+						player.ForceFinishQuest(nQuestID)
+					end
+				end
+			end
+		end
+	end
+end
+
+function tBattleFunction.AddPlayerQuestValue(player, nQuestID, nValueIdx, nAddValue, nFinishValue)
+	if not player then
+		return
+	end
+
+	local nQuestIdx = player.GetQuestIndex(nQuestID)
+	if nQuestIdx then
+		local nQuestValue = math.min(player.GetQuestValue(nQuestIdx, nValueIdx) + nAddValue, nFinishValue)
+		player.SetQuestValue(nQuestIdx, nValueIdx, nQuestValue)
+		if nFinishValue <= nQuestValue then
+			player.ForceFinishQuest(nQuestID)
+		end
+	end
+end
+
+function tBattleFunction.SetReachMaxPlayer(scene, nValueName, nMaxPlayerCount, player)
+	if player.GetBuff(11696, 1) then
+		return
+	end
+	if not scene.GetCustomBitValue(nValueName, player.nCamp) then
+		local nPlayerCount = scene.GetCustomInteger1(nValueName + player.nCamp) + 1
+		scene.SetCustomInteger1(nValueName + player.nCamp, nPlayerCount)
+		if nPlayerCount > nMaxPlayerCount then
+			scene.SetCustomBitValue(nValueName, player.nCamp, true)
+		end
+	end
+end
+
+function tBattleFunction.SetSubstituteFlag(player, nValueName)
+	local scene = player.GetScene()
+	if player.GetBuff(11696, 1) then
+		return
+	end
+	player.AddBuff(0, 99, 11696, 1)
+	if scene.GetCustomBitValue(nValueName, player.nCamp) then		
+		local buff = player.GetBuff(11696, 1)
+		if buff then
+			buff.nCustomValue = 1
+		end
+	end
+end
+
+function tBattleFunction.GiveSubstituteReward(player)
+	local buff = player.GetBuff(11696, 1)
+	local buffCount = player.GetBuff(11701, 1)
+	if buffCount and buffCount.nStackNum >= 3 then
+		return
+	end
+
+	if buff and buff.nCustomValue == 1 then
+		player.AddTitlePoint(100)
+		player.AddPrestige(500)
+		player.AddBuff(0, 99, 11701, 1, math.ceil(OnGetNextSevenPassTime() / 3600))
+	end
+end
+
+--给所有玩家禁止切换心法的buff
+function tBattleFunction.ForbidAllPlayerSwitchKungfu(player)
+	local buffLimit = player.GetBuff(12009, 1)
+	if not buffLimit then
+		player.AddBuff(0, 99, 12009, 1)	--默认30分钟
+	end	
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,4 @@
+ID	szName	szImagePath	szAnchorS	szAnchorR	nOffsetX	nOffsetY	nSizeX	nSizeY
+0	Common	ui/image/common/number_	CENTER	CENTER	0	-150	0	0
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

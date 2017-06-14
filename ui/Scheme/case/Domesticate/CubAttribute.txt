@@ -1,0 +1,11 @@
+Index	ID	Name	Value	WillChange
+1	atMoveSpeedPercent	移动速度	{D0>0?提高~D0*100/1024~\%:降低~D0*100/1024~\%}	0
+2	atEnableDoubleRide	双人同骑	？	0
+3	atHorseCanSwim	载人凫水	{D0=1?可:不可}	0
+4	atAddSprintPowerRevive	气力值恢复	提高{D0/20*3*D4/D5}点	1
+5	atAddHorseSprintPowerMax	马术气力值上限	提高{D0/100*D4/D5}点	1
+6	atAddHorseSprintPowerRevive	马术气力值恢复	提高{D0/20*3*D4/D5}点	1
+7	atAddHorseSprintPowerCost	马术气力值消耗	降低{-D0/19*3*D4/D5}点	1
+8	atDropDefence	抗摔系数	提高{D0*D4/D5}点	1
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

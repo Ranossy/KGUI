@@ -1,0 +1,668 @@
+Include("scripts/Include/String.lh")
+Include("scripts/Include/GlobalStrings.ls")
+
+--场景头文件，地图传送
+--说明：此表为每个场景的每个出口的从其他场景传送过来的时候的坐标点信息。
+--【洛阳东北】TO【天策、少林、金水】 前边表示这个点的所属出口位置 场景名+方位。后边的TO【xxx】表示此出口可以通往的地方列举，以作查询对应使用
+SWITCH_MAP_COORDINATE = {
+	DaoxiangcunDong 	= {nX = 0, nY = 0, nZ = 0, nDir = 0,},
+	
+	LuoyangDongbei 		= {nX = 86988, nY = 95165, nZ = 1075264, nDir = 163,},		--【洛阳东北】TO【天策、少林、金水】
+	LuoyangNan 			= {nX = 34945, nY = 5800, nZ = 1071616, nDir = 31,},				--【洛阳南】TO【洛道】
+	LuoyangXi 			= {nX = 7130, nY = 48821, nZ = 1054272, nDir = 12,},				--【洛阳西】TO【枫华谷】
+
+	YangzhouXi 			= {nX = 18689, nY = 55711, nZ = 1048896, nDir = 8,},   	 		--【扬州西】TO【金水，洛道】
+	YangzhouDongbei 	= {nX = 76257, nY = 55672, nZ = 1051904, nDir = 65,},			--【扬州东北】TO【七秀】
+	YangzhouDongnan 	= {nX = 87782, nY = 13870, nZ = 1049280, nDir = 60,},			--【扬州东南】TO【寇岛】
+
+	ChanganXi 			= {nX = 6498, nY = 86080, nZ = 1076416, nDir = 125,},			--【长安西】TO【龙门荒漠】
+	ChanganDong 		= {nX = 86548, nY = 70095, nZ = 1064896, nDir = 127,},			--【长安东】TO【枫华谷、纯阳】
+	ChanganNan 			= {nX = 45931, nY = 6229, nZ = 1064832, nDir = 37,},				--【长安南】TO【万花】
+
+	ChunyangNan 		= {nX = 48058, nY = 2755, nZ = 1103674, nDir = 125,},			--【纯阳南】TO【长安，长安·战乱（80+）】
+
+	TianceNan 			= {nX = 57080, nY = 4022, nZ = 1044786, nDir = 39,},				--【天策南】TO【洛阳】
+
+	WanhuaNan 			= {nX = 85839, nY = 76493, nZ = 1170436, nDir = 191,},			--【万花南】TO【长安，长安·战乱（80+）】
+
+	ShaolinNan 			= {nX = 5572, nY = 15308, nZ = 1048192, nDir = 239,},    		--【少林南】TO【洛阳，洛阳·战乱（80+）】
+	
+	QixiuZhongyan		= {nX = 23022, nY = 9141, nZ = 1056979, nDir = 63,},
+
+	LuodaoXibei 		= {nX = 41524, nY = 85991, nZ = 1076288, nDir = 203,},			--【洛道西北】TO【洛阳，洛阳·战乱（80+）】
+	LuodaoDongbei 		= {nX = 42757, nY = 86134, nZ = 1077376, nDir = 163,},			--【洛道东北】TO【扬州】
+	LuodaoNan			= {nX = 3233, nY = 11067, nZ = 1055872, nDir = 32,},				--【洛道南】TO【南屏山】
+	LuodaoXinan			= {nX = 6568, nY = 3565, nZ = 1063808, nDir = 50,},				--【洛道西南】TO【巴陵县】
+	
+	JinshuizhenBei 		= {nX = 52152, nY = 85345, nZ = 1060288, nDir = 176,},     	--【金水镇北】TO【洛阳，洛阳·战乱（80+）】
+	JinshuizhenNan 		= {nX = 86198, nY = 5783, nZ = 1058304, nDir = 114,},    	--【金水镇南】TO【扬州】
+	
+	FenghuaguDong       = {nX = 80731, nY = 50602, nZ = 1083008, nDir = 172,},     	--【枫华谷东】TO【洛阳】
+	FenghuaguXi         = {nX = 5641, nY = 37414, nZ = 1082304, nDir = 253,},    		--【枫华谷西】TO【长安】
+	FenghuaguNan		= {nX = 44592, nY = 10729, nZ = 1120192, nDir = 134,},    		--【枫华谷南】TO【荻花宫】
+	
+	DihuagongQianshan   = {nX = 18349, nY = 3398, nZ = 1114048, nDir = 198,},			--枫华谷
+	
+	LongmenhuangmoNan 	= {nX = 90735, nY = 7631, nZ = 1055430, nDir = 127,},			--【龙门荒漠南】TO【长安，长安·战乱（80+）】
+	LongmenhuangmoBei	= {nX = 7046, nY = 91513, nZ = 1051840, nDir = 210},				--【龙门荒漠北】TO【昆仑】
+	
+	NanpingshanDongbei	= {nX = 95655, nY = 78958, nZ = 1129664, nDir = 173},			--【南屏山东北】TO【洛道】
+	NanpingshanNan		= {nX = 56511, nY = 7746, nZ = 1097472, nDir = 77},				--【南屏山南】TO【浩气盟】
+	
+	HaoqimengXibei    	= {nX = 8546, nY = 95013, nZ = 1059120, nDir = 226},				--【浩气盟西北】TO【南屏山】
+	
+	ErenguDongnan		= {nX = 39647, nY = 7545, nZ = 1050176, nDir = 67},				--【恶人谷东南】TO【昆仑】
+	
+	KunlunNan			= {nX = 59410, nY = 2318, nZ = 1054208, nDir = 87},				--【昆仑南】TO【龙门荒漠】、【融天岭】北、【马嵬驿】西
+	KunlunXibei			= {nX = 5144, nY = 77572, nZ = 1096704, nDir = 221},				--【昆仑西北】TO【恶人谷】
+	
+	QutangxiaBei		= {nX = 98498, nY = 127161, nZ = 1154423, nDir = 139},			--【瞿塘峡北】TO【巴陵县】
+	
+	BalingxianXi		= {nX = 3694, nY = 50587, nZ = 1069312, nDir = 20},				--【巴陵县西】TO【瞿塘峡】、【苍山洱海】东北
+	BalingxianDong		= {nX = 91674, nY = 43271, nZ = 1064512, nDir = 148},			--【巴陵县东】TO【洛道】、
+    BalingxianNan		= {nX = 28263, nY = 6173, nZ = 1063448, nDir = 40},				--【巴陵县南】TO【南屏山】西
+
+	ZailaiZhen		= {nX = 48779, nY = 32588, nZ = 1049216, nDir = 217},				--再来镇
+	FengyuZhen		= {nX = 53758, nY = 23885, nZ = 1079936, nDir = 50},					--风雨镇
+	TianduZhen		= {nX = 28388, nY = 44808, nZ = 1063552, nDir = 67},					--天都镇
+	
+	Datangjianyu    = {nX = 24047, nY = 6041, nZ = 1063680, nDir = 35},   				--大唐监狱
+
+	FenghuaguZhanluanDong     = {nX = 87945, nY = 53416, nZ = 1093632, nDir = 135},	--【枫华谷·战乱东】TO【洛阳·战乱】
+	FenghuaguZhanluanXi       = {nX = 3927, nY = 37611, nZ = 1082432, nDir = 7 },		--【枫华谷·战乱西】TO【长安·战乱】   
+	
+	LuoyangZhanluanXi        	= {nX = 6375, nY = 48675, nZ = 1055996, nDir = 8},		--【洛阳·战乱西】TO【枫华谷·战乱】
+	LuoyangZhanluanNan 		= {nX = 37868, nY = 5678, nZ = 1071701, nDir = 64}, 		--【洛阳·战乱南】TO【洛道】
+	LuoyangZhanluanBei 		= {nX = 87939, nY = 96369, nZ = 1073190, nDir = 163}, 	--【洛阳·战乱北】TO【天策·战乱，少林，金水镇】
+	
+	ChanganZhanluanDong 		= {nX = 87443, nY = 69035, nZ = 1065984, nDir = 109},	--【长安·战乱东】TO【枫华谷·战乱、纯阳】
+	ChanganZhanluanNan			= {nX = 41837, nY = 3085, nZ = 1068288, nDir = 17}, 		--【长安·战乱南】TO【万花】
+	ChanganZhanluanXi			= {nX = 11352, nY = 84952, nZ = 1073280, nDir = 240}, 	--【长安·战乱西】TO【马嵬驿（80+），龙门】
+	ChanganZhanluanBei		= {nX = 45140, nY = 107042, nZ = 1061632, nDir = 220}, --【长安·战乱北】TO【内城南】
+	
+	ChangAnNeiChengNan                = {nX = 63162, nY = 19393, nZ = 1116928, nDir = 64}, --【内城南】TO【长安·战乱北】
+	BailongkouBei				={nX = 52702, nY = 126228, nZ = 1130560, nDir = 169},		--【白龙口北】TO【成都】
+	
+	ChengduBei 					= {nX = 124471, nY = 106460, nZ = 1115795, nDir = 166},	--【成都北】TO【白龙口，马嵬驿（80+）】
+	
+	TianceZhanluanXi 			= {nX = 3636, nY = 68060, nZ = 1074048, nDir = 0},		--【天策·战乱西】TO【洛阳·战乱】
+	
+	MaweiyiXi 					= {nX = 27778, nY = 38908, nZ = 1236992, nDir = 33}, 		--【马嵬驿西】TO【成都，白龙】、【昆仑】南
+	MaweiyiDong 				= {nX = 117422, nY = 22782, nZ = 1213696, nDir = 92}, --【马嵬驿东】TO【长安·战乱】
+	
+	GaibangNan					= {nX = 121558, nY = 21176, nZ = 1093888, nDir = 116}, --【丐帮】东南TO【巴陵】南
+	
+	NanPingShan_W				= {nX = 5969, nY = 26448, nZ = 1047424, nDir = 240},		-- 【南屏山】西 TO 【巴陵县】东、【苍山洱海】东北
+	QuTangXia_SW				= {nX = 9327, nY = 29654, nZ = 1119360, nDir = 46},		-- 【瞿塘峡】西南 TO 【白龙口】西南
+	BaiLongKou_SW				= {nX = 8892, nY = 7404, nZ = 1098440, nDir = 46},		-- 【白龙口】西南 TO【瞿塘峡】西南、【无量山】东
+	
+	WuLiangShan_E				= {nX = 124120, nY = 55852, nZ = 1077120, nDir = 168},		-- 【无量山】东 TO 【白龙口】西南、【苍山洱海】南
+	WuLiangShan_W				= {nX = 21592, nY = 63562, nZ = 1053883, nDir = 90},		-- 【无量山】西 TO 【五毒】南
+	
+	WuDu_S				= {nX = 63729, nY = 8013, nZ = 1088629, nDir = 75},		-- 【五毒】南 TO 【无量山】西
+	WuDu_W				= {nX = 16972, nY = 68837, nZ = 1072576, nDir = 245},		-- 【五毒】西 TO 【成都】南、【黑龙沼】西南
+	
+	RongTianLing_N				= {nX = 68571, nY = 123571, nZ = 1203712, nDir = 169},		-- 【融天岭】北 TO 【成都】西、【昆仑】南
+	RongTianLing_NE				= {nX = 124607, nY = 101104, nZ = 1185728, nDir = 128},		-- 【融天岭】东北 TO 【黑龙沼】北
+	
+	HeiLongZhao_N				= {nX = 65702, nY = 121736, nZ = 1058496, nDir = 215},		-- 【黑龙沼】北 TO 【融天岭】东北
+	HeiLongZhao_SW				= {nX = 26855, nY = 5935, nZ = 1117952, nDir = 36},		-- 【黑龙沼】西南 TO 【五毒】西
+	
+	CangShanErHai_NE				= {nX = 118222, nY = 113393, nZ = 1101376, nDir = 143},		-- 【苍山洱海】东北 TO 【巴陵县】西、【南屏山】西
+	CangShanErHai_S				= {nX = 84180, nY = 10647, nZ = 1059840, nDir = 104},		-- 【苍山洱海】南 TO 【无量山】东
+	
+	ChengDu_S				= {nX = 79413, nY = 4984, nZ = 1054336, nDir = 88},		-- 【成都】南 TO 【五毒】西、【唐门】东
+	ChengDu_W				= {nX = 7934, nY = 68578, nZ = 1098099, nDir = 233},		-- 【成都】西 TO 【融天岭】北
+	
+	TangMen_E				= {nX = 123774, nY = 83399, nZ = 1104384, nDir = 156},		-- 【唐门】东 TO 【成都】南
+	-- TangMen_S				= {nX = 60482, nY = 12221, nZ = 1068992, nDir = 58},		-- 【唐门】南 TO 【苍山洱海】东北
+	
+	MingJiao_SW				= {nX = 8728, nY = 7650, nZ = 1104832, nDir = 0},		-- 【明教】西南 TO 【龙门荒漠】西北
+	
+	TaiYuan_S = {nX = 43875, nY = 6598, nZ = 1107328, nDir = 55, }, --【太原南】TO【战乱洛阳北】
+	TaiYuan_N = {nX = 70714, nY = 116879, nZ = 1116608, nDir = 119, }, --【太原北】TO【苍云南】
+	CangYun_S = {nX = 37533, nY = 4758, nZ = 1127104, nDir = 63, }, --【苍云南】TO【太原北】我取的点，不服可以改，不用告诉我。by：徐烔
+}
+
+SWITCH_MAP_CONNECTION = {
+	--扬州
+	yangzhou = {
+		szName = GLOBAL_MAP_NAME.yangzhou,
+		nMapID = 6,
+		connection = {
+			jinshuizhen 	= "JinshuizhenNan",
+			luodao			= "LuodaoDongbei",
+			koudao			= "",
+			qixiu			= "QixiuZhongyan",
+			shaolin			= "ShaolinNan",
+			wanhua			= "WanhuaNan",
+			chunyang		= "ChunyangNan",
+			tiance 			= "TianceNan",
+		},
+	},
+	--长安
+	changan = {
+		szName = GLOBAL_MAP_NAME.changan,
+		nMapID = 15,
+		nMaxLevel = 79,--80级以及以上,不可见其进入选项
+		connection = {
+			wanhua			= "WanhuaNan",
+			chunyang		= "ChunyangNan",
+			longmenhuangmo = "LongmenhuangmoNan",
+			fenghuagu		 = "FenghuaguXi", 							--传送 枫华谷
+			fenghuaguzhanluan = "FenghuaguZhanluanXi", 				--传送 枫华谷战乱
+			qixiu			= "QixiuZhongyan",							--?
+			shaolin			= "ShaolinNan",							--?
+			tiance			 = "TianceNan",							--?
+			maweiyi 		= "MaweiyiDong",							--传送 马嵬驿
+		},
+	},
+	--洛阳
+	luoyang = {
+		szName = GLOBAL_MAP_NAME.luoyang,
+		nMapID = 8,
+		nMaxLevel = 79,--80级以及以上,不可见其进入选项
+		connection = {
+			luodao			= "LuodaoXibei",
+			jinshuizhen		= "JinshuizhenBei",
+			tiance 			= "TianceNan",								--传送 天策
+			tiancezhanluan	= "TianceZhanluanXi",						--传送 天策战乱
+			shaolin			= "ShaolinNan",
+			fenghuagu 		= "FenghuaguDong",							--传送 枫华谷
+			fenghuaguzhanluan = "FenghuaguZhanluanDong",				--传送 枫华谷战乱
+			qixiu			= "QixiuZhongyan",--?
+			wanhua			= "WanhuaNan",--?
+			chunyang		= "ChunyangNan",--?
+			datangjianyu		= "Datangjianyu",
+		},
+	},
+	--洛道
+	luodao = {
+		szName = GLOBAL_MAP_NAME.luodao,
+		nMapID = 9,
+		connection = {
+			luoyang			 = "LuoyangNan",					--传送 洛阳
+			luoyangzhanluan = "LuoyangZhanluanNan",			--传送 洛阳战乱
+			yangzhou		= "YangzhouXi",
+			nanpingshan		= "NanpingshanDongbei",
+			balingxian		= "BalingxianDong",
+		},
+	},
+	--少林
+	shaolin = {
+		szName = GLOBAL_MAP_NAME.shaolin,
+		nMapID = 5,
+		connection = {
+			luoyang 			= "LuoyangDongbei",			--传送 洛阳
+			luoyangzhanluan 	= "LuoyangZhanluanBei",		--传送 洛阳战乱
+		},
+	},
+	--金水镇
+	jinshuizhen = {
+		szName = GLOBAL_MAP_NAME.jinshuizhen,
+		nMapID = 13,
+		connection = {
+			luoyang				= "LuoyangDongbei",		--传送 洛阳
+			luoyangzhanluan = "LuoyangZhanluanBei", 		--传送 洛阳战乱
+			yangzhou 			= "YangzhouXi",			--传送 扬州
+		},
+	},
+	--枫华谷
+	fenghuagu = {
+		szName = GLOBAL_MAP_NAME.fenghuagu,
+		nMapID = 12,
+		nMaxLevel = 79,--80级以及以上,不可见其进入选项
+		connection = {
+			luoyang 			= "LuoyangXi",					--传送 洛阳
+			luoyangzhanluan 	= "LuoyangZhanluanXi", 		--传送 洛阳战乱
+			changan 			= "ChanganDong",				--传送 长安
+			changanzhanluan 	= "ChanganZhanluanDong",      --传送 长安战乱
+			dihuagong 			= "DihuagongQianshan",
+		},
+	},
+	--纯阳
+	chunyang = {
+		szName = GLOBAL_MAP_NAME.chunyang,
+		nMapID = 7,
+		connection = {
+			changan 			= "ChanganDong",			--传送 长安
+			changanzhanluan 	= "ChanganZhanluanDong",	--传送 长安战乱
+		},
+	},
+	--万花
+	wanhua = {
+		szName = GLOBAL_MAP_NAME.wanhua,
+		nMapID = 2,
+		connection = {
+			changan 			= "ChanganNan",			--传送 长安
+			changanzhanluan 	= "ChanganZhanluanNan",	--传送 长安战乱
+		},
+	},
+	--天策
+	tiance = {
+		szName = GLOBAL_MAP_NAME.tiance,
+		nMapID = 11,
+		nMaxLevel = 79,--80级以及以上,不可见其进入选项
+		connection = {
+			luoyang 			= 	"LuoyangDongbei",			--传送 洛阳	
+			luoyangzhanluan 	= 	"LuoyangZhanluanBei",		--传送 洛阳战乱
+		},
+	},
+	--七秀
+	qixiu = {
+		szName = GLOBAL_MAP_NAME.qixiu,
+		nMapID = 16,
+		connection = {
+		},
+	},
+	--龙门荒漠
+	longmenhuangmo = {
+		szName = GLOBAL_MAP_NAME.longmenhuangmo,
+		nMapID = 23,
+		connection = {
+			changan 			= "ChanganXi",			--传送 长安 
+			changanzhanluan 	= "ChanganZhanluanXi",	--传送 长安战乱
+			kunlun				= "KunlunNan",		
+			MingJiao				= "MingJiao_SW",				--【龙门荒漠】西北→【明教】西南
+		},
+	},
+	--荻花宫
+	dihuagong = {
+		szName = GLOBAL_MAP_NAME.dihuagong,
+		nMapID = 26,
+		connection = {
+			fenghuagu 		= "FenghuaguNan",
+		},
+	},
+	--南屏山
+	nanpingshan = {
+		szName = GLOBAL_MAP_NAME.nanpingshan,
+		nMapID = 22,
+		connection = {
+			luodao 			= "LuodaoNan",   			--  南屏山传送洛道
+			haoqimeng		= "HaoqimengXibei",		--	南屏山传送浩气盟
+			-- WuLiangShan 					= "WuLiangShan_E", 					--【南屏山】西→【无量山】东
+			balingxian	 	= "BalingxianNan",		-- 【南屏山】西→【巴陵县】南
+			CangShanErHai	 	= "CangShanErHai_NE",		--【南屏山】西→【苍山洱海】东北
+		},
+	},
+	--昆仑
+	kunlun = {
+		szName = GLOBAL_MAP_NAME.kunlun,
+		nMapID = 30,
+		connection = {
+			erengu 			= "ErenguDongnan",   		--  昆仑传送恶人谷
+			longmenhuangmo	= "LongmenhuangmoBei",		--	龙门荒漠传送昆仑
+			RongTianLing	 	= "RongTianLing_N",		-- 【昆仑】南→【融天岭】北
+			maweiyi	 	= "MaweiyiXi",		-- 【昆仑】南→【马嵬驿】西
+		},
+	},
+	--浩气盟
+	haoqimeng = {
+		szName = GLOBAL_MAP_NAME.haoqimeng,
+		nMapID = 25,
+		connection = {
+			nanpingshan 	= "NanpingshanNan",   	--  浩气盟传送南屏山
+		},
+	},
+	--恶人谷
+	erengu = {
+		szName = GLOBAL_MAP_NAME.erengu,
+		nMapID = 27,
+		connection = {
+			kunlun		 	= "KunlunXibei",   		--  恶人谷传送昆仑
+		},
+	},
+	--瞿塘峡
+	qutangxia = {
+		szName = GLOBAL_MAP_NAME.qutangxia,
+		nMapID = 35,
+		connection = {
+			balingxian	= "BalingxianXi",
+			bailongkou 					= "BaiLongKou_SW", 					--【瞿塘峡】西南→【白龙口】西南
+		},
+	},
+	--巴陵县
+	balingxian = {
+		szName = GLOBAL_MAP_NAME.balingxian,
+		nMapID = 21,
+		connection = {
+			qutangxia	 	= "QutangxiaBei",
+			luodao 			= "LuodaoXinan",
+			gaibang		 	= "GaibangNan",
+			nanpingshan	 	= "NanPingShan_W",		--【巴陵县】东→【南屏山】西
+			CangShanErHai	 	= "CangShanErHai_NE",		--【巴陵县】西→【苍山洱海】东北
+		},
+	},
+	-- 再来镇
+	zailaizhen = {
+		szName = GLOBAL_MAP_NAME.zailaizhen,
+		nMapID = 6,
+		connection = {
+			zailaizhen	 	= "ZailaiZhen",
+		},
+	},
+	-- 风雨镇
+	fengyuzhen = {
+		szName = GLOBAL_MAP_NAME.fengyuzhen,	
+		nMapID = 8,
+		connection = {
+			fengyuzhen	 	= "FengyuZhen",
+		},
+	},
+	-- 天都镇
+	tianduzhen = {
+		szName = GLOBAL_MAP_NAME.tianduzhen,
+		nMapID = 15,
+		connection = {
+			tianduzhen	 	= "TianduZhen",
+		},
+	},
+	-- 稻香村
+	daoxiangcun = {
+		szName = GLOBAL_MAP_NAME.daoxiangcun,
+		nMapID = 1,
+		connection = {
+			daoxiangcun	 	= "DaoxiangcunDong",
+		},
+	},
+	--大唐监狱
+	datangjianyu = {
+		szName = GLOBAL_MAP_NAME.datangjianyu,
+		nMapID = 152,
+		connection = {
+			luoyang 					= "LuoyangDongbei",
+			luoyangzhanluan			= "LuoyangZhanluanBei",		  --战乱洛阳
+		},
+	},
+	--成都
+	chengdu = {--
+		szName = GLOBAL_MAP_NAME.chengdu,
+		nMapID = 108,
+		connection = {
+			maweiyi 					= "MaweiyiXi", 					--传送 马嵬驿
+			bailongkou 					= "BailongkouBei", 				--传送 白龙口
+			WuDu 					= "WuDu_W", 					--【【成都】南→【五毒】西
+			TangMen 					= "TangMen_E", 				--【成都】南→【唐门】东
+			RongTianLing 					= "RongTianLing_N", 					--【成都】西→【融天岭】北
+		},
+	},
+	--白龙口
+	bailongkou = {--
+		szName = GLOBAL_MAP_NAME.bailongkou,
+		nMapID = 100,
+		connection = {
+			chengdu 					= "ChengduBei", 					--传送 成都	
+			qutangxia 					= "QuTangXia_SW", 					--【白龙口】西南→【瞿塘峡】西南
+			WuLiangShan 					= "WuLiangShan_E", 					--【白龙口】西南→【无量山】东
+		},
+	},
+	-- 无量山
+	
+	WuLiangShan = {
+		szName = GLOBAL_MAP_NAME.WuLiangShan,
+		nMapID = 101,
+		connection = {
+			-- nanpingshan					= "NanPingShan_W",			--【无量山】东→【南屏山】西
+			bailongkou				= "BaiLongKou_SW",			--【无量山】东→【白龙口】西南
+			WuDu						= "WuDu_S",				--【无量山】西→【五毒】南
+			CangShanErHai		= "CangShanErHai_S",		--【无量山】东→【苍山洱海】南
+		},
+	},
+	-- 五毒
+	WuDu = {
+		szName = GLOBAL_MAP_NAME.WuDu,
+		nMapID = 102,
+		connection = {
+			WuLiangShan						= "WuLiangShan_W",				--【五毒】南→【无量山】西
+			chengdu 			= "ChengDu_S", 	--【五毒】西→【成都】南
+			HeiLongZhao				= "HeiLongZhao_SW",				--【五毒】西→【黑龙沼】西南
+		},
+	},
+	-- 融天岭
+	RongTianLing = {
+		szName = GLOBAL_MAP_NAME.RongTianLing,
+		nMapID = 103,
+		connection = {
+			chengdu 			= "ChengDu_W", 	--【融天岭】北→【成都】西
+			HeiLongZhao				= "HeiLongZhao_N",				--【融天岭】东北→【黑龙沼】北
+			kunlun 			= "KunlunNan", 	--【融天岭】北→【昆仑】南
+		},
+	},
+	-- 黑龙沼
+	HeiLongZhao = {
+		szName = GLOBAL_MAP_NAME.HeiLongZhao,
+		nMapID = 104,
+		connection = {
+			RongTianLing 			= "RongTianLing_NE", 	--【黑龙沼】北→【融天岭】东北
+			WuDu				= "WuDu_W",				--【黑龙沼】西南→【五毒】西
+		},
+	},
+	-- 苍山洱海
+	CangShanErHai = {
+		szName = GLOBAL_MAP_NAME.CangShanErHai,
+		nMapID = 105,
+		connection = {
+			-- TangMen				= "TangMen_S",				--【苍山洱海】东北→【唐门】南
+			balingxian				= "BalingxianXi",				--【苍山洱海】东北→【巴陵县】西
+			nanpingshan				= "NanPingShan_W",				--【苍山洱海】东北→【南屏山】西
+			WuLiangShan				= "WuLiangShan_E",				--【苍山洱海】南→【无量山】东
+		},
+	},
+	-- 唐门
+	TangMen = {
+		szName = GLOBAL_MAP_NAME.TangMen,
+		nMapID = 122,
+		connection = {
+			chengdu 			= "ChengDu_S", 	--【唐门】东→【成都】南
+			-- CangShanErHai				= "CangShanErHai_NE",				--【唐门】南→【苍山洱海】东北
+		},
+	},
+	-- 明教
+	MingJiao = {
+		szName = GLOBAL_MAP_NAME.MingJiao,
+		nMapID = 150,
+		connection = {
+			longmenhuangmo				= "LongmenhuangmoBei",				--【明教】西南→【龙门荒漠】西北
+		},
+	},
+	--枫华谷·战乱
+	fenghuaguzhanluan = {
+		szName = GLOBAL_MAP_NAME.fenghuaguzhanluan,
+		nMapID = 139,
+		nMinLevel = 80,--最低80级才能看到进入项
+		connection = {
+			luoyangzhanluan			= "LuoyangZhanluanXi",		         		 --  枫华谷传送洛阳
+			changanzhanluan 	       	= "ChanganZhanluanDong",          		 --  枫华谷传送长安
+		},
+	},
+	--洛阳·战乱
+	luoyangzhanluan = {
+		szName = GLOBAL_MAP_NAME.luoyangzhanluan,
+		nMapID = 151,
+		nMinLevel = 80,--最低80级才能看到进入项
+		connection = {
+			luodao						= "LuodaoXibei",
+			jinshuizhen					= "JinshuizhenBei",			--传送 金水镇
+			tiancezhanluan				= "TianceZhanluanXi",			--传送 天策战乱
+			shaolin						= "ShaolinNan",				--传送 少林
+			fenghuaguzhanluan 			= "FenghuaguZhanluanDong", 	--传送 枫华谷战乱
+			datangjianyu				= "Datangjianyu",				--传送 大唐监狱
+			taiyuan = "TaiYuan_S",
+		},
+	},
+	--长安·战乱
+	changanzhanluan = {
+		szName = GLOBAL_MAP_NAME.changanzhanluan,
+		nMapID = 156,
+		nMinLevel = 80,--最低80级才能看到进入项	
+		connection = {
+			fenghuaguzhanluan 			= "FenghuaguZhanluanXi", 		--传送 战乱枫华谷
+			chunyang 					= "ChunyangNan", 				--传送 纯阳
+			wanhua 						= "WanhuaNan", 				--传送 万花
+			longmenhuangmo 			= "LongmenhuangmoNan", 		--传送 龙门荒漠
+			maweiyi 					= "MaweiyiDong", 				--传送 马嵬驿
+			changanneicheng			= "ChangAnNeiChengNan"                        --传送长安内城
+		},
+	},
+	-- 长安城
+	changanneicheng = {
+		szName = GLOBAL_MAP_NAME.changanneicheng,
+		nMapID = 172,
+		nMinLevel = 90,--最低80级才能看到进入项	
+		connection = {
+			changanzhanluan				= "ChanganZhanluanBei"                        --传送长安内城
+		},
+	},
+	--天策·战乱
+	tiancezhanluan = {--
+		szName = GLOBAL_MAP_NAME.tiancezhanluan,
+		nMapID = 158,
+		nMinLevel = 80,--最低80级才能看到进入项	
+		connection = {
+			luoyangzhanluan			= "LuoyangZhanluanBei",		  --传送 战乱洛阳
+		},
+	},
+	--马嵬驿
+	maweiyi = {--
+		szName = GLOBAL_MAP_NAME.maweiyi,
+		nMapID = 153,
+		nMinLevel = 80,--最低80级才能看到进入项	
+		connection = {
+			changanzhanluan = "ChanganZhanluanXi", --传送 长安战乱
+			chengdu 	     = "ChengduBei",        --传送 成都
+			kunlun 			= "KunlunNan", 	--【马嵬驿】西→【昆仑】南
+		},
+	},
+	--丐帮
+	gaibang = {
+		szName = GLOBAL_MAP_NAME.gaibang,
+		nMapID = 159,
+		connection = {
+			balingxian	= "BalingxianNan",
+		},
+	},
+	taiyuan = {
+		szName = GLOBAL_MAP_NAME.TaiYuan,
+		nMapID = 194,
+		nMinLevel = 80,--80级以及以上,不可见其进入选项
+		connection = {
+			cangyun = "CangYun_S",
+			luoyangzhanluan = "LuoyangZhanluanBei",
+		},
+	},
+	cangyun = {
+		szName = GLOBAL_MAP_NAME.CangYun,
+		nMapID = 193,
+		connection = {
+			taiyuan = "TaiYuan_N",
+		},
+	},
+	
+}
+
+--获取地图传送信息，不考虑副本 by Mati
+function GetSwitchMapInfo(szStartMapName, szEndMapName)
+	local nMapID = SWITCH_MAP_CONNECTION[szEndMapName]["nMapID"]
+	if not nMapID then
+		return nil
+	end
+
+	local szLocation = SWITCH_MAP_CONNECTION[szStartMapName]["connection"][szEndMapName]
+	if not szLocation then
+		return nil
+	end
+
+	local tInfo = SWITCH_MAP_COORDINATE[szLocation]
+	if not tInfo then
+		return nil
+	end
+	
+	local nX = tInfo.nX
+	local nY = tInfo.nY
+	local nZ = tInfo.nZ
+	local nDir = tInfo.nDir
+
+	return nMapID, nX, nY, nZ, nDir
+end
+
+function DoOnEnterTrap(player, tEndMapName, szStringOfHere)
+	if player.bFightState == true then
+		player.SendSystemMessage(GLOBAL_STRING_TABLE.FailToSwitchMap)
+		return
+	end
+	
+	local tTaggedName = {}
+	for _, v in ipairs(tEndMapName) do
+		local szName = SWITCH_MAP_CONNECTION[v].szName
+		if not szName then
+			return
+		end
+		------------------------------------------------------------------------
+		--处理等级相关BY鱼头20130519
+		local bLevel = true
+		local nMinLevel = SWITCH_MAP_CONNECTION[v].nMinLevel
+		if nMinLevel then
+			if player.nLevel < nMinLevel then
+				bLevel = false
+			end
+		end
+		local nMaxLevel = SWITCH_MAP_CONNECTION[v].nMaxLevel
+		if nMaxLevel then
+			if player.nLevel > nMaxLevel then
+				bLevel = false
+			end
+		end
+		
+		if player.GetBuff(7049, 1) then
+			bLevel = false
+			player.SendSystemMessage(GetEditorString(6, 866))
+			RemoteCallToClient(player.dwID, "OnOutputWarningMessage", "MSG_NOTICE_RED", GetEditorString(6, 866), 4)
+		end
+		
+		if bLevel then
+		----------------------------------------------
+			tTaggedName[#tTaggedName + 1] = string.format(GLOBAL_STRING_TABLE.gotoAnotherScene, szName)
+		end
+	end
+	
+	--处理传送点处的提示，可以每个地图分别各自去配置BY鱼头
+	if szStringOfHere then
+		player.OpenWindow(TARGET.NO_TARGET, 0,
+			szStringOfHere .. "\n\n" .. 
+			GLOBAL_STRING_TABLE.whereYouWannaGo .. "\n\n" .. 
+			table.concat(AddButtonTag(tTaggedName, 1), "\n"), 
+			GetMultiValue("SwitchToJointScene", #tTaggedName)
+		)
+	else
+		player.OpenWindow(TARGET.NO_TARGET, 0,
+			GLOBAL_STRING_TABLE.whereYouWannaGo .. "\n\n" .. 
+			table.concat(AddButtonTag(tTaggedName, 1), "\n"), 
+			GetMultiValue("SwitchToJointScene", #tTaggedName)
+		)
+	end
+end
+
+function DoOnDialogue(npc, player, tEndMapName)
+	local tTaggedName = {}
+	for _, v in ipairs(tEndMapName) do
+		local szName = SWITCH_MAP_CONNECTION[v].szName
+		if not szName then
+			return
+		end
+		
+		tTaggedName[#tTaggedName + 1] = string.format(GLOBAL_STRING_TABLE.gotoAnotherScene, szName)
+	end
+	
+	player.OpenWindow(TARGET.NPC, npc.dwID, 
+		npc.GetAutoDialogString(player.dwID) .. "\n\n" ..
+		table.concat(AddButtonTag(tTaggedName, 1), "\n"),	
+		GetMultiValue("SwitchToJointScene", #tTaggedName)
+	)
+end
+
+-- 玩家切换场景前一刻调用
+function OnPlayerSwitchMap(player, dwDstMapID)
+
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

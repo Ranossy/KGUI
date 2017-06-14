@@ -1,0 +1,269 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/Include/PlayerCustomValueName.lh
+-- 更新时间:	2015/6/15 22:46:50
+-- 更新用户:	lilin-kingsoft
+-- 脚本说明:
+----------------------------------------------------------------------<
+-- 必须 Include 这个头文件
+Include("scripts/Include/Table.lh")
+
+-- 下面是玩家变量的分配, 格式参照 TEST_CUSTOM_INDEX, 每个索引名全大写, 单词间用下划线分割
+-- 每个索引的值是一个 TABLE, 2个成员, 前面的数值必须小于或者等于后面的数值, 表示区间
+-- 每个索引的值段不能重叠交叉, 如果要插入新的字段, 请根据其编号的大小插入合适的位置
+-- 比如如果要插入编号希望是 10004-10007, 那就插入到 TEST_CUSTOM_INDEX_1 和 TEST_CUSTOM_INDEX_2 之间
+
+-- 使用的时候直接用类似 PLAYER_CUSTOM_VALUE.TEST_CUSTOM_INDEX_1 就可以取出 10000
+-- 由于是代理访问, 所以不能用 PLAYER_CUSTOM_VALUE.TEST_CUSTOM_INDEX_1[1] 来访问到 10000 这个值
+
+-- 玩家变量 0~479 。 20160706
+
+PLAYER_CUSTOM_VALUE = {ConvertProxiedTable = ConvertProxiedTable,
+	PLAYER_GAME = {0, 3}, -- 固定位置的全世界小游戏（需要在玩家不在游戏状态以后，清除变量占用）
+	-- 此位置用于副本进入时的转存数值使用，修改或使用望注意！--zhangyan3
+	-- 赛马比赛用于记录在赛道上的进度--zhangyan3 2012 06 30
+	-- 用于马嵬驿一些表现任务转存数据（主要针对定时器ID转存）20130315
+	-- 马嵬驿墓穴道具 临时调用使用，用于读条前后道具ID传递 20130419
+	PLAYER_CHUNYANG_LOCK = {4, 7}, -- 纯阳同心锁占用
+	SHAOLIN_VISITOR = {8, 11}, -- 用于记录少林的游客任务选择结果
+	PLAYER_JUMP_DATA = {12, 15}, -- 用于记录玩家少林跳高任务记录
+	IS_PLAYER_HAVE_SEE_MOIVE = {16, 16}, -- 用于判断寇岛的七宗罪任务，是否看过一个过场动画。
+	NONAME3 = {17, 21}, -- 用于记录侦探任务成绩
+	TYPE_OF_NPC_AT_INQUIRY = {22, 22}, -- 用于记录玩家问路所询问的类型（武功技能，生活技能等）
+	ASK_THE_WAY = {23, 26}, -- 用于所有类型的问路，支持5层，每层99个选项。（可扩展为所有的智能对话）
+	SKILL_RECIPE_ITEM_ID = {27, 30}, -- 技能秘笈的道具ID
+	POSITION_CHESS = {31, 33}, -- 用于记录七秀井字棋棋盘
+	TIANCE_SKILL_DUANYUNCI = {34, 37}, -- 用于记录天策技能断云刺教学任务中的玩家计时器ID
+	ARENA_BET = {38, 39}, -- 用来纪录城市擂台每个玩家下注金额
+	--WANTED_KILLER_ID				=	{40, 43},
+	--WANTED_TARGET_ID				=	{44, 47},
+	--WANTED_TARGET_NAME			=	{48, 59},
+	--HORO_SYS_LEVEL_U 				= 	{40, 40}, 			-- 挖宝系统: 记录 上元 的等级
+	FOLLOWPET_SAVE_DATA = {40, 40}, -- 宠物处理跨地图宠物不消失 -zhangyan3 20131024
+	HORO_SYS_EXP_U = {41, 42}, -- 挖宝系统: 记录 上元 的经验
+
+	--HORO_SYS_LEVEL_M				=	{43, 43},				-- 挖宝系统: 记录 中元 的等级
+	HORSE_ITEMCHANGE_MONTH = {43, 43}, -- 道具自损变化处理的月记录 -zhangyan3 20140414
+	HORSE_ITEMCHANGE_DAY = {44, 44}, -- 道具自损变化处理的日记录 -zhangyan3 20140414
+	--HORO_SYS_EXP_M					=	{44, 45},			-- 挖宝系统: 记录 中元 的经验
+
+	HORO_SYS_LEVEL_L = {46, 46}, -- 挖宝系统: 记录 下元 的等级
+	HORO_SYS_EXP_L = {47, 48}, -- 挖宝系统: 记录 下元 的经验
+
+	HORO_SYS_ACTIVEEFFECT = {49, 54}, -- 用来记录被激活的属性, 游戏总共支持 48 个属性
+	HORO_SYS_DIG_MAPID = {55, 55}, -- 用来记录挖宝系统自己的宝藏所在地图
+	HORO_SYS_DIG_MAPX = {56, 57}, -- 用来记录挖宝系统自己的宝藏所在坐标 X
+	HORO_SYS_DIG_MAPY = {58, 59}, -- 用来记录挖宝系统自己的宝藏所在坐标 Y
+	LONGMEN_SHUDU_ONE_ID = {60, 63}, -- 用于记录龙门荒漠数独1号棋盘
+	LONGMEN_SHUDU_TWO_ID = {64, 67}, -- 用于记录龙门荒漠数独2号棋盘
+	LONGMEN_SHUDU_PLAYER_CHOOSE = {68, 68}, -- 用于记录龙门荒漠数独玩家选项
+	CASK_NUMBER = {69, 69}, -- 用于少林跳木桩防作弊。
+	-- 赛马比赛用于记录在赛道上的圈数--zhangyan3 2012 06 30
+	LONGMEN_PLAYER_TRAP_ID = {70, 70}, -- 用于记录龙门荒漠熔岩区TRAP的ID
+	-- 赛马比赛用于作为准备去离开标记--zhangyan3 2012 06 30
+	PLAYER_DIALOGUE_ID = {71, 71}, -- 用于记录NPC对话模板中玩家当前页ID
+	SKILL_QI_CHANG_NPC1 = {72, 75}, -- 气场NPC1的ID
+	SKILL_QI_CHANG_NPC2 = {76, 79}, -- 气场NPC2的ID
+	SKILL_QI_CHANG_NPC3 = {80, 83}, -- 气场NPC3的ID
+	TEMP_CHEATINCOMEMANAGE_FLAG = {84, 84}, -- 删除刷钱的玩家的钱的标志
+	SCHOOL_INDEX_IN_TOWN = {85, 88}, -- 记录在新手镇学习门派技能的门派势力ID
+	TONG_JOIN_FLAG = {89, 89}, -- 2009.09.08 帮会活动相关, 加入帮会奖励标志, 预设值为 10
+	QUTANGXIA_XUANMIPU_ITEM_INDEX = {90, 93}, -- 玄秘谱道具Index
+	ENCHANT_SOURCE_ITEM_ID = {94, 97}, -- 附魔使用道具ID
+	ENCHANT_TARGET_ITEM_ID = {98, 101}, -- 附魔目标道具ID
+	CRAFT_RECIPE_ITEM_ID = {102, 105}, -- 技艺配方学习道具
+	BATTLEFIELD_INVITE_EMAIL = {106, 106}, -- 标记是否发送过云湖天池邀请邮件
+	MIDATUMN_INVITE_EMAIL = {107, 107}, -- 标记是否发送过中秋节活动邀请邮件
+	RILUNSHANCHENG_COMPENSATE = {108, 108}, -- 标记日轮山城回档补偿处理
+	MAJU_BUCHANG = {109, 109}, -- 标记玩家是否得到过松马具的补偿
+	MIDWINTER_INVITE_EMAIL = {110, 110}, -- 标记是否发送过冬至节日活动邀请邮件
+	DONGZHI_BUG_PUNISH = {111, 111}, -- 冬至节刷钱BUG处理	2009.12.22
+	DONGZHI_XIUWEI_BUCHANG = {112, 112}, -- 冬至节修为补偿       2009.12.31
+	SPRING_TIGER_HUNGER_INDEX = {113, 113}, -- 节日春节的老虎宝宝饥饿类型
+	SPRINGFESTIVAL_INVITE_EMAIL = {117, 117}, -- 节日春节邀请邮件
+	CIVILSERVICEEXAM_LAST_COMMITTIME = {118, 118}, -- 记录玩家最近一次参加科举考试并交了卷的期数
+	CIVILSERVICEEXAM_LAST_SCORE = {119, 119}, -- 记录玩家最近一次科举考试的成绩
+	CIVILSERVICEEXAM_LAST_PARTICIPATETIME = {120, 120}, -- 记录最近一次参加科举考试的期数（做试卷）
+	CIVILSERVICEEXAM_LAST_TYPE = {121, 121}, -- 记录最近一次参加科举考试的类型（1为省试，2为会试）
+	CIVILSERVICEEXAM_EMAIL = {122, 122}, -- 记录是否发送过科举宣传邮件
+	HORO_SYS_INITFLAG = {123, 123}, -- 挖宝系统: 由于重用之前的变量, 所以必须有一个初始化标志来清除旧信息.
+	NEWVILLAGE_TP_FLAG = {124, 124}, -- 新手村切换传送处理标记
+	GUODAORI_XIUWEIBUCHANG = {125, 125}, -- 国悼日修为补偿，1，2010.04.21；2013.7.18清除GM道具添加的隐身Buff，2，2013.7.18~2013.8.18；企鹅挂件赠送活动，3，2014.03.17~2014.03.25；2014.4.24游戏登陆困难暨维护延期补偿，4，2014.04.28~2014.05.28；
+	HORO_SYS_DUNVALUE = {126, 126}, -- 挖宝系统: 副本运势值
+	HORO_SYS_DIGVALUE = {127, 127}, -- 挖宝系统: 挖宝运势值
+	GONGLI_GAME_AFK_TIME = {128, 128}, -- 修为活动，AFK玩家可以领取奖励BUFF次数
+	GONGLI_GAME_HUODE = {129, 132}, -- 修为活动，玩家可以免费领取的修为数量
+	GONGLI_GAME_LEVEL = {133, 133}, -- 修为活动，玩家升级以后不能再领取更多修为
+	TWOMANFB_INVITE_EMAIL = {134, 134}, -- 标记是否发送过二人副本邀请邮件
+	FARM_SYS_TONG_ATTENTION = {135, 155}, -- 农场活动中记录玩家关注的帮会列表的ID
+	FARM_SYS_SCORERECORD = {156, 157}, -- 农场积分, 允许的最大值10000点
+	DUANWU_INVITE_EMAIL = {158, 158}, -- 标记是否发送过端午邀请邮件
+	XIUWEIHUHANG_BEFORE_LEVEL = {159, 159}, -- 修为护航，记录玩家点奇穴之前的奇穴等级
+	QIXI_LIANLIZHI_ID2012 = {160, 163}, -- 七夕同心锁记录结缘玩家的ID差额，即本人ID-对方ID的值。2012.8.16
+	HUODONGBUCANG_20100708 = {164, 164}, -- 20100708号服务器事故导致打坐活动受影响补偿。
+	QIXI_INSCRIPTION_ID_1 = {165, 168}, -- 七夕活动每个玩家记录的兄弟ID 1
+	QIXI_INSCRIPTION_ID_2 = {169, 172}, -- 七夕活动每个玩家记录的兄弟ID 2
+	HORO_SYS_DUNHORO_LASTCHANGETIME = {173, 176}, -- 挖宝运势里面秘境运势最后更新的时间, 用来处理下线也增加
+	QIXI_INVITE_EMAIL = {177, 177}, --七夕节日邮件是否发送
+	MAKEUPQUESTTRAIN_100810 = {178, 178}, -- 修为任务已经完成任务玩家的补偿
+	JINGMAI_GAIZAO_RESET = {183, 183}, -- 经脉改造免费给玩家洗一次经脉
+	NAYUANDAN_COUNT = {184, 184}, -- 纳元丹使用次数
+	NAYUANDAN_TIME = {185, 188}, -- 纳元丹使用时间
+	ZHOUQUNISHILIU_20100817 = {190, 190}, -- 舟曲特大泥石流全国哀悼日补偿；2013.6.24例行维护延期开服补偿，2，2013.6.27~2013.7.27；2013.8.2临时停服维护补偿，3，2013.8.8~2013.9.8；2013.9.16游戏登陆困难补偿，4，2013.9.19~2013.10.23；2013.12.12例行维护延时开服补偿，5，2013.12.16~2014.1.16；
+	JIFANGGUZHANG_20100824 = {191, 191}, -- 机房故障补偿寄月笺邮件标示，1，2010.8.24~2013.5.19；2013.5.11游戏无法登录补偿，2，2013.5.20~2013.6.20；2013.6.23龙战于野服务器故障补偿，3，2013.6.27~2013.7.27；2013.11.30连续宕机回档补偿，4，2013.12.5~2014.1.5；-- 2014.7.21梦江南两次维护补偿，5，2014.7.24~2014.8.24；
+	ZHOUNIAN_INVITE_EMAIL = {192, 192}, --周年庆活动邮件
+	NEWGUYWEAPON_INVITE_EMAIL = {193, 193}, -- 新手送武器2010年8月30号
+	ZHOUNIAN_QUEST_EMAIL = {194, 194}, --周年庆调查邮件
+	CHANGECAMP_INVITE_EMAIL = {195, 195}, -- 标记是否发送过转阵营功能宣传邮件
+	EXAM_OFFSET_EMAIL = {196, 196}, -- 记录科举第25期补偿邮件标记
+	ZHANHUN_PRESTIGE_EMAIL = {197, 197}, -- 战魂劫送5W威望活动宣传邮件，2012.1.12春节充值促销通知邮件复用；2012.7.12洱海惊龙坐骑驯养通知邮件复用，3，2012.7.12~2012.9.12；2012.9.17无法登陆补偿，4，2012.9.20~2012.10.20；2012.11.1“大战！唐门密室”没有预热活动奖励的补偿，5，2012.11.5~2012.11.19；2012.11.29延时开服补偿，6，2012.12.3~2013.1.3；2013年春节期间账号安全提示邮件，7，2013.2.7~2013.3.7；2013.3.28防盗号骗术提醒邮件，8，2013.3.28~2013.4.28；
+	QUEST_CAMP_FINISH_WEEKDAY = {198, 198}, -- 记录阵营活动任务的完成时间是哪个月-星期几（12月星期7，则为127）
+	ZHANHUN_BUG_MIJI_BUCANG = {199, 199}, -- 记录是否对刷秘籍BUG做过补偿
+	PVP_REWARD_EMAIL = {200, 200}, -- 记录是否发送过PVP活动奖励邮件（仅限梦江南和李忘生两组服务器（11.7~9日线上PVP活动））；2013年春节两组新服跨服竞技分组错误补偿，2，2013.2.7~2013.3.14；2013.11.22以来部分服务器宕机回档补偿，3，2013.12.2~2014.1.2；2014.3.26叶芷青长安和洛阳地图无法登录补偿，4，2014.3.31~2014.5.1；2014.7.2台湾版删除道具补偿的补充，5，2014.7.23~2014.8.30；2014.9.4五周年调研活动邀请邮件，6，2014.9.1~2014.9.14；
+	ZHANHUN_BUG_MIJI_FANHUAN = {201, 201}, -- 记录是否返还多扣除的秘笈
+	SERVERDOWNREWARD_20101115_EMAIL = {202, 202}, -- 2010.11.15服务器宕机补偿，1，截止至2010.11.15；2012.3.8上午临时停服维护补偿处理，2，2012.3.12~2012.4.9；2013.7.3白帝城服务器故障补偿，3，2013.7.8~2013.8.8；2013.9.12延迟开服补偿，4，2013.9.16~2013.10.16；2014.7.2台湾版删除道具补偿，5，2014.7.9~2014.8.9；
+	QUEST_CAMP_FINISH_DAY = {203, 203}, -- 记录阵营活动任务的完成时间是日期是几号
+	QUEST_FULL_SCORE_FINISH = {204, 204}, -- 记录玩家是否满分完成的开关
+	CAMP_BUG_BUCHANG = {205, 205}, -- 2010.12.27阵营场景服务器宕机补偿，2011.12.12战阶1-7阶升级历程加速复用，2012.1.12巴蜀风云前流失玩家战阶加速处理复用
+	NPPROJECT_PERMISSION = {206, 206}, -- 2011.1.20新玩家养成计划，角色参与资格。
+	NPPROJECT_MASTERID = {207, 210}, -- 2011.1.20新玩家养成计划，主人ID。4字节？
+	CURRENTSERVERID = {211, 211}, -- 2011.1.20新玩家养成计划，现所在server的index
+	BOOK_BUG_TRANFER = {212, 212}, -- 书籍替换标记
+	FISH_SHOUGAN_TIME = {213, 216}, -- 标记玩家钓鱼的收杆时间
+	GET_ZIYUN_TIME = {217, 220}, -- 紫陨获取时间
+	GET_KAOYU_ID = {221, 222}, -- 记录玩家烤鱼的ID
+	TONG_DORP = {223, 224}, -- 仙人指路道具1ID
+	TONG_SEED = {229, 230}, -- 播种用
+	SERVERDOWNREWARD_20110129_EMAIL = {231, 231}, -- 补偿：1月29日停机补偿：4战宝猛药每种各一；2013.7.4烈日斩合服名剑币补偿，2，2013.7.15~2013.7.29；2013.11.21血战天策全民礼包，3，2013.11.21~2013.12.19；2014.5.22龙争虎斗据点活动结算错误补偿，4，2014.5.29~2014.6.29；2014.6.25台湾服paysysDB故障补偿，5，2014.7.2~2014.9.2；
+	TONG_DORP_TONG_ID = {232, 235}, -- 仙人指路道具帮会ID
+	SERVERDOWNREWARD_20110221_EMAIL = {236, 236}, -- 2014年3月17日回归活动邮件标记，持续一周
+	KEJU_MAIL_2011314 = {237, 237}, -- 科举会试没有发奖励
+	HIGH_NAYUANDAN_COUNT = {238, 238}, -- 纳元丹使用次数
+	PERSONAL_GAME_CHAMPION = {239, 239}, -- 帮会擂台个人赛，冠军纪录，十六强标记纪录
+	ACHIEVEMENT_TONG_PAY_COUNT = {240, 243}, --帮会工资记录
+	FISH_TIMES_COUNT = {244, 245}, -- 每天钓鱼次数统计。早七点重置
+	TONG_PREPARE_DEVELOPMENT = {246, 247}, -- 记录玩家入帮预备期间被系统扣除的帮会发展点
+	TONG_PREPARE_FUND = {248, 249}, -- 记录玩家入帮预备期间被系统扣除的帮会资金
+	TONG_ZHENGBABAOMING_TIME = {250, 253}, -- 记录玩家上次使用争霸帖报名时间
+	TONG_YUEPIAO_TARGETID = {254, 257}, -- 记录玩家月票投给对象的ID
+	TONG_YUEPIAO_JILUID = {258, 261}, -- 临时记录玩家月票投给对象，用于扩展点
+	TONG_REWARD_FLAG = {262, 262}, -- 标记玩家是否邮寄领奖道具
+	--ACTIVITY_BLOODEYE_MAIL				= {263, 263},					--活动:血眼龙王宣传邮件
+	ACT_2012CHUNJIEXUYUAN1 = {263, 263}, --活动:2012春节许愿：0-100：节日期间许愿。 -1 已发送奖励。春节活动过后可删除
+	--ZHAOHUI3_LIBAO			=	{264, 264}, 			-- 召回三期，登录送礼包 6月16日清除
+	ACT_2012CHUNJIEXUYUAN2 = {264, 264}, --活动:2012春节许愿：0-100：节日期间许愿。 -1 已发送奖励。
+	KILL_COUNT_CHANGE = {265, 265}, -- 杀人数量从成就转换为玩家变量
+	BASHU_CURRENCY_REDEEM = {266, 266}, -- 巴蜀资料片货币补偿标记
+	BLOODEYE_BOXGIVENDAY = {267, 268}, -- 血眼龙王预热—记录箱子5件套送出日期
+	KEJU_BOX_BUCHANG = {269, 269}, -- 2011.05.05科举刷监本印文及随机宝箱停机维护补偿
+	HORO_SYS_TIMER_FLAG = {270, 270}, -- 挖宝计时器是否启动标记，0表示未启动，1表示已启动
+	SERVER_RECYCLE_REWARD = {271, 271}, -- 血龙出渊、太极广场回档补偿标记
+	LIFESKILL_HECHENG = {272, 272}, -- 资料片合成类生活技能只能学一个标记
+	LIFESKILL_CAIJI = {273, 273}, -- 资料片采集类生活技能只能学一个标记
+	FIRSTINIT_BASHU_CRAFT = {274, 274}, -- 判断玩家是否第一次登录巴蜀版本
+	SERVER_RECYCLE_MONEY_REWARD = {275, 275}, -- 血龙出渊、太极广场回档金钱补偿标记
+	ZHANCHANG_LAST_TIME = {276, 279}, -- 记录玩家从记录玩家上一次参与战场的7点的日期（7点前算昨天的）最大十进制4294967295
+	ZHANCHANG_COUNT = {280, 280}, -- 记录玩家从今天早上7点起是第几次参加战场 最大十进制255
+	BASHU_TIANNAN_ITEMDEL = {281, 281}, -- 巴蜀风云天南王家声望物品删除
+	BASHU_DROP_ERROR_20110519 = {282, 282}, -- 巴蜀掉落异常处理 ，1，2011.5.19~2012.5.16；2012.5.7回归帐号无法交易补偿复用，2，2012.5.17~2013.5.31；2013.2.5名剑大会战队丢失补偿，3，2013.2.7~2013.3.14；2013.2.5玲珑囊补偿，4，永久；
+	SERVER_RECYCLE_TONGBAO_REWARD = {283, 283}, -- 太极广场血龙出渊服务器通宝相关金币补偿
+	LIUYIERTONGJIE_EMAIL = {284, 284}, -- 活动：六一儿童节邮件
+	DUANWU2011_HARVEST = {285, 285}, -- 活动：端午节记录植物收获百分比
+	SERVERRECYCLE_20110603 = {286, 286}, -- 2011年6月3日回档补偿：设置为1.
+	SEVER_PAUSE_UPHOLD_20110603 = {287, 287}, -- 2011年6月3日停机维护补偿
+	CIVILSERVICEEXAM_QUESTLIST_INDEX = {288, 288}, -- 记录科举随机试题套数
+	YUNYINGHUODONG_QUESTIONID = {289, 289}, -- 2011年6月16日活动用 30号可删除
+	MIJI_CHUNYANG_RENJIAN = {290, 290}, -- 2011年6月23日纯阳人剑合一回血秘笈回收处理
+	TONG_PIG_PLAYER_SCORE = {291, 292}, -- 帮会赶猪活动分数
+	BATTLEFIELD_REMOTE_EMAIL = {293, 294}, -- 跨服战场道具处理
+	ZAOHUA_EMAIL_20110728 = {295, 295}, -- 造化丹发送邮件标记
+	QIXI_LIANLIZHI_ID = {296, 299}, -- 七夕连理枝记录结缘玩家的ID差额，即本人ID-对方ID的值。2011.7.26
+	QIXI_OPENBOX_LAST_TIME = {300, 303}, -- 七夕记录玩家上一次开箱子的7点的日期（7点前算昨天的）最大十进制4294967295
+	QIXI_OPENBOX_NUM = {304, 304},
+	SERVER_REDEEM_20110815 = {305, 305}, -- 2011.8.15停服补偿+八月帮会个人擂台赛补偿
+	SERVER_REDEEM_20110915 = {306, 306}, -- 2011.9.15停服补偿
+	YINGXIONGJIEYI_MAIL = {307, 307}, -- 英雄结义邮件到2011.10月27日
+	DIRECTMENTER_SENDED = {308, 308}, -- 亲传师徒：每周已发送奖励数。
+--	DIRECTMENTER_WEEK = {309, 309}, -- 亲传师徒：发放奖励周。
+	STEAL_GUARD_EMAIL = {310, 310}, -- 防盗号提醒邮件
+	ONCE_OPERATION_LL = {311, 311}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	ACT_RECHARGE_MAIL = {312, 312}, -- 充值活动邮件到2011.11月19日
+	QINGMING_INVITE_EMAIL = {313, 313}, -- 清明节活动邮件
+	VERSION_CHANGE_VALUE = {314, 314}, -- 版本更迭标记用
+	HAIR_AND_FACE = {315, 315}, -- 补偿玩家当前发型及脸型
+	ZHUHUO_CURRENCY_REDEEM = {316, 316}, -- 资料片战阶等级和名剑币货币兑换标记；烛火燎天，2012.4.19-11.21，1；日月明尊，2012.11.22-2013.5.21，2；逐鹿中原，2014.4.21-2014.11.20，3；
+	NEWGUYWEAPON_OVERSEAS_EMAIL = {317, 317}, -- 海外版专用，稀世成长紫武发放标记
+	ONCE_OPERATION_LL_2 = {318, 318}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	ONCE_PLAYL_HORSE_CG = {319, 319}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	WANTED_RESET_TIME = {320, 323}, -- 杀手和捕快排行榜的下一次重置时间，目前暂定为每周一早上7时；其他功能可以读取此变量，但是不可写操作；
+	WANTED_HUNTER_TOTALSCORE = {324, 327}, -- 捕快累计总抓捕人数；
+	WANTED_HUNTER_WEEKLYSCORE = {328, 329}, -- 捕快当周抓捕人数；
+	WANTED_KILLER_TOTALSCORE = {330, 333}, -- 杀手累计总仇杀人数；
+	WANTED_KILLER_WEEKLYSCORE = {334, 335}, -- 杀手当周仇杀人数；
+	HUAZHAO_INVITE_EMAIL = {336, 336}, -- 标记是否发送过花朝节活动邀请邮件
+	QIFUYAAN_REWARD_MAIL = {337, 337}, --祈福雅安是否发放反馈邮件
+	ERTONGJIE_HULU = {338, 338}, --用于标记儿童节购买糖葫芦数量
+	ONCE_OPERATION_LL_3 = {339, 339}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	QIXI_LIANLIZHI_ID2013 = {340, 343}, -- 七夕同心锁记录结缘玩家的ID差额，即本人ID-对方ID的值。2013.8.6
+	FirstPay_GiftPackage = {344, 344}, -- 2013.8.28后首次充值礼包奖励，1，永久占用；（国内版相关活动关闭，海外版仍可沿用此变量）
+	EQUIP_MAGIC_CHANGE_DATE = {345, 345}, -- 2013.8.26，洗练记录算卦日期，不记录年月，只记录日号，永久占用；
+	EQUIP_MAGIC_CHANGE_FENGSHUI_INDEX = {346, 346}, -- 2013.8.26，洗练当前风水宝地编号，每次在算卦的时候修改,永久占用；
+	AllKill_LOSE_1 = {347, 348}, --大乱斗第一轮失败
+	AllKill_LOSE_2 = {349, 350}, --大乱斗第二轮失败（铜牌）
+	AllKill_LOSE_3 = {351, 352}, --大乱斗第三轮失败（银牌）
+	AllKill_WIN = {353, 354}, --大乱斗获胜（金牌）
+	ONCE_OPERATION_LL_4 = {355, 355}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	YUANDAN_MAIL = {356, 356}, -- 元旦活动邮件标记
+	YUANXIAOJIE_WISH = {357, 357}, --元宵节的许愿回馈
+	YUANXIAOJIE_RESET = {358, 358}, --元宵节重置相关的标记位
+	DIG_LAST_GOOD_BUFF_LEVEL = {359, 359}, --永久占用！玩家上一次获得BUFF等级
+	DIG_LAST_GOOD_BUFF_TIME = {360, 363}, --永久占用！玩家上一次获得BUFF时间
+	CRAFT_EXPERTISED_FLAG = {364, 364}, --永久占用！玩家免费赠送一次制造类专精重置机会
+	QIXI_JIEYUAN_ID2014 = {365, 368}, -- 七夕记录结缘玩家的ID差额，即本人ID-对方ID的值。2014.7.27
+	QIXI_JIEYUAN_ID2015 = {369, 372}, -- 七夕记录结缘玩家的ID差额，即本人ID-对方ID的值。2015预留
+	ONCE_OPERATION_LL_5 = {373, 373}, -- Bit标记一次性操作，具体声明见PlayerScript.lua —> Once_Operation_LL()函数
+	CHONGYANGJIE_EMAIL = {374, 374}, -- 活动：重阳节日邮件
+	CHANGEEXP70TO90 = {375, 375}, --70-90经验平滑相关操作
+	FRIENDS_INVITE = {376, 377}, -- 好友邀请标记玩家兑换的礼品Index
+	CLEAR_PLAYER_TIMERECORD = {378, 381}, -- 清除玩家竞速排行时间,存清除的时间
+	MOUNT_GROW_EXP_NOW = {382, 382}, -- 坐骑成长的当前经验值(实际值为此值*10)
+	CUR_ADVENTURE_TASK_ID = {383, 386}, -- 当前进行的奇遇任务ID
+	CUR_ADVENTURE_ID = {387, 388}, -- 当前进行的奇遇线ID
+	ACHIEVEMENT_REWARD = {389, 390},	-- 成就阶段奖励用
+	KEJU_SHENGSHI_SCORE = {391, 391}, -- 科举-省试分数
+	QIYU_SANCHIQINGF_ID = {392, 395}, --记录奇遇挂件刻名
+	MOUNT_GROW_EXP_NOW_2 = {396, 396}, -- 占用坐骑使用-BY鱼头
+	ACCOUNT_TYPE = {397, 397},	-- 玩家账号类型（20亿通宝活动用）
+	NEWCRAFT_INDEX = {398, 398},	-- 生活技能自动学习配方版本号标记
+	PLAYER_LOGIN_INDEX = {399, 399}, -- 登陆脚本顺序标记
+	IDENTITY_RANK_TIME = {400, 403}, -- 江湖百态排行榜上传记录时间
+	MAJU_BC = {404, 404}, -- 马具补偿
+	QIXI_JIEYUAN_ID2016 = {405, 408}, -- 七夕记录结缘玩家的ID差额，即本人ID-对方ID的值。2016预留
+	QIXI_JIEYUAN_ID2017 = {409, 412}, -- 七夕记录结缘玩家的ID差额，即本人ID-对方ID的值。2017预留
+	HORSE_EQUIP_FLAG = {413, 413}, -- 马具改造处理马具上线因系统功能变化导致的槽位预设处理：首次登陆会设置，非首次的登陆会执行后设置
+	DIRECTMENTER_WEEK = {414, 415}, -- 亲传师徒：发放奖励周。新
+	BOSSRING_HAVEREDUCED = {416, 416}, --本赛季橙戒已经降低的阶数
+	QINGSHAQI = {417, 417}, --本赛季橙戒已经降低的阶数
+	NO_CHARGE_BAN = {418, 418}, -- 没有付费禁言，0号BIT
+	SHITUSYSTEM_SHIFU_ID = {419, 422}, --师徒武器 师父ID
+	PLAYER_ENTERSCENECOMMON_INDEX = {423,423}, -- enterscenecommon脚本顺序标记
+	PLAYER_JJC_LEVEL_AWARD_2V2 = {424, 424}, -- 2V2  jjc升段奖励领取 记录上一次领取的奖励段位 --赛季需要清0
+	PLAYER_JJC_LEVEL_AWARD_3V3 = {425, 425}, -- 3V3 jjc升段奖励领取 --赛季需要清0
+	PLAYER_LAST_EQUIPBACKUP_ID = {426, 426}, -- 上一次使用的套装ID，0为第一套。
+	PLAYER_JJC_LEVEL_AWARD_5V5 = {427, 427}, -- 5V5 jjc升段奖励领取 --赛季需要清0
+	PLAYER_SJY_MAP_IDEN = {428, 428}, -- 记录玩家的拭剑园地图和位面信息,因为这个地图会比赛服或者线下用,只能存变量了,卡活动判buff不靠谱
+	
+--[[	JJC_REMAIN_JYS_2V2POINT = {417, 417}, --jjc 2v2精英赛预留分数。
+	JJC_REMAIN_JYS_3V3POINT = {418, 418}, --jjc 3v3精英赛预留分数。
+	JJC_REMAIN_JYS_5V5POINT = {419, 419}, --jjc 5v5精英赛预留分数。--]]
+	
+	----玩家变量已扩到480（0-479）--------------------------------------------------
+	--TEST_CUSTOM_INDEX_1			=	{10000, 10003},			-- 这个是个例子
+	--INSERT_INDEX					=	{10004, 10007},			-- 插入合适的位置
+	--TEST_CUSTOM_INDEX_2			=	{10008, 20011},			-- 这个是个例子
+};PLAYER_CUSTOM_VALUE = PLAYER_CUSTOM_VALUE:ConvertProxiedTable()
+
+
+function AppendPlayerValueNameToGlobal()
+	_G.PLAYER_CUSTOM_VALUE = PLAYER_CUSTOM_VALUE
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

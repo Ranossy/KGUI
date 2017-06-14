@@ -1,0 +1,29 @@
+ID	DropList1	Count1	DropList2	Count2	DropList3	Count3	DropList4	Count4	KeyID	CostStamina	CostThew	RepresentType	ScriptName
+1	宝箱系统\miji_1.tab	1	宝箱系统\book_1.tab	1	宝箱系统\craft_1.tab	1	宝箱系统\stone_1.tab	1	6246	0	5		
+2	宝箱系统\miji_2.tab	1	宝箱系统\book_2.tab	1	宝箱系统\craft_2.tab	1	宝箱系统\stone_2.tab	1	6247	0	10		
+3	宝箱系统\miji_3.tab	1	宝箱系统\book_3.tab	1	宝箱系统\craft_3.tab	1	宝箱系统\stone_3.tab	1	6248	0	20		
+4	宝箱系统\miji_4.tab	1	宝箱系统\book_4.tab	1	宝箱系统\craft_4.tab	1	宝箱系统\stone_4.tab	1	10027	0	40		
+5	宝箱系统\miji_5.tab	1	宝箱系统\book_5.tab	1	宝箱系统\craft_5.tab	1	宝箱系统\stone_5.tab	1	10028	0	80		
+6	宝箱系统\special_1.tab	1							10371	0	20		
+7	宝箱系统\Activity_QingGong.tab	1							0	0	0		
+8	活动\Beautypicture_box.tab	1							0	0	0		
+9	活动\Divewhitekingcastle_box.tab	1							0	0	0		
+10	节日\3YearsCelebrate_gift.tab	1							0	0	0	1	
+11	活动\RedPacket.tab	1							0	0	0		
+12	活动掉落\运营活动\Reputation_box.tab	1							0	0	0		
+13	宝箱系统\special_90.tab	1							10371	0	20		
+14	节日\Lantern_box.tab	1							0	0	0		
+15	其他掉落\外观\Pattern_box.tab	1							0	0	0		
+16	宝箱系统\Stone_Level1.tab	1							0	0	0		
+17	宝箱系统\Stone_Level2.tab	1							0	0	0		
+18	宝箱系统\Stone_Level3.tab	1							0	0	0		
+19	宝箱系统\Stone_Level4.tab	1							0	0	0		
+20	宝箱系统\Stone_Level5.tab	1							0	0	0		
+21	宝箱系统\Stone_Level6.tab	1							0	0	0		
+22	宝箱系统\Horse_LiFeiSha.tab	1							0	0	0		
+23	宝箱系统\Horse_TaYanWuZhui.tab	1							0	0	0		
+24	节日\NewYearDay_HuYuebox_Farmer.tab	1							0	0	0		
+25	活动\Act_1111.tab	1											
+26	节日\6YearsCelebrate_gift.tab	1							0	0	0		
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,181 @@
+NodeID	Level	ImageFile	Frame	DisableFrame	Name	Desc	Introduce
+0	0	ui/Image/UICommon/ScienceTreeNode.UITex	52	54	招贤纳士	<text>text="帮会可招收帮众上限至150人。" font=18</text>	<text>text="可提升帮会可招人数上限。" font=107</text>
+0	1	ui/Image/UICommon/ScienceTreeNode.UITex	52	54	招贤纳士	<text>text="提升帮会可招收帮众上限至150人。" font=18</text>	<text>text="帮会可招收帮众上限至" font=227</text><text>text="150" font=101</text><text>text="人。" font=227</text>
+0	2	ui/Image/UICommon/ScienceTreeNode.UITex	52	54	招贤纳士	<text>text="提升帮会可招收帮众上限至200人。" font=18</text>	<text>text="帮会可招收帮众上限至" font=227</text><text>text="200" font=101</text><text>text="人。" font=227</text>
+0	3	ui/Image/UICommon/ScienceTreeNode.UITex	52	54	招贤纳士	<text>text="提升帮会可招收帮众上限至250人。" font=18</text>	<text>text="帮会可招收帮众上限至" font=227</text><text>text="250" font=101</text><text>text="人。" font=227</text>
+1	0	ui/Image/UICommon/ScienceTreeNode.UITex	40	42	封官拜将	<text>text="帮会组织结构层增加至10个。" font=18</text>	<text>text="增加帮会组织结构层。" font=107</text>
+1	1	ui/Image/UICommon/ScienceTreeNode.UITex	40	42	封官拜将	<text>text="帮会组织结构层增加至10个。" font=18</text>	<text>text="帮会组织结构层增加至" font=227</text><text>text="10" font=101</text><text>text="个。" font=227</text>
+1	2	ui/Image/UICommon/ScienceTreeNode.UITex	40	42	封官拜将	<text>text="帮会组织结构层增加至14个。" font=18</text>	<text>text="帮会组织结构层增加至" font=227</text><text>text="14" font=101</text><text>text="个。" font=227</text>
+1	3	ui/Image/UICommon/ScienceTreeNode.UITex	40	42	封官拜将	<text>text="帮会组织结构层增加至16个。" font=18</text>	<text>text="帮会组织结构层增加至" font=227</text><text>text="16" font=101</text><text>text="个。" font=227</text>
+2	0	ui/Image/UICommon/ScienceTreeNode.UITex	15	17	藏珍坊	<text>text="废弃。启动一级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，一级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动一级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，一级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+2	1	ui/Image/UICommon/ScienceTreeNode.UITex	15	17	藏珍坊	<text>text="废弃。启动一级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，一级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动一级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，一级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+3	0	ui/Image/UICommon/ScienceTreeNode.UITex	12	14	圣手坊	<text>text="废弃。启动一级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，一级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动一级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，一级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+3	1	ui/Image/UICommon/ScienceTreeNode.UITex	12	14	圣手坊	<text>text="废弃。启动一级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，一级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动一级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，一级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+4	0	ui/Image/UICommon/ScienceTreeNode.UITex	43	45	阵营铁卫	<text>text="阵营日常任务的威望值和战阶积分奖励提高20%。" font=18</text>	<text>text="提升阵营任务奖励。" font=107</text>
+4	1	ui/Image/UICommon/ScienceTreeNode.UITex	43	45	阵营铁卫	<text>text="阵营日常任务的威望值和战阶积分奖励提高20%。" font=18</text>	<text>text="阵营日常任务的威望值和战阶积分奖励提高" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+5	0	ui/Image/UICommon/ScienceTreeNode.UITex	55	57	积少成多	<text>text="帮会95级以下的高经验随机日常增加至4个。" font=18</text>	<text>text="增加帮会小号高经验日常。" font=107</text>
+5	1	ui/Image/UICommon/ScienceTreeNode.UITex	55	57	积少成多	<text>text="帮会95级以下的高经验随机日常增加至4个。" font=18</text>	<text>text="帮会95级以下的高经验随机日常增加至" font=227</text><text>text="4" font=101</text><text>text="个。" font=227</text>
+6	0	ui/Image/UICommon/ScienceTreeNode.UITex	49	51	周而复始	<text>text="亲传弟子每周为师父发送礼物时自身额外获得2000点修为，2000点江湖贡献值，2000点威望值，200点侠义值。" font=18</text>	<text>text="亲传弟子完成日常时可获得额外奖励。" font=107</text>
+6	1	ui/Image/UICommon/ScienceTreeNode.UITex	49	51	周而复始	<text>text="亲传弟子每周为师父发送礼物时自身额外获得2000点修为，2000点江湖贡献值，2000点威望值，200点侠义值。" font=18 </text>	<text>text="亲传弟子每周为师父发送礼物时自身额外获得" font=227</text><text>text="大量" font=101</text><text>text="奖励。" font=227</text>
+7	0	ui/Image/UICommon/ScienceTreeNode.UITex	27	29	白手起家	<text>text="废弃。帮会仓库上限增加到两个。" font=18</text>	<text>text="废弃。帮会仓库上限增加到两个。" font=107</text>
+7	1	ui/Image/UICommon/ScienceTreeNode.UITex	27	29	白手起家	<text>text="废弃。帮会仓库上限增加到两个。" font=18</text>	<text>text="废弃" font=227</text>
+7	2	ui/Image/UICommon/ScienceTreeNode.UITex	27	29	白手起家	<text>text="废弃。帮会仓库上限增加到三个。" font=18</text>	<text>text="废弃。帮会仓库上限增加到三个。" font=227</text>
+7	3	ui/Image/UICommon/ScienceTreeNode.UITex	27	29	白手起家	<text>text="废弃。帮会仓库上限增加到四个。" font=18</text>	<text>text="废弃。帮会仓库上限增加到四个。" font=227</text>
+8	0	ui/Image/UICommon/ScienceTreeNode.UITex	31	33	年年有余	<text>text="帮会仓库上限增加到四个。" font=18</text>	<text>text="增加帮会仓库数量。" font=107</text>
+8	1	ui/Image/UICommon/ScienceTreeNode.UITex	31	33	年年有余	<text>text="帮会仓库上限增加到四个。" font=18</text>	<text>text="帮会仓库上限增加到" font=227</text><text>text="4" font=101</text><text>text="个。" font=227</text>
+8	2	ui/Image/UICommon/ScienceTreeNode.UITex	31	33	年年有余	<text>text="帮会仓库上限增加到六个。" font=18</text>	<text>text="帮会仓库上限增加到" font=227</text><text>text="6" font=101</text><text>text="个。" font=227</text>
+8	3	ui/Image/UICommon/ScienceTreeNode.UITex	31	33	年年有余	<text>text="帮会仓库上限增加到八个。" font=18</text>	<text>text="帮会仓库上限增加到" font=227</text><text>text="8" font=101</text><text>text="个。" font=227</text>
+9	0	ui/Image/UICommon/ScienceTreeNode.UITex	9	11	隐宝阁	<text>text="废弃。启动二级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，二级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动二级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，二级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+9	1	ui/Image/UICommon/ScienceTreeNode.UITex	9	11	隐宝阁	<text>text="废弃。启动二级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，二级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动二级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，二级帮会工房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+10	0	ui/Image/UICommon/ScienceTreeNode.UITex	6	8	神工阁	<text>text="废弃。启动二级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，二级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动二级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，二级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+10	1	ui/Image/UICommon/ScienceTreeNode.UITex	6	8	神工阁	<text>text="废弃。启动二级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，二级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动二级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，二级帮会丹房商店开启，建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+11	0	ui/Image/UICommon/ScienceTreeNode.UITex	58	60	多彩多色	<text>text="增加帮会匾额样式三个：忠义堂、会武阁、群英阁。" font=18</text>	<text>text="增加帮会匾额样式，打造专属的帮会风格。" font=107</text>
+11	1	ui/Image/UICommon/ScienceTreeNode.UITex	58	60	多彩多色	<text>text="增加帮会匾额样式三个：忠义堂、会武阁、群英阁。" font=18</text>	<text>text="帮会匾额样式增加" font=227</text><text>text="3" font=101</text><text>text="个。" font=227</text>
+11	2	ui/Image/UICommon/ScienceTreeNode.UITex	58	60	多彩多色	<text>text="增加帮会匾额样式三个：忠烈堂、聚贤阁、傲义堂。" font=18</text>	<text>text="帮会匾额样式增加" font=227</text><text>text="6" font=101</text><text>text="个。" font=227</text>
+11	3	ui/Image/UICommon/ScienceTreeNode.UITex	58	60	多彩多色	<text>text="增加帮会匾额样式三个：凌云堂、山海阁、海天阁。" font=18</text>	<text>text="帮会匾额样式增加" font=227</text><text>text="9" font=101</text><text>text="个。" font=227</text>
+12	0	ui/Image/UICommon/ScienceTreeNode.UITex	34	36	美轮美奂	<text>text="增加帮会旗帜样式三个：一统江湖、千秋万代、雄霸江湖，提供一定属性加成。" font=18</text>	<text>text="增加帮会旗帜样式，同时提供强力增益加成！" font=107</text>
+12	1	ui/Image/UICommon/ScienceTreeNode.UITex	34	36	美轮美奂	<text>text="增加帮会旗帜：[" font=18</text><text>text="一统江湖" font=80 link="ItemLinkInfo/5/8063"</text><text>text="]、[" font=18</text><text>text="千秋万代" font=80 link="ItemLinkInfo/5/8064"</text><text>text="]、[" font=18</text><text>text="雄霸江湖" font=80 link="ItemLinkInfo/5/8065"</text><text>text="]。" font=18</text>	<text>text="帮会旗帜样式增加" font=227</text><text>text="3" font=101</text><text>text="个。" font=227</text>
+12	2	ui/Image/UICommon/ScienceTreeNode.UITex	34	36	美轮美奂	<text>text="增加帮会旗帜：[" font=18</text><text>text="义薄云天" font=80 link="ItemLinkInfo/5/8066"</text><text>text="]、[" font=18</text><text>text="泰山北斗" font=80 link="ItemLinkInfo/5/8067"</text><text>text="]、[" font=18</text><text>text="独步江湖" font=80 link="ItemLinkInfo/5/8068"</text><text>text="]。" font=18</text>	<text>text="帮会旗帜样式增加" font=227</text><text>text="6" font=101</text><text>text="个。" font=227</text>
+12	3	ui/Image/UICommon/ScienceTreeNode.UITex	34	36	美轮美奂	<text>text="增加帮会旗帜：[" font=18</text><text>text="天下无敌" font=77 link="ItemLinkInfo/5/8069"</text><text>text="]，[" font=18</text><text>text="武林至尊" font=77 link="ItemLinkInfo/5/8071"</text><text>text="]。" font=18</text>	<text>text="帮会旗帜样式增加" font=227</text><text>text="8" font=101</text><text>text="个。" font=227</text>
+13	0	ui/Image/UICommon/ScienceTreeNode.UITex	24	26	吃遍天下	<text>text="帮会食堂烹饪产出增加[鸡肉菜盘]和[美酒佳酿]。" font=18</text>	<text>text="增加帮会食堂烹饪产出。" font=107</text>
+13	1	ui/Image/UICommon/ScienceTreeNode.UITex	24	26	吃遍天下	<text>text="帮会食堂烹饪产出增加[" font=18</text><text>text="鸡肉菜盘" font=80 link="ItemLinkInfo/5/22520"</text><text>text="]和[" font=18</text><text>text="美酒佳酿" font=80 link="ItemLinkInfo/5/22521"</text><text>text="]。" font=18</text>	<text>text="帮会食堂烹饪产出增加" font=227</text><text>text="2" font=101</text><text>text="个。" font=227</text>
+13	2	ui/Image/UICommon/ScienceTreeNode.UITex	24	26	吃遍天下	<text>text="帮会食堂烹饪产出增加[" font=18</text><text>text="南瓜盅菜盘" font=80 link="ItemLinkInfo/5/22522"</text><text>text="]和[" font=18</text><text>text="蒸鱼菜盘" font=80 link="ItemLinkInfo/5/22523"</text><text>text="]。" font=18</text>	<text>text="帮会食堂烹饪产出增加" font=227</text><text>text="4" font=101</text><text>text="个。" font=227</text>
+13	3	ui/Image/UICommon/ScienceTreeNode.UITex	24	26	吃遍天下	<text>text="帮会食堂烹饪产出增加[" font=18</text><text>text="肘子菜盘" font=77 link="ItemLinkInfo/5/22524"</text><text>text="]。" font=18</text>	<text>text="帮会食堂烹饪产出增加" font=227</text><text>text="5" font=101</text><text>text="个。" font=227</text>
+14	0	ui/Image/UICommon/ScienceTreeNode.UITex	21	23	物美价廉	<text>text="帮众成员打包帮会食物个数增加至二个。" font=18</text>	<text>text="帮会美食允许打包外带。" font=107</text>
+14	1	ui/Image/UICommon/ScienceTreeNode.UITex	21	23	物美价廉	<text>text="帮众成员打包帮会食物个数增加至二个。" font=18</text>	<text>text="帮众成员打包帮会食物个数增加至" font=227</text><text>text="2" font=101</text><text>text="个。" font=227</text>
+15	0	ui/Image/UICommon/ScienceTreeNode.UITex	3	5	玉华玄宫	<text>text="废弃。启动三级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，三级帮会工房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动三级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，三级帮会工房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+15	1	ui/Image/UICommon/ScienceTreeNode.UITex	3	5	玉华玄宫	<text>text="废弃。启动三级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，三级帮会工房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动三级帮会工房建设，需要完成一系列帮会工房建筑升级任务，建筑升级完成后，三级帮会工房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+16	0	ui/Image/UICommon/ScienceTreeNode.UITex	0	2	天机宝殿	<text>text="废弃。启动三级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，三级帮会丹房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动三级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，三级帮会丹房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=107</text>
+16	1	ui/Image/UICommon/ScienceTreeNode.UITex	0	2	天机宝殿	<text>text="废弃。启动三级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，三级帮会丹房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=18</text>	<text>text="废弃。启动三级帮会丹房建设，需要完成一系列帮会丹房建筑升级任务，建筑升级完成后，三级帮会丹房商店开启。建筑升级完成后才能继续升级后面的天工树节点。" font=227</text>
+17	0	ui/Image/UICommon/ScienceTreeNode.UITex	37	39	仙人指路	<text>text="开启帮会祈愿台，允许每周和韩非子对话获得[瑰石]一块。" font=18</text>	<text>text="增加秘境首领装备产出数量。" font=107</text>
+17	1	ui/Image/UICommon/ScienceTreeNode.UITex	37	39	仙人指路	<text>text="开启帮会祈愿台，允许每周和韩非子对话获得[" font=18</text><text>text="瑰石" font=74 link="ItemLinkInfo/5/22534"</text><text>text="]一块。" font=18</text>	<text>text="允许每周和韩非子对话获得" font=227</text><text>text="[" font=112</text><text>text="瑰石" font=112 link="ItemLinkInfo/5/22534"</text><text>text="]" font=112</text><text>text="1" font=101</text><text>text="块。" font=227</text>
+17	2	ui/Image/UICommon/ScienceTreeNode.UITex	37	39	仙人指路	<text>text="开启帮会祈愿台，允许每周和韩非子对话获得[" font=18</text><text>text="瑰石" font=74 link="ItemLinkInfo/5/22534"</text><text>text="]三块。" font=18</text>	<text>text="允许每周和韩非子对话获得" font=227</text><text>text="[" font=112</text><text>text="瑰石" font=112 link="ItemLinkInfo/5/22534"</text><text>text="]" font=112</text><text>text="3" font=101</text><text>text="块。" font=227</text>
+17	3	ui/Image/UICommon/ScienceTreeNode.UITex	37	39	仙人指路	<text>text="开启帮会祈愿台，允许每周和韩非子对话获得[" font=18</text><text>text="瑰石" font=74 link="ItemLinkInfo/5/22534"</text><text>text="]五块。" font=18</text>	<text>text="允许每周和韩非子对话获得" font=227</text><text>text="[" font=112</text><text>text="瑰石" font=112 link="ItemLinkInfo/5/22534"</text><text>text="]" font=112</text><text>text="5" font=101</text><text>text="块。" font=227</text>
+18	0	ui/Image/UICommon/ScienceTreeNode.UITex	46	48	事半功倍	<text>text="废弃。完成所有帮会任务额外奖励5%帮会资金。" font=18</text>	<text>text="废弃。完成所有帮会任务额外奖励5%帮会资金。" font=107</text>
+18	1	ui/Image/UICommon/ScienceTreeNode.UITex	46	48	事半功倍	<text>text="废弃。完成所有帮会任务额外奖励5%帮会资金。" font=18</text>	<text>text="废弃。完成所有帮会任务额外奖励5%帮会资金。" font=227</text>
+18	2	ui/Image/UICommon/ScienceTreeNode.UITex	46	48	事半功倍	<text>text="废弃。完成所有帮会任务额外奖励10%帮会资金。" font=18</text>	<text>text="废弃。完成所有帮会任务额外奖励10%帮会资金。" font=227</text>
+18	3	ui/Image/UICommon/ScienceTreeNode.UITex	46	48	事半功倍	<text>text="废弃。完成所有帮会任务额外奖励20%帮会资金。" font=18</text>	<text>text="废弃。完成所有帮会任务额外奖励20%帮会资金。" font=227</text>
+20	0	ui/Image/UICommon/ScienceTreeNode.UITex	64	66	小猪快跑	<text>text="废弃。帮会家园帮主找丁三石开启帮会赶猪活动。" font=18</text>	<text>text="废弃。帮会家园帮主找丁三石开启帮会赶猪活动。" font=107</text>
+20	1	ui/Image/UICommon/ScienceTreeNode.UITex	64	66	小猪快跑	<text>text="废弃。帮会家园帮主找丁三石开启帮会赶猪活动。" font=18</text>	<text>text="废弃。帮会家园帮主找丁三石开启帮会赶猪活动。" font=227</text>
+21	0	ui/Image/UICommon/ScienceTreeNode.UITex	91	93	步步生莲	<text>text="帮会花盆商处出售普通产量的花盆。" font=18</text>	<text>text="帮会花盆商处出售可随身携带、种植的花盆。" font=107</text>
+21	1	ui/Image/UICommon/ScienceTreeNode.UITex	91	93	步步生莲	<text>text="帮会花盆商处出售普通产量的花盆。" font=18</text>	<text>text="帮会花盆商处出售" font=227</text><text>text="普通" font=101</text><text>text="产量的花盆。" font=227</text>
+21	2	ui/Image/UICommon/ScienceTreeNode.UITex	91	93	步步生莲	<text>text="帮会花盆商处出售1.5倍产量的花盆。" font=18</text>	<text>text="帮会花盆商处出售" font=227</text><text>text="1.5倍" font=101</text><text>text="产量的花盆。" font=227</text>
+21	3	ui/Image/UICommon/ScienceTreeNode.UITex	91	93	步步生莲	<text>text="帮会花盆商处出售2倍产量的花盆。" font=18</text>	<text>text="帮会花盆商处出售" font=227</text><text>text="2倍" font=101</text><text>text="产量的花盆。" font=227</text>
+22	0	ui/Image/UICommon/ScienceTreeNode.UITex	88	90	锦天绣地	<text>text="帮会家园土地打开五级土地上限。" font=18</text>	<text>text="提高帮会土地等级上限。" font=107</text>
+22	1	ui/Image/UICommon/ScienceTreeNode.UITex	88	90	锦天绣地	<text>text="帮会家园土地打开五级土地上限。" font=18</text>	<text>text="帮会家园土地等级上限提高至" font=227</text><text>text="5" font=101</text><text>text="级。" font=227</text>
+23	0	ui/Image/UICommon/ScienceTreeNode.UITex	79	81	奇珍异宝	<text>text="开启帮会宝物商店与兵鉴迷篇商店。" font=18</text>	<text>text="开启帮会宝物商店与兵鉴迷篇商店。" font=107</text>
+23	1	ui/Image/UICommon/ScienceTreeNode.UITex	79	81	奇珍异宝	<text>text="开启帮会宝物商店与兵鉴迷篇商店。" font=18</text>	<text>text="开启帮会宝物商店与兵鉴迷篇商店。" font=227</text>
+24	0	ui/Image/UICommon/ScienceTreeNode.UITex	70	72	春华秋实	<text>text="菜地和花盆可种植一至四级草料。" font=18</text>	<text>text="菜地和花盆可种植草料。" font=107</text>
+24	1	ui/Image/UICommon/ScienceTreeNode.UITex	70	72	春华秋实	<text>text="菜地和花盆可种植一至四级草料。" font=18</text>	<text>text="菜地和花盆可种植一至四级草料。" font=227</text>
+25	0	ui/Image/UICommon/ScienceTreeNode.UITex	82	84	兴家立业	<text>text="废弃。增加帮会工房建设任务奖励的30%。" font=18</text>	<text>text="废弃。增加帮会工房建设任务奖励的30%。" font=107</text>
+25	1	ui/Image/UICommon/ScienceTreeNode.UITex	82	84	兴家立业	<text>text="废弃。增加帮会工房建设任务奖励的30%。" font=18</text>	<text>text="废弃。增加帮会工房建设任务奖励的30%。" font=227</text>
+25	2	ui/Image/UICommon/ScienceTreeNode.UITex	82	84	兴家立业	<text>text="废弃。增加工房建设任务奖励的50%。" font=18</text>	<text>text="废弃。增加工房建设任务奖励的50%。" font=227</text>
+25	3	ui/Image/UICommon/ScienceTreeNode.UITex	82	84	兴家立业	<text>text="废弃。增加工房建设任务奖励的100%。" font=18</text>	<text>text="废弃。增加工房建设任务奖励的100%。" font=227</text>
+26	0	ui/Image/UICommon/ScienceTreeNode.UITex	73	75	五谷丰登	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高30%。" font=18</text>	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高30%。" font=107</text>
+26	1	ui/Image/UICommon/ScienceTreeNode.UITex	73	75	五谷丰登	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高30%。" font=18</text>	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高30%。" font=227</text>
+26	2	ui/Image/UICommon/ScienceTreeNode.UITex	73	75	五谷丰登	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高50%。需要天工树主干隐宝阁建设完成。" font=18</text>	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高50%。需要天工树主干隐宝阁建设完成。" font=227</text>
+26	3	ui/Image/UICommon/ScienceTreeNode.UITex	73	75	五谷丰登	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高100%。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。帮会家园农作物上交获得的帮会资金提高100%。需要天工树主干玉华玄宫建设完成。" font=227</text>
+27	0	ui/Image/UICommon/ScienceTreeNode.UITex	76	78	鸢飞鱼跃	<text>text="钓鱼活动增产50%并有几率钓出素银宝箱和鎏金宝箱。" font=18</text>	<text>text="大幅提高钓鱼活动收益。" font=107</text>
+27	1	ui/Image/UICommon/ScienceTreeNode.UITex	76	78	鸢飞鱼跃	<text>text="钓鱼活动增产50%并有几率钓出[" font=18</text><text>text="素银宝箱" font=74 link="ItemLinkInfo/5/10031"</text><text>text="]和[" font=18</text><text>text="鎏金宝箱" font=74 link="ItemLinkInfo/5/10032"</text><text>text="]。" font=18</text>	<text>text="钓鱼活动增产" font=227</text><text>text="50%" font=101</text><text>text="并有几率钓出" font=227</text><text>text="[" font=112</text><text>text="素银宝箱" font=112 link="ItemLinkInfo/5/10031"</text><text>text="]" font=112</text><text>text="和" font=227</text><text>text="[" font=112</text><text>text="鎏金宝箱" font=112 link="ItemLinkInfo/5/10032"</text><text>text="]" font=112</text><text>text="。" font=227</text>
+28	0	ui/Image/UICommon/ScienceTreeNode.UITex	85	87	灵丹妙药	<text>text="废弃。增加丹房建设任务奖励30%。" font=18</text>	<text>text="废弃。增加丹房建设任务奖励30%。" font=107</text>
+28	1	ui/Image/UICommon/ScienceTreeNode.UITex	85	87	灵丹妙药	<text>text="废弃。增加丹房建设任务奖励30%。" font=18</text>	<text>text="废弃。增加丹房建设任务奖励30%。" font=227</text>
+28	2	ui/Image/UICommon/ScienceTreeNode.UITex	85	87	灵丹妙药	<text>text="废弃。增加丹房建设任务奖励50%。" font=18</text>	<text>text="废弃。增加丹房建设任务奖励50%。" font=227</text>
+28	3	ui/Image/UICommon/ScienceTreeNode.UITex	85	87	灵丹妙药	<text>text="废弃。增加丹房建设任务奖励100%。" font=18</text>	<text>text="废弃。增加丹房建设任务奖励100%。" font=227</text>
+29	0	ui/Image/UICommon/ScienceTreeNode.UITex	94	96	洗髓伐脉	<text>text="在生活技艺训练师处遗忘专精消耗减少50%。" font=18</text>	<text>text="大幅降低遗忘生活技艺专精的消耗。" font=107</text>
+29	1	ui/Image/UICommon/ScienceTreeNode.UITex	94	96	洗髓伐脉	<text>text="在生活技艺训练师处遗忘专精消耗减少50%。" font=18</text>	<text>text="在生活技艺训练师处遗忘专精消耗减少" font=227</text><text>text="50%" font=101</text><text>text="。" font=227</text>
+30	0	ui/Image/UICommon/ScienceTreeNode.UITex	97	99	欣欣向荣	<text>text="提高帮会菜地最低收成数到40%。" font=18</text>	<text>text="可降低帮会菜地损失。" font=107</text>
+30	1	ui/Image/UICommon/ScienceTreeNode.UITex	97	99	欣欣向荣	<text>text="提高帮会菜地最低收成数到40%。" font=18</text>	<text>text="提高帮会菜地最低收成数到" font=227</text><text>text="40%" font=101</text><text>text="。" font=227</text>
+31	0	ui/Image/UICommon/ScienceTreeNode2.UITex	36	38	大庇寒士	<text>text="开启帮会资金修理装备：修理装备花费的50%将由帮会资金支出。" font=18</text>	<text>text="帮会资金可用于修理装备。" font=107</text>
+31	1	ui/Image/UICommon/ScienceTreeNode2.UITex	36	38	大庇寒士	<text>text="开启帮会资金修理装备：修理装备花费的50%将由帮会资金支出。" font=18</text>	<text>text="修理装备花费的" font=227</text><text>text="50%" font=101</text><text>text="将由帮会资金支出。" font=227</text>
+32	0	ui/Image/UICommon/ScienceTreeNode2.UITex	33	35	万卷真经	<text>text="开启帮会书童售卖指定书籍。" font=18</text>	<text>text="可在帮会购买部分稀有书籍。" font=107</text>
+32	1	ui/Image/UICommon/ScienceTreeNode2.UITex	33	35	万卷真经	<text>text="开启帮会书童售卖指定书籍。" font=18</text>	<text>text="开启帮会书童售卖指定书籍。" font=227</text>
+33	0	ui/Image/UICommon/ScienceTreeNode.UITex	108	110	百废俱兴	<text>text="帮会内活动收益提高100%。帮会内钓鱼活动、小猪快跑、菜园保卫战收益加成。" font=18</text>	<text>text="大幅提高帮会内活动收益。" font=107</text>
+33	1	ui/Image/UICommon/ScienceTreeNode.UITex	108	110	百废俱兴	<text>text="帮会内活动收益提高100%。帮会内小猪快跑、菜园保卫战收益加成。" font=18</text>	<text>text="帮会内活动收益提高" font=227</text><text>text="100%" font=101</text><text>text="。" font=227</text>
+34	0	ui/Image/UICommon/ScienceTreeNode.UITex	111	113	四海皆朋	<text>text="帮会家园每周生成二十张请帖。可邀请他人至本帮会领地参赏。" font=18</text>	<text>text="可邀请他人至本帮会领地游玩。" font=107</text>
+34	1	ui/Image/UICommon/ScienceTreeNode.UITex	111	113	四海皆朋	<text>text="帮会家园每周生成二十张[" font=18</text><text>text="请帖" font=77 link="ItemLinkInfo/5/17421"</text><text>text="]。可邀请他人至本帮会领地参赏。" font=18</text>	<text>text="帮会家园每周生成" font=227</text><text>text="20" font=101</text><text>text="张" font=227</text><text>text="[" font=206</text><text>text="请帖" font=206 link="ItemLinkInfo/5/17421"</text><text>text="]" font=206</text><text>text="。" font=227</text>
+35	0	ui/Image/UICommon/ScienceTreeNode.UITex	114	116	一念千里	<text>text="帮会成员神行千里调息时间降低十五分钟。" font=18</text>	<text>text="极大降低神行千里调息时间。" font=107</text>
+35	1	ui/Image/UICommon/ScienceTreeNode.UITex	114	116	一念千里	<text>text="帮会成员神行千里调息时间降低十五分钟。" font=18</text>	<text>text="帮会成员神行千里调息时间降低" font=227</text><text>text="15" font=101</text><text>text="分钟。" font=227</text>
+36	0	ui/Image/UICommon/ScienceTreeNode.UITex	117	119	妙境通幽	<text>text="95级团队秘境中同帮会帮众数量占70%及以上则秘境中数值奖励提高100%。" font=18</text>	<text>text="大幅提高帮会成员合作探索秘境收益。" font=107</text>
+36	1	ui/Image/UICommon/ScienceTreeNode.UITex	117	119	妙境通幽	<text>text="95级团队秘境中同帮会帮众数量占70%及以上则秘境中数值奖励提高100%。" font=18</text>	<text>text="帮会团于95级团队秘境中获得的数值奖励提高" font=227</text><text>text="100%" font=101</text><text>text="。" font=227</text>
+37	0	ui/Image/UICommon/ScienceTreeNode.UITex	120	122	甘露凝汁	<text>text="帮会家园菜地和花盆能种植草药；同时在帮会领地种植草药时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="大幅提高帮会领地内采药收益。" font=107</text>
+37	1	ui/Image/UICommon/ScienceTreeNode.UITex	120	122	甘露凝汁	<text>text="帮会家园菜地和花盆能种植草药；同时在帮会领地种植草药时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="大幅提高帮会领地内采药收益。" font=227</text>
+38	0	ui/Image/UICommon/ScienceTreeNode.UITex	126	128	千锤万凿	<text>text="帮会家园出现矿点；同时在帮会领地采矿时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="大幅提高帮会领地内采矿收益。" font=107</text>
+38	1	ui/Image/UICommon/ScienceTreeNode.UITex	126	128	千锤万凿	<text>text="帮会家园出现矿点；同时在帮会领地采矿时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="大幅提高帮会领地内采矿收益。" font=227</text>
+39	0	ui/Image/UICommon/ScienceTreeNode.UITex	132	134	解羊之手	<text>text="帮会家园的牧场出现可庖丁的动物；同时在帮会领地庖丁时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="提高帮会成员庖丁收益。" font=107</text>
+39	1	ui/Image/UICommon/ScienceTreeNode.UITex	132	134	解羊之手	<text>text="帮会家园的牧场出现可庖丁的动物；同时在帮会领地庖丁时会随机触发特殊事件。预备期成员无法享受此福利。" font=18</text>	<text>text="大幅提高帮会领地内庖丁收益。" font=227</text>
+40	0	ui/Image/UICommon/ScienceTreeNode.UITex	123	125	细嚼慢咽	<text>text="废弃。帮会家园开启特殊事件，在帮会家园菜地种植草药时随机触发。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园菜地种植草药时随机触发。需要天工树主干天机宝殿建设完成。" font=107</text>
+40	1	ui/Image/UICommon/ScienceTreeNode.UITex	123	125	细嚼慢咽	<text>text="废弃。帮会家园开启特殊事件，在帮会家园菜地种植草药时随机触发。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园菜地种植草药时随机触发。需要天工树主干天机宝殿建设完成。" font=227</text>
+41	0	ui/Image/UICommon/ScienceTreeNode.UITex	135	137	王中之王	<text>text="废弃。帮会家园开启特殊事件，在帮会家园牧场庖丁时随机触发。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园牧场庖丁时随机触发。需要天工树主干玉华玄宫建设完成。" font=107</text>
+41	1	ui/Image/UICommon/ScienceTreeNode.UITex	135	137	王中之王	<text>text="废弃。帮会家园开启特殊事件，在帮会家园牧场庖丁时随机触发。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园牧场庖丁时随机触发。需要天工树主干玉华玄宫建设完成。" font=227</text>
+42	0	ui/Image/UICommon/ScienceTreeNode.UITex	129	131	石破玉出	<text>text="废弃。帮会家园开启特殊事件，在帮会家园矿场采金时随机触发。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园矿场采金时随机触发。需要天工树主干玉华玄宫建设完成。" font=107</text>
+42	1	ui/Image/UICommon/ScienceTreeNode.UITex	129	131	石破玉出	<text>text="废弃。帮会家园开启特殊事件，在帮会家园矿场采金时随机触发。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。帮会家园开启特殊事件，在帮会家园矿场采金时随机触发。需要天工树主干玉华玄宫建设完成。" font=227</text>
+43	0	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	南北名菜	<text>text="废弃。烹饪技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。烹饪技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=107</text>
+43	1	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	南北名菜	<text>text="废弃。烹饪技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。烹饪技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=227</text>
+44	0	ui/Image/UICommon/ScienceTreeNode2.UITex	3	5	锦衣华服	<text>text="废弃。缝纫技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。缝纫技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=107</text>
+44	1	ui/Image/UICommon/ScienceTreeNode2.UITex	3	5	锦衣华服	<text>text="废弃。缝纫技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。缝纫技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=227</text>
+45	0	ui/Image/UICommon/ScienceTreeNode2.UITex	6	8	百炼成锋	<text>text="废弃。铸造技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。铸造技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=107</text>
+45	1	ui/Image/UICommon/ScienceTreeNode2.UITex	6	8	百炼成锋	<text>text="废弃。铸造技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=18</text>	<text>text="废弃。铸造技艺精力消耗减少20%。需要天工树主干玉华玄宫建设完成。" font=227</text>
+46	0	ui/Image/UICommon/ScienceTreeNode2.UITex	9	11	妙手仁心	<text>text="废弃。医术技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。医术技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=107</text>
+46	1	ui/Image/UICommon/ScienceTreeNode2.UITex	9	11	妙手仁心	<text>text="废弃。医术技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。医术技艺精力消耗减少20%。需要天工树主干天机宝殿建设完成。" font=227</text>
+47	0	ui/Image/UICommon/ScienceTreeNode2.UITex	12	14	薄利多修	<text>text="修理商八折修理装备。" font=18</text>	<text>text="可降低装备修理消耗。" font=107</text>
+47	1	ui/Image/UICommon/ScienceTreeNode2.UITex	12	14	薄利多修	<text>text="修理商八折修理装备。" font=18</text>	<text>text="修理商" font=227</text><text>text="八折" font=101</text><text>text="修理装备。" font=227</text>
+48	0	ui/Image/UICommon/ScienceTreeNode2.UITex	15	17	一品良驹	<text>text="废弃。帮会牧场每周刷出一匹高级马驹(凌晨0点至8点期间不刷新)，详细规则及马驹刷新情况可向帮会牧场马商询问。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。帮会牧场每周刷出一匹高级马驹(凌晨0点至8点期间不刷新)，详细规则及马驹刷新情况可向帮会牧场马商询问。需要天工树主干天机宝殿建设完成。" font=107</text>
+48	1	ui/Image/UICommon/ScienceTreeNode2.UITex	15	17	一品良驹	<text>text="废弃。帮会牧场每周刷出一匹高级马驹(凌晨0点至8点期间不刷新)，详细规则及马驹刷新情况可向帮会牧场马商询问。需要天工树主干天机宝殿建设完成。" font=18</text>	<text>text="废弃。帮会牧场每周刷出一匹高级马驹(凌晨0点至8点期间不刷新)，详细规则及马驹刷新情况可向帮会牧场马商询问。需要天工树主干天机宝殿建设完成。" font=227</text>
+49	0	ui/Image/UICommon/ScienceTreeNode2.UITex	18	20	遛马名师	<text>text="帮会领地遛马驹增加饱食度并额外获得成长经验。" font=18</text>	<text>text="帮会领地遛马驹可增加饱食度并额外获得成长经验。" font=107</text>
+49	1	ui/Image/UICommon/ScienceTreeNode2.UITex	18	20	遛马名师	<text>text="帮会领地遛马驹增加饱食度并额外获得成长经验。" font=18</text>	<text>text="帮会领地遛马驹增加饱食度并额外获得成长经验。" font=227</text>
+50	0	ui/Image/UICommon/ScienceTreeNode2.UITex	21	23	魂牵梦绕	<text>text="帮会成员获得腰部挂件牵魂索，限时一周。" font=18</text>	<text>text="帮会成员获得统一的腰部挂件，打造独一无二的个性化帮会！" font=107</text>
+50	1	ui/Image/UICommon/ScienceTreeNode2.UITex	21	23	魂牵梦绕	<text>text="帮会成员获得腰部挂件[" font=18</text><text>text="牵魂索" font=74 link="ItemLinkInfo/8/2823"</text><text>text="]，限时一周。" font=18</text>	<text>text="帮会成员获得腰部挂件" font=227</text><text>text="[" font=112</text><text>text="牵魂索" font=112 link="ItemLinkInfo/8/2823"</text><text>text="]" font=112</text><text>text="。" font=227</text>
+51	0	ui/Image/UICommon/ScienceTreeNode2.UITex	24	26	三叹三秋	<text>text="帮会成员获得腰部挂件[" font=18</text><text>text="三秋" font=74 link="ItemLinkInfo/8/2828"</text><text>text="]，限时一周。" font=18</text>	<text>text="帮会成员获得统一的腰部挂件，打造独一无二的个性化帮会！" font=107</text>
+51	1	ui/Image/UICommon/ScienceTreeNode2.UITex	24	26	三叹三秋	<text>text="帮会成员获得腰部挂件[" font=18</text><text>text="三秋" font=74 link="ItemLinkInfo/8/2828"</text><text>text="]，限时一周。" font=18</text>	<text>text="帮会成员获得统一腰部挂件" font=227</text><text>text="[" font=112</text><text>text="三秋" font=112 link="ItemLinkInfo/8/2828"</text><text>text="]" font=112</text><text>text="。" font=227</text>
+52	0	ui/Image/UICommon/ScienceTreeNode2.UITex	27	29	边荒古韵	<text>text="帮会成员获得背部挂件" font=18</text><text>text="蛮衣" font=77 link="ItemLinkInfo/8/2830"</text><text>text="，限时一周。" font=18</text>	<text>text="帮会所有成员获得统一的背部挂件。" font=107</text>
+52	1	ui/Image/UICommon/ScienceTreeNode2.UITex	27	29	边荒古韵	<text>text="帮会成员获得背部挂件[" font=18</text><text>text="蛮衣" font=77 link="ItemLinkInfo/8/2830"</text><text>text="]，限时一周。" font=18</text>	<text>text="帮会成员获得背部挂件" font=227</text><text>text="[" font=206</text><text>text="蛮衣" font=206 link="ItemLinkInfo/8/2830"</text><text>text="]" font=206</text><text>text="。" font=227</text>
+53	0	ui/Image/UICommon/ScienceTreeNode2.UITex	30	32	红篓碧葫	<text>text="帮会成员获得背部挂件青葫篓，限时一周。" font=18</text>	<text>text="帮会成员获得统一的背部挂件，打造独一无二的个性化帮会！" font=107</text>
+53	1	ui/Image/UICommon/ScienceTreeNode2.UITex	30	32	红篓碧葫	<text>text="帮会成员获得背部挂件[" font=18</text><text>text="青葫篓" font=74 link="ItemLinkInfo/8/2831"</text><text>text="]，限时一周。" font=18</text>	<text>text="帮会成员获得统一的背部挂件" font=227</text><text>text="[" font=112</text><text>text="青葫篓" font=112 link="ItemLinkInfo/8/2831"</text><text>text="]" font=112</text><text>text="。" font=227</text>
+54	0	ui/Image/UICommon/ScienceTreeNode2.UITex	78	80	甘霖	<text>text="据点贸易任务奖励的载具物资增加100%。" font=18</text>	<text>text="大幅提高据点贸易任务的载具物资奖励。" font=107</text>
+54	1	ui/Image/UICommon/ScienceTreeNode2.UITex	78	80	甘霖	<text>text="据点贸易任务奖励的载具物资增加100%。" font=18</text>	<text>text="据点贸易任务奖励的载具物资增加" font=227</text><text>text="100%" font=101</text><text>text="。" font=227</text>
+55	0	ui/Image/UICommon/ScienceTreeNode2.UITex	81	83	简材	<text>text="生产载具消耗降低20%，可用金币额外购买两辆神机车。" font=18</text>	<text>text="可以提高每周载具可使用数量。" font=107</text>
+55	1	ui/Image/UICommon/ScienceTreeNode2.UITex	81	83	简材	<text>text="生产载具消耗降低20%，可用金币额外购买两辆神机车。" font=18</text>	<text>text="生产载具消耗降低" font=227</text><text>text="20%" font=101</text><text>text="，可用金币额外购买" font=227</text><text>text="2" font=101</text><text>text="辆神机车。" font=227</text>
+56	0	ui/Image/UICommon/ScienceTreeNode2.UITex	84	86	神工	<text>text="箭塔照明弹的作用范围和持续时间增加100%。" font=18</text>	<text>text="大幅增强据点神机台效果。" font=107</text>
+56	1	ui/Image/UICommon/ScienceTreeNode2.UITex	84	86	神工	<text>text="箭塔照明弹的作用范围和持续时间增加100%。" font=18</text>	<text>text="箭塔照明弹的作用范围和持续时间增加" font=227</text><text>text="100%" font=101</text><text>text="。" font=227</text>
+57	0	ui/Image/UICommon/ScienceTreeNode2.UITex	87	89	鬼斧	<text>text="载具攻击力提高10%。" font=18</text>	<text>text="提高载具攻击力。" font=107</text>
+57	1	ui/Image/UICommon/ScienceTreeNode2.UITex	87	89	鬼斧	<text>text="载具攻击力提高10%。" font=18</text>	<text>text="载具攻击力提高" font=227</text><text>text="10%" font=101</text><text>text="。" font=227</text>
+58	0	ui/Image/UICommon/ScienceTreeNode2.UITex	90	92	神速	<text>text="神机车移动速度提高三分之二。" font=18</text>	<text>text="大幅提高神机车移动速度。" font=107</text>
+58	1	ui/Image/UICommon/ScienceTreeNode2.UITex	90	92	神速	<text>text="神机车移动速度提高三分之二。" font=18</text>	<text>text="神机车移动速度提高" font=227</text><text>text="2/3" font=101</text><text>text="。" font=227</text>
+59	0	ui/Image/UICommon/ScienceTreeNode2.UITex	39	41	摧城	<text>text="载具对载具和城墙伤害提高100%。" font=18</text>	<text>text="大幅提高载具对载具和城墙的伤害。" font=107</text>
+59	1	ui/Image/UICommon/ScienceTreeNode2.UITex	39	41	摧城	<text>text="载具对载具和城墙伤害提高100%。" font=18</text>	<text>text="载具对载具和城墙伤害提高" font=227</text><text>text="100%" font=101</text><text>text="。" font=227</text>
+60	0	ui/Image/UICommon/ScienceTreeNode2.UITex	50	43	坚韧	<text>text="神机车和摧城车防御提高20%。" font=18</text>	<text>text="提高神机车和摧城车防御。" font=107</text>
+60	1	ui/Image/UICommon/ScienceTreeNode2.UITex	50	43	坚韧	<text>text="神机车和摧城车防御提高20%。" font=18</text>	<text>text="神机车和摧城车防御提高" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+61	0	ui/Image/UICommon/ScienceTreeNode2.UITex	44	46	利器	<text>text="载具攻击对玩家伤害提升50%。" font=18</text>	<text>text="大幅提高载具伤害。" font=107</text>
+61	1	ui/Image/UICommon/ScienceTreeNode2.UITex	44	46	利器	<text>text="载具攻击对玩家伤害提升50%。" font=18</text>	<text>text="载具攻击对玩家伤害提升" font=227</text><text>text="50%" font=101</text><text>text="。" font=227</text>
+62	0	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设工房	<text>text="Legend" font=18</text>	<text>text="Legend" font=107</text>
+62	1	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设工房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+62	2	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设工房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+62	3	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设工房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+63	0	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设丹房	<text>text="Legend" font=18</text>	<text>text="Legend" font=107</text>
+63	1	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设丹房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+63	2	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设丹房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+63	3	ui/Image/UICommon/ScienceTreeNode2.UITex	0	2	建设丹房	<text>text="Legend" font=18</text>	<text>text="Legend" font=227</text>
+64	0	ui/Image/UICommon/ScienceTreeNode2.UITex	54	56	镖头	<text>text="帮会成员进行据点贸易时可骑乘坐骑。" font=18</text>	<text>text="提高帮会成员据点贸易时的效率。" font=107</text>
+64	1	ui/Image/UICommon/ScienceTreeNode2.UITex	54	56	镖头	<text>text="帮会成员进行据点贸易时可骑乘坐骑。" font=18</text>	<text>text="帮会成员进行据点贸易时可" font=227</text><text>text="骑乘" font=101</text><text>text="坐骑。" font=227</text>
+65	0	ui/Image/UICommon/ScienceTreeNode2.UITex	51	53	宝地	<text>text="据点贸易任务奖励的帮会资金增加20%。" font=18</text>	<text>text="提高据点贸易任务的帮会资金奖励。" font=107</text>
+65	1	ui/Image/UICommon/ScienceTreeNode2.UITex	51	53	宝地	<text>text="据点贸易任务奖励的帮会资金增加20%。" font=18</text>	<text>text="据点贸易任务奖励的帮会资金增加" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+66	0	ui/Image/UICommon/ScienceTreeNode2.UITex	47	49	多金	<text>text="废弃。据点贸易任务奖励的载具物资增加50%。需要天工树主干隐宝阁或者神工阁建设完成。" font=18</text>	<text>text="废弃。据点贸易任务奖励的载具物资增加50%。需要天工树主干隐宝阁或者神工阁建设完成。" font=107</text>
+66	1	ui/Image/UICommon/ScienceTreeNode2.UITex	47	49	多金	<text>text="废弃。据点贸易任务奖励的载具物资增加50%。需要天工树主干隐宝阁或者神工阁建设完成。" font=18</text>	<text>text="废弃。据点贸易任务奖励的载具物资增加50%。需要天工树主干隐宝阁或者神工阁建设完成。" font=227</text>
+67	0	ui/Image/UICommon/ScienceTreeNode2.UITex	57	59	拾遗	<text>text="失去据点时，额外返还已积累的30%战功牌。" font=18</text>	<text>text="降低失去据点时战功牌损失。" font=107</text>
+67	1	ui/Image/UICommon/ScienceTreeNode2.UITex	57	59	拾遗	<text>text="失去据点时，额外返还已积累的30%战功牌。" font=18</text>	<text>text="失去据点时，额外返还已积累的" font=227</text><text>text="30%" font=101</text><text>text="战功牌。" font=227</text>
+68	0	ui/Image/UICommon/ScienceTreeNode2.UITex	60	62	死斗	<text>text="据点内帮会成员攻击力和内外功防御提高50%。" font=18</text>	<text>text="大幅提高据点内帮会成员的战斗力。" font=107</text>
+68	1	ui/Image/UICommon/ScienceTreeNode2.UITex	60	62	死斗	<text>text="据点内帮会成员攻击力和内外功防御提高50%。" font=18</text>	<text>text="据点内帮会成员攻击力和内外功防御提高" font=227</text><text>text="50%" font=101</text><text>text="。" font=227</text>
+69	0	ui/Image/UICommon/ScienceTreeNode2.UITex	63	65	壁立	<text>text="废弃据点内帮会成员内外功防御提高50%。需要天工树主干神工阁建设完成。" font=18</text>	<text>text="废弃据点内帮会成员内外功防御提高50%。需要天工树主干神工阁建设完成。" font=107</text>
+69	1	ui/Image/UICommon/ScienceTreeNode2.UITex	63	65	壁立	<text>text="废弃据点内帮会成员内外功防御提高50%。需要天工树主干神工阁建设完成。" font=18</text>	<text>text="废弃据点内帮会成员内外功防御提高50%。需要天工树主干神工阁建设完成。" font=227</text>
+70	0	ui/Image/UICommon/ScienceTreeNode2.UITex	85	67	将星	<text>text="据点内持旗帮会成员最大气血值和御劲等级提高200%。" font=18</text>	<text>text="大幅提高据点内持旗帮会成员的防御。" font=107</text>
+70	1	ui/Image/UICommon/ScienceTreeNode2.UITex	85	67	将星	<text>text="据点内持旗帮会成员最大气血值和御劲等级提高200%。" font=18</text>	<text>text="据点内持旗帮会成员最大气血值和御劲等级提高" font=227</text><text>text="200%" font=101</text><text>text="。" font=227</text>
+71	0	ui/Image/UICommon/ScienceTreeNode2.UITex	68	70	火矢	<text>text="废弃。据点内弓箭手守卫伤害提高20%。需要天工树主干神工阁建设完成。" font=18</text>	<text>text="废弃。据点内弓箭手守卫伤害提高20%。需要天工树主干神工阁建设完成。" font=107</text>
+71	1	ui/Image/UICommon/ScienceTreeNode2.UITex	68	70	火矢	<text>text="废弃。据点内弓箭手守卫伤害提高20%。需要天工树主干神工阁建设完成。" font=18</text>	<text>text="废弃。据点内弓箭手守卫伤害提高20%。需要天工树主干神工阁建设完成。" font=227</text>
+72	0	ui/Image/UICommon/ScienceTreeNode2.UITex	71	73	超拔	<text>text="据点所有建筑受到伤害减少20%。" font=18</text>	<text>text="提高据点内所有建筑的城防强度。" font=107</text>
+72	1	ui/Image/UICommon/ScienceTreeNode2.UITex	71	73	超拔	<text>text="据点所有建筑受到伤害减少20%。" font=18</text>	<text>text="据点所有建筑受到伤害减少" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+73	0	ui/Image/UICommon/ScienceTreeNode2.UITex	75	77	驰援	<text>text="据点内弓箭手和近战守卫伤害提高20%。" font=18</text>	<text>text="提高据点内弓箭手和近战守卫的伤害。" font=107</text>
+73	1	ui/Image/UICommon/ScienceTreeNode2.UITex	75	77	驰援	<text>text="据点内弓箭手和近战守卫伤害提高20%。" font=18</text>	<text>text="据点内弓箭手和近战守卫伤害提高" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+74	0	ui/Image/UICommon/ScienceTreeNode2.UITex	3	5	神工巧匠	<text>text="烹饪、缝纫、铸造、医术技艺精力消耗降低20%。预备期成员无法享受此福利。" font=18</text>	<text>text="可降低制造类生活技艺精力消耗。" font=107</text>
+74	1	ui/Image/UICommon/ScienceTreeNode2.UITex	3	5	神工巧匠	<text>text="烹饪、缝纫、铸造、医术技艺精力消耗降低20%。预备期成员无法享受此福利。" font=18</text>	<text>text="制造类生活技艺精力消耗降低" font=227</text><text>text="20%" font=101</text><text>text="。" font=227</text>
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

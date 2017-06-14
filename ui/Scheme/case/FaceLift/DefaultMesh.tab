@@ -1,0 +1,8 @@
+RoleType	DefaultMesh	DefaultMtl	LookAtX	LookAtY	LookAtZ	CamPosX	CamPosY	CamPosZ
+0			0	0	0	0	0	0
+1	data\source\player\M2\部件\m2_new_face.Mesh	data\source\player\M2\部件\m2_new_face.Mtl	25566	762	25700	25554	762	25780
+2	data\source\player\F2\部件\F2_new_face.Mesh	data\source\player\F2\部件\F2_new_face.Mtl	25574	753	25702	25570	752	25780
+5	data\source\player\M1\部件\m1_new_face.Mesh	data\source\player\M1\部件\m1_new_face.Mtl	25565	708	25703	25575	710	25775
+6	data\source\player\F1\部件\f1_new_face.Mesh	data\source\player\F1\部件\f1_new_face.Mtl	25565	705	25701	25563	704	25771
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

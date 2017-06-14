@@ -1,0 +1,1219 @@
+<modules>
+	<module name="base" load="true" layer="1">
+		<file>\ui\script\onactive.lua</file>
+		<file>\ui\script\base.lua</file>
+		<file>\ui\script\time_lib.lua</file>
+		<file>\ui\script\c_call_func.lua</file>
+		<file>\ui\script\ui_extensions.lua</file>
+		<file>\ui\script\class.lua</file>
+		<file>\ui\script\enum_ui.lua</file>
+		<file>\ui\Script\json.lua</file>
+		<file>\ui\Script\RingQueue.lua</file>
+		<file>\ui\Script\kmath.lua</file>
+		<file>\ui\Script\module_loader.lua</file>
+	</module>
+
+	<module name="string" load="true" layer="1">
+		<file>\ui\string\string.lua</file>
+		<file>\ui\string\gluestring.lua</file>
+		<file>\ui\string\url.lua</file>
+	</module>
+
+	<module name="tPhone" load="false" layer="1" type="lib">
+		<file>\ui\string\phone.lua</file>
+	</module>
+
+	<module name="g_tHotKey" load="false" layer="1" type="lib">
+		<file>\ui\string\hotkeystring.lua</file>
+	</module>
+
+	<module name="g_tLoad" load="false" layer="1" type="lib">
+		<file>\ui\string\loadstring.lua</file>
+	</module>
+
+	<module name="g_tTotur" load="false" layer="1" type="lib">
+		<file>\ui\string\toturstring.lua</file>
+	</module>
+
+	<module name="wstring" load="false" layer="1" type="lib">
+		<file>\ui\script\utf8.lua</file>
+		<file>\ui\script\gbk.lua</file>
+		<file>\ui\script\wstring.lua</file>
+	</module>
+
+	<module name="customdata" load="true" layer="1">
+		<file>\ui\script\customdata.lua</file>
+	</module>
+
+	<module name="UIModule" load="true" layer="1">
+		<file>\ui\script\module.lua</file>
+	</module>
+
+	<module name="XGUI" load="true" layer="1" type="lib">
+		<file>\ui\script\XGUI.lua</file>
+	</module>
+
+	<module name="recording" load="false" layer="1" type="lib">
+		<file>\ui\script\recording.lua</file>
+	</module>
+
+	<module name="recording_data" load="false" layer="1" type="lib">
+		<file>\ui\script\recording_data.lua</file>
+	</module>
+
+	<module name="code_video" load="false" layer="1" type="lib">
+		<file>\ui\script\code_video.lua</file>
+	</module>
+
+	<module name="TwoDimensionalLogin" type="frame" load="false" layer="1">
+		<file>\ui\config\default\TwoDimensionalLogin.lua</file>
+	</module>
+
+	<module name="ScreenShotPanel" type="frame" load="false" layer="1">
+		<file>\ui\config\default\ScreenShotPanel.lua</file>
+	</module>
+
+	<module name="http_download" type="frame" load="false" layer="1">
+		<file>\ui\script\http_download.lua</file>
+	</module>
+
+	<module name="UICursor" type="frame" load="false" layer="1">
+		<file>\ui\config\default\UICursor.lua</file>
+	</module>
+
+	<module name="loginscript" load="true" layer="1">
+		<file>\ui\script\mainscene.lua</file>
+		<file>\ui\script\cameraplus.lua</file>
+		<file>\ui\script\VivnDetails.lua</file>
+		<file>\ui\Script\mult_thread.lua</file>
+		<file>\ui\script\config.lua</file>
+		<file>\ui\script\animation.lua</file>
+		<file>\ui\script\image_ani.lua</file>
+		<file>\ui\script\table.lua</file>
+		<file>\ui\script\setting.lua</file>
+		<file>\ui\script\macro.lua</file>
+		<file>\ui\script\enum_gameworld.lua</file>
+		<file>\ui\script\globalmgr.lua</file>
+		<file>\ui\Script\DetectiveQuestTip.lua</file>
+		<file>\ui\script\common.lua</file>
+		<file>\ui\script\tip.lua</file>
+		<file>\ui\script\autotip.lua</file>
+		<file>\ui\script\force.lua</file>
+		<file>\ui\config\default\messagebox.lua</file>
+		<file>\ui\script\uishell.lua</file>
+		<file>\ui\script\popupmenu.lua</file>
+		<file>\ui\script\bulletin.lua</file>
+		<file>\ui\script\helper.lua</file>
+		<file>\ui\script\autowndpos.lua</file>
+		<file>\ui\script\remotecommand.lua</file>
+		<file>\ui\script\DataAnalysis.lua</file>
+		<file>\ui\script\scroll.lua</file>
+		<file>\ui\script\preloadimage.lua</file>
+		<file>\ui\script\npcmodelview.lua</file>
+		<file>\ui\script\playermodelview.lua</file>
+		<file>\ui\script\SwitchMapList.lua</file>
+		<file>\ui\config\default\animationmgr.lua</file>
+		<file>\ui\config\default\popupmenupanel.lua</file>
+		<file>\ui\config\default\Keyboard.lua</file>
+		<file>\ui\config\default\loadingpanel.lua</file>
+		<file>\ui\script\LoginNpcMgr.lua</file>
+		<file>\ui\config\default\logindeleterole.lua</file>
+		<file>\ui\config\default\loginwaiting.lua</file>
+		<file>\ui\script\mergedserver.lua</file>
+		<file>\ui\config\default\loginserverlist.lua</file>
+		<file>\ui\config\default\loginmessage.lua</file>
+		<file>\ui\config\default\logindeleterole.lua</file>
+		<file>\ui\script\EmotionCommand.lua</file>
+		<file>\ui\config\default\PluginsWarning.lua</file>
+		<file>\ui\script\hotkeys.lua</file>
+		<file>\ui\config\default\loginswordlogo.lua</file>
+		<file>\ui\script\name.lua</file>
+		<file>\ui\script\sfx.lua</file>
+		<file>\ui\config\default\queue.lua</file>
+		<file>\ui\config\default\exitpanel.lua</file>
+		<file>\ui\config\default\droplinepanel.lua</file>
+		<file>\ui\script\jianghuwordcommand.lua</file>
+		<file>\ui\config\default\moviepanel.lua</file>
+		<file>\ui\config\default\internetexplorer.lua</file>
+		<file>\ui\config\default\SecurityCard.lua</file>
+		<file>\ui\config\default\LoginWaitServerList.lua</file>
+		<file>\ui\config\default\LoginRename.lua</file>
+		<file>\ui\config\default\LoginTokenPanel.lua</file>
+		<file>\ui\script\Talent.lua</file>
+		<file>\ui\script\followmodule.lua</file>
+		<file>\ui\config\default\CGSelectPanel.lua</file>
+		<file>\ui\config\default\LoginMotp.lua</file>
+		<file>\ui\config\default\LockPanel.lua</file>
+		<file>\ui\config\default\LoginPayFor.lua</file>
+		<file>\ui\script\uimodule_switch.lua</file>
+		<file>\ui\Script\FaceData.lua</file>
+		<file>\ui\config\default\FaceLift.lua</file>
+		<file>\ui\config\default\UILock.lua</file>
+		<file>\ui\Script\AddonManager.lua</file>
+		<file>\ui\Script\PropsSort.lua</file>
+	</module>
+
+	<module name="tweenlite" load="true" layer="1" type="lib">
+		<file>\ui\script\tween.lua</file>
+		<file>\ui\script\tweenlite.lua</file>
+		<file>\ui\script\tweenliteFileMgr.lua</file>
+	</module>
+
+	<module name="Login" load="true" layer="1" type="lib">
+		<file>\ui\script\login.lua</file>
+	</module>
+
+	<module name="LoginLogo" load="true" layer="1" type="frame">
+		<file>\ui\config\default\loginlogo.lua</file>
+	</module>
+
+	<module name="LoginPassword" load="false" layer="1" type="frame">
+		<file>\ui\config\default\loginpassword.lua</file>
+	</module>
+
+	<module name="LoginServerPanel" load="true" layer="1" type="frame">
+		<file>\ui\config\default\LoginServerPanel.lua</file>
+	</module>
+
+	<module name="LoginScene" load="false" layer="1" type="frame">
+		<file>\ui\config\default\LoginScene.lua</file>
+	</module>
+
+	<module name="LoginRoleList" load="false" layer="1" type="frame">
+		<file>\ui\config\default\LoginRoleList.lua</file>
+	</module>
+
+	<module name="LoginCustomRole" load="false" layer="1" type="frame">
+		<file>\ui\config\default\LoginCustomRole.lua</file>
+	</module>
+
+	<module name="LoginCustomRoleNext" load="false" layer="1" type="frame">
+		<file>\ui\config\default\LoginCustomRoleNext.lua</file>
+	</module>
+
+	<module name="EULAPanel" load="false" layer="1" type="frame">
+		<file>\ui\string\eulastring.lua</file>
+		<file>\ui\config\default\EULAPanel.lua</file>
+	</module>
+
+	<module name="CreditsPanel" load="false" layer="1" type="frame">
+		<file>\ui\string\Credits.lua</file>
+		<file>\ui\config\default\CreditsPanel.lua</file>
+	</module>
+
+	<module name="AddonChangeLog" load="false" layer="1" type="frame">
+		<file>\ui\config\default\AddonChangeLog.lua</file>
+	</module>
+
+	<module name="AddonPanel" load="false" layer="1" type="frame">
+		<file>\ui\config\default\AddonDownload.lua</file>
+		<file>\ui\config\default\AddonPanel.lua</file>
+	</module>
+
+	<module name="TurnCard" load="false" layer="1" type="frame">
+		<file>\ui\config\default\TurnCard.lua</file>
+	</module>
+
+	<module name="string" load="true" layer="2">
+		<file>\ui\string\expressionstring.lua</file>
+		<file>\ui\string\EquipInquireString.lua</file>
+		<file>\ui\string\reputationstring.lua</file>
+		<file>\ui\string\dungeonstring.lua</file>
+		<file>\ui\String\BreakthroughQuest.lua</file>
+		<file>\ui\String\HoroCompass.lua</file>
+	</module>
+
+	<module name="g_tAuctionString" load="false" layer="2" type="lib">
+		<file>\ui\string\auctionstring.lua</file>
+	</module>
+
+	<module name="client_scripts" load="true" layer="2">
+		<file>\scripts\skill\include\SkillLearn.lh</file>
+		<file>\scripts\Include\SkillRecipe.lh</file>
+		<file>\scripts\skill\天赋\TalentTab.lua</file>
+		<file>\scripts\achievement\ItemAcquire_Achievement.lua</file>
+		<file>\scripts\skill\经脉\verationtable.lua</file>
+		<file>\scripts\Tong\include\TongTechTree.lh</file>
+		<file>\scripts\Tong\include\SeedData.lh</file>
+		<file>\scripts\Include\CastleCustomValueName.lh</file>
+		<file>\scripts\HorseSkill\include\HorseMagicInfoToHorseSkillIdLvForUI.lua</file>
+		<file>\scripts\Include\IdentityVisibleType.lua</file>
+		<file>\scripts\Map\天山碎冰谷\include\Match3V3Acount.lua</file>
+		<file>\scripts\Include\JJCCoinFunc.lua</file>
+		<file>\scripts\Include\UIscript\UIscript_FriendsInvite.lua</file>
+	</module>
+
+	<module name="DefaultScript" load="true" layer="2">
+		<file>\ui\script\buff.lua</file>
+		<file>\ui\script\doodad.lua</file>
+		<file>\ui\script\hand.lua</file>
+		<file>\ui\script\item.lua</file>
+		<file>\ui\script\itemtip.lua</file>
+		<file>\ui\script\map.lua</file>
+		<file>\ui\script\npc.lua</file>
+		<file>\ui\script\file.lua</file>
+		<file>\ui\script\playerportrait.lua</file>
+		<file>\ui\script\npcportrait.lua</file>
+		<file>\ui\script\ridesmodelview.lua</file>
+		<file>\ui\Script\ExteriorCharacter.lua</file>
+		<file>\ui\script\CoinShopBase.lua</file>
+		<file>\ui\script\player.lua</file>
+		<file>\ui\script\skill.lua</file>
+		<file>\ui\script\craft.lua</file>
+		<file>\ui\script\control.lua</file>
+		<file>\ui\script\target.lua</file>
+		<file>\ui\script\msg.lua</file>
+		<file>\ui\script\trafficline.lua</file>
+		<file>\ui\script\playerablitytable.lua</file>
+		<file>\ui\script\battlefield_head.lua</file>
+		<file>\ui\script\Arena_head.lua</file>
+		<file>\ui\script\achievement.lua</file>
+		<file>\ui\script\mergedserver.lua</file>
+		<file>\ui\script\box.lua</file>
+		<file>\ui\script\QuestBase.lua</file>
+		<file>\ui\script\CharInfoData.lua</file>
+		<file>\ui\script\FightLog.lua</file>
+		<file>\ui\config\default\CommonBlankPanel.lua</file>
+		<file>\ui\config\default\actionbar.lua</file>
+		<file>\ui\config\default\announce.lua</file>
+		<file>\ui\config\default\enterareatip.lua</file>
+		<file>\ui\config\default\characterpanel.lua</file>
+		<file>\ui\config\default\charinfo.lua</file>
+		<file>\ui\config\default\charinfomore.lua</file>
+		<file>\ui\config\default\chatpanel.lua</file>
+		<file>\ui\config\default\craftmanagepanel.lua</file>
+		<file>\ui\config\default\craftreaderpanel.lua</file>
+		<file>\ui\config\default\craftreadmanagepanel.lua</file>
+		<file>\ui\config\default\debug.lua</file>
+		<file>\ui\config\default\dialoguepanel.lua</file>
+		<file>\ui\config\default\editbox.lua</file>
+		<file>\ui\config\default\fps.lua</file>
+		<file>\ui\config\default\getnumberpanel.lua</file>
+		<file>\ui\config\default\globaleventhandler.lua</file>
+		<file>\ui\config\default\hotkeypanel.lua</file>
+		<file>\ui\config\default\mainbarpanel.lua</file>
+		<file>\ui\config\default\lootlist.lua</file>
+		<file>\ui\config\default\lootroll.lua</file>
+		<file>\ui\config\default\lootrollmini.lua</file>
+		<file>\ui\config\default\minimap.lua</file>
+		<file>\ui\config\default\optionpanel.lua</file>
+		<file>\ui\config\default\player.lua</file>
+		<file>\ui\config\default\questacceptpanel.lua</file>
+		<file>\ui\config\default\questpanel.lua</file>
+		<file>\ui\config\default\scene.lua</file>
+		<file>\ui\config\default\scenemini.lua</file>
+		<file>\ui\config\default\bufflist.lua</file>
+		<file>\ui\config\default\debufflist.lua</file>
+		<file>\ui\config\default\NewSkillPanel.lua</file>
+		<file>\ui\config\default\Skill_TalentComment.lua</file>
+		<file>\ui\config\default\RecipeOpenSure.lua</file>
+		<file>\ui\config\default\craftpanel.lua</file>
+		<file>\ui\config\default\SystemMenu_List.lua</file>
+		<file>\ui\config\default\SystemMenu_Right.lua</file>
+		<file>\ui\config\default\SystemMenu_Left.lua</file>
+		<file>\ui\config\default\target.lua</file>
+		<file>\ui\config\default\teammate.lua</file>
+		<file>\ui\config\default\getnamepanel.lua</file>
+		<file>\ui\config\default\activemessage0.lua</file>
+		<file>\ui\config\default\revivepanel.lua</file>
+		<file>\ui\config\default\pkleavepanel.lua</file>
+		<file>\ui\config\default\shenbar.lua</file>
+		<file>\ui\config\default\jingbar.lua</file>
+		<file>\ui\config\default\tradepanel.lua</file>
+		<file>\ui\config\default\videosettingpanel.lua</file>
+		<file>\ui\config\default\qibar.lua</file>
+		<file>\ui\config\default\balloon.lua</file>
+		<file>\ui\config\default\debugnpcportrait.lua</file>
+		<file>\ui\config\default\mailpanel.lua</file>
+		<file>\ui\config\default\bankpanel.lua</file>
+		<file>\ui\config\default\middlemap.lua</file>
+		<file>\ui\config\default\middlemapflageditor.lua</file>
+		<file>\ui\config\default\findbuggame.lua</file>
+		<file>\ui\config\default\soundsettingpanel.lua</file>
+		<file>\ui\config\default\skillformulapanel.lua</file>
+		<file>\ui\config\default\getpercentagepanel.lua</file>
+		<file>\ui\config\default\breathebar.lua</file>
+		<file>\ui\config\default\playerview.lua</file>
+		<file>\ui\config\default\mystiquepanel.lua</file>
+		<file>\ui\config\default\kungfupanel.lua</file>
+		<file>\ui\config\default\worldmap.lua</file>
+		<file>\ui\config\default\trafficsurepanel.lua</file>
+		<file>\ui\config\default\marketpanel.lua</file>
+		<file>\ui\config\default\getpricepanel.lua</file>
+		<file>\ui\config\default\markettradepanel.lua</file>
+		<file>\ui\config\default\addfriendpanel.lua</file>
+		<file>\ui\config\default\durabilitypanel.lua</file>
+		<file>\ui\config\default\helppanel.lua</file>
+		<file>\ui\config\default\fullscreensfx.lua</file>
+		<file>\ui\config\default\newskillbar.lua</file>
+		<file>\ui\config\default\gmpanel.lua</file>
+		<file>\ui\config\default\banishpanel.lua</file>
+		<file>\ui\config\default\keynotespanel.lua</file>
+		<file>\ui\config\default\bigbagpanel.lua</file>
+		<file>\ui\config\default\bigbankpanel.lua</file>
+		<file>\ui\config\default\questtracelist.lua</file>
+		<file>\ui\config\default\formationpanel.lua</file>
+		<file>\ui\config\default\matrix.lua</file>
+		<file>\ui\config\default\targettarget.lua</file>
+		<file>\ui\config\default\uicustommodepanel.lua</file>
+		<file>\ui\config\default\EmotionPanel.lua</file>
+		<file>\ui\config\default\EmotionManagePanel.lua</file>
+		<file>\ui\config\default\NewRecipeTip.lua</file>
+		<file>\ui\config\default\AutoExitPanel.lua</file>
+		<file>\ui\config\default\GuildMainPanel.lua</file>
+		<file>\ui\config\default\GuildMemberDragPanel.lua</file>
+		<file>\ui\config\default\BattleFieldQueue.lua</file>
+		<file>\ui\config\default\BattleFieldPanel.lua</file>
+		<file>\ui\config\default\BattleFieldObjective.lua</file>
+		<file>\ui\config\default\CampPanel.lua</file>
+		<file>\ui\config\default\Comment.lua</file>
+		<file>\ui\Config\Default\CraftReadComparePanel.lua</file>
+		<file>\ui\config\default\BookExchangePanel.lua</file>
+		<file>\ui\config\default\QuestContrastPanel.lua</file>
+		<file>\ui\config\default\MinimizeEffect.lua</file>
+		<file>\ui\config\default\RaidPanel.lua</file>
+		<file>\ui\config\default\AchievementPanel.lua</file>
+		<file>\ui\config\default\AchievementTip.lua</file>
+		<file>\ui\config\default\NewAchievement.lua</file>
+		<file>\ui\config\default\DesignationPanel.lua</file>
+		<file>\ui\config\default\RaidDragPanel.lua</file>
+		<file>\ui\config\default\ChatSettingPanel.lua</file>
+		<file>\ui\config\default\ColorTablePanel.lua</file>
+		<file>\ui\config\default\ActivityPanel.lua</file>
+		<file>\ui\config\default\GuildBankPanel.lua</file>
+		<file>\ui\config\default\SuggestPanel.lua</file>
+		<file>\ui\config\default\OptimizePanel.lua</file>
+		<file>\ui\config\default\MacroSettingPanel.lua</file>
+		<file>\ui\config\default\GMCheck.lua</file>
+		<file>\ui\config\default\GMMessagePanel.lua</file>
+		<file>\ui\config\default\CardSell.lua</file>
+		<file>\ui\config\default\CardBuy.lua</file>
+		<file>\ui\config\default\SelectMacroIconPanel.lua</file>
+		<file>\ui\config\default\CouresPanel.lua</file>
+		<file>\ui\config\default\HotSpot.lua</file>
+		<file>\ui\config\default\MentorPanel.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia_Home.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia_Career.lua</file>
+		<file>\ui\Script\EmotionRemote.lua</file>
+		<file>\ui\config\default\SceneCampTip.lua</file>
+		<file>\ui\config\default\Cyclopaedia_JX3Library.lua</file>
+		<file>\ui\config\default\GuildRename.lua</file>
+		<file>\ui\config\default\ItemBox.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia_Active.lua</file>
+		<file>\ui\Config\Default\CompassPanel.lua</file>
+		<file>\ui\Config\Default\WishPanel.lua</file>
+		<file>\ui\Config\Default\RandomReward.lua</file>
+		<file>\ui\Config\Default\ExaminationPanel.lua</file>
+		<file>\ui\Config\Default\CallFriendPannel.lua</file>
+		<file>\ui\Config\Default\CallGuildMemberPannel.lua</file>
+		<file>\ui\Config\Default\FilterMask.lua</file>
+		<file>\ui\Config\Default\HelperTip.lua</file>
+		<file>\ui\Config\Default\UserActionChoose.lua</file>
+		<file>\ui\Config\Default\QuestionnairePanel.lua</file>
+		<file>\ui\Script\OnDialoguePanelClose.lua</file>
+		<file>\ui\Config\Default\PartyRecruitPanel.lua</file>
+		<file>\ui\Config\Default\FindTeamPQObjective.lua</file>
+		<file>\ui\Config\Default\IrrigatePanel.lua</file>
+		<file>\ui\Config\Default\PendantPanel.lua</file>
+		<file>\ui\Config\Default\TongBaoPanel.lua</file>
+		<file>\ui\Config\Default\CheatWarningPanel.lua</file>
+		<file>\ui\Config\Default\HatredPanel.lua</file>
+		<file>\ui\Config\Default\Questionnaire_FresherExitGame.lua</file>
+		<file>\ui\Config\Default\GuildCampReverse.lua</file>
+		<file>\ui\Config\Default\CampActiveTime.lua</file>
+		<file>\ui\Config\Default\KFActionBarPanel.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia_FAQ.lua</file>
+		<file>\ui\Config\Default\RoleChange.lua</file>
+		<file>\ui\Config\Default\PQTimePanel.lua</file>
+		<file>\ui\Config\Default\FEQuickProduce.lua</file>
+		<file>\ui\Config\Default\FEEquipPanel.lua</file>
+		<file>\ui\Config\Default\FEEquipExtractPanel.Lua</file>
+		<file>\ui\Config\Default\FEPeelPanel.Lua</file>
+		<file>\ui\Config\Default\FEActivationPanel.Lua</file>
+		<file>\ui\Config\Default\GMAnnouncePanel.lua</file>
+		<file>\ui\Config\Default\Cyclopaedia_Log.lua</file>
+		<file>\ui\Config\Default\PetActionBar.lua</file>
+		<file>\ui\Config\Default\FieldPQPanel.lua</file>
+		<file>\ui\Config\Default\PetPanel.lua</file>
+		<file>\ui\Config\Default\FishPanel.lua</file>
+		<file>\ui\Config\Default\TongFarmPanel.lua</file>
+		<file>\ui\Config\Default\ReputationIntroduce.lua</file>
+		<file>\ui\Config\Default\KeyPanel.lua</file>
+		<file>\ui\Config\Default\TongArena.lua</file>
+		<file>\ui\Config\Default\PayPathPanel.lua</file>
+		<file>\ui\Config\Default\EquipInquireCommon.lua</file>
+		<file>\ui\Config\Default\VideoManagerPanel.lua</file>
+		<file>\ui\Config\Default\WarningTipPanel.lua</file>
+		<file>\ui\Config\Default\GuildDiplomacy.lua</file>
+		<file>\ui\Config\Default\GuildTree.lua</file>
+		<file>\ui\Config\Default\GuildAddMember.lua</file>
+		<file>\ui\Config\Default\GuildListPanel.lua</file>
+		<file>\ui\Config\Default\MainMessageLine.lua</file>
+		<file>\ui\Config\Default\SingleFStatistic.lua</file>
+		<file>\ui\Config\Default\FightingStatistic.lua</file>
+		<file>\ui\config\default\MoneySell.lua</file>
+		<file>\ui\config\default\MoneyBuy.lua</file>
+		<file>\ui\Config\Default\KoreaLogo.lua</file>
+		<file>\ui\config\default\AchievementRanking.lua</file>
+		<file>\ui\config\default\BankLock.lua</file>
+		<file>\ui\config\default\BattleFieldMap.lua</file>
+		<file>\ui\config\default\WeaponBag.lua</file>
+		<file>\ui\config\default\XoyoAsk.lua</file>
+		<file>\ui\config\default\ArenaQueue.lua</file>
+		<file>\ui\config\default\ArenaFinalPanel.lua</file>
+		<file>\ui\config\default\PuppetActionBar.lua</file>
+		<file>\ui\config\default\BubblePanel.lua</file>
+		<file>\ui\config\default\SprintPower.lua</file>
+		<file>\ui\config\default\BattleTipPanel.lua</file>
+		<file>\ui\config\default\ProgressSaveData.lua</file>
+		<file>\ui\config\default\ItemBuySure.lua</file>
+		<file>\ui\config\default\Bullet.lua</file>
+		<file>\ui\config\default\CountDownPanel.lua</file>
+		<file>\ui\config\default\SkillTipPanel.lua</file>
+		<file>\ui\config\default\QGJump.lua</file>
+		<file>\ui\config\default\UIMovie.lua</file>
+		<file>\ui\config\default\FightProgress.lua</file>
+		<file>\ui\config\default\SprintHelp.lua</file>
+		<file>\ui\config\default\Chapters.lua</file>
+		<file>\ui\config\default\RegressionPanel.lua</file>
+		<file>\ui\Script\addonapi.lua</file>
+		<file>\ui\config\default\RankingPanel.lua</file>
+		<file>\ui\config\default\ExpLine.lua</file>
+		<file>\ui\config\default\TopMenu.lua</file>
+		<file>\ui\config\default\TraceButton.lua</file>
+		<file>\ui\config\default\DomesticatePanel.lua</file>
+		<file>\ui\config\default\DomesticateEvent.lua</file>
+		<file>\ui\config\default\CharInfoRideMessage.lua</file>
+		<file>\ui\config\default\HorseStable.lua</file>
+		<file>\ui\config\default\StoryDisplay.lua</file>
+		<file>\ui\config\default\ExteriorView.lua</file>
+		<file>\ui\Script\ChestRepresent.lua</file>
+		<file>\ui\config\default\DisableCompositionTip.lua</file>
+		<file>\ui\config\default\CrossingProcessPanel.lua</file>
+		<file>\ui\config\default\CrossingFinishPanel.lua</file>
+		<file>\ui\config\default\CrossingChoosePanel.lua</file>
+		<file>\ui\config\default\TheFlopPanel.lua</file>
+		<file>\ui\config\default\SkillGuidePanel.lua</file>
+		<file>\ui\config\default\SkillGuideSettingPanel.lua</file>
+		<file>\ui\config\default\PopupBuffList.lua</file>
+		<file>\ui\config\default\GuildFightQueue.lua</file>
+		<file>\ui\config\default\XiangQiPanel.lua</file>
+		<file>\ui\Script\XiangQiRule.lua</file>
+		<file>\ui\config\default\WorldMark.lua</file>
+		<file>\ui\config\default\BattleMapPay.lua</file>
+		<file>\ui\config\default\BattleIntegral.lua</file>
+		<file>\ui\config\default\QTEPanel.lua</file>
+		<file>\ui\config\default\ManualDropList.lua</file>
+		<file>\ui\config\default\WantedPanel.lua</file>
+		<file>\ui\config\default\HelpSound.lua</file>
+		<file>\ui\config\default\Wanted_Publish.lua</file>
+		<file>\ui\config\default\TitleRankReward.lua</file>
+		<file>\ui\config\default\GuildRenameEX.lua</file>
+		<file>\ui\config\default\autosearch.lua</file>
+		<file>\ui\config\default\LootShowList.lua</file>
+		<file>\ui\config\default\RoleRename.lua</file>
+		<file>\ui\config\default\SkillRemind.lua</file>
+		<file>\ui\config\default\NumericalPanel.lua</file>
+		<file>\ui\config\default\ComboPanel.lua</file>
+		<file>\ui\config\default\QixueLookup.lua</file>
+		<file>\ui\config\default\RenewRule.lua</file>
+		<file>\ui\config\default\AllKBAccounts.lua</file>
+		<file>\ui\config\default\SafePanel.lua</file>
+		<file>\ui\config\default\RecoverEquipment.lua</file>
+		<file>\ui\config\default\Fellowship.lua</file>
+		<file>\ui\config\default\FellowshipQuest.lua</file>
+		<file>\ui\config\default\LeftMessage.lua</file>
+		<file>\ui\config\default\LootAuction.lua</file>
+		<file>\ui\config\default\LootModify.lua</file>
+		<file>\ui\config\default\GoldTeam.lua</file>
+		<file>\ui\config\default\CompensationModify.lua</file>
+		<file>\ui\config\default\ChooseCompensation.lua</file>
+		<file>\ui\script\frienddatamgr.lua</file>
+		<file>\ui\config\default\SafeReminder.lua</file>
+		<file>\ui\config\default\SafeModifyPwd.lua</file>
+		<file>\ui\config\default\SafeTip.lua</file>
+		<file>\ui\config\default\FellowshipChoose.lua</file>
+		<file>\ui\config\default\QuestTeamSuggest.lua</file>
+		<file>\ui\config\default\ConfirmTime.lua</file>
+		<file>\ui\config\default\ExteriorBoxError.lua</file>
+		<file>\ui\config\default\LeaderAddMoney.lua</file>
+		<file>\ui\config\default\AddMoney.lua</file>
+		<file>\ui\config\default\NPCGuidelines.lua</file>
+		<file>\ui\config\default\PlotExplain.lua</file>
+		<file>\ui\config\default\BuyTime.lua</file>
+		<file>\ui\Script\task_condition.lua</file>
+		<file>\ui\Script\task.lua</file>
+		<file>\ui\Script\teach_base.lua</file>
+		<file>\ui\config\default\SkillIntroduce.lua</file>
+		<file>\ui\config\default\SkillGuidePanelTips.lua</file>
+		<file>\ui\Script\game_logic_lib.lua</file>
+		<file>\ui\config\default\GeneralProgressBar.lua</file>
+		<file>\ui\config\default\FriendPraise.lua</file>
+		<file>\ui\config\default\PQprogressbar.lua</file>
+		<file>\ui\Script\Web_Orderform.lua</file>
+		<file>\ui\Script\EventLink.lua</file>
+		<file>\ui\Script\CombatBase.lua</file>
+		<file>\ui\Script\FilterInviteBase.lua</file>
+		<file>\ui\Script\JJCEquipmentDIYBase.lua</file>
+		<file>\ui\Script\SprintBase.lua</file>
+		<file>\ui\config\default\Danmaku.lua</file>
+		<file>\ui\Script\DanmakuBase.lua</file>
+		<file>\ui\Script\ArenaBonusBase.lua</file>
+	</module>
+
+	<module name="OTActionBar" type="frame" load="true" layer="2">
+		<file>\ui\config\default\OTActionBar.lua</file>
+		<file>\ui\config\default\OTGCDBar.lua</file>
+	</module>
+
+	<module name="UISetting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\UISetting.lua</file>
+		<file>\ui\config\default\UISetting_Basic.lua</file>
+		<file>\ui\config\default\UISetting_Display.lua</file>
+		<file>\ui\config\default\UISetting_ActionBar.lua</file>
+		<file>\ui\config\default\UISetting_StatusBar.lua</file>
+		<file>\ui\config\default\UISetting_Combat.lua</file>
+		<file>\ui\config\default\UISetting_BuffList.lua</file>
+		<file>\ui\config\default\UISetting_Fight.lua</file>
+		<file>\ui\config\default\UISetting_HeadTop.lua</file>
+		<file>\ui\config\default\UISetting_ServerSave.lua</file>
+		<file>\ui\config\default\UISetting_SIMWorld.lua</file>
+	</module>
+
+	<module name="ActionSmallBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ActionSmallBar.lua</file>
+	</module>
+
+	<module name="EquipInquire" type="frame" load="false" layer="2">
+		<file>\ui\Config\Default\EquipInquire.lua</file>
+	</module>
+
+	<module name="AuctionPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\BlackMarket.lua</file>
+		<file>\ui\config\default\AuctionPanel.lua</file>
+	</module>
+
+	<module name="SocialPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SocialPanel.lua</file>
+		<file>\ui\config\default\FriendTip.lua</file>
+	</module>
+
+	<module name="FriendRank" type="frame" load="false" layer="2">
+		<file>\ui\config\default\friendrank.lua</file>
+	</module>
+
+	<module name="AdvertisePanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\AdvertisePanel.lua</file>
+	</module>
+
+	<module name="ArenaOpponent" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArenaOpponent.lua</file>
+	</module>
+
+	<module name="DynamicCarrierBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\DynamicCarrierBar.lua</file>
+	</module>
+
+	<module name="DynamicActionBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\DynamicActionBar.lua</file>
+	</module>
+
+	<module name="MindControlActionBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MindControlActionBar.lua</file>
+	</module>
+
+	<module name="CampMaps" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CampMaps.lua</file>
+		<file>\ui\config\default\CampMapsTips.lua</file>
+	</module>
+
+	<module name="CityBelong" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CityBelong.lua</file>
+	</module>
+
+	<module name="CampBigThings" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CampBigThings.lua</file>
+	</module>
+
+	<module name="MilitaryRanking" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MilitaryRanking.lua</file>
+	</module>
+
+	<module name="ArenaCorpsPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArenaCorpsPanel.lua</file>
+		<file>\ui\config\default\ArenaCHList.lua</file>
+	</module>
+
+	<module name="BadaoPosture" type="frame" load="false" layer="2">
+		<file>\ui\config\default\BadaoPosture.lua</file>
+	</module>
+
+	<module name="ComboWinEffect" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ComboWinEffect.lua</file>
+	</module>
+
+	<module name="ArenaCorpsTipl" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArenaCorpsTipl.lua</file>
+	</module>
+
+	<module name="MapQueue" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MapQueue.lua</file>
+	</module>
+
+	<module name="EndOfBattle" type="frame" load="false" layer="2">
+		<file>\ui\config\default\EndOfBattle.lua</file>
+	</module>
+
+	<module name="SniperPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SniperPanel.lua</file>
+	</module>
+
+	<module name="Aim" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Aim.lua</file>
+	</module>
+
+	<module name="FullScreenWarning" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FullScreenWarning.lua</file>
+	</module>
+
+	<module name="FightingWarning" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FightingWarning.lua</file>
+	</module>
+
+	<module name="InstanceInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\InstanceInfo.lua</file>
+	</module>
+
+	<module name="ActivityTipPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ActivityTipPanel.lua</file>
+	</module>
+
+	<module name="sns_sina" type="lib" load="false" layer="2">
+		<file>\ui\Script\sns_sina.lua</file>
+	</module>
+
+	<module name="sns_tencent" type="lib" load="false" layer="2">
+		<file>\ui\Script\sns_tencent.lua</file>
+	</module>
+
+	<module name="sns_base" type="lib" load="true" layer="2">
+		<file>\ui\Script\sns_base.lua</file>
+	</module>
+
+	<module name="SnsPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SnsPanel.lua</file>
+	</module>
+
+	<module name="FBlist" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FBlist.lua</file>
+	</module>
+
+	<module name="ActivityList" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ActivityList.lua</file>
+	</module>
+
+	<module name="NewPet" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewPet.lua</file>
+		<file>\ui\config\default\NewPetCar.lua</file>
+	</module>
+
+	<module name="NewPetSkill" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewPetSkill.lua</file>
+	</module>
+
+	<module name="Teaching" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Teaching.lua</file>
+	</module>
+
+
+
+	<module name="ScreenLock" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ScreenLock.lua</file>
+	</module>
+
+	<module name="QuestGuide" type="frame" load="false" layer="2">
+		<file>\ui\config\default\QuestGuide.lua</file>
+	</module>
+
+	<module name="Navigator" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Navigator.lua</file>
+	</module>
+
+	<module name="NewPetInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewPetInfo.lua</file>
+	</module>
+
+	<module name="CoinShop" type="frame" load="false" layer="2">
+		<file>\ui\script\CoinShopData.lua</file>
+		<file>\ui\script\CoinShopView.lua</file>
+		<file>\ui\config\default\CoinShop_Main.lua</file>
+		<file>\ui\config\default\CoinShop.lua</file>
+		<file>\ui\config\default\CoinShop_View.lua</file>
+		<file>\ui\config\default\CoinShop_Shop.lua</file>
+		<file>\ui\config\default\CoinShop_SetTip.lua</file>
+		<file>\ui\config\default\CoinShop_MyExterior.lua</file>
+		<file>\ui\config\default\CoinShop_HairShop.lua</file>
+		<file>\ui\config\default\CoinShop_MyHair.lua</file>
+		<file>\ui\config\default\CoinShop_TradeCenter.lua</file>
+		<file>\ui\config\default\CoinShop_Home.lua</file>
+		<file>\ui\config\default\CoinShop_Center.lua</file>
+		<file>\ui\config\default\CoinShop_SetList.lua</file>
+		<file>\ui\config\default\CoinShop_Welfare.lua</file>
+		<file>\ui\config\default\CoinShop_Weapons.lua</file>
+		<file>\ui\config\default\CoinShop_Exterior.lua</file>
+		<file>\ui\config\default\CoinShop_TuoyinRule.lua</file>
+		<file>\ui\config\default\Coinshop_CantBuy.lua</file>
+		<file>\ui\config\default\CoinShop_UnPayRel.lua</file>
+		<file>\ui\config\default\CoinShop_Topics.lua</file>
+		<file>\ui\config\default\CoinShop_ImprotTopics.lua</file>
+		<file>\ui\config\default\CoinShop_FaceSave.lua</file>
+		<file>\ui\config\default\CoinShop_ZhouBianRule.lua</file>
+		<file>\ui\config\default\CoinShop_GoodsIntroduce.lua</file>
+		<file>\ui\config\default\CoinShop_Rewards.lua</file>
+		<file>\ui\config\default\CoinShop_BoxMod.lua</file>
+		<file>\ui\config\default\CoinShop_Entrance.lua</file>
+		<file>\ui\config\default\CoinShop_Search.lua</file>
+		<file>\ui\config\default\CoinShop_PreviewBox.lua</file>
+		<file>\ui\config\default\CoinShop_MyHorse.lua</file>
+		<file>\ui\config\default\CoinShop_Cutscene.lua</file>
+		<file>\ui\config\default\CoinShop_Outfit.lua</file>
+	</module>
+
+	<module name="CoinShop_CheckOut" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CoinShop_CheckOut.lua</file>
+	</module>
+
+	<module name="CraftManagePanelnew" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CraftManagePanelnew.lua</file>
+		<file>\ui\config\default\CraftStuffPanel.lua</file>
+	</module>
+
+	<module name="UpGradeEffect" type="frame" load="false" layer="2">
+		<file>\ui\config\default\UpGradeEffect.lua</file>
+	</module>
+
+	<module name="NewEquip" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewEquip.lua</file>
+	</module>
+
+	<module name="NewEmotionAction" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewEmotionAction.lua</file>
+	</module>
+
+	<module name="Dismantle" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Dismantle.lua</file>
+	</module>
+
+	<module name="quest_uiverify" type="lib" load="false" layer="2">
+		<file>\ui\script\quest_uiverify.lua</file>
+	</module>
+
+	<module name="TeamBuilding" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamBuilding.lua</file>
+	</module>
+
+	<module name="TeamBuildMessage" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamBuildMessage.lua</file>
+	</module>
+
+	<module name="TeamBuildTip" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamBuildTip.lua</file>
+	</module>
+
+	<module name="RechargeRemind" load="false" layer="1" type="frame">
+		<file>\ui\config\default\RechargeRemind.lua</file>
+	</module>
+
+	<module name="OperationActivity" load="false" layer="1" type="frame">
+		<file>\ui\config\default\OperationActivity.lua</file>
+	</module>
+
+	<module name="ActionBarBind" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ActionBarBind.lua</file>
+	</module>
+
+	<module name="StorageServer" type="lib" load="true" layer="2">
+		<file>\ui\Script\storage_server.lua</file>
+	</module>
+
+	<module name="PluginTotal" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PluginTotal.lua</file>
+	</module>
+
+	<module name="PluginSingle" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PluginSingle.lua</file>
+	</module>
+
+	<module name="FriendPraiseTip" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FriendPraiseTip.lua</file>
+	</module>
+
+	<module name="ActivityDetail" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ActivityDetail.lua</file>
+	</module>
+
+	<module name="ShopPanel" type="frame" load="true" layer="2">
+		<file>\ui\config\default\ShopPanel.lua</file>
+	</module>
+
+	<module name="CastingPanel" type="frame" load="true" layer="2">
+		<file>\ui\config\default\CastingPanel.lua</file>
+	</module>
+
+	<module name="HorsePanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\HorsePanel.lua</file>
+		<file>\ui\config\default\HorseEquip.lua</file>
+	</module>
+
+	<module name="regionPQPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\regionPQPanel.lua</file>
+	</module>
+
+	<module name="regionPQreward" type="frame" load="false" layer="2">
+		<file>\ui\config\default\regionPQreward.lua</file>
+	</module>
+
+	<module name="PQwarning" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PQwarning.lua</file>
+	</module>
+
+	<module name="WhoIsUndercover" type="frame" load="false" layer="2">
+		<file>\ui\config\default\WhoIsUndercover.lua</file>
+	</module>
+
+	<module name="TeamBuildingPlayerSet" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamBuildingPlayerSet.lua</file>
+	</module>
+
+	<module name="PQNextStage" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PQNextStage.lua</file>
+	</module>
+
+	<module name="MyAward" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MyAward.lua</file>
+	</module>
+
+	<module name="SmallCalender" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SmallCalender.lua</file>
+	</module>
+
+	<module name="ProgressBar" type="frame" load="true" layer="2">
+		<file>\ui\config\default\ProgressBar.lua</file>
+	</module>
+
+	<module name="NewAddFriendPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\NewAddFriendPanel.lua</file>
+	</module>
+
+	<module name="BugReport" type="frame" load="false" layer="2">
+		<file>\ui\config\default\BugReport.lua</file>
+	</module>
+
+	<module name="ClothingPendantPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ClothingPendantPanel.lua</file>
+	</module>
+
+	<module name="FullLevelHelpPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FullLevelHelpPanel.lua</file>
+	</module>
+
+	<module name="FriendBack" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FriendBack.lua</file>
+	</module>
+
+	<module name="RedEnvelope" type="frame" load="false" layer="2">
+		<file>\ui\config\default\RedEnvelope.lua</file>
+	</module>
+
+	<module name="RedEnvelopeInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\RedEnvelopeInfo.lua</file>
+	</module>
+
+	<module name="Exterior_Operator" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Exterior_Operator.lua</file>
+	</module>
+
+	<module name="CloakColorChange" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CloakColorChange.lua</file>
+	</module>
+
+	<module name="JiangHuMatrix" type="frame" load="false" layer="2">
+		<file>\ui\config\default\JiangHuMatrix.lua</file>
+	</module>
+
+	<module name="Album" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Album.lua</file>
+	</module>
+	<module name="Selfie" type="frame" load="false" layer="2">
+		<file>\ui\config\default\Selfie.lua</file>
+		<file>\ui\config\default\SelfieNav.lua</file>
+	</module>
+	<module name="SelfieEmotion" type="frame" load="false" layer="2">
+		<file>\ui\String\SelfieAnimationString.lua</file>
+		<file>\ui\config\default\SelfieEmotion.lua</file>
+	</module>
+	<module name="PhotoShop" type="frame" load="false" layer="2">
+		<file>\ui\String\PhotoShopFilters.lua</file>
+		<file>\ui\config\default\PhotoShop.lua</file>
+	</module>
+
+	<module name="CrossMap" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CrossMap.lua</file>
+	</module>
+
+	<module name="TeamNumList" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamNumList.lua</file>
+	</module>
+
+	<module name="FBTimeRank" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FBTimeRank.lua</file>
+	</module>
+
+	<module name="SpeedRankPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SpeedRankPanel.lua</file>
+	</module>
+
+	<module name="MentorPanelTip" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MentorPanelTip.lua</file>
+	</module>
+
+	<module name="MentorTransform" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MentorTransform.lua</file>
+	</module>
+
+	<module name="BuyRule" type="frame" load="false" layer="2">
+		<file>\ui\config\default\BuyRule.lua</file>
+	</module>
+
+	<module name="TeamNumListLong" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeamNumListLong.lua</file>
+	</module>
+
+	<module name="SpeedEffect" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SpeedEffect.lua</file>
+	</module>
+
+	<module name="CDProcess" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CDProcess.lua</file>
+	</module>
+
+	<module name="LuckyMeetingTrace" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LuckyMeetingTrace.lua</file>
+	</module>
+
+	<module name="LuckyMeeting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LuckyMeeting.lua</file>
+	</module>
+
+	<module name="LuckyMeetingInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LuckyMeetingInfo.lua</file>
+	</module>
+
+	<module name="LuckyMeetingDialogue" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LuckyMeetingDialogue.lua</file>
+	</module>
+
+	<module name="ExteriorAction" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ExteriorAction.lua</file>
+	</module>
+
+	<module name="DynamicSkillBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\DynamicSkillBar.lua</file>
+	</module>
+
+	<module name="ChangGeShadow" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ChangGeShadow.lua</file>
+	</module>
+
+	<module name="LuckyMeetingGet" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LuckyMeetingGet.lua</file>
+	</module>
+
+	<module name="CraftIntroduce" type="frame" load="false" layer="2">
+		<file>\ui\config\default\CraftIntroduce.lua</file>
+	</module>
+
+	<module name="AuctionMsgBox" type="frame" load="false" layer="2">
+		<file>\ui\config\default\AuctionMsgBox.lua</file>
+	</module>
+
+	<module name="TeachingPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\TeachingPanel.lua</file>
+	</module>
+
+	<module name="CombatTextWnd" type="frame" load="false" layer="2">
+		<file>\ui\config\default\combattextwnd.lua</file>
+	</module>
+	<module name="CombatText" type="frame" load="true" layer="2">
+		<file>\ui\config\default\CombatText.lua</file>
+	</module>
+
+
+	<module name="PVPShowPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPShowPanel.lua</file>
+	</module>
+
+	<module name="PVPShowFinal" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPShowFinal.lua</file>
+	</module>
+
+	<module name="PVPShowSFX" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPShowSFX.lua</file>
+	</module>
+
+	<module name="PVPShowHarm" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPShowHarm.lua</file>
+	</module>
+
+	<module name="WishingBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\WishingBar.lua</file>
+	</module>
+
+	<module name="BuffMgr" type="frame" load="false" layer="2">
+		<file>\ui\script\BuffMgr.lua</file>
+	</module>
+
+	<module name="ArtistReward" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArtistReward.lua</file>
+	</module>
+
+	<module name="ArtistRewardSure" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArtistRewardSure.lua</file>
+	</module>
+
+	<module name="ArtistRewardAmount" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArtistRewardAmount.lua</file>
+	</module>
+
+	<module name="GuardPanelSure" type="frame" load="false" layer="2">
+		<file>\ui\config\default\GuardPanelSure.lua</file>
+	</module>
+
+	<module name="IdentityPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\IdentityPanel.lua</file>
+	</module>
+
+	<module name="IdentityDynamicBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\IdentityDynamicBar.lua</file>
+	</module>
+
+	<module name="DynamicPetBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\DynamicPetBar.lua</file>
+	</module>
+
+	<module name="IdentityUpGrade" type="frame" load="false" layer="2">
+		<file>\ui\config\default\IdentityUpGrade.lua</file>
+	</module>
+
+	<module name="GuardPanelSureInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\GuardPanelSureInfo.lua</file>
+	</module>
+
+	<module name="FBCountDown" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FBCountDown.lua</file>
+	</module>
+
+	<module name="GuardList" type="frame" load="false" layer="2">
+		<file>\ui\config\default\GuardList.lua</file>
+	</module>
+
+	<module name="GuardInfo" type="frame" load="false" layer="2">
+		<file>\ui\config\default\GuardInfo.lua</file>
+	</module>
+
+	<module name="LightingCityPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\LightingCityPanel.lua</file>
+	</module>
+
+	<module name="IdentityDynActBar" type="frame" load="false" layer="2">
+		<file>\ui\config\default\IdentityDynActBar.lua</file>
+	</module>
+	
+	<module name="PVPInput" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPInput.lua</file>
+	</module>
+	
+	<module name="PVPSetting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPSetting.lua</file>
+	</module>
+	
+	<module name="PVPSetting_Last" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPSetting_Last.lua</file>
+	</module>
+
+	<module name="YangDaoMeeting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\YangDaoMeeting.lua</file>
+	</module>
+	<module name="FilterInviteMsg" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FilterInviteMsg.lua</file>
+	</module>
+	
+	<module name="OutMap" type="frame" load="true" layer="2">
+		<file>\ui\config\default\OutMap.lua</file>
+	</module>
+
+	<module name="CastleFightCleanup" type="frame" load="true" layer="2">
+		<file>\ui\config\default\CastleFightCleanup.lua</file>
+	</module>
+
+	<module name="MentorMessage" type="frame" load="true" layer="2">
+		<file>\ui\config\default\MentorMessage.lua</file>
+	</module>
+
+	<module name="MentorTask" type="frame" load="false" layer="2">
+		<file>\ui\config\default\MentorTask.lua</file>
+	</module>
+	
+	<module name="OperatPreOrder" type="frame" load="true" layer="2">
+		<file>\ui\config\default\OperatPreOrder.lua</file>
+		<file>\ui\config\default\OperatPreOrderMsg.lua</file>
+	</module>
+
+	<module name="PlayerReturn" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PlayerReturn.lua</file>
+	</module>
+
+	<module name="PlayerReturnTip" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PlayerReturnTip.lua</file>
+	</module>
+	
+	<module name="AddTBMegBox" type="frame" load="false" layer="2">
+		<file>\ui\config\default\AddTBMegBox.lua</file>
+	</module>
+	<module name="JJCEquipmentDIY" type="frame" load="false" layer="2">
+		<file>\ui\config\default\JJCEquipmentDIY.lua</file>
+	</module>
+	<module name="QixueTeachBy" type="frame" load="false" layer="2">
+		<file>\ui\config\default\QixueTeachBy.lua</file>
+	</module>
+
+	<module name="PVPShowSetting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\PVPShowSetting.lua</file>
+	</module>
+	
+	<module name="FBCountNum" type="frame" load="false" layer="2">
+		<file>\ui\config\default\FBCountNum.lua</file>
+	</module>
+	
+	<module name="DanmakuSetting" type="frame" load="false" layer="2">
+		<file>\ui\config\default\DanmakuSetting.lua</file>
+		</module>
+		
+	<module name="SprintPanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\SprintPanel.lua</file>
+	</module>
+
+	<module name="ArenaBonusPool" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArenaBonusPool.lua</file>
+	</module>
+	
+	<module name="ArenaLivePanel" type="frame" load="false" layer="2">
+		<file>\ui\config\default\ArenaLivePanel.lua</file>
+	</module>
+	<module name="RealNameCertify" type="frame" load="false" layer="2">
+		<file>\ui\config\default\RealNameCertify.lua</file>
+	</module>
+</modules>
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

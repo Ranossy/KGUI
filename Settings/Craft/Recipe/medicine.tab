@@ -1,0 +1,281 @@
+ID	Name	CostStamina	ProfessionID	RequireLevel	RecipeLevel	NeedExpertise	RequireBranchID	RequireDoodad	ToolItemType	ToolItemIndex	PowerfulToolItemType	PowerfulToolItemIndex	EquipmentType	Exp	PrepareFrame	Belong	ResultOnLevel	RequireItemType1	RequireItemIndex1	RequireItemCount1	RequireItemType2	RequireItemIndex2	RequireItemCount2	RequireItemType3	RequireItemIndex3	RequireItemCount3	RequireItemType4	RequireItemIndex4	RequireItemCount4	RequireItemType5	RequireItemIndex5	RequireItemCount5	RequireItemType6	RequireItemIndex6	RequireItemCount6	RequireItemType7	RequireItemIndex7	RequireItemCount7	RequireItemType8	RequireItemIndex8	RequireItemCount8	CreateItemType1	CreateItemIndex1	CreateItemMin1	CreateItemMax1	CreateItemProbability1	CreateItemType2	CreateItemIndex2	CreateItemMin2	CreateItemMax2	CreateItemProbability2	CreateItemType3	CreateItemIndex3	CreateItemMin3	CreateItemMax3	CreateItemProbability3	CreateItemType4	CreateItemIndex4	CreateItemMin4	CreateItemMax4	CreateItemProbability4	CreateItemType5	CreateItemIndex5	CreateItemMin5	CreateItemMax5	CreateItemProbability5	CreateItemType6	CreateItemIndex6	CreateItemMin6	CreateItemMax6	CreateItemProbability6	CreateItemType7	CreateItemIndex7	CreateItemMin7	CreateItemMax7	CreateItemProbability7	CreateItemType8	CreateItemIndex8	CreateItemMin8	CreateItemMax8	CreateItemProbability8	_Quality	ScriptName	CoolDownID
+0	未知配方	0	0	0	0		0	0	0	0	0	0	-1	0	80	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0		
+1	下品止血散	7	7	10	10			344	0	0	0	0		9		10		5	3003	2	5	3006	1																			5	3034	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+3	下品活络散	7	7	10	12			344	0	0	0	0		9		10		5	3002	2	5	3006	1																			5	3035	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+4	下品长生散	19	7	10	12			344	0	0	0	0		23		30		5	3003	1	5	3004	1	5	3005	1																5	2754	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+5	下品聚魂散	19	7	10	14			344	0	0	0	0		23		20		5	3002	1	5	3006	2																			5	3039	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+6	下品护心散	7	7	10	14			344	0	0	0	0		9		20		5	3004	2	5	3006	1																			5	3036	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+7	下品强身散	7	7	10	16			344	0	0	0	0		9		20		5	3002	2	5	3006	1																			5	3038	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+8	下品凝神散	19	7	10	16			344	0	0	0	0		23		30		5	3002	1	5	3004	1	5	3005	1																5	2755	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+9	下品健骨散	19	7	10	18			344	0	0	0	0		23		20		5	3013	2	5	3006	1																			5	3047	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+10	下品万灵散	19	7	10	18			344	0	0	0	0		23		10		5	3002	1	5	3003	1	5	3004	1	5	3010	1	5	3006	1										5	3037	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+11	中品止血散	9	7	10	20			344	0	0	0	0		11		10		5	3012	2	5	3006	1																			5	3042	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+12	下品补筋散	25	7	10	20			344	0	0	0	0		31		20		5	3013	1	5	3006	2																			5	3046	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+14	下品金创散	25	7	10	24			344	0	0	0	0		31		30		5	3002	1	5	3013	1	5	979	1	5	3006	1													5	3043	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+15	太白丹	25	7	10	24			344	0	0	0	0		31		20		5	3012	1	5	3013	1	5	972	1	5	3006	1													5	2756	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+16	中品活络散	9	7	10	24			344	0	0	0	0		11		10		5	3013	2	5	3006	1																			5	3044	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+17	下品定痛散	25	7	10	26			344	0	0	0	0		31		30		5	3014	1	5	3013	1	5	3006	1																5	3049	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+18	中品长生散	9	7	10	28			344	0	0	0	0		11		30		5	3014	2	5	3005	1	5	0	0																5	2757	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+19	飞鱼丸	25	7	10	28			344	0	0	0	0		31		40		5	3014	3	5	3005	2	5	3012	2																5	3048	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+20	中品凝神散	25	7	10	28			344	0	0	0	0		31		30		5	3013	1	5	3014	1	5	3005	1																5	2758	1	2	1048576																																					scripts/Craft/Include/Event.lua	
+21	下品逍遥散	25	7	10	28			344	0	0	0	0		31		40		5	3014	3	5	3010	2	5	3006	2																5	2759	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+22	下品玉露散	25	7	10	28			344	0	0	0	0		31		30		5	3014	2	5	979	1	5	3005	1																5	2760	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+24	避水银针	37	7	10	30			344	0	0	0	0		46		40		5	972	1	5	3012	2	5	3009	2																5	3050	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+25	下品闭气散	37	7	10	30			344	0	0	0	0		46		40		5	979	1	5	3004	2	5	3014	2	5	3005	2	5	0	0										5	3051	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+26	上品止血散	13	7	10	32			344	0	0	0	0		16		10		5	3018	2	5	3006	1	5	0	0																5	3054	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+27	上品活络散	37	7	10	34			344	0	0	0	0		46		10		5	3016	2	5	3013	1	5	3006	1																5	3053	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+28	中品万灵散	37	7	10	34			344	0	0	0	0		46		10		5	3018	1	5	3016	1	5	3010	1	5	3006	1													5	3055	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+29	中品金创散	37	7	10	34			344	0	0	0	0		46		30		5	3006	2	5	3013	2	5	979	1	5	0	0													5	3056	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+30	中品补筋散	13	7	10	36			344	0	0	0	0		16		20		5	3016	2	5	3006	1	5	0	0																5	3074	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+31	中品定痛散	37	7	10	36			344	0	0	0	0		46		30		5	3006	2	5	3016	2	5	972	1	5	0	0													5	3058	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+32	下品金元散	37	7	10	38			344	0	0	0	0		46		30		5	3017	2	5	3006	1	5	0	0																5	3059	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+33	下品化功散	37	7	10	38			344	0	0	0	0		46		40		5	3018	1	5	3004	1	5	3017	1	5	3006	1													5	2761	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+34	下品亢龙散	43	7	10	40			344	0	0	0	0		53		30		5	3006	2	5	3017	2	5	979	1	5	0	0													5	3061	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+35	中品护心散	15	7	10	40			344	0	0	0	0		18		20		5	3017	2	5	3006	1	5	0	0																5	3062	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+36	中品强身散	43	7	10	40			344	0	0	0	0		53		20		5	979	1	5	3018	2	5	3006	2																5	3063	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+37	中品聚魂散	43	7	10	40			344	0	0	0	0		53		20		5	972	1	5	3021	2	5	3006	2																5	3064	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+38	上品长生散	43	7	10	42			344	0	0	0	0		53		30		5	3018	1	5	3017	1	5	3005	1																5	2762	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+39	上品凝神散	43	7	10	42			344	0	0	0	0		53		30		5	3016	1	5	3017	1	5	3005	1																5	2763	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+40	中品健骨散	43	7	10	42			344	0	0	0	0		53		20		5	3006	4	5	3020	2	5	0	0																5	3075	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+41	下品止血丸	15	7	10	44			344	0	0	0	0		18		10		5	3020	2	5	3005	1	5	0	0																5	3067	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+43	下品活络丸	15	7	10	46			344	0	0	0	0		18		10		5	3021	2	5	3005	1	5	0	0																5	3066	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+44	健胃散	43	7	10	48			344	0	0	0	0		53		40		5	3004	2	5	3017	2	5	3022	2	5	3006	1	5	0	0	5	0	0							5	3554	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+45	辟邪散	43	7	10	48			344	0	0	0	0		53		40		5	3022	2	5	3006	2	5	0	0																5	3072	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+46	中品逍遥散	55	7	10	50			344	0	0	0	0		68		40		5	3021	3	5	3022	2	5	3006	2	5	979	1													5	3555	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+47	上品金创散	55	7	10	50			344	0	0	0	0		68		30		5	3020	2	5	972	2	5	3006	1	0	0														5	3068	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+48	上品定痛散	55	7	10	50			344	0	0	0	0		68		30		5	3021	2	5	979	2	5	3006	1	5	0	0													5	3069	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+49	下品幽冥散	55	7	10	50			344	0	0	0	0		68		30		5	3006	2	5	3022	1	5	3016	1	5	972	1	5	0	0										5	3076	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+50	下品霹雳散	55	7	10	50			344	0	0	0	0		68		30		5	3006	2	5	3020	1	5	3017	1	5	972	1	5	0	0										5	3077	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+51	下品烈火散	55	7	10	50			344	0	0	0	0		68		30		5	3006	2	5	3021	1	5	3018	1	5	972	1	5	0	0										5	3078	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+52	中品止血丸	19	7	10	52			344	0	0	0	0		23		10		5	3025	2	5	3005	1	5	0	0																5	3080	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+53	中品活络丸	55	7	10	52			344	0	0	0	0		68		10		5	3021	2	5	3024	2	5	3005	1																5	3079	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+54	软筋针	55	7	10	52		0	344	0	0	0	0		68		40		5	3009	4	5	3022	4	5	0	0																5	2764	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+55	避水金针	55	7	10	52		0	344	0	0	0	0		68		40		5	974	1	5	3025	4	5	3008	2																5	3081	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+56	上品万灵散	55	7	10	54			344	0	0	0	0		68		10		5	3024	3	5	3025	3	5	3010	2	5	3006	1													5	3082	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+57	上品护心散	55	7	10	54			344	0	0	0	0		68		20		5	973	1	5	3025	4	5	3006	2																5	3083	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+58	上品聚魂散	19	7	10	56			344	0	0	0	0		23		20		5	3024	2	5	3006	1	5	0	0																5	3085	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+59	中品亢龙散	55	7	10	56		0	344	0	0	0	0		68		30		5	973	1	5	3026	4	5	3022	4	5	3006	2	5	0	0										5	3093	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+60	下品金创丸	55	7	10	56		0	344	0	0	0	0		68		30		5	974	1	5	3027	4	5	3022	4	5	3006	2	5	0	0										5	3086	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+61	上品强身散	19	7	10	58			344	0	0	0	0		23		20		5	3027	2	5	3006	1	5	0	0																5	3084	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+62	摧心针	55	7	10	58		0	344	0	0	0	0		68		40		5	974	1	5	3024	4	5	3009	2	5	0	0													5	2765	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+63	中品金元散	55	7	10	58		0	344	0	0	0	0		68		30		5	973	1	5	3027	4	5	3006	2	5	0	0													5	3090	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+64	五毒针	55	7	10	58		0	344	0	0	0	0		68		30		5	3009	2	5	3025	4	5	3027	4	5	0	0													5	2766	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+65	下品定痛丸	55	7	10	58		0	344	0	0	0	0		68		30		5	3006	2	5	3026	4	5	3027	4	5	0	0	5	0	0										5	3087	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+66	中品化功散	61	7	10	60			344	0	0	0	0		75		40		5	3007	2	5	3024	5	5	973	1	5	3010	1	5	0	0										5	2767	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+68	下品长生丸	61	7	10	60			344	0	0	0	0		75		30		5	3030	2	5	3028	2	5	3010	1	5	3006	1													5	2721	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+69	下品凝神丸	61	7	10	60			344	0	0	0	0		75		30		5	3030	2	5	3029	2	5	3010	1	5	3006	1													5	2722	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+70	下品展凤散	61	7	10	60		0	344	0	0	0	0		75		30		5	3006	2	5	3024	4	5	3026	2	5	0	0													5	3560	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+71	正骨膏	61	7	10	60		0	344	0	0	0	0		75		40		5	3028	10	5	3030	5	5	3010	2	5	3007	2	5	0	0										5	3089	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+72	上品补筋散	61	7	10	60			344	0	0	0	0		75		20		5	3006	2	5	3029	4	5	0	0																5	3095	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+73	上品健骨散	61	7	10	60			344	0	0	0	0		75		20		5	3006	2	5	3028	4	5	0	0																5	3096	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+74	涣精针	61	7	10	60			344	0	0	0	0		75		40		5	3009	2	5	3032	4	5	0	0																5	2768	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+75	钻心针	61	7	10	60			344	0	0	0	0		75		40		5	3009	2	5	3031	5	5	0	0	5	0	0													5	2769	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+76	上品止血丸	21	7	10	62			344	0	0	0	0		26		10		5	3028	2	5	3006	1	5	0	0																5	3098	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+77	上品活络丸	61	7	10	62			344	0	0	0	0		75		10		5	3029	3	5	3024	3	5	3006	1																5	3097	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+78	中品金创丸	61	7	10	64		0	344	0	0	0	0		75		30		5	974	2	5	3028	5	5	3030	5	5	3007	5	5	0	0										5	3102	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+79	上品亢龙散	61	7	10	64		0	344	0	0	0	0		75		30		5	973	2	5	3030	3	5	3032	5	5	3007	5	5	0	0										5	3563	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+80	中品闭气散	61	7	10	64			344	0	0	0	0		75		40		5	3028	5	5	3030	5	5	3007	5	5	0	0	5	0	0										5	3101	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+81	下品吸星散	61	7	10	64			344	0	0	0	0		75		40		5	3028	5	5	3010	1	5	3007	5	5	0	0													5	3108	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+82	上品逍遥散	61	7	10	66			344	0	0	0	0		75		40		5	3030	5	5	3010	1	5	3007	5	5	0	0													5	3099	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+83	空山新雨	61	7	10	66			344	0	0	0	0		75		40		5	3028	4	5	3029	4	5	3007	5	5	0	0													5	3116	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+84	下品强身丸	21	7	10	66			344	0	0	0	0		26		20		5	3031	2	5	3006	1	5	0	0	5	0	0													5	3125	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+85	下品健骨丸	61	7	10	66			344	0	0	0	0		75		20		5	3010	1	5	3032	4	5	3006	2	5	0	0													5	3126	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+86	下品聚魂丸	61	7	10	66			344	0	0	0	0		75		20		5	3010	1	5	3029	4	5	3006	2	5	0	0													5	3127	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+87	下品调和散	61	7	10	68		0	344	0	0	0	0		75		30		5	3010	1	5	3029	4	5	3032	4	5	3006	2	5	0	0										5	3103	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+88	下品护心丸	61	7	10	68		0	344	0	0	0	0		75		20		5	3010	2	5	3030	4	5	3007	5	5	0	0													5	3123	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+89	下品补筋丸	61	7	10	68		0	344	0	0	0	0		75		20		5	3010	2	5	3032	4	5	3007	5	5	0	0													5	3124	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+90	中品幽冥散	61	7	10	68		0	344	0	0	0	0		75		30		5	6646	1	5	3029	2	5	3032	2	5	979	1	5	0	0										5	3104	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+91	中品霹雳散	61	7	10	68		0	344	0	0	0	0		75		30		5	6646	1	5	3029	2	5	3031	2	5	979	1	5	0	0										5	3105	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+92	中品烈火散	61	7	10	68		0	344	0	0	0	0		75		30		5	6646	1	5	3029	2	5	3028	2	5	979	1	5	0	0										5	3106	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+93	下品止血膏	21	7	10	70			344	0	0	0	0		26		10		5	3028	2	5	3006	1	5	0	0	5	0	0													5	3113	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+94	下品活络膏	61	7	10	70			344	0	0	0	0		75		10		5	3029	3	5	3024	3	5	979	1	5	3006	1													5	3109	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+95	下品万灵丸	61	7	10	70			344	0	0	0	0		75		10		5	5000	1	5	4999	1	5	6646	1	5	0	0	5	0	0										5	3111	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+96	沐火丹	61	7	10	70			344	0	0	0	0		75		40		5	3007	2	5	3030	3	5	3029	5	5	3010	2	5	0	0										5	3107	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+97	破冰丸	61	7	10	70		0	344	0	0	0	0		75		40		5	3007	2	5	3030	3	5	3032	5	5	3010	2	5	0	0										5	3117	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+98	混元丹	61	7	10	70		0	344	0	0	0	0		75		40		5	3031	5	5	3030	5	5	3010	2	5	3007	2	5	0	0										5	3118	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+100	金针·烟	61	7	10	70			344	0	0	0	0		75		40		5	3028	5	5	973	1	5	3008	1	5	0	0	5	0	0										5	2771	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+101	金针·影	61	7	10	70			344	0	0	0	0		75		40		5	3008	1	5	974	1	5	3029	5	5	0	0	5	0	0										5	2772	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+104	万花丹	61	7	10	70		0	344	0	0	0	0		75		30		5	3031	5	5	974	1	5	3010	2	5	3007	5	5	0	0										5	2775	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+105	中品玉露散	61	7	10	70		0	344	0	0	0	0		75		30		5	3032	5	5	973	1	5	3010	2	5	3007	5	5	0	0										5	2776	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+107	中品展凤散	61	7	10	70		0	344	0	0	0	0		75		30		5	3029	5	5	3032	3	5	974	1	5	3006	1													5	3570	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+108	下品亢龙丸	61	7	10	70		0	344	0	0	0	0		75		30		5	3028	5	5	3031	3	5	973	1	5	3006	1													5	2744	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+110	中品吸星散	61	7	10	70			344	0	0	0	0		75		40		5	3028	5	5	3010	2	5	3030	5	5	3007	2	5	0	0										5	3119	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+111	中品止血膏	61	7	10	70			344	0	0	0	0		75		10		5	5000	1	5	3007	1	5	0	0																5	3130	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+113	中品活络膏	61	7	10	70			344	0	0	0	0		75		10		5	4999	1	5	3007	1	5	0	0																5	3129	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+118	下品逍遥丸	61	7	10	70		0	344	0	0	0	0		75		40		5	5000	1	5	6648	2	5	0	0	5	0	0	5	0	0										5	3132	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+131	魄元散	15	7	10	44		0	344	0	0	0	0	-1	18	80	50	0	5	3032	5	5	3021	5	5	3016	5	5	3024	5	5	974	1	0	0	0	0	0	0	0	0	0	5	4999	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+132	金刚散	15	7	10	44		0	344	0	0	0	0	-1	18	80	50	0	5	3028	5	5	3020	5	5	3018	5	5	3025	5	5	6648	1	0	0	0	0	0	0	0	0	0	5	5000	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+133	下品玄阴散	61	7	10	68		0	344	0	0	0	0	-1	75	80	30	0	5	974	1	5	3031	4	5	3032	4	5	3006	1	0	0	0	0	0	0	0	0	0	0	0	0	5	4996	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+134	下品罡阳散	61	7	10	68		0	344	0	0	0	0	-1	75	80	30	0	5	973	1	5	3028	4	5	3032	4	5	3007	1	0	0	0	0	0	0	0	0	0	0	0	0	5	4997	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+137	下品静心散	61	7	10	70		0	344	0	0	0	0		75		40		5	3032	3	5	6646	1	5	973	1	5	974	1	5	3024	3										5	6869	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+139	截元丹	61	7	10	70		0	344	0	0	0	0		75		40		5	3030	3	5	6646	1	5	973	1	5	974	1	5	3026	3										5	6870	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+140	下品益气散	21	7	10	70		0	344	0	0	0	0		26		30		5	3028	3	5	6646	1	5	973	1	5	974	1	5	3031	3										5	6871	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+141	纳元丹	61	7	10	70		0	344	0	0	0	0	-1	75	80	40	0	5	3029	2	5	6646	2	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	7053	8	12	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+142	下品护心丹	61	7	10	72			344	0	0	0	0		75		20		5	3030	2	5	3028	2	5	3007	2	5	974	2													5	9689	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+143	下品展凤丹	61	7	10	72			344	0	0	0	0		75		30		5	3032	4	5	3031	4	5	3007	2	5	973	2													5	9690	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+144	下品长生丹	61	7	10	72			344	0	0	0	0		75		30		5	9692	4	5	9693	2	5	3007	1																5	9691	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+145	下品凝神丹	61	7	10	72			344	0	0	0	0		75		30		5	9692	4	5	3030	4	5	6646	1																5	9694	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+146	下品健骨丹	61	7	10	74			344	0	0	0	0		75		20		5	3032	4	5	3031	4	5	3007	2	5	974	2													5	9695	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+147	下品亢龙丹	61	7	10	74			344	0	0	0	0		75		30		5	3030	4	5	3028	4	5	3007	2	5	973	2													5	9696	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+148	下品万通丹	61	7	10	74			344	0	0	0	0		75		40		5	9692	2	5	9693	2	5	3007	1																5	9697	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+149	蜀元露	21	7	10	74			344	0	0	0	0		26		50		5	9692	4	5	9693	4	5	9699	4	5	3010	4													5	9698	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+150	下品聚魂丹	61	7	10	76			344	0	0	0	0		75		20		5	3030	2	5	3028	2	5	3007	2	5	974	2													5	9700	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+151	下品益气丸	61	7	10	76			344	0	0	0	0		75		30		5	3032	4	5	3031	4	5	3007	2	5	973	2													5	9701	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+152	下品止血丹	61	7	10	76			344	0	0	0	0		75		10		5	9693	4	5	3028	4	5	6646	1																5	9702	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+153	下品活络丹	61	7	10	76			344	0	0	0	0		75		10		5	9692	4	5	3029	4	5	6646	1																5	9703	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+154	下品补筋丹	61	7	10	78			344	0	0	0	0		75		20		5	3030	2	5	3028	2	5	3007	2	5	974	2													5	9704	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+155	下品破秽丹	61	7	10	78			344	0	0	0	0		75		30		5	3032	4	5	3031	4	5	3007	2	5	973	2													5	9705	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+156	下品强身丹	61	7	10	80			344	0	0	0	0		75		20		5	3030	2	5	3028	2	5	3007	2	5	974	2													5	9706	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+157	下品金创丹	61	7	10	80			344	0	0	0	0		75		30		5	3032	4	5	3031	4	5	3007	2	5	973	2													5	9707	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+158	下品万灵丹	61	7	10	80			344	0	0	0	0		75		10		5	9699	4	5	3032	4	5	6646	1																5	9708	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+159	素针·封	81	7	10	80	1		344	0	0	0	0		100		40		5	9692	4	5	3028	4	5	3010	1	5	3008	5													5	9710	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+160	素针·锢	81	7	10	80	1		344	0	0	0	0		100		40		5	9693	4	5	3031	4	5	3010	1	5	3008	5													5	9712	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+164	上品定痛丸	81	7	10	80	1		344	0	0	0	0		100		30		5	9692	4	5	3028	4	5	3010	1	5	9571	2													5	9720	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+165	上品金创丸	81	7	10	80	1		344	0	0	0	0		100		30		5	9693	4	5	3031	4	5	3010	1	5	9571	2													5	9722	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+166	中品金元丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9699	4	5	3032	4	5	3010	1	5	9571	2													5	9724	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+167	中品玄阴丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9692	4	5	3029	4	5	3010	1	5	9571	2													5	9726	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+169	上品玉露散	61	7	10	80	1		344	0	0	0	0		75		30		5	9693	4	5	3032	4	5	6646	1	5	9571	2	5	3010	2										5	9730	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+170	中品万花丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9692	4	5	3028	4	5	6646	1	5	9571	2	5	3010	2										5	9732	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+171	素针·破	81	7	10	80	1		344	0	0	0	0		100		40		5	9693	5	5	3029	4	5	3008	1	5	9571	2	5	3010	2										5	9734	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+172	素针·禁	81	7	10	80	1		344	0	0	0	0		100		40		5	9692	5	5	3028	4	5	3008	1	5	9571	2	5	3010	2										5	9736	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+173	中品止血丹	81	7	10	80	1		344	0	0	0	0		100		10		5	4999	1	5	3010	2	5	6646	2	5	9571	2													5	9738	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+174	中品活络丹	81	7	10	80	1		344	0	0	0	0		100		10		5	5000	1	5	3010	2	5	6646	2	5	9571	2													5	9740	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+175	中品凝神丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9693	5	5	9699	5	5	6646	5	5	9571	2	5	3010	2										5	9742	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+176	中品长生丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9692	5	5	6646	5	5	9571	2	5	3010	2	5	9699	5										5	9744	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+177	中品护心丹	81	7	10	80	1		344	0	0	0	0		100		20		5	9698	1	5	6648	1	5	9571	4																5	9746	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+178	中品静心丸	81	7	10	80	1		344	0	0	0	0		100		30		5	9698	1	5	6648	1	5	9571	4																5	9748	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+179	中品补筋丹	81	7	10	80	1		344	0	0	0	0		100		20		5	9698	1	5	6648	1	5	9571	4																5	9750	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+180	中品破秽丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9698	1	5	6648	1	5	9571	4																5	9752	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+181	中品聚魂丹	81	7	10	80	1		344	0	0	0	0		100		20		5	9698	1	5	6648	1	5	9571	4																5	9754	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+182	中品亢龙丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9698	1	5	6648	1	5	9571	4																5	9756	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+183	中品强身丹	81	7	10	80	1		344	0	0	0	0		100		20		5	9698	1	5	6648	1	5	9571	4																5	9758	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+185	中品健骨丹	81	7	10	80	1		344	0	0	0	0		100		20		5	9698	1	5	6648	1	5	9571	4																5	9761	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+186	中品展凤丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9698	1	5	6648	1	5	9571	4																5	9763	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+187	中品聚元丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9693	4	5	3029	4	5	6646	1	5	9571	2	5	3010	2										5	9765	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+188	中品聚神丹	81	7	10	80	1		344	0	0	0	0		100		30		5	9692	4	5	3030	4	5	6646	1	5	9571	2	5	3010	2										5	9767	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+189	素针·定	81	7	10	80	1		344	0	0	0	0		100		40		5	9698	1	5	9571	5	5	3008	5	5	6648	2													5	9769	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+190	素针·缓	81	7	10	80	1		344	0	0	0	0		100		40		5	9698	1	5	9571	5	5	3008	5	5	6648	2													5	9771	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+191	中品罡阳散	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9692	4	5	3029	4	5	3010	1	5	9571	2	0	0	0	0	0	0	0	0	0	0	0	0	5	9838	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+192	中品调和散	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9693	4	5	3030	4	5	3010	1	5	9571	2	0	0	0	0	0	0	0	0	0	0	0	0	5	9837	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+193	舒筋益气丹	19	7	10	50		0	344	0	0	0	0	-1	23	80	40	0	5	3030	4	5	10171	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	9822	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+194	般若水	15	7	10	80	1	0	344	0	0	0	0	-1	18	80	30	0	5	9699	2	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10292	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+195	意气水	15	7	10	80	1	0	344	0	0	0	0	-1	18	80	30	0	5	9699	2	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10293	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+196	重黎水	15	7	10	80	1	0	344	0	0	0	0	-1	18	80	30	0	5	9699	2	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10294	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+197	逸隐水	15	7	10	80	1	0	344	0	0	0	0	-1	18	80	30	0	5	9699	2	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10295	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+198	赤炼水	15	7	10	80	1	0	344	0	0	0	0	-1	18	80	30	0	5	9699	2	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10296	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+199	易功丸	20	7	10	50		0	344	0	0	0	0	-1	25	80	40	0	5	3029	4	5	6648	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	10309	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+200	活气散	20	7	10	80		0	344	0	0	0	0	-1	25	80	40	0	5	3029	4	5	6646	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	11522	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+201	檀香囊	21	7	10	74		0	344	0	0	0	0	-1	26	48	20	0	5	9693	2	5	3006	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	11893	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+202	迷香囊	21	7	10	78		0	344	0	0	0	0	-1	26	48	30	0	5	9692	2	5	3006	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	5	11894	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+203	绢云母	20	7	10	80		0	344	0	0	0	0	-1	25	80	50	0	5	3275	10	5	974	10	5	3547	5	5	981	5	0	0	0	0	0	0	0	0	0	0	0	0	5	3549	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+204	茜草	20	7	10	80		0	344	0	0	0	0	-1	25	80	50	0	5	3299	10	5	9571	5	5	3548	5	5	982	5	0	0	0	0	0	0	0	0	0	0	0	0	5	3550	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+205	靛蓝	20	7	10	80		0	344	0	0	0	0	-1	25	80	50	0	5	3310	5	5	979	10	5	3300	10	5	977	10	0	0	0	0	0	0	0	0	0	0	0	0	5	3283	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+206	鼠尾叶	20	7	10	80		0	344	0	0	0	0	-1	25	80	50	0	5	3546	5	5	972	10	5	3544	5	5	980	10	0	0	0	0	0	0	0	0	0	0	0	0	5	3552	1	1	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+207	护心补筋丹	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	20	0	5	9698	2	5	3549	1	5	6646	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17042	2	4	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+208	护心健骨丹	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	20	0	5	9698	2	5	3550	1	5	6646	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17043	2	4	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+209	护心聚魄丹	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	20	0	5	9698	2	5	3283	1	5	6646	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17044	2	4	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+210	护心强身丹	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	20	0	5	9698	2	5	3552	1	5	6646	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17045	2	4	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+211	化瘀香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3549	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17822	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+212	清心香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3550	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17823	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+213	滋补香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3283	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17824	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+214	强身香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3552	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17825	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+215	健体香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3549	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17826	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+216	提神香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3550	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17827	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+217	壮骨香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3283	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17828	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+218	润肺香囊	81	7	10	80	1	0	344	0	0	0	0	-1	100	80	30	0	5	9698	2	5	3552	1	5	3006	1	5	9571	1	0	0	0	0	0	0	0	0	0	0	0	0	5	17829	3	3	1048576	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	scripts/Craft/Include/Event.lua	
+219	行军亢龙散	21	7	10	80		0	344	0	0	0	0	-1	26	80	30	0	5	19905	2	5	3005	1																			5	19490	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+220	行军展凤散	21	7	10	80		0	344	0	0	0	0	-1	26	80	30	0	5	19906	2	5	3005	1																			5	19491	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+221	行军静心散	21	7	10	82		0	344	0	0	0	0	-1	26	80	30	0	5	19905	2	5	3005	1																			5	19492	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+222	行军止血散	21	7	10	84		0	344	0	0	0	0	-1	26	80	30	0	5	19906	2	5	3005	1																			5	19493	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+223	行军活络散	21	7	10	86		0	344	0	0	0	0	-1	26	80	30	0	5	19905	2	5	3005	1																			5	19494	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+224	行军定志散	21	7	10	88		0	344	0	0	0	0	-1	26	80	30	0	5	19906	2	5	3005	1																			5	19495	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+225	百花香囊	61	7	10	90		0	344	0	0	0	0	-1	75	80	20	0	5	19905	4	5	6646	1	5	3006	1																5	19497	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+226	栀仁香囊	61	7	10	90		0	344	0	0	0	0	-1	75	80	20	0	5	19906	4	5	6646	1	5	3006	1																5	19498	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+227	柏桂香囊	61	7	10	90		0	344	0	0	0	0	-1	75	80	20	0	5	19905	4	5	6646	1	5	3006	1																5	19499	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+228	紫荷香囊	61	7	10	90		0	344	0	0	0	0	-1	75	80	20	0	5	19906	4	5	6646	1	5	3006	1																5	19500	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+229	桂枝香囊	61	7	10	90		0	344	0	0	0	0	-1	75	80	20	0	5	19905	4	5	6646	1	5	3006	1																5	19501	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+230	上品长生丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19502	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+231	上品凝神丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19905	4	5	6646	1	5	3007	1																5	19503	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+232	上品亢龙丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19504	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+233	上品展凤丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19905	4	5	6646	1	5	3007	1																5	19505	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+234	上品静心丸	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19506	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+235	上品活血丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19905	4	5	6646	1	5	3007	1																5	19896	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+236	上品疏络丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19897	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+237	上品定志丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19905	4	5	6646	1	5	3007	1																5	19509	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+238	上品玉露丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19510	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+239	上品万花丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19905	4	5	6646	1	5	3007	1																5	19511	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+240	上品破秽丹	61	7	10	90		0	344	0	0	0	0	-1	75	80	30	0	5	19906	4	5	6646	1	5	3007	1																5	19512	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+241	碧闺药花	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	50	0	5	19905	20	5	19906	20	5	19903	1																5	19513	5	5	1048576																																					scripts/Craft/Include/Event.lua	
+242	尚·百花香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	20	0	5	19513	1	5	3549	1	5	6648	1	5	3006	1													5	19514	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+243	尚·栀仁香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	20	0	5	19513	1	5	3550	1	5	6648	1	5	3006	1													5	19515	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+244	尚·柏桂香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	20	0	5	19513	1	5	3283	1	5	6648	1	5	3006	1													5	19516	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+245	尚·紫荷香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	20	0	5	19513	1	5	3552	1	5	6648	1	5	3006	1													5	19517	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+246	尚·桂枝香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	20	0	5	19513	1	5	3549	1	5	6648	1	5	3006	1													5	19518	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+247	尚·上品长生丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3550	1	5	6648	1	5	3007	1													5	19519	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+248	尚·上品凝神丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3283	1	5	6648	1	5	3007	1													5	19520	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+249	尚·上品亢龙丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3552	1	5	6648	1	5	3007	1													5	19521	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+250	尚·上品展凤丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3549	1	5	6648	1	5	3007	1													5	19522	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+251	尚·上品静心丸	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3550	1	5	6648	1	5	3007	1													5	19523	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+252	尚·上品活血丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3283	1	5	6648	1	5	3007	1													5	19898	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+253	尚·上品疏络丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3552	1	5	6648	1	5	3007	1													5	19899	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+254	尚·上品止血丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	10	0	5	19513	1	5	3549	1	5	3283	1	5	3007	1													5	19524	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+255	尚·上品活络丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	10	0	5	19513	1	5	3550	1	5	3552	1	5	3007	1													5	19525	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+256	尚·上品定志丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3283	1	5	6648	1	5	3007	1													5	19526	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+257	尚·上品玉露丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3552	1	5	6648	1	5	3007	1													5	19527	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+258	尚·上品万花丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3549	1	5	6648	1	5	3007	1													5	19528	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+259	尚·上品破秽丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3550	1	5	6648	1	5	3007	1													5	19529	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+260	尚·特品止血丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	10	0	5	19513	1	5	3549	1	5	3283	1	5	3007	1													5	20940	1	3	1048576																																					scripts/Craft/Include/Event.lua	
+261	尚·特品活络丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	10	0	5	19513	1	5	3550	1	5	3552	1	5	3007	1													5	20941	1	3	1048576																																					scripts/Craft/Include/Event.lua	
+262	淬腐针	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	40	0	5	19513	1	5	3283	1	5	6648	1	5	3008	1													5	20942	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+263	直木针	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	40	0	5	19513	1	5	3552	1	5	6648	1	5	3008	1													5	20943	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+264	苍·上品亢龙丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3549	1	5	6648	4	5	3007	1													5	22412	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+265	苍·上品展凤丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3550	1	5	6648	4	5	3007	1													5	22413	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+266	苍·上品静心丸	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3283	1	5	6648	4	5	3007	1													5	22414	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+267	苍·上品破秽丹	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3552	1	5	6648	4	5	3007	1													5	22415	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+268	苍·健体香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3283	1	5	6648	4	5	3007	1													5	22416	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+269	苍·提神香囊	81	7	10	90	1	0	344	0	0	0	0	-1	100	80	30	0	5	19513	1	5	3549	1	5	6648	4	5	3007	1													5	22417	2	4	1048576																																					scripts/Craft/Include/Event.lua	
+270	护命丹	15	7	10	91	0	0	344	0	0	0	0	-1	25	80	20	0	5	24521	1	5	24519	15	5	6646	1																5	24250	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+271	补心丹	15	7	10	91	0	0	344	0	0	0	0	-1	25	80	20	0	5	24521	1	5	24520	15	5	6646	1																5	24253	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+272	点骨丹	15	7	10	91	0	0	344	0	0	0	0	-1	25	80	20	0	5	24521	1	5	24519	15	5	6646	1																5	24251	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+273	养神丹	15	7	10	92	0	0	344	0	0	0	0	-1	25	80	20	0	5	24521	1	5	24520	15	5	6646	1																5	24252	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+274	轻身丹	15	7	10	92	0	0	344	0	0	0	0	-1	25	80	20	0	5	24521	1	5	24519	15	5	6646	1																5	24254	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+275	玄元丹	15	7	10	92	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24520	15	5	6646	1																5	24255	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+276	枕中丹	15	7	10	93	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24519	15	5	6646	1																5	24256	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+277	清灵丹	15	7	10	93	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24520	15	5	6646	1																5	24259	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+278	玉蟾丹	15	7	10	93	0	0	344	0	0	0	0	-1	25	80	10	0	5	24521	1	5	24519	15	5	6646	1																5	24260	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+279	玉华丹	15	7	10	94	0	0	344	0	0	0	0	-1	25	80	10	0	5	24521	1	5	24520	15	5	6646	1																5	24261	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+280	震灵丹	15	7	10	94	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24519	15	5	6646	1																5	24262	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+281	妙香丹	15	7	10	94	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24520	15	5	6646	1																5	24263	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+282	玉枢丹	15	7	10	95	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24519	15	5	6646	1																5	24264	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+283	灵寿丹	15	7	10	95	0	0	344	0	0	0	0	-1	25	80	30	0	5	24521	1	5	24520	15	5	6646	1																5	24265	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+284	佳·护命丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24250	3	5	24769	1	5	24767	3	5	6646	1													5	24268	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+285	佳·补心丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24253	3	5	24769	1	5	24767	3	5	6646	1													5	24271	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+286	佳·点骨丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24251	3	5	24770	1	5	24768	3	5	6646	1													5	24269	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+287	佳·养神丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24252	3	5	24771	1	5	24765	3	5	6646	1													5	24270	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+288	佳·轻身丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24254	3	5	24772	1	5	24766	3	5	6646	1													5	24272	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+289	佳·玄元丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24255	3	5	24769	1	5	24767	3	5	6646	1													5	24273	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+290	佳·枕中丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24256	3	5	24770	1	5	24768	3	5	6646	1													5	24274	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+291	佳·清灵丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24259	3	5	24772	1	5	24766	3	5	6646	1													5	24277	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+292	佳·玉蟾丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	10	0	5	24260	3	5	24771	1	5	24765	3	5	6646	1													5	24278	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+293	佳·玉华丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	10	0	5	24261	3	5	24772	1	5	24766	3	5	6646	1													5	24279	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+294	佳·震灵丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24262	3	5	24771	1	5	24765	3	5	6646	1													5	24280	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+295	佳·妙香丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24263	3	5	24769	1	5	24767	3	5	6646	1													5	24281	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+296	佳·玉枢丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24264	3	5	24770	1	5	24768	3	5	6646	1													5	24282	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+297	佳·灵寿丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24265	3	5	24772	1	5	24766	3	5	6646	1													5	24283	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+298	玉璃丹	20	7	10	95	0	0	344	0	0	0	0	-1	33	80	30	0	5	24521	1	5	24519	15	5	6646	1																5	24873	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+299	白信丹	20	7	10	95	0	0	344	0	0	0	0	-1	33	80	30	0	5	24521	1	5	24520	15	5	6646	1																5	24874	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+300	佳·玉璃丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24873	3	5	24770	1	5	24768	3	5	6646	1													5	24875	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+301	佳·白信丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24874	3	5	24772	1	5	24766	3	5	6646	1													5	24876	1	1	1048576																																					scripts/Craft/Include/Event.lua	
+302	珍·行露丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24769	1	5	24766	2	5	27610	7	5	6648	5													5	27611	5	7	1048576																																					scripts/Craft/Include/Event.lua	
+303	珍·九还丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24770	1	5	24765	2	5	27610	7	5	6648	5													5	27612	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+304	珍·御风丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24771	1	5	24768	2	5	27610	7	5	6648	5													5	27613	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+305	珍·益神丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24772	1	5	24767	2	5	27610	7	5	6648	5													5	27614	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+306	珍·玉阳丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	20	0	5	24769	1	5	24766	2	5	27610	7	5	6648	5													5	27615	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+307	珍·碧凝丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24770	1	5	24765	2	5	27610	7	5	6648	5													5	27616	5	7	1048576																																					scripts/Craft/Include/Event.lua	
+308	珍·养魂丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24771	1	5	24768	2	5	27610	7	5	6648	5													5	27617	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+309	珍·金麟丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24772	1	5	24767	2	5	27610	7	5	6648	5													5	27618	3	5	1048576																																					scripts/Craft/Include/Event.lua	
+310	珍·涤魂丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24769	1	5	24766	2	5	27610	7	5	6648	5													5	27619	5	7	1048576																																					scripts/Craft/Include/Event.lua	
+311	珍·升龙丹	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	30	0	5	24770	1	5	24765	2	5	27610	7	5	6648	5													5	27620	5	7	1048576																																					scripts/Craft/Include/Event.lua	
+312	玉凝药香草	20	7	10	95	1	0	344	0	0	0	0	-1	33	80	50	0	5	24521	5	5	24520	20	5	24519	20	5	27605	10													5	27610	4	6	1048576																																					scripts/Craft/Include/Event.lua	
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,25 @@
+dwID	dwIntergral	dwFrame	szLinkFrame	szName	bNewProduct	szFRecallReward
+0						
+1	120	9	ui/Image/OperationActivity2/FriendsRecruit.UITex	豚鼠跟宠·糖豆		8;11343
+2	240	8	ui/Image/OperationActivity2/FriendsRecruit.UITex	黄泉·不知名		8;11345
+3	10	7	ui/Image/OperationActivity2/FriendsRecruit.UITex	接引人		5;19287
+4	180	16	ui/Image/OperationActivity2/FriendsRecruit.UITex	掌旗者		5;19288
+5	15	14	ui/Image/OperationActivity2/FriendsRecruit.UITex	西山秘宝·琼霄佳酿		8;2838
+6	75	15	ui/Image/OperationActivity2/FriendsRecruit.UITex	西山秘宝·花无缺		8;2839
+7	500	12	ui/Image/OperationActivity2/FriendsRecruit.UITex	西山秘宝·魁首		8;17651
+8	2800	11	ui/Image/OperationActivity2/FriendsRecruit.UITex	虚空交椅·美女版		8;601
+9	3800	13	ui/Image/OperationActivity2/FriendsRecruit.UITex	虚空交椅·阿婆版		8;604
+10	360	2	ui/Image/OperationActivity2/FriendsRecruit.UITex	追风紫罗带		8;5775
+11	180	0	ui/Image/OperationActivity2/FriendsRecruit.UITex	阴阳坠		8;2821
+12	600	1	ui/Image/OperationActivity2/FriendsRecruit.UITex	跟宠·夜刃		8;13706
+13	500	3	ui/Image/OperationActivity2/FriendsRecruit.UITex	马饰·罚恶八针		8;17817
+14	200	5	ui/Image/OperationActivity2/FriendsRecruit.UITex	马具·风行无殇头饰		8;17816
+15	200	6	ui/Image/OperationActivity2/FriendsRecruit.UITex	马具·风行无殇鞍饰		8;17815
+16	200	4	ui/Image/OperationActivity2/FriendsRecruit.UITex	马具·风行无殇足饰		8;17814
+17	500	20	ui/Image/OperationActivity2/FriendsRecruit.UITex	公侯伯仲·锐锋		8;17865
+18	200	17	ui/Image/OperationActivity2/FriendsRecruit.UITex	逐皇逍遥·锐锋头饰		8;17860
+19	200	18	ui/Image/OperationActivity2/FriendsRecruit.UITex	逐皇逍遥·鞍		8;17861
+20	200	19	ui/Image/OperationActivity2/FriendsRecruit.UITex	逐皇逍遥·足		8;17862
+21	800	0	ui/Image/OperationActivity2/FriendsRecruit2.UITEX	英雄结义旗	1	8;17597
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

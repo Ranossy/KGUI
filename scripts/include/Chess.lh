@@ -1,0 +1,175 @@
+--路径点位置记录棋盘
+Board = {{{x = 21316,y = 70119,z = 1112128},{x = 21315,y = 69880,z = 1112128},{x = 21312,y = 69648,z = 1112128},{x = 21316,y = 69417,z = 1112128}},
+		 {{x = 21079,y = 70117,z = 1112128},{x = 21080,y = 69885,z = 1112128},{x = 21078,y = 69652,z = 1112128},{x = 21081,y = 69416,z = 1112128}},
+		 {{x = 20846,y = 70120,z = 1112128},{x = 20847,y = 69880,z = 1112128},{x = 20850,y = 69655,z = 1112128},{x = 20847,y = 69414,z = 1112128}},
+		 {{x = 20613,y = 70119,z = 1112128},{x = 20612,y = 69883,z = 1112128},{x = 20616,y = 69650,z = 1112128},{x = 20612,y = 69417,z = 1112128}}}
+
+--六子冲规则判定，PositionID当前位置对应场景变量ID，BlackID（WhiteID）存放黑（白）棋当前数量的场景变量ID，color当前移动棋子颜色ID
+--BlackcolorID黑棋对应的颜色ID，WhitecolorID白棋对应的颜色ID
+--返回TABLE包含剩余棋子数量和被吃棋子的ID
+function Judgement(scene,PositionID,BlackID,WhiteID,color,BlackcolorID,WhitecolorID) 
+	local nBlackNum = scene.GetCustomUnsigned4(BlackID)
+	local nWhiteNum = scene.GetCustomUnsigned4(WhiteID)
+	local dwDeadNpcID1 = 0 --用来记录被吃棋子ID
+	local dwDeadNpcID2 = 0
+	local dwDeadNpcID3 = 0
+	local dwDeadNpcID4 = 0
+	if  (PositionID + 16) <= 76 and scene.GetCustomUnsigned4(PositionID + 16) ~= 0 then
+		if GetNpc(scene.GetCustomUnsigned4(PositionID + 16)).dwTemplateID == color then
+			if (PositionID + 32) <= 76 and scene.GetCustomUnsigned4(PositionID + 32) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID + 32)).dwTemplateID ~= color then
+					if (PositionID + 48) > 76 or scene.GetCustomUnsigned4(PositionID + 48) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID + 48)).dwTemplateID == color then
+						local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID + 32))
+						dwDeadNpcID1 = delnpc.dwID
+						scene.SetCustomUnsigned4(PositionID + 32,0)
+						if color == BlackcolorID then
+							scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+						elseif color == WhitecolorID then
+							scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+						end
+					end	
+				end
+			end
+		elseif GetNpc(scene.GetCustomUnsigned4(PositionID + 16)).dwTemplateID ~= color then
+			if (PositionID - 16) >= 16 and scene.GetCustomUnsigned4(PositionID - 16) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID - 16)).dwTemplateID == color then
+					if (PositionID + 32) > 76 or scene.GetCustomUnsigned4(PositionID + 32) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID + 32)).dwTemplateID == color then
+						local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID + 16))
+						dwDeadNpcID1 = delnpc.dwID
+						scene.SetCustomUnsigned4(PositionID + 16, 0)
+						if color == BlackcolorID then
+							scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+						elseif color == WhitecolorID then
+							scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+						end
+					end
+				end
+			end		
+		end
+	end
+	
+	if  (PositionID + 4) <= 76 and scene.GetCustomUnsigned4(PositionID + 4) ~= 0 then
+		if GetNpc(scene.GetCustomUnsigned4(PositionID + 4)).dwTemplateID == color then
+			if (PositionID + 8) <= 76 and scene.GetCustomUnsigned4(PositionID + 8) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID + 8)).dwTemplateID ~= color then
+					if (PositionID + 12) > 76 or scene.GetCustomUnsigned4(PositionID + 12) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID + 12)).dwTemplateID == color then
+						-- 对跨行的情况做特殊处理，保证被吃棋子和移动棋子是在一行上
+						if PositionID ~= 24 and PositionID ~= 40 and PositionID ~= 56 then
+							local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID + 8))
+							dwDeadNpcID2 = delnpc.dwID
+							scene.SetCustomUnsigned4(PositionID + 8, 0)
+							if color == BlackcolorID then
+								scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+							elseif color == WhitecolorID then
+								scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+							end
+						end
+					end	
+				end
+			end
+		elseif GetNpc(scene.GetCustomUnsigned4(PositionID + 4)).dwTemplateID ~= color then
+			if (PositionID - 4) >= 4 and scene.GetCustomUnsigned4(PositionID - 4) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID - 4)).dwTemplateID == color then
+					if (PositionID + 8) > 76 or scene.GetCustomUnsigned4(PositionID + 8) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID + 8)).dwTemplateID == color then
+						if PositionID ~= 28 and PositionID ~= 44 and PositionID ~= 60 then
+							local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID + 4))
+							dwDeadNpcID2 = delnpc.dwID
+							scene.SetCustomUnsigned4(PositionID + 4, 0)
+							if color == BlackcolorID then
+								scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+							elseif color == WhitecolorID then
+								scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+							end
+						end				
+					end
+				end
+			end			
+		end
+	end
+	
+	if  (PositionID - 4) >= 16 and scene.GetCustomUnsigned4(PositionID - 4) ~= 0 then
+		if GetNpc(scene.GetCustomUnsigned4(PositionID - 4)).dwTemplateID == color then
+			if (PositionID - 8) >= 16 and scene.GetCustomUnsigned4(PositionID - 8) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID - 8)).dwTemplateID ~= color then
+					if (PositionID - 12) < 16 or scene.GetCustomUnsigned4(PositionID - 12) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID - 12)).dwTemplateID == color then
+						if PositionID ~= 68 and PositionID ~= 52 and PositionID ~= 36 then
+							local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID - 8))
+							dwDeadNpcID3 = delnpc.dwID
+							scene.SetCustomUnsigned4(PositionID - 8, 0)
+							if color == BlackcolorID then
+								scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+							elseif color == WhitecolorID then
+								scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+							end
+						end
+					end	
+				end
+			end
+		elseif GetNpc(scene.GetCustomUnsigned4(PositionID - 4)).dwTemplateID ~= color then
+			if (PositionID + 4) <= 76 and scene.GetCustomUnsigned4(PositionID + 4) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID + 4)).dwTemplateID == color then
+					if (PositionID - 8) < 16 or scene.GetCustomUnsigned4(PositionID - 8) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID - 8)).dwTemplateID == color then
+						if PositionID ~= 64 and PositionID ~= 48 and PositionID ~= 32 then
+							local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID - 4))
+							dwDeadNpcID3 = delnpc.dwID
+							scene.SetCustomUnsigned4(PositionID - 4, 0)
+							if color == BlackcolorID then
+								scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+							elseif color == WhitecolorID then
+								scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+							end
+						end					
+					end
+				end
+			end		
+		end
+	end
+	
+	if  (PositionID - 16) >= 16 and scene.GetCustomUnsigned4(PositionID - 16) ~= 0 then
+		if GetNpc(scene.GetCustomUnsigned4(PositionID - 16)).dwTemplateID == color then
+			if (PositionID - 32) >= 16 and scene.GetCustomUnsigned4(PositionID - 32) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID - 32)).dwTemplateID ~= color then
+					if (PositionID - 48) < 16 or scene.GetCustomUnsigned4(PositionID - 48) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID - 48)).dwTemplateID == color then
+						local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID - 32))
+						dwDeadNpcID4 = delnpc.dwID
+						scene.SetCustomUnsigned4(PositionID - 32, 0)
+						if color == BlackcolorID then
+							scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+						elseif color == WhitecolorID then
+							scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+						end
+					end	
+				end
+			end
+		elseif GetNpc(scene.GetCustomUnsigned4(PositionID - 16)).dwTemplateID ~= color then
+			if (PositionID + 16) <= 76 and scene.GetCustomUnsigned4(PositionID + 16) ~= 0 then
+				if GetNpc(scene.GetCustomUnsigned4(PositionID + 16)).dwTemplateID == color then
+					if (PositionID - 32) < 16 or scene.GetCustomUnsigned4(PositionID - 32) == 0 or 
+					GetNpc(scene.GetCustomUnsigned4(PositionID - 32)).dwTemplateID == color then
+						local delnpc = GetNpc(scene.GetCustomUnsigned4(PositionID - 16))
+						dwDeadNpcID4 = delnpc.dwID
+						scene.SetCustomUnsigned4(PositionID - 16, 0)
+						if color == BlackcolorID then
+							scene.SetCustomUnsigned4(WhiteID,scene.GetCustomUnsigned4(WhiteID) - 1)
+						elseif color == WhitecolorID then
+							scene.SetCustomUnsigned4(BlackID,scene.GetCustomUnsigned4(BlackID) - 1)
+						end						
+					end
+				end
+			end		
+		end
+	end
+	local nBlackLoss = nBlackNum - scene.GetCustomUnsigned4(BlackID)
+	local nWhiteLoss = nWhiteNum - scene.GetCustomUnsigned4(WhiteID)
+	local tResult = {nBlackLoss, nWhiteLoss, dwDeadNpcID1, dwDeadNpcID2, dwDeadNpcID3, dwDeadNpcID4}
+	return tResult
+end
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,14 @@
+IconType	ImageFile	nFrame	szName	Tip
+0				
+1	ui\image\uicommon\Fblist.UITex	19	坦克预警	高伤害可预判必中类技能，需要减伤、重点治疗
+2	ui\image\uicommon\Fblist.UITex	20	治疗预警	需要短时间给友方NPC或者队友刷血，一般伴随治疗吸收盾
+3	ui\image\uicommon\Fblist.UITex	21	打断预警	高惩罚的吟唱，需要打断
+4	ui\image\uicommon\Fblist.UITex	22	驱散预警	单一目标或范围目标的减益效果，需要驱散
+5	ui\image\uicommon\Fblist.UITex	23	群体伤害	以首领为中心、或指定区域的范围伤害，需要走位或者扶摇躲避，治疗应关注团队血量
+6	ui\image\uicommon\Fblist.UITex	24	点名注意	首领随机选中某目标并对其施放招式效果，需要被点名者减伤、加大治疗，或远离人群
+7	ui\image\uicommon\Fblist.UITex	25	转换目标	首领召唤出小怪或辅助NPC，需要转集火
+8	ui\image\uicommon\Fblist.UITex	26	需要走位	需求玩家到特定的位置消除首领的某个惩罚
+9	ui\image\uicommon\Fblist.UITex	27	特殊玩法	首领其他招式效果
+10	ui\image\uicommon\Fblist.UITex	28	QTE	需要按照接下来的屏幕提示进行操作
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

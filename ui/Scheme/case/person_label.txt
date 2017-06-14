@@ -1,0 +1,9 @@
+id	title	count_coff	desc	tips	image_file	image_norframe	image_overframe
+0	好团长	1	<text>text=\"率领团队通关25人英雄副本后，通过队友对团长点赞获得。\" r=255 g=255 b=255 font=18</text>	若TA是个好团长，不妨点个赞	ui\Image\UICommon\GoodFriends.UITex	12	13
+1	好师父	1	<text>text=\"通过徒弟对师父点赞获得。\" r=255 g=255 b=255 font=18</text>	为最疼爱你的师父点个赞	ui\Image\UICommon\GoodFriends.UITex	15	14
+2	好镖师	1	<text>text=\"保护雇主完成据点贸易，雇主可为你点赞。\" r=255 g=255 b=255 font=18</text>	为你的镖师点个赞	ui\Image\JiangHu\JiangHu07.UITex	22	22
+3	群龙之首	1	<text>text=\"率领团队通关当前最新25人英雄副本后，通过队友对团长点赞获得。\" r=255 g=255 b=255 font=18</text>	若TA是个好团长，不妨点个赞	ui\Image\UICommon\GoodFriends.UITex	26	27
+4	一代军师	1	<text>text=\"率领团队赢得战场胜利后，通过队友对团长点赞获得。\" r=255 g=255 b=255 font=18</text>	战场指挥犀利与否，你说了算	ui\Image\UICommon\GoodFriends.UITex	28	29
+5	名剑名侠	1	<text>text=\"在十段及以上的名剑大会中，表现突出并赢得胜利后，通过队友点赞获得。\" r=255 g=255 b=255 font=18</text>	名剑大会全场最佳	ui\Image\UICommon\GoodFriends.UITex	30	31
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

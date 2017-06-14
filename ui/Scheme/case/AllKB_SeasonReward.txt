@@ -1,0 +1,8 @@
+ID	Name	DesignationID	ItemType1	ItemIndex1	Count1	ItemType2	ItemIndex2	Count2	ItemType3	ItemIndex3	Count3	ItemType4	ItemIndex4	Count4	ItemType5	ItemIndex5	Count5
+0		0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+1	第1名	266	5	10032	8	5	10031	10	5	20523	10						
+2	第2名	267	5	10032	5	5	10031	7	5	20523	7						
+3	第3名	268	5	10032	3	5	10031	5	5	20523	5						
+4	第4~10名		5	10032	1	5	10031	2	5	20523	2						
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

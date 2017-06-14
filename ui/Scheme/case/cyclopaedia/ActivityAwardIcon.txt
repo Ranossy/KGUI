@@ -1,0 +1,23 @@
+Id	Name	Des	nFrame
+0			0
+1	money	金钱	
+2	experience	经验	
+3	contribution	江湖贡献值	29
+4	justice	侠义值	34
+5	prestige	威望	33
+6	titlepoint	战阶	37
+7	arenaaward	名剑币	32
+8	exteriorpiece	拓印碎片	
+9	examprint	监本印文	31
+10	train	修为	17
+11	tongfund	帮会资金	30
+12	tongresource	载具资源	36
+13	prestigelimit	威望周上限	
+14	contributionlimit	帮贡周上限	
+15	justicelimit	侠义值周上限	
+16	exitem	额外奖励道具	
+17	exdoubleitem	额外双倍奖励道具	
+18	personalhighlevel	个人精英分	63
+19	teamhighlevel	队伍精英分	62
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

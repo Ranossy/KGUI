@@ -1,0 +1,48 @@
+ID	BeChangedMagic	Type	MagicValue	TargetMagic1	TargetMagic2	TargetMagic3	TargetMagic4	TargetMagic5	TargetMagic6	TargetMagic7	TargetMagic8
+1	atPhysicsCriticalStrike	1	500	atPhysicsHitValue	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atPhysicsCriticalDamagePowerBase	atHasteBase		
+2	atMagicCriticalStrike	1	500	atStrainBase	atMagicOvercome	atMagicCriticalDamagePowerBase	atMagicHitValue	atHasteBase			
+3	atSolarCriticalStrike	1	500	atSolarHitValue	atStrainBase	atSolarOvercomeBase	atSolarCriticalDamagePowerBase	atHasteBase			
+4	atNeutralCriticalStrike	1	500	atNeutralHitValue	atStrainBase	atNeutralOvercomeBase	atNeutralCriticalDamagePowerBase	atHasteBase			
+5	atLunarCriticalStrike	1	500	atLunarHitValue	atStrainBase	atLunarOvercomeBase	atLunarCriticalDamagePowerBase	atHasteBase			
+6	atPoisonCriticalStrike	1	500	atPoisonHitValue	atStrainBase	atPoisonOvercomeBase	atPoisonCriticalDamagePowerBase	atHasteBase			
+7	atDodge	2	1000	atParryBase	atParryValueBase	atToughnessBase					
+8	atPhysicsHitValue	3	500	atPhysicsCriticalStrike	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atPhysicsCriticalDamagePowerBase	atHasteBase		
+9	atSolarHitValue	3	500	atSolarCriticalStrike	atStrainBase	atSolarOvercomeBase	atSolarCriticalDamagePowerBase	atHasteBase			
+10	atNeutralHitValue	3	500	atNeutralCriticalStrike	atStrainBase	atNeutralOvercomeBase	atNeutralCriticalDamagePowerBase	atHasteBase			
+11	atLunarHitValue	3	500	atLunarCriticalStrike	atStrainBase	atLunarOvercomeBase	atLunarCriticalDamagePowerBase	atHasteBase			
+12	atPoisonHitValue	3	500	atPoisonCriticalStrike	atStrainBase	atPoisonOvercomeBase	atPoisonCriticalDamagePowerBase	atHasteBase			
+13	atParryBase	4	1000	atDodge	atParryValueBase	atToughnessBase					
+14	atParryValueBase	5	81	atDodge	atParryBase	atToughnessBase					
+15	atStrainBase	6	500	atAllTypeCriticalStrike	atAllTypeHitValue	atPhysicsOvercomeBase	atMagicOvercome	atAllTypeCriticalDamagePowerBase	atHasteBase		
+16	atPhysicsOvercomeBase	7	500	atPhysicsCriticalStrike	atPhysicsHitValue	atStrainBase	atPhysicsCriticalDamagePowerBase	atHasteBase			
+17	atSolarOvercomeBase	7	500	atSolarCriticalStrike	atSolarHitValue	atStrainBase	atSolarCriticalDamagePowerBase	atHasteBase			
+18	atNeutralOvercomeBase	7	500	atNeutralCriticalStrike	atNeutralHitValue	atStrainBase	atNeutralCriticalDamagePowerBase	atHasteBase			
+19	atLunarOvercomeBase	7	500	atLunarCriticalStrike	atLunarHitValue	atStrainBase	atLunarCriticalDamagePowerBase	atHasteBase			
+20	atPoisonOvercomeBase	7	500	atAllTypeCriticalStrike	atAllTypeHitValue	atStrainBase	atAllTypeCriticalDamagePowerBase	atHasteBase			
+21	atMagicOvercome	7	500	atAllTypeCriticalStrike	atAllTypeHitValue	atStrainBase	atAllTypeCriticalDamagePowerBase	atHasteBase			
+22	atToughnessBase	8	1000	atDodge	atParryBase	atParryValueBase					
+23	atMagicCriticalDamagePowerBase	9	500	atMagicCriticalStrike	atStrainBase	atMagicOvercome	atMagicHitValue	atHasteBase			
+24	atPhysicsCriticalDamagePowerBase	9	500	atPhysicsCriticalStrike	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atPhysicsHitValue	atHasteBase		
+25	atSolarCriticalDamagePowerBase	9	500	atSolarCriticalStrike	atSolarHitValue	atStrainBase	atSolarOvercomeBase	atHasteBase			
+26	atNeutralCriticalDamagePowerBase	9	500	atNeutralCriticalStrike	atNeutralHitValue	atStrainBase	atNeutralOvercomeBase	atHasteBase			
+27	atLunarCriticalDamagePowerBase	9	500	atLunarCriticalStrike	atLunarHitValue	atStrainBase	atLunarOvercomeBase	atHasteBase			
+28	atPoisonCriticalDamagePowerBase	9	500	atPoisonCriticalStrike	atPoisonHitValue	atStrainBase	atPoisonOvercomeBase	atHasteBase			
+29	atMagicHitValue	3	500	atMagicCriticalStrike	atStrainBase	atMagicOvercome	atMagicCriticalDamagePowerBase	atHasteBase			
+30	atAllTypeHitValue	3	500	atAllTypeCriticalStrike	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atAllTypeCriticalDamagePowerBase	atHasteBase		
+31	atAllTypeCriticalStrike	1	500	atAllTypeHitValue	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atAllTypeCriticalDamagePowerBase	atHasteBase		
+32	atAllTypeCriticalDamagePowerBase	9	500	atAllTypeHitValue	atAllTypeCriticalStrike	atStrainBase	atPhysicsOvercomeBase	atMagicOvercome	atHasteBase		
+33	atSolarAndLunarHitValue	3	500	atSolarAndLunarCriticalStrike	atStrainBase	atSolarAndLunarOvercomeBase	atSolarAndLunarCriticalDamagePowerBase	atHasteBase			
+34	atSolarAndLunarCriticalStrike	1	500	atSolarAndLunarHitValue	atStrainBase	atSolarAndLunarOvercomeBase	atSolarAndLunarCriticalDamagePowerBase	atHasteBase			
+35	atSolarAndLunarCriticalDamagePowerBase	9	500	atSolarAndLunarCriticalStrike	atSolarAndLunarHitValue	atStrainBase	atSolarAndLunarOvercomeBase	atHasteBase			
+36	atSolarAndLunarOvercomeBase	7	500	atSolarAndLunarCriticalStrike	atSolarAndLunarHitValue	atStrainBase	atSolarAndLunarCriticalDamagePowerBase	atHasteBase			
+37	atHasteBase	10	500	atStrainBase	atAllTypeCriticalStrike	atAllTypeHitValue	atPhysicsOvercomeBase	atMagicOvercome	atAllTypeCriticalDamagePowerBase		
+38	atPhysicsAttackPowerBase	11	147	atPhysicsHitValue	atPhysicsCriticalStrike	atStrainBase	atPhysicsOvercomeBase	atPhysicsCriticalDamagePowerBase	atHasteBase		
+39	atMagicAttackPowerBase	12	122	atAllTypeHitValue	atAllTypeCriticalStrike	atStrainBase	atMagicOvercome	atAllTypeCriticalDamagePowerBase	atHasteBase		
+40	atSolarAttackPowerBase	12	122	atSolarCriticalStrike	atSolarHitValue	atStrainBase	atSolarOvercomeBase	atSolarCriticalDamagePowerBase	atHasteBase		
+41	atNeutralAttackPowerBase	12	122	atNeutralCriticalStrike	atNeutralHitValue	atStrainBase	atNeutralOvercomeBase	atNeutralCriticalDamagePowerBase	atHasteBase		
+42	atLunarAttackPowerBase	12	122	atLunarCriticalStrike	atLunarHitValue	atStrainBase	atLunarOvercomeBase	atLunarCriticalDamagePowerBase	atHasteBase		
+43	atPoisonAttackPowerBase	12	122	atAllTypeCriticalStrike	atAllTypeHitValue	atStrainBase	atPoisonOvercomeBase	atAllTypeCriticalDamagePowerBase	atHasteBase		
+44	atTherapyPowerBase	13	62	atAllTypeCriticalStrike	atAllTypeHitValue	atAllTypeCriticalDamagePowerBase	atHasteBase				
+45	atSolarAndLunarAttackPowerBase	12	122	atSolarAndLunarCriticalStrike	atSolarAndLunarHitValue	atStrainBase	atSolarAndLunarOvercomeBase	atSolarAndLunarCriticalDamagePowerBase	atHasteBase		
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,13 @@
+ID	GroupName
+0	
+1	城市
+2	门派
+3	野外
+4	秘境
+5	阵营
+6	战场
+7	二人秘境
+8	帮会
+9	名剑大会
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

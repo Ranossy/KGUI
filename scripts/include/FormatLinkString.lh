@@ -1,0 +1,168 @@
+tEscapeTable = 
+{
+	['"'] = '\\"',
+	['\\'] = '\\\\',
+	['\n'] = '\\n',
+	['\t'] = '\\t'
+}
+
+--[[tFontColor = {
+	default = " font=4 r=40 g=40 b=40 ",	-- 默认的灰色字体，主要用于普通字符串
+	blue = " font=10 r=202 g=126 b=255 ",	-- 蓝色，清冷的深蓝色玩家名字
+	green = " font=10 r=40 g=40 b=40 ",	-- 绿色，帮会的生机盎然绿
+	red = " font=10 r=255 g=255 b=0 ",		-- 红色，仇人的红色
+	Achievement = " font=10 r=170 g=150 b=30 ",	-- 成就用的颜色，我也不知道是什么颜色
+}--]]
+
+tFontColor = {
+	default = " font=4 r=40 g=40 b=40 ",	-- 默认的灰色字体，主要用于普通字符串
+	blue = " font=32 r=255 g=150 b=0 ",	-- 蓝色，清冷的深蓝色玩家名字（现调整为橘黄）
+	orange = " font=32 r=255 g=150 b=0 ",	-- 橘黄，暖暖的玩家名字
+	green = " font=165 r=0 g=200 b=72 ",	-- 绿色，帮会的生机盎然绿
+	red = " font=166 r=255 g=0 b=0 ",		-- 红色，仇人的红色
+	Achievement = " font=10 r=170 g=150 b=30 ",	-- 成就用的颜色，我也不知道是什么颜色
+}
+
+function GetItemFontColor(KItem)
+	local font, r, g, b = 10, 0, 0, 0
+	if KItem.nQuality == 1 then
+		r, g, b = 250, 250, 250
+	elseif KItem.nQuality == 2 then
+		r, g, b = 0, 210, 75
+	elseif KItem.nQuality == 3 then
+		r, g, b = 0, 126, 255
+	elseif KItem.nQuality == 4 then
+		r, g, b = 255, 45, 255
+	elseif KItem.nQuality == 5 then
+		r, g, b = 255, 165, 0
+	end
+	
+	return " font=" .. font .. " r=" .. r .. " g=" .. g .. " b=" .. b .. " "
+end
+
+function EncodeComponentsString(string)
+	return '"' .. string.gsub(string, "[\"\\\n\t]", tEscapeTable) .. '"'
+end
+
+function MakeNameLink(szName, szFont, dwTalkerID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+	szFont..string.format(" name=\"namelink_%d\" eventid=515</text>", (dwTalkerID or 0))
+	return szLink
+end
+
+function MakeItemLink(szName, szFont, dwID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"itemlink\" eventid=513 userdata="..dwID.."</text>"
+    return szLink
+end
+
+function MakeItemInfoLink(szName, szFont, nVersion, dwTabType, dwIndex)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"iteminfolink\" eventid=513 script="..
+			EncodeComponentsString("this.nVersion="..nVersion.." this.dwTabType="..dwTabType.." this.dwIndex="..dwIndex).."</text>"
+    return szLink
+end
+
+function MakeQuestLink(szName, szFont, dwQuestID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"questlink\" eventid=513 userdata="..dwQuestID.."</text>"
+    return szLink
+end
+
+function MakeRecipeLink(szName, szFont, dwCraftID, dwRecipeID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"recipelink\" eventid=513 script="..
+		EncodeComponentsString("this.dwCraftID="..dwCraftID.."\nthis.dwRecipeID="..dwRecipeID).."</text>"
+    return szLink
+end
+
+function MakeEnchantLink(szName, szFont, dwProID, dwCraftID, dwRecipeID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"enchantlink\" eventid=513 script="..
+		EncodeComponentsString("this.dwProID="..dwProID.."\nthis.dwCraftID="..dwCraftID.."\nthis.dwRecipeID="..dwRecipeID).."</text>"
+    return szLink
+end
+
+function MakeSkillLink(szName, szFont, skillKey)
+	local szScript = "this.skillKey={"
+	for k, v in pairs(skillKey) do
+		szScript = szScript..k.."="..v..","
+	end
+	szScript = szScript.."}"
+	
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"skilllink\" eventid=513 script="..
+		EncodeComponentsString(szScript).."</text>"
+    return szLink
+end
+
+function MakeSkillRecipeLink(szName, szFont, dwID, dwLevel)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"skillrecipelink\" eventid=513 script="..
+			EncodeComponentsString("this.dwID="..dwID.."\nthis.dwLevel="..dwLevel).."</text>"
+    return szLink
+end
+
+function MakeBookLink(szName, szFont, nVersion, dwTabType, dwIndex, nBookRecipeID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"booklink\" eventid=513 script="..
+			EncodeComponentsString("this.nVersion="..nVersion.."\nthis.dwTabType="..dwTabType.."\nthis.dwIndex="..dwIndex.."\nthis.nBookRecipeID="..nBookRecipeID).."</text>"
+    return szLink
+end
+
+function MakeAchievementLink(szName, szFont, dwAchievementID)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"achievementlink\" eventid=513 script="..
+			EncodeComponentsString("this.dwID="..dwAchievementID).."</text>"
+    return szLink
+end
+
+function MakeDesignationLink(szName, szFont, dwDesignationID, bPrefix)
+	local szLink = "<text>text="..EncodeComponentsString(szName)..
+		szFont.."name=\"designationlink\" eventid=513 script="..
+			EncodeComponentsString("this.dwID="..dwDesignationID.."\nthis.bPrefix="..tostring(bPrefix)).."</text>"
+    return szLink
+end
+
+function MakeEventLink(szText, szFont, szName, szLinkInfo)
+	local szLink = "<text>text="..EncodeComponentsString(szText)..
+		szFont.."name=\"eventlink\" eventid=513 script="..
+			EncodeComponentsString("this.szName=\""..szName.."\"\nthis.szLinkInfo=\""..szLinkInfo.."\"").."</text>"
+    return szLink
+end
+
+function MakeMsgLink(szMsgName, szFont)
+	local szLink = "<text>text="..EncodeComponentsString(szMsgName)..
+		szFont.."name=\"msglink\" eventid=513 script="..
+			EncodeComponentsString("this.szName=\""..szMsgName.."\"").."</text>"
+    return szLink
+end
+
+function FormatLinkString(szMsg, szFont, ...)
+	szMsg = string.format(szMsg, ...)
+	local szResult = ""
+	local nFirst, nLast, szAdd = string.find(szMsg, "<link (.-)>")
+	while nFirst do
+		local szPrev = string.sub(szMsg, 1, nFirst - 1)
+		if szPrev and szPrev ~= "" then
+			szResult = szResult.."<text>text="..EncodeComponentsString(szPrev)..szFont.." </text>"
+		end
+		if szAdd and szAdd ~= "" then
+			local nIndex = tonumber(szAdd) + 1
+			local szText = select(nIndex, ...) 
+			if szText then
+				szResult = szResult..szText
+			else
+				szResult = szResult.."<text>text="..EncodeComponentsString(szAdd)..szFont.." </text>"
+			end
+		end
+		
+		szMsg = string.sub(szMsg, nLast + 1, -1)
+		nFirst, nLast, szAdd = string.find(szMsg, "<link (.-)>")
+	end
+	if szMsg and szMsg ~= "" then
+		szResult = szResult.."<text>text="..EncodeComponentsString(szMsg)..szFont.." </text>"
+	end
+	return szResult
+end
+ -- by ÿ����ͣ@�ν��� $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

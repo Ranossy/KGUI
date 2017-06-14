@@ -1,0 +1,27 @@
+TableID	ForceID	dwSelectKungfuIndex	FilePath
+1	0	1	少林新手镇.tab
+2	0	2	万花新手镇.tab
+3	0	3	天策新手镇.tab
+4	0	4	纯阳新手镇.tab
+5	0	5	七秀新手镇.tab
+6	0	6	五毒新手镇.tab
+7	0	7	唐门新手镇.tab
+8	0	8	藏剑新手镇.tab
+9	0	0	丐帮新手镇.tab
+10	0	9	明教新手镇.tab
+11	0	11	苍云新手镇.tab
+12	1	0	少林.tab
+13	2	0	万花.tab
+14	3	0	天策.tab
+15	4	0	纯阳.tab
+16	5	0	七秀.tab
+17	6	0	五毒.tab
+18	7	0	唐门.tab
+19	8	0	藏剑.tab
+20	9	0	丐帮.tab
+21	10	0	明教.tab
+22	21	0	苍云.tab
+23	22	0	长歌.tab
+24	23	0	霸刀.tab
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,20 @@
+ClassID	ClassName	Drop1	Count1	Drop2	Count2	Drop3	Count3	Drop4	Count4
+0	错误类型		0		0		0		0
+1	箱子								
+2	矿石								
+3	草药								
+4	中原人型尸体	ClassDrop\Box\humen_craft_zhongyuan.tab	1						
+5	江南人型尸体	ClassDrop\Box\humen_craft_jiangnan.tab	1						
+6	西北人型尸体	ClassDrop\Box\humen_craft_xibei.tab	1						
+7	老虎庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_tiger.tab	1		
+8	猪庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_pig.tab	1		
+9	狼庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_wolf.tab	1		
+10	熊庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_bear.tab	1		
+11	龟庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_tortoise.tab	1		
+12	鳄鱼庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_crocodile.tab	1		
+13	貂庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_mink.tab	1		
+14	神兽庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1	ClassDrop\Box\paoding_shenshou.tab	1		
+15	通用庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	1	ClassDrop\Box\paoding_animal_meat_2.tab	1				
+16	帮会庖丁术	ClassDrop\Box\paoding_animal_meat_1.tab	2	ClassDrop\Box\paoding_animal_meat_2.tab	3				
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

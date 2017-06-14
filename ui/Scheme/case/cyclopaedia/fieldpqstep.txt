@@ -1,0 +1,34 @@
+PQTemplateID	Step	Name	Description	KillNpcTemplateID1	Amount1	KillNpcTemplateID2	Amount2	KillNpcTemplateID3	Amount3	KillNpcTemplateID4	Amount4	KillNpcTemplateID5	Amount5	KillNpcTemplateID6	Amount6	KillNpcTemplateID7	Amount7	KillNpcTemplateID8	Amount8	PQvalue1	PQValueString1	PQvalue2	PQValueString2	PQvalue3	PQValueString3	PQvalue4	PQValueString4	PQvalue5	PQValueString5	PQvalue6	PQValueString6	PQvalue7	PQValueString7	PQvalue8	PQValueString8
+0	0																																		
+21	1	阶段一	<text>text="破除地刺机关，歼灭周围的机关护卫。" font=18</text>	13095	40	13121	80																												
+21	2	阶段二	<text>text="歼灭前来增援的机关护卫，并突破机关死士的围堵。" font=18</text>	13095	80	13096	40																												
+21	3	阶段三	<text>text="击败南诏四将。" font=18</text>	13119	1	13118	1	13120	1	12576	1																								
+21	4	阶段四	<text>text="击败莫邪摩罗。" font=18</text>	13190	1																														
+21	5	阶段五	<text>text="击退血眼龙王。" font=18</text>	12550	1																														
+22	1	阶段一	<text>text="清除剑神门下。" font=18</text>	11668	60	11602	60																												
+22	2	阶段二	<text>text="清除前来增援的剑神门下并找到潜伏在武林人士中的奸细。" font=18</text>	11603	20	11668	40	11602	40	13270	40																								
+22	3	阶段三	<text>text="击败影疾雷三剑奴。" font=18</text>	13972	1	13973	1	13974	1																										
+22	4	阶段四	<text>text="击败杨沉剑。" font=18</text>	13975	1																														
+22	5	阶段五	<text>text="击败剑三少。" font=18</text>	12545	1																														
+23	1	阶段一	<text>text="破除地鼠门布置的机关并杀掉机关附近的杂兵。" font=18</text>	12094	50	12095	30													40	破除机关														
+23	2	阶段二	<text>text="清除鼠王喽啰和部分精锐。" font=18</text>	11945	80	11946	30																												
+23	3	阶段三	<text>text="清除鼠王的亲随。" font=18</text>	12086	5																														
+23	4	阶段四	<text>text="击败鼠王门下两散人。" font=18</text>	11947	1	11948	1																												
+23	5	阶段五	<text>text="击退白眉鼠王。" font=18</text>	12544	1																														
+24	1	阶段一	<text>text="采集足够的苍耳子为苗民解毒，清除附近的天一教徒。" font=18</text>	14064	40															80	苍耳子														
+24	2	阶段二	<text>text="杀死前来支援的天一教徒和天一巨毒尸。" font=18</text>	14064	70	14067	30																												
+24	3	阶段三	<text>text="清除天一教头领。" font=18</text>	14060	5																														
+24	4	阶段四	<text>text="击败乌蒙贵亲随。" font=18</text>	14061	2																														
+24	5	阶段五	<text>text="击败月神祭祀。" font=18</text>	12549	1																														
+25	1	阶段一	<text>text="摧毁神像，清除神像附近迷惑人心的施法祭祀。" font=18</text>	14076	1	14086	4																												
+25	2	阶段二	<text>text="清除前来支援的红衣护卫。" font=18</text>	14079	120																														
+25	3	阶段三	<text>text="击败红衣教祭祀。" font=18</text>	14077	4																														
+25	4	阶段四	<text>text="击败红衣教主祭祀。" font=18</text>	14078	1																														
+25	5	阶段五	<text>text="击退牡丹。" font=18</text>	12551	1																														
+33	1	阶段一	<text>text="清除守卫城门的狼牙兵，开辟道路。" font=18</text>	25454	120																														
+33	2	阶段二	<text>text="许多无辜的老百姓被狼牙军当做唐军抓去领赏，还有失陷城中的义军，救出他们。" font=18</text>	25563	20	25458	20																												
+33	3	阶段三	<text>text="狼牙兵囤积的粮食已近在眼前，为了救助饥饿的流民，杀掉看守粮草的狼牙守军，夺取粮草。" font=18</text>	24670	30															40	夺取粮草														
+33	4	阶段四	<text>text="你们的行动惊动了城中的禁宫统领卫凌云和飞夜叉花廉，他们的武功非此前的散兵可比，千万小心了。" font=18</text>	25462	1	25463	1																												
+33	5	阶段五	<text>text="驻守长安城的水狼尹素颜，听说有人来城中夺粮，决定亲自出手。" font=18</text>	25464	1																														
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

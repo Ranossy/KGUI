@@ -1,0 +1,11 @@
+Step	StepsName	TopImagePath	TopFrame
+0	大侠之路	ui\Image\UICommon\FullLevelPanel.UITex	0
+0	大侠之路	ui\Image\UICommon\FullLevelPanel.UITex	18
+1	初入江湖	ui\Image\UICommon\FullLevelPanel.UITex	1
+2	大侠之路	ui\Image\UICommon\FullLevelPanel.UITex	7
+3	勇闯江湖	ui\Image\UICommon\FullLevelPanel.UITex	18
+4	恩怨情仇	ui\Image\UICommon\FullLevelPanel2.UITex	0
+5	闲情逸致	ui\Image\UICommon\FullLevelPanel2.UITex	13
+6	最终奖励	ui\Image\UICommon\FullLevelPanel2.UITex	21
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

@@ -1,0 +1,59 @@
+-- 将TABLE转换为代理元表
+function ConvertProxiedTable(selftable)
+	-- 先检查有效性, 以及重复空间
+	local tablemap = {}
+	for k, v in pairs(selftable) do
+		if type(v) == "table" then
+			if type(v[1]) == "number" and type(v[2]) == "number" and v[1] <= v[2] then
+				for i = v[1], v[2] do
+					local classid = "_GLOBAL"
+					if type(v[3]) == "number" then
+						classid = v[3]
+					end
+					if not tablemap[classid] then
+						tablemap[classid] = {}
+					end
+					if not tablemap[classid][i] then
+						tablemap[classid][i] = {}
+					end
+					-- 
+					table.insert(tablemap[classid][i], k)
+				end
+			else
+				error("\n[错误] " .. k .. " 的内容不符合标准，必须是由两个增序排列的整数构成的 TABLE。")
+			end
+		end
+	end
+
+	-- 这里输出重复元素详细信息
+	for objID, idList in pairs(tablemap) do
+		for keyID, keyList in pairs(idList) do
+			if #keyList > 1 then
+				print("[警告] " .. objID .. " 分配的编号 " .. keyID .. " 发生冲突, 冲突的常量名有: ", unpack(keyList))
+			end
+		end
+	end
+
+	-- 创建代理元表
+	local mt = {}
+	mt.__metatable = selftable
+	mt.__index = function(table, key)
+		local datatable = getmetatable(table)
+		if datatable[key] and datatable[key][1] then
+			return datatable[key][1], datatable[key][2]
+		else
+			error("\n[错误] 引用了不存在的常量表索引, 需要到头文件中注册一个索引并赋值。", 2)
+		end
+	end
+	mt.__newindex = function(table, key, value)
+		error("\n[错误] 不能对只读常量表的成员赋值!", 2)
+	end
+	
+	-- 返回代理元表
+	selftable = {}
+	setmetatable(selftable, mt)
+	return selftable
+end
+
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

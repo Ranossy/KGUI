@@ -1,0 +1,64 @@
+-- 判断 nOldTime 和 nCurrentTime 之间是否经过【周一】七点
+-- 经过周一07:00 则返回true，否则返回false
+function OnCheckPassTimeRequest(nOldTime, nCurrentTime)
+	local tTime = TimeToDate(nCurrentTime)
+	local nSevenTime = DateToTime(tTime.year, tTime.month, tTime.day, 7, 0, 0)			-- 获得当天七点时间
+	local nResetCycleTime = (tTime.weekday - 1) * 24 * 60 * 60					-- 当天七点到本周一七点的时间
+	if tTime.weekday == 0 then
+		nResetCycleTime = 6 * 24 * 60 * 60
+	elseif tTime.weekday == 1 and tTime.hour < 7 then
+		nResetCycleTime = 7 * 24 * 60 * 60
+	end
+	if nSevenTime - nOldTime > nResetCycleTime then
+		return true
+	end
+	return false
+end
+
+-- 判断 nOldTime 和 nCurrentTime 之间是否经过【每天】七点
+-- 经过一个07:00 则返回true，否则返回false
+function OnCheckPassSevenTimeRequest(nOldTime, nCurrentTime)
+	local tTime = TimeToDate(nCurrentTime)
+	local nSevenTime = DateToTime(tTime.year, tTime.month, tTime.day, 7, 0, 0)			-- 获得当天七点时间
+	if tTime.hour >= 7 then
+		if nOldTime < nSevenTime then
+			return true
+		end
+	elseif nOldTime < nSevenTime - 24 * 3600 then
+		return true
+	end
+	return false
+end
+
+-- 获取当前到下【周一】七点的时间
+function OnGetNextMondaySevenPassTime()
+	local nTime = GetCurrentTime()
+	local tTime = TimeToDate(nTime)
+	local nPassTime = 0
+	local nSevenTime = DateToTime(tTime.year, tTime.month, tTime.day, 7, 0, 0)
+	if tTime.weekday == 0 then
+		nPassTime = 24 * 3600 + nSevenTime - nTime
+	elseif tTime.weekday == 1 and tTime.hour < 7 then
+		nPassTime = nSevenTime - nTime
+	else
+		nPassTime = (8 - tTime.weekday) * 24 * 3600 + nSevenTime - nTime
+	end
+	
+	return nPassTime
+end
+
+-- 获取当前到下一个【早晨】七点的时间
+function OnGetNextSevenPassTime()
+	local nTime = GetCurrentTime()
+	local nPassTime = 0
+	local tTime = TimeToDate(nTime)
+	local nResetTime = DateToTime(tTime.year, tTime.month, tTime.day, 7, 0, 0)	
+	if tTime.hour >= 7 then
+		nPassTime = 24 * 3600 - (nTime - nResetTime)
+	else
+		nPassTime = nResetTime - nTime
+	end
+	
+	return nPassTime
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

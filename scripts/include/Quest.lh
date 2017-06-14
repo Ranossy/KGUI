@@ -1,0 +1,261 @@
+local tEscortQuestResource = {}
+
+--使用do - end的目的是为了保证InitSingleEscortQuestResouce的私密性，仅对do - end匿名块可见
+do
+	--初始化单个护送任务资源，成功返回true，失败返回false
+	local InitSingleEscortQuestResource = function (scene, nQuestID)
+		if not scene then
+			print(string.format("[KLUA][ERROR]InitSingleEscortQuestResouce Failed. Param scene is nil, nQuestID: %d.", nQuestID))
+			return false
+		end
+		
+		--判断该任务是否为护送任务需要添加
+		local bIsEscortQuest = IsEscortQuest(nQuestID)
+		if not bIsEscortQuest then
+			print(string.format("[KLUA][ERROR]InitSingleEscortQuestResouce Failed. Not a EscortQuest, nQuestID: %d.", nQuestID))
+			return false
+		end
+		
+		--如果该任务资源为空，创建一个空table作为该任务资源容器
+		local tSingleEscortQuestResource = tEscortQuestResource[nQuestID]
+		if not tEscortQuestResource[nQuestID] then
+			tEscortQuestResource[nQuestID] = {}
+			tSingleEscortQuestResource = tEscortQuestResource[nQuestID]
+		end
+		
+		return true
+	end
+	
+	--创建护送任务npc资源
+	function EscortCreateNpc(scene, nQuestID, dwNpcTemplateID, nX, nY, nZ, nDir, szNickName, dwOwnerID)
+		local bInitRes = InitSingleEscortQuestResource(scene, nQuestID)
+		if not bInitRes then
+			return
+		end
+		
+		--如果任务资源中的Npc资源为空，在tEscortQuestResource[nQuestID]中创建一个空table作为Npc资源容器
+		local tNpc = tEscortQuestResource[nQuestID].tNpc
+		if not tNpc then
+			tEscortQuestResource[nQuestID].tNpc = {}
+			tNpc = tEscortQuestResource[nQuestID].tNpc
+		end
+		
+		--创建npc并注册
+		local npc = scene.CreateNpc(dwNpcTemplateID, nX, nY, nZ, nDir, -1, szNickName, dwOwnerID)
+		if npc then
+			tNpc[#tNpc + 1] = npc.dwID
+		end
+		return npc
+	end
+	
+	--创建护送任务doodad资源
+	function EscortCreateDoodad(scene, nQuestID, dwDoodadTemplateID, nX, nY, nZ, nDir, szNickName, dwOwnerID)
+		local bInitRes = InitSingleEscortQuestResource(scene, nQuestID)
+		if not bInitRes then
+			return
+		end
+		
+		--如果任务资源中的Doodad资源为空，在tEscortQuestResource[nQuestID]中创建一个空table作为Doodad资源容器
+		local tDoodad = tEscortQuestResource[nQuestID].tDoodad
+		if not tDoodad then
+			tEscortQuestResource[nQuestID].tDoodad = {}
+			tDoodad = tEscortQuestResource[nQuestID].tDoodad
+		end
+		
+		--创建doodad并注册
+		local doodad = scene.CreateDoodad(dwDoodadTemplateID, nX, nY, nZ, nDir, szNickName, dwOwnerID)
+		if doodad then
+			tDoodad[#tDoodad + 1] = doodad.dwID
+		end
+		return doodad
+	end
+	
+	--为做护送任务玩家添加buff
+	function EscortPlayerAddBuff(scene, nQuestID, dwBuffID, dwBuffLevel)
+		local bInitRes = InitSingleEscortQuestResource(scene, nQuestID)
+		if not bInitRes then
+			return
+		end
+		
+		--如果任务资源中的Buff资源为空，在tEscortQuestResource[nQuestID]中创建一个空table作为Buff资源容器
+		local tPlayerBuff = tEscortQuestResource[nQuestID].tPlayerBuff
+		if not tPlayerBuff then
+			tEscortQuestResource[nQuestID].tPlayerBuff = {}
+			tPlayerBuff = tEscortQuestResource[nQuestID].tPlayerBuff
+		end
+		
+		--为做任务玩家添加Buff并注册
+		tPlayerBuff[#tPlayerBuff + 1] = {}
+		tPlayerBuff[#tPlayerBuff].dwBuffID = dwBuffID
+		tPlayerBuff[#tPlayerBuff].dwBuffLevel = dwBuffLevel
+		scene.EscortPlayerAddBuff(nQuestID, dwBuffID, dwBuffLevel)
+	end
+	
+	--添加场景计时器
+	function EscortSetTimer(scene, nQuestID, nTime, szScriptName, nParam1, nParam2)
+		local bInitRes = InitSingleEscortQuestResource(scene, nQuestID)
+		if not bInitRes then
+			return
+		end
+		
+		--如果任务资源中的Timer资源为空，在tEscortQuestResource[nQuestID]中创建一个空table作为Timer资源容器
+		local tTimer = tEscortQuestResource[nQuestID].tTimer
+		if not tTimer then
+			tEscortQuestResource[nQuestID].tTimer = {}
+			tTimer = tEscortQuestResource[nQuestID].tTimer
+		end
+		
+		local dwFinishTimerID = scene.SetTimer(nTime, szScriptName, nParam1, nParam2)
+		tTimer[#tTimer + 1] = dwFinishTimerID
+		return dwFinishTimerID
+	end
+	
+	--使用自定义变量
+	function EscortSetCustomInteger4(scene, nQuestID, nIndex, nValue)
+		local bInitRes = InitSingleEscortQuestResource(scene, nQuestID)
+		if not bInitRes then
+			return
+		end
+		
+		--如果任务资源中的自定义变量资源为空，在tEscortQuestResource[nQuestID]中创建一个空table作为自定义变量资源容器
+		local tCustomInteger4 = tEscortQuestResource[nQuestID].tCustomInteger4
+		if not tCustomInteger4 then
+			tEscortQuestResource[nQuestID].tCustomInteger4 = {}
+			tCustomInteger4 = tEscortQuestResource[nQuestID].tCustomInteger4
+		end
+		
+		for _, v in ipairs(tCustomInteger4) do 
+			if nIndex == v then
+				scene.SetCustomInteger4(nIndex, nValue)
+				return
+			end
+		end
+		
+		tCustomInteger4[#tCustomInteger4 + 1] = nIndex
+		scene.SetCustomInteger4(nIndex, nValue)
+	end
+end
+
+
+--向在场景中做护送任务的玩家发送系统信息
+--nMod为nil或1,仅发送给任务未失败的玩家；nMod为2，发送给任务已经失败的玩家；nMod为3，发送给所有做任务玩家
+function EscortSendSystemMessage(scene, nQuestID, szText, nMod)
+	if not szText then
+		print(string.format("[KLUA][ERROR]EscortSendSystemMessage Failed. szText nil, nQuestID: %d.", nQuestID))
+	end
+
+	local tPlayerList = scene.GetEscortQuestPlayerList(nQuestID)
+	if not tPlayerList then
+		print(string.format("[KLUA][ERROR]EscortSendSystemMessage Failed. tPlayerList nil, nQuestID: %d.", nQuestID))
+	end 
+	
+	nMod = nMod or 1
+	if nMod == 1 then
+		for k, v in pairs(tPlayerList) do
+			if v.bValid then
+				local player = GetPlayer(v.dwPlayerID)
+				if player then
+					player.SendSystemMessage(szText)
+				end
+			end
+		end
+	elseif nMod == 2 then
+		for k, v in pairs(tPlayerList) do
+			if not v.bValid then
+				local player = GetPlayer(v.dwPlayerID)
+				if player then
+					player.SendSystemMessage(szText)
+				end
+			end
+		end
+	else
+		for k, v in pairs(tPlayerList) do
+			local player = GetPlayer(v.dwPlayerID)
+			if player then
+				player.SendSystemMessage(szText)
+			end
+		end
+	end
+end
+
+--重置护送任务，使用闭包保证ClearNpc(), ClearDoodad(), 
+--ClearPlayerBuff(), ClearTimer(), ClearCustomInteger4()的私密性
+function EscortResetQuest(scene, nQuestID)
+	if not scene then
+		print(string.format("[KLUA][ERROR]EscortResetQuest parameter scene is nil, nQuestID: %d.", nQuestID))
+		return
+	end
+
+	local tSingleEscortQuestResource = tEscortQuestResource[nQuestID]
+	if not tSingleEscortQuestResource then
+		return
+	end
+
+	local ClearNpc = function ()
+		local tNpc = tEscortQuestResource[nQuestID].tNpc
+		if not tNpc then
+			return
+		end
+		
+		for _, v in pairs(tNpc) do
+			if IsNpcExist(v) then
+				scene.DestroyNpc(v)
+			end
+		end
+	end
+
+	local ClearDoodad = function ()
+		local tDoodad = tEscortQuestResource[nQuestID].tDoodad
+		if not tDoodad then
+			return
+		end
+		
+		for _, v in pairs(tDoodad) do
+			if IsDoodadExist(v) then
+				scene.DestroyDoodad(v)
+			end
+		end
+	end
+	
+	local ClearPlayerBuff = function ()
+		local tPlayerBuff = tEscortQuestResource[nQuestID].tPlayerBuff
+		if not tPlayerBuff then
+			return
+		end
+		
+		for _, v in pairs(tPlayerBuff) do
+			scene.EscortPlayerDelBuff(nQuestID, v.dwBuffID, v.dwBuffLevel)
+		end
+	end
+	
+	local ClearTimer = function ()
+		local tTimer = tEscortQuestResource[nQuestID].tTimer
+		if not tTimer then
+			return
+		end
+
+		for _, v in pairs(tTimer) do		
+			scene.RemoveTimer(v)
+		end
+	end
+	
+	local ClearCustomInteger4 = function ()
+		local tCustomInteger4 = tEscortQuestResource[nQuestID].tCustomInteger4
+		if not tCustomInteger4 then
+			return
+		end
+		
+		for _, v in pairs(tCustomInteger4) do
+			scene.SetCustomInteger4(v, 0)
+		end
+	end
+	
+	ClearNpc()
+	ClearDoodad()
+	ClearPlayerBuff()
+	ClearTimer()
+	ClearCustomInteger4()
+	tEscortQuestResource[nQuestID] = nil
+end
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

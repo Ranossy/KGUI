@@ -1,0 +1,80 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/Include/OnEnterSceneCommon/OnEnterSceneCommon_FuncList.lh
+-- 更新时间:	2017/3/20 10:23:59
+-- 更新用户:	zhengfeng6
+-- 脚本说明:	新增登陆脚本文件或总函数需在此处声明
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+--------------------------------特殊声明-------------------------------
+
+-------------------------此脚本任何改动请知会系统组-----------------------
+-------------------------此脚本任何改动请知会系统组-----------------------
+-------------------------此脚本任何改动请知会系统组-----------------------
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------<
+
+ENTERSCENECOMMON_FUNC_TIME_LIMIT = 20	-- 每个函数耗时报警，单位：毫秒
+
+ENTERSCENECOMMON_FUNC_LIST = {	-- 登陆总函数，如需添加请RTX linjiajia2 或 xiedixun
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_基础功能.lua", "OnEnterSceneCommon_Common0"},
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_基础功能.lua", "OnEnterSceneCommon_Common1"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_PVP相关.lua",  "OnEnterSceneCommon_PVP0"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_活动相关.lua", "OnEnterSceneCommon_Activity0"},
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_活动相关.lua", "OnEnterSceneCommon_Activity1"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_副本相关.lua", "OnEnterSceneCommon_Dungeon0"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_系统相关.lua", "OnEnterSceneCommon_System0"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_场景相关.lua", "OnEnterSceneCommon_NormalMap0"},
+	
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_奇遇相关.lua", "OnEnterSceneCommon_Adventure0"},
+
+	{"scripts/Include/OnEnterSceneCommon/过地图脚本_最后处理.lua", "OnEnterSceneCommon_LastAction"}, 
+	--[[
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnEnterSceneCommon_Common0"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common2"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common3"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common4"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common5"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common6"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common7"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common8"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_常驻功能.lua", "OnPlayerLogin_Common9"}, -- 可在此函数内添加，需添加在“正文结束”之前。
+
+	{"scripts/player/OnPlayerLogin/登陆脚本_特殊功能.lua", "OnPlayerLogin_Special0"}, -- 可在此函数内添加，需添加在“正文结束”之前。
+	{"scripts/player/OnPlayerLogin/登录脚本_常驻补偿.lua", "OnPlayerLogin_PermCompensate0"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登录脚本_常驻补偿.lua", "OnPlayerLogin_PermCompensate1"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登录脚本_常驻补偿.lua", "OnPlayerLogin_PermCompensate2"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登录脚本_常驻补偿.lua", "OnPlayerLogin_PermCompensate3"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登录脚本_常驻补偿.lua", "OnPlayerLogin_PermCompensate4"}, -- 可在此函数内添加，需添加在“正文结束”之前。
+
+	{"scripts/player/OnPlayerLogin/登陆脚本_临时补偿.lua", "OnPlayerLogin_TempCompensate0"}, -- ！此函数运行时间已到20MS，不可添加
+	{"scripts/player/OnPlayerLogin/登陆脚本_临时补偿.lua", "OnPlayerLogin_TempCompensate1"}, -- 可在此函数内添加，需添加在“正文结束”之前。
+
+	{"scripts/player/OnPlayerLogin/登录脚本_最后处理.lua", "OnPlayerLogin_LastAction"}		--！--]]
+
+	-- 一定要放在最后！重要,该函数内不要轻易添加，如需添加请RTX linjiajia2 或 xiedixun
+}
+
+function OnEnterSceneCommon_CallNextFunc(player, scene)
+	local nIndex = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.PLAYER_ENTERSCENECOMMON_INDEX)
+	if ENTERSCENECOMMON_FUNC_LIST[nIndex] then
+		player.SetCustomUnsigned1(PLAYER_CUSTOM_VALUE.PLAYER_ENTERSCENECOMMON_INDEX, nIndex + 1)
+	else
+		player.SetCustomUnsigned1(PLAYER_CUSTOM_VALUE.PLAYER_ENTERSCENECOMMON_INDEX, 0)
+		return
+	end
+	player.NextCallEnterSceneScript(ENTERSCENECOMMON_FUNC_LIST[nIndex][1], ENTERSCENECOMMON_FUNC_LIST[nIndex][2])
+end
+
+function AppendEnterSceneCommonFuncInfoToGlobal()
+	_G.ENTERSCENECOMMON_FUNC_TIME_LIMIT = ENTERSCENECOMMON_FUNC_TIME_LIMIT
+	_G.ENTERSCENECOMMON_FUNC_LIST = ENTERSCENECOMMON_FUNC_LIST
+	_G.OnEnterSceneCommon_CallNextFunc = OnEnterSceneCommon_CallNextFunc
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

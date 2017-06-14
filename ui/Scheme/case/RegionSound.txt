@@ -1,0 +1,25 @@
+nID	szPath
+0	
+1	data\sound\背景音乐\长安\云游歌者01.mp3
+2	data\sound\背景音乐\长安\云游歌者02.mp3
+3	data\sound\背景音乐\长安\云游歌者03.mp3
+4	data\sound\背景音乐\世界通用场景\B04030枫林.mp3
+5	data\sound\背景音乐\世界通用场景\B04036 雪山.mp3
+6	data\sound\背景音乐\世界通用场景\B05028_擂台比武_全长.mp3
+7	data\sound\背景音乐\情感音乐\B06003.mp3
+8	data\sound\背景音乐\华清池\bianzhong.wav
+9	data\sound\背景音乐\长安内城\歌舞表演.wav
+10	data\\sound\\背景音乐\\太原\\tianxianzi.mp3
+11	data\\sound\\背景音乐\\情感音乐\\B06003.mp3
+12	data\\sound\\背景音乐\\藏剑\\B02010a_雪霁春波.mp3
+13	data\\sound\\背景音乐\\藏剑\\B02010b_穆然世风.mp3
+14	data\\sound\\背景音乐\\丐帮\\B02012c.mp3
+15	data\\sound\\背景音乐\\黑龙沼\\aidefeixu2.mp3
+16	data\\sound\\背景音乐\\七秀\\B02009a.mp3
+17	data\\sound\\背景音乐\\情感音乐\\广陵散.mp3
+18	data\\sound\\背景音乐\\情感音乐\\B06004_无忧无虑_全长.mp3
+19	data\\sound\\背景音乐\\世界通用场景\\B04036 雪山.mp3
+20	data\\sound\\背景音乐\\世界通用场景/B04025_古城_全长.mp3
+21	data\\sound\\背景音乐\\倭寇\\B05022.mp3
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

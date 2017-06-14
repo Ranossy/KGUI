@@ -1,0 +1,19 @@
+nID	szDesc	szPointList	nRoute	bCriticalStrike	nSelf	nOther	nDamagePhysics	nDamageSolarMagic	nDamageNeutralMagic	nDamageLunarMagic	nDamagePosion	nDamageReflectied	nDamageTherapy	nDamageStealLife	nDamageAbsorb	nDamageShield	nDamageParry	nDamageInsight	nStateText	nBuff	nDeBuff	nSkillMiss	nSkillDodge	nBuffImmunity	nExp	DamagePhysicsColor	DamageSolarMagicColor	DamageNeutralMagicColor	DamageLunarMagicColor	DamagePosionColor	DamageReflectiedColor	DamageTherapyColor	DamageStealLifeColor	DamageAbsorbColor	DamageShieldColor	DamageParryColor	DamageInsightColor	StateTextColor	BuffColor	DeBuffColor	SkillMissColor	SkillDodgeColor	BuffImmunityColor	ExpColor
+0			0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																			
+1	测试轨迹1	1|2|3|4|6|7|5	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0																			
+2	sdfsdfsdfsdfasdfadf	8|9|10|12	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																			
+3	测试轨迹4	16|11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																			
+4	目标未会心冒血轨迹	19|21|20|22	1	0	0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	255|255|255|255	255|255|128|128	255|255|255|0	255|12|242|239	255|128|255|128	255|255|128|128	255|0|255|0	255|255|255|255											
+5	目标会心冒血轨迹	28|29|30|31|32|33	1	1	0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	255|255|255|255	255|255|128|128	255|255|255|0	255|12|242|239	255|128|255|128	255|255|128|128	255|0|255|0	255|255|255|255											
+6	自己躲闪偏离	34|35|36	0	0	1	0	0	0	0	0	0	0	0	0	1	1	1	1	0	0	0	1	1	1	0									255|255|255|255	255|255|255|255	255|210|200|58	255|255|255|255				255|255|255|255	2255|216|54|4	255|255|255|255	
+7	目标躲闪偏离	38|40|39|41	1	0	0	1	0	0	0	0	0	0	0	0	1	1	1	1	0	0	0	1	1	0	0									255|255|255|255	255|255|255|255	255|255|255|255	255|255|255|255				255|255|255|255	2255|216|54|4	255|255|255|255	
+8	自己增益效果	42|43|44	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0														255|255|255|0	255|255|0|0				
+9	自己未会心治疗	46|47|48	0	0	1	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0							255|0|255|0	255|0|255|0											
+10	自己会心治疗	50|55|51|49|52	0	1	1	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	0	0	0							255|0|255|0	255|0|255|0											
+11	ExpLog	56|57|58|59|60	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1																			255|211|10|199
+12	BowledLog	61|62|63|64|65	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0																			
+13	自己未会心伤害轨迹	66|67|68	0	0	1	0	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0											
+14	自己会心伤害轨迹	70|74|71|14|15	0	1	1	0	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0	255|255|0|0											
+15	目标免疫	34|35|36	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0									255|255|255|255	255|255|255|255	255|210|200|58	255|255|255|255				255|255|255|255	2255|216|54|4	255|255|255|255	
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

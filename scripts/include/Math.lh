@@ -1,0 +1,87 @@
+Include("scripts/Include/GlobalStrings.ls")
+
+-- 取得两点间距离。
+function GetDistanceByPoint(nX1, nY1, nX2, nY2)
+	return ((nX1 - nX2) ^ 2 + (nY1 - nY2) ^ 2) ^ 0.5
+end;
+
+-- 取得两对象间距离。
+function GetDistanceByTarget(target1, target2)
+	if not target1 or not target2 then
+		return false
+	end
+	local scene1 = target1.GetScene()
+	local scene2 = target2.GetScene()
+	if scene1.dwMapID ~= scene2.dwMapID then
+		return false
+	end
+
+	local nX1 = target1.nX
+	local nX2 = target2.nX
+	local nY1 = target1.nY
+	local nY2 = target2.nY
+	return ((nX1 - nX2) ^ 2 + (nY1 - nY2) ^ 2) ^ 0.5
+end;
+
+function GetDigitNum(dwNumber, nIndex)
+	if nIndex > 10 or nIndex < 1 then
+		return false
+	end
+
+	local dwDigit = 10 ^ nIndex
+	local dwRemainder = math.fmod(dwNumber, dwDigit)
+	local dwLowDigit = dwDigit / 10
+	local nDigitNum, dwFractional = math.modf(dwRemainder/dwLowDigit)
+	return nDigitNum
+end;
+
+function SetDigitNum(dwNumber, nIndex, nValue)
+	if nIndex > 10 or nIndex < 1 or nValue > 9 or nValue < 0 then
+		return false
+	end
+
+	local dwDigit = 10 ^ nIndex
+	local dwRemainder = math.fmod(dwNumber, dwDigit)
+	local dwLowDigit = dwDigit / 10
+	local nDigitNum, dwFractional = math.modf(dwRemainder/dwLowDigit)
+	local nMargin = nValue - nDigitNum
+	local dwFinalNum = dwNumber + nMargin * dwLowDigit
+	return dwFinalNum
+end;
+
+--这个函数用来把阿拉伯数字转换成为中文字符串，但不能作用于小数、负整数数。
+function ConversionNumber(number)
+	local math_floor = math.floor
+	local string_gsub = string.gsub
+	--if math_floor(number) ~= number or number < 0 or number > 2 ^ 32 then
+	--2^32次方在打开浮点数检测的机器的环境下会宕机
+	if math_floor(number) ~= number or number < 0 or number > 2 ^ 31 then
+		return false
+	end
+	local nTime = 0
+	local szString = ""
+	if number == 0 then
+		szString = GLOBAL_STRING_TABLE.tNum[1]
+		return szString
+	end
+	while number > 0 do
+		nTime = nTime + 1
+		local nDigitally = number % 10
+		szString = GLOBAL_STRING_TABLE.tNum[nDigitally + 1] .. GLOBAL_STRING_TABLE.tDigitally[nTime] .. szString
+		number = math_floor(number / 10)
+	end
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[1], GLOBAL_STRING_TABLE.tNum[1])
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[2], GLOBAL_STRING_TABLE.tNum[1])
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[3], GLOBAL_STRING_TABLE.tNum[1])
+	for i =1, 2 do
+		szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[4], GLOBAL_STRING_TABLE.tNum[1])
+	end
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[5], GLOBAL_STRING_TABLE.tDigitally[5])
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[6], GLOBAL_STRING_TABLE.tDigitally[9])
+	szString = szString .. GLOBAL_STRING_TABLE.tSwitch[8]
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[7], "")
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[8], "")
+	szString = string_gsub(szString, GLOBAL_STRING_TABLE.tSwitch[9], GLOBAL_STRING_TABLE.tDigitally[2])
+	return szString
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

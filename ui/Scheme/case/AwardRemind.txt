@@ -1,0 +1,5 @@
+ID	Activity	TimeRepresent	Level	Details	Award	LinkID	QuestID
+0			20				0
+10	笑傲江湖路·飞檐走壁	2012年4月19日~2012年5月7日		<text>text="在节日大使处观看各门派的轻功演示，了解新轻功。" font=18</text>	<text>text="50金" font=18</text>	<text>text="在四大主城可找到" font=168</text><text>text="节日大使" font=168 link="NPCGuide/81"</text><text>text="。" font=168</text>	8385
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

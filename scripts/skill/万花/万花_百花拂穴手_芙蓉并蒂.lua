@@ -1,0 +1,190 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/skill/万花/万花_百花拂穴手_芙蓉并蒂.lua
+-- 更新时间:	2013/4/24 10:25:32
+-- 更新用户:	taoli
+-- 脚本说明:	
+----------------------------------------------------------------------<
+------------------------------------------------
+-- 文件名    :  万花_百花拂穴手_芙蓉并蒂.lua
+-- 创建人    :  南剑	
+-- 创建时间  :  2008-8-12
+-- 用途(模块):  武功技能
+-- 武功门派  :  万花
+-- 武功类型  :  瞬发技能
+-- 武功套路  :  百花拂穴手
+-- 技能名称  :  芙蓉并蒂
+-- 技能效果  :  远程中性内功伤害，能使目标被点穴定身3秒
+------------------------------------------------
+
+--------------脚本文件开始------------------------------------------------
+Include("scripts/Include/Skill.lh")
+Include("scripts/Include/Player.lh")
+
+tSkillData = 
+{
+	{ nDamageBase = 28, nDamageRand = 5, nCostMana = 247}, -- Level 1
+	{ nDamageBase = 43, nDamageRand = 5, nCostMana = 316}, -- Level 2
+	{ nDamageBase = 61, nDamageRand = 5, nCostMana = 385}, -- Level 3
+	{ nDamageBase = 76, nDamageRand = 5, nCostMana = 454}, -- Level 4
+
+};
+
+--设置武功技能级别相关数值
+function GetSkillLevelData(skill)
+
+	local dwSkillLevel = skill.dwLevel;
+    	
+	----------------- 魔法属性 -------------------------------------------------
+   	
+	skill.AddAttribute(
+		ATTRIBUTE_EFFECT_MODE.EFFECT_TO_SELF_AND_ROLLBACK, -- 属性作用模式
+		ATTRIBUTE_TYPE.SKILL_NEUTRAL_DAMAGE, -- 魔法属性
+		tSkillData[dwSkillLevel].nDamageBase, -- 属性值1
+		0																-- 属性值2
+	);
+    
+	skill.AddAttribute(
+		ATTRIBUTE_EFFECT_MODE.EFFECT_TO_SELF_AND_ROLLBACK, -- 属性作用模式
+		ATTRIBUTE_TYPE.SKILL_NEUTRAL_DAMAGE_RAND, -- 魔法属性
+		tSkillData[dwSkillLevel].nDamageRand, -- 属性值1
+		0																-- 属性值2
+	);
+   		
+	skill.AddAttribute(
+		ATTRIBUTE_EFFECT_MODE.EFFECT_TO_DEST_NOT_ROLLBACK, -- 属性作用模式
+		ATTRIBUTE_TYPE.CALL_NEUTRAL_DAMAGE, -- 魔法属性
+		0, -- 属性值1
+		0																-- 属性值2
+	);
+	skill.AddAttribute(
+		ATTRIBUTE_EFFECT_MODE.EFFECT_TO_DEST_NOT_ROLLBACK,
+		ATTRIBUTE_TYPE.EXECUTE_SCRIPT,
+		"skill/万花/万花_百花拂穴手_芙蓉并蒂.lua",
+		0
+	);	
+
+	----------------- 技能施放Buff需求 ---------------------------------------------
+	--skill.AddSlowCheckSelfBuff(nType, dwBuffID, nStackNum)		-- 需求自身Buff
+	--skill.AddSlowCheckDestBuff(nType, dwBuffID, nStackNum)		-- 需求目标Buff
+    
+	----------------- BUFF相关 -------------------------------------------------
+	--skill.BindBuff(nBuffID, nBuffLevel)			-- 设置Buff
+	--skill.BindBuff(1, 675, 1);		-- 设置Debuff
+	--skill.BindDot(nDotID, nDotLevel);				-- 设置Dot
+	--skill.BindHot(nHotID, nHotLevel);				-- 设置Hot 
+
+	----------------- 设置Cool down --------------------------------------------
+	--CoolDownIndex为CD位(共4个),nCoolDownID为CoolDownList.tab内的CDID
+	skill.SetPublicCoolDown(16);						-- 公共CD 1.5秒
+	skill.SetNormalCoolDown(1, 178);
+	skill.SetCheckCoolDown(1, 444)
+	----------------- 经验升级相关 ---------------------------------------------
+	--注意,虽然这些内容可以在脚本内更改,但一般不做任何改动!
+	--skill.dwLevelUpExp	= 0;    				-- 升级经验
+	--skill.nExpAddOdds		= 1024;					-- 技能熟练度增长概率
+	--skill.nPlayerLevelLimit	= 0;				-- 角色可以学会该技能所必须达到的最低等级
+
+	----------------- 技能消耗 -------------------------------------------------
+	--skill.nCostLife		= 0;									-- 技能消耗生命值
+	--skill.nCostMana      	= tSkillData[dwSkillLevel].nCostMana;	-- 技能消耗的内力
+	--skill.nCostRage		= 0;									-- 技能消耗的怒气
+	--skill.nCostStamina	= 0;									-- 技能消耗的体力
+	--skill.nCostItemType	= 0;									-- 技能消耗的物品类型
+	--skill.nCostItemIndex	= 0;									-- 技能消耗的物品索引ID
+	skill.nCostManaBasePercent = 85;	-- 技能消耗的内力
+	----------------- 聚气相关 -------------------------------------------------
+	--skill.bIsAccumulate	= false;				-- 技能是否需要聚气
+	--skill.SetSubsectionSkill(nBeginInterval, nEndInterval, dwSkillID, dwSkillLevel)
+    
+	----------------- 链状技能相关 ---------------------------------------------
+	--skill.nChainBranch	= 1;					--链状技能分支数
+	--skill.nChainDepth		= 3;					--链状技能层数
+	--链状技能的子技能用skill.SetSubsectionSkill()设定
+    
+	----------------- 施放距离 -------------------------------------------------
+	--skill.nMinRadius		= 0 * LENGTH_BASE;		-- 技能施放的最小距离 
+	skill.nMaxRadius = 20 * LENGTH_BASE;		-- 技能施放的最大距离 
+
+	----------------- 作用范围 -------------------------------------------------
+	skill.nAngleRange = 128;					-- 攻击范围的扇形角度范围 
+	--skill.nAreaRadius		= 0 * LENGTH_BASE;		-- 技能作用半径 
+	--skill.nTargetCountLimit	= 2;				-- 技能作用目标数量限制,(小于0 代表目标数量不限制) 
+    
+	----------------- 时间相关 -------------------------------------------------
+	skill.nPrepareFrames = 0;				-- 吟唱帧数
+	skill.nChannelInterval	= 64; 				-- 通道技间隔时间 
+	--skill.nChannelFrame		= 0;	 			-- 通道技持续时间，单位帧数 
+	--skill.nBulletVelocity		= 0;				-- 子弹速度，单位 点/帧
+    
+	----------------- 阵法相关 -------------------------------------------------
+	--skill.bIsFormationSkill	= false;			-- 是否阵眼技能
+	--skill.nFormationRange		= 0 * LENGTH_BASE;	-- 结阵的范围
+	--skill.nLeastFormationPopulation	= 2;		-- 结阵的范围的最少队员数（包括队长）
+    
+	----------------- 目标血量需求 ---------------------------------------------
+	--skill.bIsFormationSkill		= 0;			-- 血量最小值>=
+	--skill.TargetLifePercentMax	= 100;			-- 血量最大值<=
+    
+	----------------- 打断相关 -------------------------------------------------
+	skill.nBrokenRate = PERCENT_BASE;	-- 技能被打断的概率.基数1024
+	--skill.nBreakRate			= 0 * PERCENT_BASE;		-- 打断目标施法的概率,基数1024
+	--skill.nDismountingRate		= PERCENT_BASE;					-- 将目标击落下马几率,基数1024，默认0
+	----------------- 武器伤害相关 ---------------------------------------------
+	--skill.nWeaponDamagePercent		= 0;			-- 武器伤害百分比,对外功伤害有用。填0表示此次外功攻击不计算武器伤害,1024为100%
+	
+	return true;
+end
+
+--对技能执行的特殊条件检查，该函数可以在开始施放技能的时候被调用，以确定是否可以施放该机能
+-- Player: 技能施放者, nPreResult: 程序里面按照一般流程判断的结果
+-- 注意，最终以脚本返回的结果为准
+function CanCast(player, nPreResult)    --判断玩家的状态，以判断是否可以发出技能
+	return nPreResult;
+end
+
+function OnSkillLevelUp(skill, player)
+end
+
+--魔法属性应用时的执行函数,dwCharacterID是魔法属性作用的目标ID
+function Apply(dwCharacterID, dwSkillSrcID)
+	local player = GetPlayer(dwSkillSrcID)
+	if not player then
+		return
+	end
+	local target
+	if IsPlayer(dwCharacterID) then
+		target = GetPlayer(dwCharacterID)
+	else
+		target = GetNpc(dwCharacterID)
+	end
+	if not target then
+		return
+	end
+	local lv1 = player.GetSkillLevel(180)
+	local lv2 = player.GetSkillLevel(189)
+	local lv3 = player.GetSkillLevel(190)
+	if player.GetSkillLevel(5761) == 1 then
+		player.CastSkill(6134, lv1)
+		player.CastSkill(6135, lv2)
+		player.CastSkill(6136, lv3)
+	end
+	--[[
+	if player.dwForceID == 21 and target.dwForceID == 2 then
+		if target.GetSkillLevel(5761) == 1 then
+			return
+		end
+	end
+	--]]
+	if player.GetSkillLevel(14635) == 1 then
+		target.AddBuff(dwSkillSrcID, player.nLevel, 675, 1, 5)
+		--player.CastSkill(14636, 1, player.GetSkillTarget())	--是否成功定身判定
+	else
+		target.AddBuff(dwSkillSrcID, player.nLevel, 675, 1, 4)
+	end
+end
+
+--魔法属性反应用时的执行函数,dwCharacterID是魔法属性作用的目标ID
+function UnApply(dwCharacterID)
+end
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

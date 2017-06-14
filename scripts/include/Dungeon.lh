@@ -1,0 +1,42 @@
+-- 这里定义了那些场景是副本, 如果涉及到区分副本的脚本, 请 Include 此文件
+tDungeonList = {
+	[14] = true,
+	[17] = true,
+	[18] = true,
+	[19] = true,
+	[20] = true,
+	[26] = true,
+	[28] = true,
+	[32] = true,
+	[33] = true,
+	[34] = true,
+}
+
+-- 下面定义了每天能进入的副本或者场景的BUFF判断
+-- 所有 DEBUFF 的 ID 段是 1117 - 1146
+tSceneFlagBuffList = {
+	[14] = {dwID = 1117, nLevel = 1, nLimit = 10},
+	[17] = {dwID = 1118, nLevel = 1, nLimit = 10},
+	[18] = {dwID = 1119, nLevel = 1, nLimit = 10},
+	[19] = {dwID = 1120, nLevel = 1, nLimit = 10},
+	[20] = {dwID = 1121, nLevel = 1, nLimit = 10},
+	[26] = {dwID = 1122, nLevel = 1, nLimit = 10},
+	[28] = {dwID = 1123, nLevel = 1, nLimit = 10},
+	[29] = {dwID = 1124, nLevel = 1, nLimit = 20},	-- 云湖天池是战场, 20次
+	[32] = {dwID = 1125, nLevel = 1, nLimit = 10},
+	[33] = {dwID = 1126, nLevel = 1, nLimit = 10},
+	[34] = {dwID = 1127, nLevel = 1, nLimit = 10},
+}
+do
+	for i, v in pairs(tSceneFlagBuffList) do
+		for j, v2 in pairs(tSceneFlagBuffList) do
+			if i ~= j then
+				if v.dwID == v2.dwID then
+					print("[KLUA][ERROR] scripts/Include/Dungeon.lh 中定义的 tSceneFlagBuffList 存在重复项.")
+					return
+				end
+			end
+		end
+	end
+end
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

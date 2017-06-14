@@ -1,0 +1,67 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/Tong/include/帮会擂台赛道具.lh
+-- 更新时间:	2013/12/11 11:11:51
+-- 更新用户:	zhengkaifeng
+-- 脚本说明:	
+----------------------------------------------------------------------<
+--- 帮会擂台赛报名道具列表，需要每年底12月前加入下一年的道具
+tItem = {
+	[2011] = {		-- 擂台赛年份
+		-- [月份] = {[浩气盟势力ID] = {zhongzi = 种子赛争霸贴ID, waiwei = 外围赛逐鹿贴ID}, [恶人谷势力ID] = {zhongzi = 种子赛争霸贴ID, waiwei = 外围赛逐鹿贴ID}},
+		[1] = {[1] = {zhongzi = 7788, waiwei = 7790}, [2] = {zhongzi = 7789, waiwei = 7791}},
+		[2] = {[1] = {zhongzi = 7792, waiwei = 7794}, [2] = {zhongzi = 7793, waiwei = 7795}},
+		[3] = {[1] = {zhongzi = 7796, waiwei = 7798}, [2] = {zhongzi = 7797, waiwei = 7799}},
+		[4] = {[1] = {zhongzi = 7800, waiwei = 7802}, [2] = {zhongzi = 7801, waiwei = 7803}},
+		[5] = {[1] = {zhongzi = 7804, waiwei = 7806}, [2] = {zhongzi = 7805, waiwei = 7807}},
+		[6] = {[1] = {zhongzi = 7808, waiwei = 7810}, [2] = {zhongzi = 7809, waiwei = 7811}},
+		[7] = {[1] = {zhongzi = 7812, waiwei = 7814}, [2] = {zhongzi = 7813, waiwei = 7815}},
+		[8] = {[1] = {zhongzi = 7816, waiwei = 7818}, [2] = {zhongzi = 7817, waiwei = 7819}},
+		[9] = {[1] = {zhongzi = 7820, waiwei = 7822}, [2] = {zhongzi = 7821, waiwei = 7823}},
+		[10] = {[1] = {zhongzi = 7824, waiwei = 7826}, [2] = {zhongzi = 7825, waiwei = 7827}},
+		[11] = {[1] = {zhongzi = 7828, waiwei = 7830}, [2] = {zhongzi = 7829, waiwei = 7831}},
+		[12] = {[1] = {zhongzi = 7832, waiwei = 7834}, [2] = {zhongzi = 7833, waiwei = 7835}},
+	},
+	[2012] = {
+		[1] = {[1] = {zhongzi = 11545, waiwei = 11547}, [2] = {zhongzi = 11546, waiwei = 11548}},
+		[2] = {[1] = {zhongzi = 11549, waiwei = 11551}, [2] = {zhongzi = 11550, waiwei = 11552}},
+		[3] = {[1] = {zhongzi = 11553, waiwei = 11555}, [2] = {zhongzi = 11554, waiwei = 11556}},
+		[4] = {[1] = {zhongzi = 11557, waiwei = 11559}, [2] = {zhongzi = 11558, waiwei = 11560}},
+		[5] = {[1] = {zhongzi = 11561, waiwei = 11563}, [2] = {zhongzi = 11562, waiwei = 11564}},
+		[6] = {[1] = {zhongzi = 11565, waiwei = 11567}, [2] = {zhongzi = 11566, waiwei = 11568}},
+		[7] = {[1] = {zhongzi = 11569, waiwei = 11571}, [2] = {zhongzi = 11570, waiwei = 11572}},
+		[8] = {[1] = {zhongzi = 11573, waiwei = 11575}, [2] = {zhongzi = 11574, waiwei = 11576}},
+		[9] = {[1] = {zhongzi = 11577, waiwei = 11579}, [2] = {zhongzi = 11578, waiwei = 11580}},
+		[10] = {[1] = {zhongzi = 11581, waiwei = 11583}, [2] = {zhongzi = 11582, waiwei = 11584}},
+		[11] = {[1] = {zhongzi = 11585, waiwei = 11587}, [2] = {zhongzi = 11586, waiwei = 11588}},
+		[12] = {[1] = {zhongzi = 11589, waiwei = 11591}, [2] = {zhongzi = 11590, waiwei = 11592}},
+	},
+	[2013] = {
+		[1] = {[1] = {zhongzi = 18523, waiwei = 18525}, [2] = {zhongzi = 18524, waiwei = 18526}},
+		[2] = {[1] = {zhongzi = 18527, waiwei = 18529}, [2] = {zhongzi = 18528, waiwei = 18530}},
+		[3] = {[1] = {zhongzi = 18531, waiwei = 18533}, [2] = {zhongzi = 18532, waiwei = 18534}},
+		[4] = {[1] = {zhongzi = 18535, waiwei = 18537}, [2] = {zhongzi = 18536, waiwei = 18538}},
+		[5] = {[1] = {zhongzi = 18539, waiwei = 18541}, [2] = {zhongzi = 18540, waiwei = 18542}},
+		[6] = {[1] = {zhongzi = 18543, waiwei = 18545}, [2] = {zhongzi = 18544, waiwei = 18546}},
+		[7] = {[1] = {zhongzi = 18547, waiwei = 18549}, [2] = {zhongzi = 18548, waiwei = 18550}},
+		[8] = {[1] = {zhongzi = 18551, waiwei = 18553}, [2] = {zhongzi = 18552, waiwei = 18554}},
+		[9] = {[1] = {zhongzi = 18555, waiwei = 18557}, [2] = {zhongzi = 18556, waiwei = 18558}},
+		[10] = {[1] = {zhongzi = 18559, waiwei = 18561}, [2] = {zhongzi = 18560, waiwei = 18562}},
+		[11] = {[1] = {zhongzi = 18563, waiwei = 18565}, [2] = {zhongzi = 18564, waiwei = 18566}},
+		[12] = {[1] = {zhongzi = 18567, waiwei = 18569}, [2] = {zhongzi = 18568, waiwei = 18570}},
+	},
+	[2014] = {
+		[1] = {[1] = {zhongzi = 20972, waiwei = 20974}, [2] = {zhongzi = 20973, waiwei = 20975}},
+		[2] = {[1] = {zhongzi = 20976, waiwei = 20978}, [2] = {zhongzi = 20977, waiwei = 20979}},
+		[3] = {[1] = {zhongzi = 20980, waiwei = 20982}, [2] = {zhongzi = 20981, waiwei = 20983}},
+		[4] = {[1] = {zhongzi = 20984, waiwei = 20986}, [2] = {zhongzi = 20985, waiwei = 20987}},
+		[5] = {[1] = {zhongzi = 20988, waiwei = 20990}, [2] = {zhongzi = 20989, waiwei = 20991}},
+		[6] = {[1] = {zhongzi = 20992, waiwei = 20994}, [2] = {zhongzi = 20993, waiwei = 20995}},
+		[7] = {[1] = {zhongzi = 20996, waiwei = 20998}, [2] = {zhongzi = 20997, waiwei = 20999}},
+		[8] = {[1] = {zhongzi = 21000, waiwei = 21002}, [2] = {zhongzi = 21001, waiwei = 21003}},
+		[9] = {[1] = {zhongzi = 21004, waiwei = 21006}, [2] = {zhongzi = 21005, waiwei = 21007}},
+		[10] = {[1] = {zhongzi = 21008, waiwei = 21010}, [2] = {zhongzi = 21009, waiwei = 21011}},
+		[11] = {[1] = {zhongzi = 21012, waiwei = 21014}, [2] = {zhongzi = 21013, waiwei = 21015}},
+		[12] = {[1] = {zhongzi = 21016, waiwei = 21018}, [2] = {zhongzi = 21017, waiwei = 21019}},
+	},
+}
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

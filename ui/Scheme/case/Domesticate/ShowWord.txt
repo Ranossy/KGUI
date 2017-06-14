@@ -1,0 +1,10 @@
+CubSubType	FullMeasure	FullMeasureDegree1	FullMeasureDegree2	FullMeasure1	FullMeasure2	FullMeasure3	CubText	AdultText	Feed	PutFeed
+0	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	马驹	成年马	喂食	投入饲料
+1	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	小螃蟹	跟宠蟹	喂食	投入饲料
+2	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	小乌龟	跟宠龟	喂食	投入饲料
+3	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	幼崽	跟宠兽	喂食	投入饲料
+4	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	雏鸟	禽鸟宠	喂食	投入饲料
+5	稳定度	30	70	故障百出	基本正常	完美运转	半成品	机关马	装配	放入零件
+6	饱食度	30	70	饥肠辘辘	半饥半饱	吃饱喝足	雏雕	坐骑雕	喂食	投入食料
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

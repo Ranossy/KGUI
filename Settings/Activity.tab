@@ -1,0 +1,312 @@
+ID	Activity	ParentID1	ParentID2	ParentID3	ParentID4	ParentID5	StartTimeRule	Cycle	Duration	ShowUI	ServerScript	CenterScript	IsSyncState
+0	空活动（默认）	0	0	0	0	0		0	60	0			
+14	公共任务日常						Calendar:Solar;Year:2001;Month:1;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	1			
+16	战场-神农洇	70					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;	0	46740	1			
+17	七夕活动						Calendar:Solar;Year:2016;Month:8;MDay:8;WDay:*;Hour:7;Minute:0;		1209599	1	scripts/Activity/七夕活动/七夕节开始结束处理.lua		
+18	战场-神农洇	70					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;	0	46740	1			
+27	战场-九宫棋谷	71					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;	0	46740	1			
+28	战场-九宫棋谷	71					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;	0	46740	1			
+30	野外地图首领						Calendar:Solar;Year:2004;Month:8;MDay:6;WDay:*;Hour:7;Minute:0;	259200	61140				
+31	战场-云湖天池	72					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;	0	46740	1			
+32	冬至活动						Calendar:Solar;Year:2016;Month:12;MDay:19;WDay:1;Hour:7;Minute:0;		1209599	1	scripts\Activity\Dongzhihuodong.lua		
+33	春节活动						Calendar:Solar;Year:2017;Month:1;MDay:19;WDay:*;Hour:7;Minute:0;		2764799	1	scripts/Activity/Chunjiehuodong.lua		
+34	端午节活动						Calendar:Solar;Year:2017;Month:5;MDay:27;WDay:*;Hour:7;Minute:0;		1209599	1	scripts/Activity/端午节活动/端午节开始结束处理.lua		
+35	科举-省试						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:0;Minute:0;		604799		scripts/Activity/科举/省考.lua		
+36	科举-会试						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:20;Minute:0;	0	100740		scripts/Activity/科举/会考通知.lua		
+37	科举-放榜						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;	0	61200	1			
+41	阵营攻防战	237					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:13,19;Minute:0;	0	7200	1	scripts\Activity\阵营攻防战\攻防战活动NPC创建.lua		
+42	中秋活动						Calendar:Solar;Year:2016;Month:9;MDay:14;WDay:*;Hour:7;Minute:0;		1295999	1	scripts/Activity/中秋活动/中秋活动.lua		
+43	六一儿童节活动						Calendar:Solar;Year:2017;Month:6;MDay:1;WDay:*;Hour:7;Minute:0;		1209599	1	scripts\Activity\儿童节活动\儿童节开始结束处理.lua		
+44	战场-云湖天池	72					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;	0	46740	1			
+45	逐鹿赛隐藏父活动						Calendar:Solar;Year:*;Month:*;MDay:1-7;WDay:1;Hour:20;Minute:30;	0	266400				
+46	帮会擂台逐鹿赛	45						86400	7200		scripts\Activity\帮会擂台赛\每日子活动开始.lua		
+49	争霸赛隐藏父活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:8-14;WDay:1;Hour:20;Minute:30;	0	266400	0			
+50	帮会擂台争霸赛	49	0	0	0	0		86400	7200		scripts\Activity\帮会擂台赛\每日子活动开始.lua		
+51	帮会擂台人气投票		0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:11-17;WDay:4;Hour:22;Minute:30;	0	696600			center_scripts\PersonalTongGame\begin_toupiao.lua	
+52	下月帮会擂台报名		0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:15-21;WDay:1;Hour:7;Minute:20;	0	604800			center_scripts\PersonalTongGame\begin_toupiao.lua	
+53	下月逐鹿帖争夺赛		0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:1;Hour:7;Minute:20;	0	604800	0	scripts\Activity\帮会擂台赛\每日子活动开始.lua		
+54	帮会擂台决赛隐藏父活动		0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:22-28;WDay:1;Hour:20;Minute:30;	0	266400	0		center_scripts\PersonalTongGame\juesaifengzu.lua	
+55	帮会擂台决赛	54	0	0	0	0		86400	7200		scripts\Activity\帮会擂台赛\每日子活动开始.lua		
+56	帮会擂台总决赛	64	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:5;Hour:20;Minute:30;	0	3600		scripts\Activity\帮会擂台赛\每日子活动开始.lua	center_scripts\PersonalTongGame\juesaifengzu.lua	
+58	春节活动抽奖	33						86400	86340		scripts\Activity\Chunjiehuodongchoujiang.lua		
+59	清明节活动						Calendar:Solar;Year:2017;Month:3;MDay:30;WDay:*;Hour:7;Minute:0;		1209599	1	scripts/Activity/清明节活动/清明节活动.lua		
+61	擂台赛周一清除记录	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:1-7;WDay:1;Hour:7;Minute:30;	0	259260	0		center_scripts\PersonalTongGame\yusaifengzu.lua	
+62	擂台赛系统发票	0	0	0	0	0	Calendar:Solar;Year:2011;Month:3;MDay:28;WDay:*;Hour:7;Minute:0;	0	259260	0	scripts\Activity\帮会擂台赛\专门发票.lua		
+63	擂台赛第二周分组	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:8-14;WDay:1;Hour:7;Minute:30;	0	259260	0		center_scripts\PersonalTongGame\yusaifengzu.lua	
+64	总决赛隐藏父活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:22-28;WDay:1;Hour:7;Minute:30;	0	604800	0		center_scripts\PersonalTongGame\juesaifengzu.lua	
+69	十大推荐帮会更新	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;		86400	0		center_scripts\TongTopTenUpdate.lua	
+70	战场日-神农洇						Calendar:Solar;Year:2001;Month:1;MDay:2;WDay:*;Hour:7;Minute:0;	518400	86400	1			
+71	战场日-九宫棋谷						Calendar:Solar;Year:2001;Month:1;MDay:3;WDay:*;Hour:7;Minute:0;	518400	86400	1			
+72	战场日-云湖天池						Calendar:Solar;Year:2001;Month:1;MDay:4;WDay:*;Hour:7;Minute:0;	518400	86400	1			
+75	战场日-丝绸之路						Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:*;Hour:7;Minute:0;	518400	86400	1			
+76	战场-丝绸之路	75					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;	0	46740	1			
+77	战场-丝绸之路	75					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;	0	46740	1			
+82	科举-生成题库	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:0;Minute:0;		604799	0		center_scripts\Exam.lua	
+88	阵营战性能统计	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12,18;Minute:0;	0	14400	0	scripts\Activity\CampFightStat.lua		
+89	中秋·烟花表演	42	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:11,13,19,21,23;Minute:50;	0	900		scripts/Activity/中秋活动/中秋活动·烟花表演.lua	center_scripts\Activity\中秋活动·烟花表演.lua	
+90	中秋·天狗抢月饼	42	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:11,13,15,17,19;Minute:0;	0	900		scripts/Activity/中秋活动/中秋活动·天狗抢月饼.lua	center_scripts\Activity\中秋活动·天狗抢月饼.lua	
+92	中秋·金秋共团圆	42	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:20;Minute:0;	0	14400		scripts/Activity/中秋活动/中秋活动·爷爷做月饼.lua	center_scripts\Activity\中秋活动·金秋共团圆.lua	
+93	中秋活动·小饼的委托	42	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:20;Minute:0;	0	86340		scripts/Activity/中秋活动/中秋活动·刷小饼.lua	center_scripts\Activity\中秋活动·小饼的委托.lua	
+94	美人图	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:3,5,6,7;Hour:7;Minute:0;		86399	1	scripts/Activity/宫敖美人图/美人图.lua		
+97	攻防期间南屏昆仑场景处理	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;		68340	0	scripts\Activity\阵营攻防战\南屏昆仑任务NPC创建.lua		
+103	阵营战BOSS击杀个数重置	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:0;Minute:0;	0	28800	0		center_scripts\Activity\Camp\CampBossCountReset.lua	
+104	游历江湖寻秘宝	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86399	1	scripts/Activity/系统活动_隐元追缉令/隐元追缉令开始结束处理.lua		
+105	南屏昆仑之役·筹备	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:*;Hour:*;Minute:*;		43140	1	scripts/Activity/可人和莫雨的突袭/突袭活动开始结束处理.lua		
+106	南屏昆仑之役·进攻	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:*;Hour:*;Minute:*;	0	3600	1		center_scripts\Activity\南屏昆仑之战.lua	
+110	美人图·潜行	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:3,5,6,7;Hour:7;Minute:0;	0	86399	1			
+111	主城茶馆	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340		scripts/Activity/主城茶馆/主城茶馆.lua		
+113	帮会食堂	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:8,12,18;Minute:0;	0	7200	1		center_scripts\Activity\TongCanteen\TongCanteen.lua	
+114	元旦活动						Calendar:Solar;Year:2016;Month:12;MDay:29;WDay:*;Hour:7;Minute:0;		1209599	1	scripts/Activity/Yuandanhuodong.lua		
+116	春节活动·重奖年后迎归客						Calendar:Solar;Year:2016;Month:2;MDay:15;WDay:*;Hour:7;Minute:0;	0	1209599				
+117	花朝节·相伴江湖						Calendar:Solar;Year:2017;Month:3;MDay:9;WDay:*;Hour:7;Minute:0;		604799	1	scripts\Activity\qingrenjiehuodong.lua		
+118	南屏昆仑之役·创建任务npc	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:*;Hour:*;Minute:*;		75540	1	scripts/Activity/可人和莫雨的突袭/突袭结束后任务npc处理.lua		
+119	勤修不辍·打坐	125	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12,18,23;Minute:0;		7200	1	scripts/Activity/门派归属活动/门派打坐开始结束处理.lua		
+120	游历瞿塘采仙草	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:3,5,6,7;Hour:7;Minute:0;	0	86340	1	scripts/Activity/瞿塘峡轻功活动/瞿塘峡轻功活动开关.lua		
+121	战场日-三国古战场						Calendar:Solar;Year:2001;Month:1;MDay:5;WDay:*;Hour:7;Minute:0;	518400	86400	1			
+124	勤修不辍·演武	125	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:*;Minute:0,30;	0	900	1	scripts/Activity/门派归属活动/门派大师兄演武.lua		
+125	勤修不辍·师门·父活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	0			
+127	赛马·报名	138	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:1;		240		scripts\Activity\SaiMaBaoMing.lua		
+128	赛马·比赛	138	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:5;		300	1	scripts\Activity\SaiMaBiSai.lua		
+129	驯马1号	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:0;	600	120	0	scripts/Map/驯养系统/event/1号马匹刷新脚本.lua		
+130	驯马2号	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:0;	1800	120	0	scripts\Map\驯养系统\event\2号马匹刷新脚本.lua		
+131	驯马3号	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:0;	14400	120	0	scripts\Map\驯养系统\event\3号马匹刷新脚本.lua		
+132	勤修不辍	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	1			
+133	驯马4号	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:21;Minute:0;	43200	120	0	scripts\Map\驯养系统\event\4号马匹刷新脚本.lua		
+134	驯马5号	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:8;Minute:0;	86400	120	0	scripts\Map\驯养系统\event\5号马匹刷新脚本.lua		
+135	试炼之地	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	604740	1	scripts/Activity/试炼之地/试炼之地开始结束处理.lua		
+136	三国古战场	121					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;	0	46740	1			
+137	三国古战场	121					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;	0	46740	1			
+138	赛马总开关	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:11;WDay:*;Hour:7;Minute:0;		604740	0			
+139	套马开关	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:10;WDay:*;Hour:7;Minute:0;	604800	604740	0			
+142	隐元追缉令发奖活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:0,2,4,8,10,12,14,16,18,20,22;Minute:0;		7200	0	scripts/Activity/系统活动_隐元追缉令/隐元追缉令发奖活动.lua		
+143	洱海夺马	0	0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:*;WDay:5,6,7;Hour:21;Minute:0;	0	3600	1	scripts/Activity/集群刷马/集群刷马开始结束处理.lua		
+144	宠物龟蛋刷新	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:8;Minute:0;	600	120	0	scripts\Map\跟宠系统\evevt\龟蛋刷新控制.lua		
+145	涅槃分支控制活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:5;Hour:4;Minute:0;		604740	0			
+149	流寇入侵	0	0	0	0	0	Calendar:Solar;Year:2012;Month:9;MDay:18;WDay:*;Hour:7;Minute:0;	0	1209600	0	scripts/Activity/Act_流寇入侵/流寇入侵开始结束处理.lua		
+151	藏剑-叶凡迎亲	255					Calendar:Solar;Year:2014;Month:12;MDay:17;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\藏剑\藏剑门派事件开始结束处理.lua		
+152	七秀-比武大会	253					Calendar:Solar;Year:2014;Month:12;MDay:15;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\七秀\七秀门派事件开始结束处理.lua		
+153	天策-狩猎围场	252					Calendar:Solar;Year:2014;Month:12;MDay:14;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\天策\天策门派事件开始结束处理.lua		
+154	纯阳-一刀流骚扰	251					Calendar:Solar;Year:2014;Month:12;MDay:13;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\纯阳\纯阳门派事件开始结束处理.lua		
+155	唐门-唐家送亲	256					Calendar:Solar;Year:2014;Month:12;MDay:18;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\唐门\门派事件唐门开始结束处理.lua		
+156	万花-机甲大战	254					Calendar:Solar;Year:2014;Month:12;MDay:16;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\万花\万花门派事件开始结束处理.lua		
+157	明教-守卫陆烟儿	259					Calendar:Solar;Year:2014;Month:12;MDay:12;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\明教\明教门派事件开始结束处理.lua		
+158	少林-竞技大会	258	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:10;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\少林\少林门派事件开始结束处理.lua		
+159	五毒-曲云解毒	257	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:19;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\五毒\五毒门派事件开始结束处理.lua		
+160	控制黑市交易开始	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1,4;Hour:7;Minute:0;	0	226800	0		center_scripts\Activity\BlackMarketSell.lua	
+161	钓鱼活动	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:21;Minute:*;	0	7200	1	scripts\Activity\帮会钓鱼活动\钓鱼活动.lua		
+162	钓鱼活动-第二阶段	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:22;Minute:*;	0	3600	0	scripts\Activity\帮会钓鱼活动\钓鱼活动.lua		
+163	钓鱼活动-第三阶段	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:23;Minute:*;	0	3600	0	scripts\Activity\帮会钓鱼活动\钓鱼活动.lua		
+164	捕快排行奖励发放	0	0	0	0	0	Calendar:Solar;Year:2012;Month:12;MDay:24;WDay:*;Hour:7;Minute:0;	604800	432000	0	scripts/Activity/捕快每周发奖活动/捕快每周发奖server.lua		
+168	充值翻牌功能开关	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	0			
+170	阵营押镖	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:*;Hour:*;Minute:*;	0	21600			center_scripts/Activity/押镖活动center.lua	
+171	战阶排名奖励发放	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:8;Minute:0;	0	604740	0	scripts\Activity\战阶排名奖励\战阶排名奖励发放.lua		
+172	逼婚·主城表现	0	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:14;WDay:*;Hour:9;Minute:0;	0	604800	0	scripts\Map\逼婚GWW\include\逼婚活动表.lua		
+173	逼婚·创建假剑心	175	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:18;WDay:*;Hour:20;Minute:30;	300	290	0	scripts\Map\逼婚GWW\include\逼婚活动表.lua		
+174	逼婚·玄晶公告	176	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:18;WDay:*;Hour:21;Minute:0;	3600	300	0		center_scripts\Activity\BiHunXuanJing.lua	
+175	逼婚·创建假剑心父活动	0	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:18;WDay:*;Hour:20;Minute:20;	0	3600	0			
+176	逼婚·总父活动	0	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:14;WDay:*;Hour:9;Minute:0;	0	1555260	0			
+177	逼婚·正式活动	0	0	0	0	0	Calendar:Solar;Year:2013;Month:3;MDay:18;WDay:*;Hour:21;Minute:30;	0	1800	0			
+180	安史之乱预热	0	0	0	0	0	Calendar:Solar;Year:2013;Month:5;MDay:23;WDay:*;Hour:7;Minute:0;	0	1382340	1	scripts\Activity\Act_安史之乱预热\安史之乱预热开始结束处理.lua		
+181	祈福雅安	0	0	0	0	0	Calendar:Solar;Year:2013;Month:4;MDay:22;WDay:*;Hour:7;Minute:0;	0	604800		scripts/Activity/ACT_祈福雅安/祈福雅安.lua	center_scripts/Activity/祈福雅安center.lua	
+182	祈福雅安公告	181	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:*;Minute:0,30;	0	120	0		center_scripts/Activity/祈福雅安公告活动center.lua	
+183	洛道野外BOSS	0	0	0	0	0	Calendar:Solar;Year:2004;Month:8;MDay:6;WDay:*;Hour:22;Minute:0;	777600	3600	0	scripts\Activity\野外首领\洛道野外BOSS.lua		
+184	寇岛野外BOSS	0	0	0	0	0	Calendar:Solar;Year:2004;Month:8;MDay:9;WDay:*;Hour:22;Minute:0;	777600	3600	0	scripts\Activity\野外首领\寇岛野外BOSS.lua		
+185	金水镇野外BOSS	0	0	0	0	0	Calendar:Solar;Year:2004;Month:8;MDay:12;WDay:*;Hour:22;Minute:0;	777600	3600	0	scripts\Activity\野外首领\金水镇野外BOSS.lua		
+186	丐帮-十二连环坞挑衅	260	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:20;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\丐帮\丐帮门派事件开始结束处理.lua		
+187	狼牙首领·洛阳	0	0	0	0	0	Calendar:Solar;Year:2001;Month:5;MDay:15;WDay:*;Hour:20;Minute:0;		3600	0			
+188	世界首领						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:3;Hour:20;Minute:0;		14400	1	scripts\Activity\野外首领\新版世界BOSS.lua		
+189	令狐伤的进击	0	0	0	0	0	Calendar:Solar;Year:2013;Month:8;MDay:28;WDay:*;Hour:7;Minute:0;	0	486000	0	scripts/Activity/ACT_令狐伤的进击/令狐伤的进击.lua	center_scripts/Activity/令狐伤的进击center.lua	
+190	乱世天策-抵御狼牙	261	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:14;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\乱世天策\乱世天策门派事件开始结束处理.lua		
+191	令狐伤的进击·当晚刷怪	189	0	0	0	0	Calendar:Solar;Year:2013;Month:9;MDay:2;WDay:*;Hour:20;Minute:30;	300	240	0	scripts/Activity/ACT_令狐伤的进击/令狐伤的进击`当晚刷怪191.lua	center_scripts/Activity/令狐伤的进击刷怪center.lua	
+192	茶馆·战乱	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	1			
+193	世界首领						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:5;Hour:20;Minute:0;		14400	1	scripts\Activity\野外首领\新版世界BOSS.lua		
+195	更新薪火值重置时间	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:1-7;WDay:1;Hour:14;Minute:0;	0	604800	0			
+196	科举-省试						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:0;Minute:0;		604799	1	scripts/Activity/科举/省考.lua		
+197	科举-会试						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:20;Minute:0;	0	100799	1	scripts/Activity/科举/会考通知.lua	center_scripts/Activity/科举排行榜清除.lua	
+198	科举-放榜						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;	0	61200	1	scripts/Activity/科举/放皇榜.lua		
+200	安史乱天下，豪侠仗剑归		0	0	0	0	Calendar:Solar;Year:2013;Month:7;MDay:1;WDay:*;Hour:7;Minute:0;		2419200	0	scripts\Activity\安史之乱回归活动\安史乱天下，豪侠仗剑归.lua		
+201	试炼之地bug处理·清排行榜	0	0	0	0	0	Calendar:Solar;Year:2013;Month:7;MDay:29;WDay:*;Hour:7;Minute:0;	0	86460	0	scripts/Activity/试炼之地清除排行榜活动.lua		
+202	长安内城-劫法场	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12,13,18,19,22,23;Minute:20;		3540	1	scripts\Activity\ACT_劫法场\劫法场.lua		
+203	战阶结算日	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;		3600	1			
+205	齐物阁		0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:1;Hour:15,21;Minute:0;		14399				
+209	拳市父活动	0	0	0	0	0	Calendar:Solar;Year:2013;Month:9;MDay:13;WDay:*;Hour:7;Minute:0;	86400	86340	0			
+210	拳市子活动	209	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:0-23;Minute:0;			0	scripts\Activity\长安内城拳市\拳市.lua		
+211	齐物阁-周排行奖励发放	0	0	0	0	0	Calendar:Solar;Year:2013;Month:9;MDay:23;WDay:*;Hour:3;Minute:0;	604800	432000	0	scripts/Activity/齐物阁/周排行榜奖励发放.lua		
+212	齐物阁-周排行榜重置	0	0	0	0	0	Calendar:Solar;Year:2013;Month:9;MDay:28;WDay:*;Hour:0;Minute:0;	604800	432000	0	scripts/Activity/齐物阁/周排行榜数据重置.lua		
+213	洗炼开关	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:10;WDay:*;Hour:7;Minute:0;	604800	604740	0			
+214	奇宝之争	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;	0	604800	0			
+219	世界首领						Calendar:Solar;Year:2016;Month:5;MDay:9;WDay:*;Hour:20;Minute:0;		14400	1	scripts\Activity\野外首领\新版世界BOSS.lua		
+222	春节活动年兽二点	33	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:*;Minute:0;		3000	0	scripts\Activity\节日春节\春节年兽二点.lua		
+224	元宵节	0	0	0	0	0	Calendar:Solar;Year:2017;Month:2;MDay:9;WDay:*;Hour:7;Minute:0;	0	1209599	1	scripts\Activity\Act_元宵节\元宵节.lua		
+225	逐鹿中原	236	237	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:20;Minute:0;	0	7200	1	scripts\Map\逐鹿中原\include\据点争夺_活动表.lua	center_scripts\Activity\Camp\据点争夺_活动表.lua	
+226	新服阵法	0	0	0	0	0	Calendar:Solar;Year:2014;Month:2;MDay:24;WDay:1;Hour:7;Minute:0;	0	2419200	0	scripts\Map\Act_新服福利\include\新服福利.lua		
+227	2014年3月预热帮会发奖父活动	0	0	0	0	0	Calendar:Solar;Year:2014;Month:3;MDay:24;WDay:*;Hour:7;Minute:0;		3024060	0			
+228	2014年3月预热帮会发奖子活动	227	0	0	0	0	Calendar:Solar;Year:2014;Month:3;MDay:24;WDay:*;Hour:7;Minute:0;	604800	432000	0	scripts/Activity/2014年3月预热/2014年3月阵营第一帮会发奖.lua		
+229	幽陵劫潮	0	0	0	0	0	Calendar:Solar;Year:2014;Month:3;MDay:17;WDay:*;Hour:7;Minute:*;	0	3024060	0	scripts\Activity\2014年3月预热\幽陵劫潮.lua		
+230	逐鹿中原赛季结算	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;		86400	0	scripts\Map\逐鹿中原\include\赛季重置_活动表.lua		
+231	逐鹿中原预热同步浩气盟排行榜到官网	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:*;Minute:59;		3540	0		center_scripts\逐鹿中原预热同步浩气盟排行榜到官网.lua	
+232	逐鹿中原预热同步恶人谷排行榜到官网	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:*;Minute:1;		3540	0		center_scripts\逐鹿中原预热同步恶人谷排行榜到官网.lua	
+233	狼牙BOSS彩蛋	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:13,14,15,16,9,10,11,12,17,18,19,20,21,22,23,0,1;Minute:0;		3540	0	scripts\Map\逐鹿中原\surprise_boss\狼牙boss活动表.lua		
+234	逐鹿中原-帮会战功榜周结算	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:*;		86400	0	scripts\Map\逐鹿中原\include\帮会战功榜周结算.lua		
+235	押运粮草	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:6,7;Hour:13,19;Minute:0;		7200	1	scripts\Map\逐鹿中原\include\运镖活动.lua		
+236	逐鹿中原活动总开关	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:5;Minute:0;	0	604799	0			
+237	提前开排队	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4,6,7;Hour:0;Minute:0;	0	79800	0	scripts\Map\逐鹿中原\include\提前开排队_活动表.lua		
+238	驯马6号核心处理	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2;Hour:7;Minute:0;		60	0	scripts/Map/驯养系统/event/6号核心刷新处理.lua		
+239	驯养6号每天处理	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:11;Minute:0;	0	60	0	scripts/Map/驯养系统/event/6号执行刷新处理.lua		
+240	Server禁止创建副本	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:18;Minute:0;	0	10800	0		center_scripts\Activity\Camp\Server禁止创建副本.lua	
+241	记录据点信息	0	0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:*;Hour:0;Minute:0;		300	0			
+244	据点贸易	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:10;Minute:0;	0	57540	1			
+245	阴山商路	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1,3;Hour:10;Minute:0;	0	57540	1	scripts\Map\帮会押镖\include\活动表.lua	center_scripts/Activity/帮派押镖.lua	
+246	战场-浮香丘	0	0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:6;WDay:*;Hour:7;Minute:0;	518400	86400				
+248	据点战准备期	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:19;Minute:0;	0	10800	0			
+249	周六时间-任务指引用	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:12;Minute:0;	0	68340	0			
+250	周日时间-任务指引用	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:7;Hour:12;Minute:0;	0	68340	0			
+251	门派事件-纯阳	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:13;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+252	门派事件-天策	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:14;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+253	门派事件-七秀	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:15;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+254	门派事件-万花	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:16;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+255	门派事件-藏剑	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:17;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+256	门派事件-唐门	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:18;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+257	门派事件-五毒	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:19;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+258	门派事件-少林	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:10;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+259	门派事件-明教	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:12;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+260	门派事件-丐帮	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:20;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+261	门派事件-乱世天策	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:14;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+262	烽烟再起·南屏山	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:12;Minute:0;	0	68340	1			
+263	烽烟再起·昆仑	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:7;Hour:12;Minute:0;	0	68340	1			
+264	剑试天下	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:1,2,3,4,5,6,7;Hour:12;Minute:0;		46800	1			
+265	战场首胜	0	0	0	0	0	Calendar:Solar;Year:2001;Month:*;MDay:*;WDay:1,2,3,4,5,6,7;Hour:12;Minute:0;		46800	1			
+266	群雄竞技逐名剑	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1,2,3,4,5,6,7;Hour:12;Minute:0;	0	46800				
+267	阁有奇宝天下逐之	0	0	0	0	0	Calendar:Solar;Year:2001;Month:1;MDay:*;WDay:6;Hour:15,21;Minute:0;	0	14399	1			
+268	统计前线据点	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:5;Minute:0;	0	85800	0	scripts\Map\逐鹿中原\include\记录前线据点_Data.lua		
+269	不醉不归	272	0	0	0	0	Calendar:Solar;Year:2014;Month:7;MDay:28;WDay:*;Hour:21;Minute:0;	0	3599	1	scripts\Activity\Act_挑战策划\挑战策划.lua		
+270	衣冠禽兽	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340				
+272	不醉不归父活动	0	0	0	0	0	Calendar:Solar;Year:2014;Month:7;MDay:28;WDay:1;Hour:0;Minute:0;	0	86399	0	scripts\Activity\Act_挑战策划\挑战策划父活动.lua		
+273	周年庆	0	0	0	0	0	Calendar:Solar;Year:2014;Month:8;MDay:28;WDay:*;Hour:7;Minute:0;	0	1555200	1			
+274	重阳节	0	0	0	0	0	Calendar:Solar;Year:2016;Month:10;MDay:3;WDay:*;Hour:7;Minute:0;	0	1209599	1	scripts/Activity/重阳活动/重阳活动.lua		
+276	击杀叛徒偿血债		0	0	0	0	Calendar:Solar;Year:2014;Month:10-11;MDay:1-31;WDay:1-7;Hour:*;Minute:0;		3599	1	scripts/Activity/ACT_苍云预热/长安预热活动.lua		
+277	风起云涌截粮草		0	0	0	0	Calendar:Solar;Year:2014;Month:10-11;MDay:1-31;WDay:1-7;Hour:*;Minute:0,30;		1799	1	scripts/Activity/ACT_苍云预热/洛阳预热活动.lua		
+278	苍云预热活动	0	0	0	0	0	Calendar:Solar;Year:2014;Month:10;MDay:21;WDay:*;Hour:7;Minute:0;	0	2937600		scripts/Activity/ACT_苍云预热/活动广告.lua		
+279	名剑大会精英赛	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:21;Minute:0;	0	7200			center_scripts\Activity\Camp\精英争霸赛.lua	
+280	名剑大会精英赛资格生成	0	0	0	0	0	Calendar:Solar;Year:2014;Month:11;MDay:10;WDay:1;Hour:3;Minute:0;	604800	600000	0	scripts/Activity/名剑大会/每周精英赛资格生成.lua		
+281	苍雪龙城活动开关	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;	0	86340	0			
+282	门派事件-苍云	0	0	0	0	0	Calendar:Solar;Year:2014;Month:12;MDay:11;WDay:*;Hour:7;Minute:0;		46800	0	scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+283	名剑大会精英赛资格生成	280	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1-5;Hour:12;Minute:0;		86000	0		center_scripts/Arena/每周精英赛资格上传.lua	
+284	苍云-东陉关之战	282					Calendar:Solar;Year:2014;Month:12;MDay:11;WDay:*;Hour:19;Minute:0;	1036800	3600	1	scripts\Activity\Act_门派事件\苍云\苍云门派事件开始结束处理.lua		
+285	峰值广告						Calendar:Solar;Year:2015;Month:1;MDay:5;WDay:*;Hour:7-20;Minute:0,30;		1800		scripts/Activity/峰值活动/20141222峰值广告.lua		
+286	剑心点将						Calendar:Solar;Year:2015;Month:1;MDay:5;WDay:*;Hour:20;Minute:0;		3600	1			
+287	剑心的宝箱						Calendar:Solar;Year:2015;Month:1;MDay:8;WDay:4;Hour:21;Minute:*;		10800	1	scripts/Activity/峰值活动/20150108奖励.lua		
+289							Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;		604799				
+290	剑心送红包						Calendar:Solar;Year:2015;Month:2;MDay:13;WDay:5;Hour:20;Minute:0;		3600	1			
+291	剑心送红包预行脚本						Calendar:Solar;Year:2015;Month:2;MDay:13;WDay:5;Hour:16;Minute:0;		18000			center_scripts\Activity\剑心送红包.lua	
+292	百战英杰铸神兵						Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:*;Hour:7;Minute:0;		86340	1			
+293	更新薪火值重置时间	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:1-7;WDay:1;Hour:14;Minute:0;	0	-60	0	scripts\Activity\TAEquipsScoreReset.lua		
+294	寻龙勘脉窥天机	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:3,5,6,7;Hour:7;Minute:0;	0	86399	1	scripts/Activity/ACT_地脉勘测/地脉勘测.lua		
+295	新建·未使用						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;		86340				
+296	阴阳两界NPC刷新						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:20,21,22,23,0,1,2,3,4,5;Minute:0;		3540			center_scripts/Activity/Adventure/阴阳两界_NPC刷新.lua	
+298		197						3600	3540			center_scripts/Activity/科举会试排行存储.lua	
+299	大草原-篝火会	313					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:20;Minute:0;		39540		scripts\Activity\95级声望相关\阴山大草原\篝火会开始结束处理.lua		
+300	千岛湖·温泉战倭						Calendar:Solar;Year:2015;Month:10;MDay:11;WDay:*;Hour:7;Minute:0;	432000	86340	1	scripts\Activity\95级声望相关\千岛湖\声望活动开始结束处理.lua		
+301	风雨琴歌						Calendar:Solar;Year:2015;Month:9;MDay:14;WDay:*;Hour:7;Minute:0;		46740	1	scripts/Activity/峰值活动/2015年9月7日峰值.lua		
+302	大草原-运马	313					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;		25199		scripts\Activity\95级声望相关\阴山大草原\运马PQ开始结束处理.lua		
+303	大草原-运货	313					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:14;Minute:0;		21599		scripts\Activity\95级声望相关\阴山大草原\运货PQ开始结束处理.lua		
+304	五台山·无遮大会						Calendar:Solar;Year:2015;Month:10;MDay:12;WDay:*;Hour:7;Minute:0;	432000	86340	1	scripts\Activity\95级声望相关\五台山\声望活动开始结束处理.lua		
+305	黑戈壁·沙漠杀机						Calendar:Solar;Year:2015;Month:10;MDay:13;WDay:*;Hour:7;Minute:0;	432000	86340	1	scripts\Activity\95级声望相关\黑戈壁\声望活动开始结束处理.lua		
+306	六周年庆	0	0	0	0	0	Calendar:Solar;Year:2015;Month:8;MDay:27;WDay:*;Hour:7;Minute:0;	0	1555200	1			
+307	门派事件-长歌						Calendar:Solar;Year:2015;Month:11;MDay:14;WDay:*;Hour:21;Minute:0;		46800		scripts/Activity/Act_门派事件/门派事件任务npc创建删除处理.lua		
+308	长歌·学堂晒书						Calendar:Solar;Year:2016;Month:11;MDay:26;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\Act_门派事件\长歌\长歌门派事件开始结束处理.lua	center_scripts/Activity/长歌门派事件.lua	
+309	大草原·拍卖盛会						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:22;Minute:0;		7200		scripts/Activity/95级声望相关/黑市和觅宝会/草原拍卖会开始结束处理.lua	center_scripts/Activity/阴山拍卖盛会.lua	
+310							Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:13,19,14,20;Minute:15,30,45,59;		899		scripts/Activity/阵营攻防战/攻防复活点物资堆创建.lua		
+311	杨逸飞对决白陶						Calendar:Solar;Year:2015;Month:9;MDay:14;WDay:*;Hour:20;Minute:0;		3600	1	scripts/Activity/峰值活动/2015年9月7日峰值_晚上开启.lua		
+312	当世长歌						Calendar:Solar;Year:2015;Month:9;MDay:24;WDay:*;Hour:7;Minute:0;		2764799	1	scripts\Activity\ACT_剑胆琴心预热\预热活动开始结束处理.lua		
+313	大草原·回纥部族						Calendar:Solar;Year:2015;Month:10;MDay:10;WDay:*;Hour:7;Minute:0;	432000	86399	1			
+314		41					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:13,19,14,20;Minute:15,30,45,59;		899		scripts/Activity/阵营攻防战/攻防牛车创建.lua		
+315	江湖茶馆						Calendar:Solar;Year:2015;Month:10;MDay:19;WDay:*;Hour:7;Minute:0;	604800	604799	1	scripts/Map/ACT_主城茶馆/include/主城茶馆活动开启.lua		
+316	晶矿争夺-黑戈壁						Calendar:Solar;Year:2015;Month:10;MDay:19;WDay:*;Hour:7;Minute:0;	604800	604799	1	scripts/Map/ACT_95级黑戈壁阵营活动/activity/活动脚本.lua		
+317	淬炼以及五行石转换开关						Calendar:Solar;Year:2015;Month:10;MDay:26;WDay:*;Hour:7;Minute:0;	604800	604740				
+318	阴山商路控制活动						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:5;Minute:0;		86280				
+319							Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6,7;Hour:12;Minute:0;		43140				
+320	万花·奇花藏花海						Calendar:Solar;Year:2016;Month:11;MDay:28;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts/Activity/ACT_95级门派事件/万花周一到周五.lua		
+321	万花·开谷济苍生						Calendar:Solar;Year:2016;Month:12;MDay:3;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/万花周六.lua	center_scripts\Activity\万花门派事件.lua	
+322	万花·献花复晴昼						Calendar:Solar;Year:2016;Month:12;MDay:4;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/万花周日.lua	center_scripts\Activity\万花门派事件.lua	
+323	七秀·红袖飞花						Calendar:Solar;Year:2016;Month:12;MDay:12;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\七秀周一至周五.lua		
+324	七秀·剑舞凝光						Calendar:Solar;Year:2016;Month:12;MDay:17;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\七秀周六.lua	center_scripts\Activity\七秀门派事件.lua	
+325	七秀·东海来客						Calendar:Solar;Year:2016;Month:12;MDay:18;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\七秀周日.lua	center_scripts\Activity\七秀门派事件.lua	
+326	纯阳·山门卫道						Calendar:Solar;Year:2017;Month:1;MDay:9;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\纯阳周一至周五.lua		
+327	纯阳·星野剑阵						Calendar:Solar;Year:2017;Month:1;MDay:15;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\纯阳周日.lua	center_scripts\Activity\纯阳门派事件.lua	
+328	纯阳·西昇大典						Calendar:Solar;Year:2017;Month:1;MDay:14;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\纯阳周六.lua	center_scripts\Activity\纯阳门派事件.lua	
+329	少林·山雨欲来						Calendar:Solar;Year:2016;Month:12;MDay:26;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Map\ACT_95级门派事件\少林\include\山雨欲来.lua		
+330	少林·禅武较量						Calendar:Solar;Year:2016;Month:12;MDay:31;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Map\ACT_95级门派事件\少林\include\禅武较量.lua	center_scripts\Activity\少林门派事件.lua	
+331	少林·荡除心魔						Calendar:Solar;Year:2017;Month:1;MDay:1;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Map\ACT_95级门派事件\少林\include\荡除心魔.lua	center_scripts\Activity\少林门派事件.lua	
+332	天策·筹备						Calendar:Solar;Year:2016;Month:12;MDay:19;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Map\ACT_95级门派事件\乱世天策\Include\95门派事件之乱世天策开始结束处理.lua		
+333	天策·阻击						Calendar:Solar;Year:2016;Month:12;MDay:24;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Map\ACT_95级门派事件\乱世天策\Include\95门派事件之乱世天策开始结束处理.lua	center_scripts\Activity\天策门派事件.lua	
+334	天策·战！						Calendar:Solar;Year:2016;Month:12;MDay:25;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Map\ACT_95级门派事件\乱世天策\Include\95门派事件之乱世天策开始结束处理.lua	center_scripts\Activity\天策门派事件.lua	
+335	藏剑·熔炼寒铁						Calendar:Solar;Year:2016;Month:12;MDay:5;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts/Activity/ACT_95级门派事件/藏剑周一至周五.lua		
+336	藏剑·铸造神兵						Calendar:Solar;Year:2016;Month:12;MDay:10;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/藏剑周六.lua	center_scripts/Activity/藏剑门派事件.lua	
+337	藏剑·名剑新生						Calendar:Solar;Year:2016;Month:12;MDay:11;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/藏剑周日.lua	center_scripts/Activity/藏剑门派事件.lua	
+338	五毒·毒蚊幼虫						Calendar:Solar;Year:2017;Month:2;MDay:6;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\五毒周一到周五.lua		
+339	五毒·天一阴谋						Calendar:Solar;Year:2017;Month:2;MDay:11;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\五毒周六.lua	center_scripts\Activity\五毒门派事件.lua	
+340	五毒·噬魂金虎						Calendar:Solar;Year:2017;Month:2;MDay:12;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\五毒周日.lua	center_scripts\Activity\五毒门派事件.lua	
+341	唐门·兄弟之争						Calendar:Solar;Year:2017;Month:1;MDay:16;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\唐门周一至周五.lua		
+342	唐门·机甲对决						Calendar:Solar;Year:2017;Month:1;MDay:21;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\唐门周六.lua	center_scripts\Activity\唐门门派事件.lua	
+343	唐门·对抗狼牙						Calendar:Solar;Year:2017;Month:1;MDay:22;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\唐门周日.lua	center_scripts\Activity\唐门门派事件.lua	
+344	明教·漫漫朝圣路						Calendar:Solar;Year:2017;Month:1;MDay:30;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts/Activity/ACT_95级门派事件/明教周一至周五.lua		
+345	明教·明尊大典						Calendar:Solar;Year:2017;Month:2;MDay:4;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/明教周六.lua		
+346	明教·血染红衣						Calendar:Solar;Year:2017;Month:2;MDay:5;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/明教周日.lua		
+347	丐帮·美酒飘香						Calendar:Solar;Year:2017;Month:1;MDay:23;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\丐帮周一至周五.lua		
+348	丐帮·洞庭虹影						Calendar:Solar;Year:2017;Month:1;MDay:28;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\丐帮周六.lua	center_scripts\Activity\丐帮门派事件.lua	
+349	丐帮·寿宴风云						Calendar:Solar;Year:2017;Month:1;MDay:29;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\丐帮周日.lua	center_scripts\Activity\丐帮门派事件.lua	
+350	苍云·战前准备						Calendar:Solar;Year:2017;Month:1;MDay:2;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts\Activity\ACT_95级门派事件\苍云周一至周五.lua		
+351	苍云·黑云压城						Calendar:Solar;Year:2017;Month:1;MDay:7;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\苍云周六.lua	center_scripts\Activity\苍云门派事件.lua	
+352	苍云·决战之时						Calendar:Solar;Year:2017;Month:1;MDay:8;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts\Activity\ACT_95级门派事件\苍云周日.lua	center_scripts\Activity\苍云门派事件.lua	
+353	长歌·弟子笃学						Calendar:Solar;Year:2016;Month:11;MDay:21;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts/Activity/ACT_95级门派事件/长歌周一至周五.lua		
+355	长歌·音律之试						Calendar:Solar;Year:2016;Month:11;MDay:27;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/长歌周日.lua	center_scripts/Activity/长歌门派事件.lua	
+356	猴年春节烟花通宝回馈开关	0	0	0	0	0	Calendar:Solar;Year:2016;Month:1;MDay:25;WDay:*;Hour:7;Minute:0;		3024000	0			
+357	洛阳·神兵迷踪						Calendar:Solar;Year:2015;Month:10;MDay:14;WDay:*;Hour:7;Minute:0;	432000	86399	1	scripts/Map/ACT_四月洛阳/activity/四月活动脚本.lua		
+358	据点占坑父活动						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:18;Minute:50;		10800				
+360		358					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:*;Minute:*;		600		scripts\Map\逐鹿中原\include\据点争夺_定时检测挂机.lua		
+364	江湖百态周榜结算						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;		518460		scripts\Map\江湖百态\include\周排行榜结算.lua		
+365	庆典·梦回稻香	0	0	0	0	0	Calendar:Solar;Year:2016;Month:8;MDay:28;WDay:*;Hour:7;Minute:0;	0	10886399	1	scripts/Map/梦回稻香/activity/七周年梦回稻香活动.lua		
+366	七周年庆	0	0	0	0	0	Calendar:Solar;Year:2016;Month:8;MDay:22;WDay:*;Hour:7;Minute:0;	0	1814399	1	scripts/Map/Act_运营活动通用/activity/七周年庆活动脚本.lua		
+367	风临神都						Calendar:Solar;Year:2016;Month:9;MDay:12;WDay:*;Hour:7;Minute:0;	604800	604799		scripts\Map\ACT_霸刀预热\activity\预热活动开始结束处理.lua		
+368	驭兽挑战						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:7;Hour:21;Minute:30;		14400	1	scripts/Activity/野外首领/驭兽世界BOSS.lua		
+369	方士异闻录						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:6;Hour:21;Minute:30;		14400	1	scripts/Map/里世界/世界首领相关/里世界boss刷新.lua		
+370	霸刀·霜林围猎						Calendar:Solar;Year:2016;Month:11;MDay:14;WDay:*;Hour:7;Minute:0;	7862400	431999	1	scripts/Activity/ACT_95级门派事件/霸刀周一至周五.lua		
+371	霸刀·星暗长林						Calendar:Solar;Year:2016;Month:11;MDay:19;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/霸刀周六.lua	center_scripts\Activity\霸刀门派事件.lua	
+372	霸刀·蛇魅狼影						Calendar:Solar;Year:2016;Month:11;MDay:20;WDay:*;Hour:21;Minute:0;	7862400	3600	1	scripts/Activity/ACT_95级门派事件/霸刀周日.lua		
+373	长歌·音律之试						Calendar:Solar;Year:2017;Month:6;MDay:1;WDay:*;Hour:21;Minute:0;		3600	1	scripts/Activity/ACT_95级门派事件/长歌周日.lua	center_scripts/Activity/长歌门派事件.lua	
+374	逆改阴阳						Calendar:Solar;Year:2016;Month:11;MDay:21;WDay:*;Hour:7;Minute:0;		46740	1	scripts/Activity/峰值活动/2016年11月21日峰值早.lua		
+375	魔王再临						Calendar:Solar;Year:2016;Month:11;MDay:21;WDay:*;Hour:20;Minute:0;		28800	1	scripts/Activity/峰值活动/2016年11月21日峰值_晚上开启.lua		
+376							Calendar:Solar;Year:*;Month:*;MDay:*;WDay:1;Hour:7;Minute:0;					center_scripts\Activity\据点每周清.lua	
+377	据点地图是否排队	225						600	540			center_scripts\Activity\Camp\小攻防占坑相关.lua	
+378	小攻防前一小时						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:2,4;Hour:19;Minute:0;		3600		scripts/Activity/小攻防前一小时保护/小攻防前一小时保护.lua		
+379	监狱消杀气						Calendar:Solar;Year:2016;Month:12;MDay:7;WDay:3;Hour:7;Minute:0;	1800	1740		scripts/Activity/监狱精英怪.lua		
+380	勤修不辍·传功		0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:7;Minute:0;		86340	1			
+381	春节系统主城花灯						Calendar:Solar;Year:2017;Month:1;MDay:28;WDay:*;Hour:0;Minute:0;		900		scripts/Map/主城烟花/activity/元旦系统主城花灯.lua		
+382	秘境的镖局接引	0	0	0	0	0	Calendar:Solar;Year:2012;Month:7;MDay:6;WDay:*;Hour:7;Minute:0;	90		0		center_scripts/Activity/秘境的镖局接引事件.lua	
+383	尊师明礼						Calendar:Solar;Year:2017;Month:1;MDay:27;WDay:5;Hour:7;Minute:0;		259199	1			
+384	春回盛唐						Calendar:Solar;Year:2017;Month:2;MDay:27;WDay:*;Hour:7;Minute:0;		4233540	1			
+385	双线新服福利						Calendar:Solar;Year:2017;Month:2;MDay:20;WDay:*;Hour:7;Minute:0;		1814399				
+386	春回盛唐						Calendar:Solar;Year:2017;Month:2;MDay:27;WDay:*;Hour:7;Minute:0;		1814340				
+387	攻防前置南屏分流活动						Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:1;Hour:7;Minute:0;		68340		scripts/Activity/地图分流相关/南平分流开启.lua		1
+388	刀谷迷踪						Calendar:Solar;Year:2017;Month:3;MDay:20;WDay:*;Hour:7;Minute:0;		2678399	1	scripts/Map/ACT_风雷刀谷预热/activity/风雷刀谷预热开始结束处理.lua		
+389	剑阁争锋						Calendar:Solar;Year:2017;Month:3;MDay:20;WDay:*;Hour:7;Minute:0;		2678399	1			
+390	攻防分流关闭						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:7,1;Hour:7;Minute:0;		43200			center_scripts/Activity/南屏昆仑分流地图关闭.lua	
+391	攻防前置昆仑分流活动						Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:1;Hour:7;Minute:0;		68340		scripts/Activity/地图分流相关/昆仑分流开启.lua		1
+392	分流周期性检测	0	0	0	0	0	Calendar:Solar;Year:2017;Month:3;MDay:20;WDay:*;Hour:7;Minute:0;	300	180	0		center_scripts/Activity/分流地图周期性检测.lua	
+393	大师赛入场时间	395					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:5,6,7;Hour:12;Minute:0;		43200		scripts/Activity/大师赛拭剑园/入场准备时间.lua		
+394	大师赛比赛时间	395					Calendar:Solar;Year:*;Month:*;MDay:*;WDay:5,6,7;Hour:20;Minute:0;		7200		scripts/Activity/大师赛拭剑园/正式比赛时间.lua		
+395	竞技大师赛						Calendar:Solar;Year:2017;Month:4;MDay:20;WDay:*;Hour:7;Minute:0;		2160000	1	scripts/Activity/大师赛拭剑园/大师赛父活动.lua		
+396							Calendar:Solar;Year:2017;Month:4;MDay:20;WDay:4;Hour:0;Minute:0;	1500				center_scripts\Activity\副本计数.lua	
+397	金水市集						Calendar:Solar;Year:2017;Month:4;MDay:10;WDay:*;Hour:7;Minute:0;		604800	1	scripts/Map/ACT_动态城镇/activity/动态城镇开始结束处理.lua		1
+398	黑戈壁矿车分流大草原						Calendar:Solar;Year:2001;Month:1;MDay:1;WDay:1;Hour:7;Minute:0;		3600		scripts/Map/ACT_戈壁矿车分流大草原/activity/戈壁矿车分流大草原.lua		1
+399	动态城镇监控	0	0	0	0	0	Calendar:Solar;Year:2017;Month:3;MDay:20;WDay:*;Hour:7;Minute:0;	300	61	0		center_scripts/Activity/动态城镇监控活动.lua	
+401	名剑大会开关	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12;Minute:0;	0	46800				
+402	名剑大会散排开关	0	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12;Minute:0;	0	46800				
+403	鹤羽诉情						Calendar:Solar;Year:2017;Month:5;MDay:20;WDay:*;Hour:7;Minute:0;		1209540	1			
+405	副本排行界面更新						Calendar:Solar;Year:2017;Month:5;MDay:1;WDay:1;Hour:7;Minute:0;	300				center_scripts\Activity\GetFBRankData.lua	
+407	通用server每分刷新数据						Calendar:Solar;Year:2017;Month:3;MDay:20;WDay:*;Hour:7;Minute:0;	90	61		scripts/Activity/通用server每分刷新数据.lua		
+408	每日战场入场时间						Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12;Minute:0;		46800				
+409	战场-浮香丘	246	0	0	0	0	Calendar:Solar;Year:*;Month:*;MDay:*;WDay:*;Hour:12;Minute:0;		46740	1			
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

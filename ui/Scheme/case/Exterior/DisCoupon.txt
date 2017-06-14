@@ -1,0 +1,5 @@
+ID	Desc	BgPath	NormalFrame	MouseFrame
+0		ui\Image\UICommon\yirong2.UITex	0	1
+1	新建角色6.8折特惠(自定义脸型不参与特惠)	ui\Image\UICommon\yirong2.UITex	2	3
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

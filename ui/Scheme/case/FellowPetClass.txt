@@ -1,0 +1,8 @@
+ID	ClassName	Frame
+0		0
+1	水族	10
+2	禽鸟	7
+3	走兽	9
+4	机关	8
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

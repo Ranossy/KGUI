@@ -1,0 +1,60 @@
+ID	forceid	f1_image	f1_frame	f2_image	f2_frame	m1_image	m1_frame	m2_image	m2_frame	bAnimate	nRelateID	nHat	hudimage_left	hudimage_lframe	hudimage_mid	hudimage_mframe	hudimage_right	hudimage_rframe
+0	0		-1		-1		-1		-1	0	0	-1		-1		-1		-1
+1	1		-1		-1	ui\Image\PlayerAvatar\MP_SL_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_SL_m2_001.tga	-1									
+2	1		-1		-1	ui\Image\PlayerAvatar\MP_SL_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_SL_m2_002.tga	-1									
+3	2	ui\Image\PlayerAvatar\MP_WH_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_WH_m2_001.tga	-1									
+4	2	ui\Image\PlayerAvatar\MP_WH_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_WH_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_WH_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_WH_m2_002.tga	-1									
+5	3	ui\Image\PlayerAvatar\MP_TC_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_TC_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_TC_m2_001.tga	-1	ui\Image\PlayerAvatar\MP_TC_m1_001.tga	-1									
+6	3	ui\Image\PlayerAvatar\MP_TC_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_TC_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_TC_m2_002.tga	-1	ui\Image\PlayerAvatar\MP_TC_m1_002.tga	-1									
+7	5	ui\Image\PlayerAvatar\MP_QX_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_QX_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_QX_M1_001.tga	-1		-1									
+8	5	ui\Image\PlayerAvatar\MP_QX_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_QX_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_QX_M1_002.tga	-1		-1									
+9	6	ui\Image\PlayerAvatar\MP_WD_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_WD_m2_001.tga	-1									
+10	6	ui\Image\PlayerAvatar\MP_WD_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_WD_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_WD_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_WD_m2_002.tga	-1									
+11	7	ui\Image\PlayerAvatar\MP_TM_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_TM_m2_001.tga	-1									
+12	7	ui\Image\PlayerAvatar\MP_TM_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_TM_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_TM_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_TM_m2_002.tga	-1									
+13	4	ui\Image\PlayerAvatar\MP_CY_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CY_m2_001.tga	-1									
+14	4	ui\Image\PlayerAvatar\MP_CY_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_CY_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_CY_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_CY_m2_002.tga	-1									
+15	8	ui\Image\PlayerAvatar\MP_CJ_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CJ_m2_001.tga	-1									
+16	8	ui\Image\PlayerAvatar\MP_CJ_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_CJ_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_CJ_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_CJ_m2_002.tga	-1									
+17	0	ui\Image\PlayerAvatar\gif_f1.UITex	0	ui\Image\PlayerAvatar\gif_f2.UITex	0	ui\Image\PlayerAvatar\gif_M1.UITex	0	ui\Image\PlayerAvatar\gif_m2.UITex	0	1								
+18	0	ui\Image\PlayerAvatar\HD_szn.tga	-1	ui\Image\PlayerAvatar\HD_szn.tga			-1	ui\Image\PlayerAvatar\HD_szn.tga	-1									
+19	10	ui\Image\PlayerAvatar\MP_MJ_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_001.tga	-1		21	0						
+20	10	ui\Image\PlayerAvatar\MP_MJ_F1_002.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_002.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_002.tga	-1		22	0						
+21	10	ui\Image\PlayerAvatar\MP_MJ_F1_003.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_003.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_004.tga	-1		19	1						
+22	10	ui\Image\PlayerAvatar\MP_MJ_F1_004.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_004.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_004.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_003.tga	-1		20	1						
+23	9	ui\Image\PlayerAvatar\MP_GB_f1_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_f2_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_GB_m2_001.tga	-1									
+24	9	ui\Image\PlayerAvatar\MP_GB_f1_002.tga	-1	ui\Image\PlayerAvatar\MP_GB_f2_002.tga	-1	ui\Image\PlayerAvatar\MP_GB_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_GB_m2_002.tga	-1									
+25	1					ui\Image\PlayerAvatar\MP_SL_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_SL_m2_003.tga	-1				ui\Image\PlayerAvatar\SL_1_DK_1.UITex	0	ui\Image\PlayerAvatar\SL_1_DK_1.UITex	1	ui\Image\PlayerAvatar\SL_1_DK_1.UITex	2
+26	2	ui\Image\PlayerAvatar\MP_WH_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_WH_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_WH_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_WH_m2_003.tga	-1				ui\Image\PlayerAvatar\WH_1_DK_1.UITex	0	ui\Image\PlayerAvatar\WH_1_DK_1.UITex	1	ui\Image\PlayerAvatar\WH_1_DK_1.UITex	2
+27	3	ui\Image\PlayerAvatar\MP_TC_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_TC_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_TC_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_TC_m2_003.tga	-1				ui\Image\PlayerAvatar\TC_1_DK_1.UITex	0	ui\Image\PlayerAvatar\TC_1_DK_1.UITex	1	ui\Image\PlayerAvatar\TC_1_DK_1.UITex	2
+28	4	ui\Image\PlayerAvatar\MP_CY_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_CY_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_CY_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_CY_m2_003.tga	-1				ui\Image\PlayerAvatar\CY_1_DK_1.UITex	0	ui\Image\PlayerAvatar\CY_1_DK_1.UITex	1	ui\Image\PlayerAvatar\CY_1_DK_1.UITex	2
+29	5	ui\Image\PlayerAvatar\MP_QX_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_QX_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_QX_M1_003.tga	-1		-1				ui\Image\PlayerAvatar\QX_1_DK_1.UITex	0	ui\Image\PlayerAvatar\QX_1_DK_1.UITex	1	ui\Image\PlayerAvatar\QX_1_DK_1.UITex	2
+30	6	ui\Image\PlayerAvatar\MP_WD_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_WD_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_WD_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_WD_m2_003.tga	-1				ui\Image\PlayerAvatar\WD_1_DK_1.UITex	0	ui\Image\PlayerAvatar\WD_1_DK_1.UITex	1	ui\Image\PlayerAvatar\WD_1_DK_1.UITex	2
+31	7	ui\Image\PlayerAvatar\MP_TM_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_TM_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_TM_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_TM_m2_003.tga	-1				ui\Image\PlayerAvatar\TM_1_DK_1.UITex	0	ui\Image\PlayerAvatar\TM_1_DK_1.UITex	1	ui\Image\PlayerAvatar\TM_1_DK_1.UITex	2
+32	8	ui\Image\PlayerAvatar\MP_CJ_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_CJ_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_CJ_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_CJ_m2_003.tga	-1				ui\Image\PlayerAvatar\CJ_1_DK_1.UITex	0	ui\Image\PlayerAvatar\CJ_1_DK_1.UITex	1	ui\Image\PlayerAvatar\CJ_1_DK_1.UITex	2
+33	9	ui\Image\PlayerAvatar\MP_GB_f1_003.tga	-1	ui\Image\PlayerAvatar\MP_GB_f2_003.tga	-1	ui\Image\PlayerAvatar\MP_GB_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_GB_m2_003.tga	-1				ui\Image\PlayerAvatar\GB_1_DK_1.UITex	0	ui\Image\PlayerAvatar\GB_1_DK_1.UITex	1	ui\Image\PlayerAvatar\GB_1_DK_1.UITex	2
+34	10	ui\Image\PlayerAvatar\MP_MJ_F1_005.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_005.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_006.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_005.tga	-1		35	1	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	0	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	1	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	2
+35	10	ui\Image\PlayerAvatar\MP_MJ_F1_006.tga	-1	ui\Image\PlayerAvatar\MP_MJ_F2_006.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M1_005.tga	-1	ui\Image\PlayerAvatar\MP_MJ_M2_006.tga	-1		34	0	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	0	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	1	ui\Image\PlayerAvatar\MJ_1_DK_1.UITex	2
+36	21	ui\Image\PlayerAvatar\MP_CAY_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M2_001.tga	-1									
+37	21	ui\Image\PlayerAvatar\MP_CAY_F1_002.tga	-1	ui\Image\PlayerAvatar\MP_CAY_F2_002.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M2_002.tga	-1									
+38	21	ui\Image\PlayerAvatar\MP_CAY_F1_003.tga	-1	ui\Image\PlayerAvatar\MP_CAY_F2_003.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_CAY_M2_003.tga	-1				ui\Image\PlayerAvatar\CangYun_1_DK_1.UITex	0	ui\Image\PlayerAvatar\CangYun_1_DK_1.UITex	1	ui\Image\PlayerAvatar\CangYun_1_DK_1.UITex	2
+39	0	ui\Image\PlayerAvatar\JH_f1_009.tga	-1	ui\Image\PlayerAvatar\JH_f2_009.tga	-1	ui\Image\PlayerAvatar\JH_M1_009.tga	-1	ui\Image\PlayerAvatar\JH_m2_009.tga	-1				ui\Image\PlayerAvatar\JH_1_DK_1.UITex	0	ui\Image\PlayerAvatar\JH_1_DK_1.UITex	1	ui\Image\PlayerAvatar\JH_1_DK_1.UITex	2
+40	0	ui\Image\PlayerAvatar\JH_f1_010.tga	-1	ui\Image\PlayerAvatar\JH_f2_010.tga	-1	ui\Image\PlayerAvatar\JH_M1_010.tga	-1	ui\Image\PlayerAvatar\JH_m2_010.tga	-1				ui\Image\PlayerAvatar\JH_1_DK_2-1.UITex	0	ui\Image\PlayerAvatar\JH_1_DK_2-1.UITex	1	ui\Image\PlayerAvatar\JH_1_DK_2-1.UITex	2
+41	0	ui\Image\PlayerAvatar\JH_f1_011.tga	-1	ui\Image\PlayerAvatar\JH_f2_011.tga	-1	ui\Image\PlayerAvatar\JH_M1_011.tga	-1	ui\Image\PlayerAvatar\JH_m2_011.tga	-1				ui\Image\PlayerAvatar\JH_1_DK_3-1.UITex	0	ui\Image\PlayerAvatar\JH_1_DK_3-1.UITex	1	ui\Image\PlayerAvatar\JH_1_DK_3-1.UITex	2
+42	22	ui\Image\PlayerAvatar\MP_CGM_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M2_001.tga	-1									
+43	22	ui\Image\PlayerAvatar\MP_CGM_F1_002.tga	-1	ui\Image\PlayerAvatar\MP_CGM_F2_002.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M2_002.tga	-1									
+44	22	ui\Image\PlayerAvatar\MP_CGM_F1_003.tga	-1	ui\Image\PlayerAvatar\MP_CGM_F2_003.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_CGM_M2_003.tga	-1				ui\Image\PlayerAvatar\CG.UITex	0	ui\Image\PlayerAvatar\CG.UITex	1	ui\Image\PlayerAvatar\CG.UITex	2
+45	0	ui\Image\PlayerAvatar\JH_f1_008.tga	-1	ui\Image\PlayerAvatar\JH_f2_008.tga	-1	ui\Image\PlayerAvatar\JH_m1_008.tga	-1	ui\Image\PlayerAvatar\JH_m2_008.tga	-1				ui\Image\PlayerAvatar\JH_DK_15_01.UITex	0	ui\Image\PlayerAvatar\JH_DK_15_01.UITex	1	ui\Image\PlayerAvatar\JH_DK_15_01.UITex	2
+46	23	ui\Image\PlayerAvatar\MP_BD_F1_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_F2_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_M1_001.tga	-1	ui\Image\PlayerAvatar\MP_BD_M2_001.tga	-1									
+47	23	ui\Image\PlayerAvatar\MP_BD_F1_002.tga	-1	ui\Image\PlayerAvatar\MP_BD_F2_002.tga	-1	ui\Image\PlayerAvatar\MP_BD_M1_002.tga	-1	ui\Image\PlayerAvatar\MP_BD_M2_002.tga	-1									
+48	23	ui\Image\PlayerAvatar\MP_BD_F1_003.tga	-1	ui\Image\PlayerAvatar\MP_BD_F2_003.tga	-1	ui\Image\PlayerAvatar\MP_BD_M1_003.tga	-1	ui\Image\PlayerAvatar\MP_BD_M2_003.tga	-1				\ui\Image\PlayerAvatar\BD_1_DK_1.UITEX	0	\ui\Image\PlayerAvatar\BD_1_DK_1.UITEX	1	\ui\Image\PlayerAvatar\BD_1_DK_1.UITEX	2
+49	0	ui\Image\PlayerAvatar\gif_f1_1.UITex	0	ui\Image\PlayerAvatar\gif_f2_1.UITex	0	ui\Image\PlayerAvatar\gif_M1_1.UITex	0	ui\Image\PlayerAvatar\gif_m2_1.UITex	0	1								
+100	0	ui\Image\PlayerAvatar\JH_f1_001.tga	-1	ui\Image\PlayerAvatar\JH_f2_001.tga	-1	ui\Image\PlayerAvatar\JH_M1_001.tga	-1	ui\Image\PlayerAvatar\JH_m2_001.tga	-1									
+101	0	ui\Image\PlayerAvatar\JH_f1_002.tga	-1	ui\Image\PlayerAvatar\JH_f2_002.tga	-1	ui\Image\PlayerAvatar\JH_M1_002.tga	-1	ui\Image\PlayerAvatar\JH_m2_002.tga	-1									
+102	0	ui\Image\PlayerAvatar\JH_f1_003.tga	-1	ui\Image\PlayerAvatar\JH_f2_003.tga	-1	ui\Image\PlayerAvatar\JH_M1_003.tga	-1	ui\Image\PlayerAvatar\JH_m2_003.tga	-1									
+103	0	ui\Image\PlayerAvatar\JH_f1_004.tga	-1	ui\Image\PlayerAvatar\JH_f2_004.tga	-1	ui\Image\PlayerAvatar\JH_M1_004.tga	-1	ui\Image\PlayerAvatar\JH_m2_004.tga	-1									
+104	0	ui\Image\PlayerAvatar\JH_f1_005.tga	-1	ui\Image\PlayerAvatar\JH_f2_005.tga	-1	ui\Image\PlayerAvatar\JH_M1_005.tga	-1	ui\Image\PlayerAvatar\JH_m2_005.tga	-1									
+105	0	ui\Image\PlayerAvatar\JH_f1_006.tga	-1	ui\Image\PlayerAvatar\JH_f2_006.tga	-1	ui\Image\PlayerAvatar\JH_M1_006.tga	-1	ui\Image\PlayerAvatar\JH_m2_006.tga	-1									
+106	0	ui\Image\PlayerAvatar\JH_f1_007.tga	-1	ui\Image\PlayerAvatar\JH_f2_007.tga	-1	ui\Image\PlayerAvatar\JH_m1_007.tga	-1	ui\Image\PlayerAvatar\JH_m2_007.tga	-1									
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

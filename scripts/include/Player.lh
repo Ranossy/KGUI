@@ -1,0 +1,1333 @@
+---------------------------------------------------------------------->
+-- 脚本名称:	scripts/Include/Player.lh
+-- 更新时间:	2017/3/15 20:29:35
+-- 更新用户:	ZHANGGUANYI
+-- 脚本说明:
+----------------------------------------------------------------------<
+Include("scripts/Include/OnEnterSceneCommon/Player_EnterSceneCommon_Include.lua")
+
+-- 判断目标身上是否有某等级技能，如果没有，则加到相应等级。
+function LearnSkillByLevel(target, dwSkillID, nSkillLevel)
+	local nLevel = target.GetSkillLevel(dwSkillID)
+
+	if not nLevel then
+		Trace("Get skill level [" .. dwSkillID .. "] failed !\n")
+		return
+	end
+
+	local nLeveldDispersion = nSkillLevel - nLevel
+
+	for i = 1, nLeveldDispersion do
+		target.LearnSkill(dwSkillID)
+	end
+end
+
+-- 修改队伍的任务变量。
+-- nQuestID：任务ID；
+-- nSlot：变量号码，这个号码从 0 开始，0-7 一共8个，对应 Quests.Tab 中的 QuestValue# 。
+-- nMode：参数可以省略，省略或者赋值为 0 都表示设置为 nValue，如果为 1 则表示增加 nValue。
+function ModifyPartyQuestValue(player, nQuestID, nSlot, nValue, nMode)
+	if not nMode then
+		nMode = 0
+	end
+	local tPartyMember = player.GetPartyMemberList()
+	if not tPartyMember then
+		if player.GetQuestPhase(nQuestID) == 1 then
+			local nQuestIndex = player.GetQuestIndex(nQuestID)
+			local nOldValue = player.GetQuestValue(nQuestIndex, nSlot)
+			if nMode == 0 then
+				player.SetQuestValue(nQuestIndex, nSlot, nValue)
+			elseif nMode == 1 then
+				player.SetQuestValue(nQuestIndex, nSlot, nOldValue + nValue)
+			end
+		end
+		return
+	end
+
+	local nPartyMemberCount = #tPartyMember
+	local scene = player.GetScene()
+	local dwMapID = scene.dwMapID
+	local nShareDistance = 4096
+
+	for i = 1, nPartyMemberCount do
+		local member = GetPlayer(tPartyMember[i])
+		if member then
+			local memberScene = member.GetScene()
+			local dwMemberMapID = memberScene.dwMapID
+			local nQuestPhase = member.GetQuestPhase(nQuestID)
+			if nQuestPhase == 1 or nQuestPhase == 2 then
+				if dwMapID == dwMemberMapID then
+					local nDistance = ((player.nX - member.nX) ^ 2 + (player.nY - member.nY) ^ 2) ^ 0.5
+					if nDistance <= nShareDistance then
+						local nQuestIndex = member.GetQuestIndex(nQuestID)
+						local nOldValue = member.GetQuestValue(nQuestIndex, nSlot)
+						if nMode == 0 then
+							member.SetQuestValue(nQuestIndex, nSlot, nValue)
+						elseif nMode == 1 then
+							member.SetQuestValue(nQuestIndex, nSlot, nOldValue + nValue)
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+--在玩家周围一定角度，一定距离，创建一个DOODAD
+--nAngel 需要创建DOODAD相对于玩家的角度，nDir创建出来的doodad的朝向,nR创建的doodad离玩家的距离
+function CreateDoodadByDirection(scene, dwDoodadTemplateID, player, nAngel, nR, nDir)
+	if player then
+		local nX, nY, nZ = player.GetAbsoluteCoordinate()
+		if scene then
+			local dwAngel = (player.nFaceDirection * 1.4 - 90) / 180 * 3.14159265 + nAngel
+			local createddoodad = scene.CreateDoodad(dwDoodadTemplateID, nX + nR * math.cos(dwAngel), nY + nR * math.sin(dwAngel), nZ, nDir)
+			return createddoodad
+		end
+	end
+end
+
+--在玩家周围一定角度，一定距离，创建一个NPC
+--nAngel 需要创建NPC相对于玩家的角度，nDir创建出来的NPC的朝向,nR创建的NPC离玩家的距离
+--szNickName  创建出来的NPC别名，没有就不填，不要填0
+function CreateNpcByDirection(scene, dwNpcTemplateID, player, nAngel, nR, nDir, nDisappearFrame, szNickName, dwOwner)
+	nDisappearFrame = nDisappearFrame or 9600
+	if player then
+		local nX, nY, nZ = player.GetAbsoluteCoordinate()
+		if scene then
+			local dwAngel = (player.nFaceDirection * 1.4 - 90) / 180 * 3.14159265 + nAngel
+			if szNickName and (not dwOwner) then
+				local creatednpc = scene.CreateNpc(dwNpcTemplateID, nX + nR * math.cos(dwAngel), nY + nR * math.sin(dwAngel), nZ, nDir, nDisappearFrame, szNickName)
+				return creatednpc
+			elseif dwOwner and szNickName then
+				local creatednpc = scene.CreateNpc(dwNpcTemplateID, nX + nR * math.cos(dwAngel), nY + nR * math.sin(dwAngel), nZ, nDir, nDisappearFrame, szNickName, dwOwner)
+				return creatednpc
+			else
+				local creatednpc = scene.CreateNpc(dwNpcTemplateID, nX + nR * math.cos(dwAngel), nY + nR * math.sin(dwAngel), nZ, nDir, nDisappearFrame)
+				return creatednpc
+			end
+		end
+	end
+end
+
+-- 死亡方式 0-自然(无惩罚), 1-被玩家杀死, 2-被NPC杀死, 3-被系统杀死
+-- 复活方式 0-系统, 1-原地复活, 2-被玩家复活, 3-复活点复活
+-- 基本上被系统杀死和被NPC杀死可以看成是完全一样的
+-- 当在副本的时候, 全部复活方式都强制为回"复活点复活"和"被玩家复活"
+tAbradeEquipmentConfig = {
+	-- 被玩家杀死
+	[1] = {
+		-- 杀气等级 0
+		[0] = {
+			[1] = {Abrade = 1, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 1, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 1, AffectBag = false}, -- 复活点复活
+		},
+		[1] = {
+			[1] = {Abrade = 1, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 1, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 1, AffectBag = false}, -- 复活点复活
+		},
+		[2] = {
+			[1] = {Abrade = 20, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = false}, -- 复活点复活
+		},
+		[3] = {
+			[1] = {Abrade = 20, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = false}, -- 复活点复活
+		},
+		[4] = {
+			[1] = {Abrade = 20, AffectBag = true}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = true}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = true}, -- 复活点复活
+		},
+	},
+	-- 被NPC杀死或者被系统杀死
+	[2] = {
+		[0] = {
+			[1] = {Abrade = 10, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 5, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 5, AffectBag = false}, -- 复活点复活
+		},
+		[1] = {
+			[1] = {Abrade = 10, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 5, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 5, AffectBag = false}, -- 复活点复活
+		},
+		[2] = {
+			[1] = {Abrade = 20, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = false}, -- 复活点复活
+		},
+		[3] = {
+			[1] = {Abrade = 20, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = false}, -- 复活点复活
+		},
+		[4] = {
+			[1] = {Abrade = 20, AffectBag = false}, -- 原地复活
+			[2] = {Abrade = 10, AffectBag = false}, -- 被玩家复活
+			[3] = {Abrade = 10, AffectBag = false}, -- 复活点复活
+		},
+	},
+}
+
+--玩家杀气值对应其处罚等级。
+tKillPointLevelValue = {
+	level0 = 0,
+	level1 = 50,
+	level2 = 100,
+	level3 = 200,
+	level4 = 500,
+}
+
+-- 此脚本是通用的, 检查和设置玩家的复活设置的脚本
+function CheckPlayerReviveCommon(player, bFristLaunch, nBattleFieldReviveCycleSecond)
+	local scene = player.GetScene()
+	local dwMapID = scene.dwMapID
+	local bIsInDungeon = false
+	local bIsBattleField = false
+	local bIsInPrison = false
+	local nCurrentTime = GetCurrentTime()
+	-- 战场复活周期默认值
+	if not nBattleFieldReviveCycleSecond then
+		nBattleFieldReviveCycleSecond = 20
+	end
+	if scene.nType == MAP_TYPE.DUNGEON then
+		bIsInDungeon = true
+	elseif scene.nType == MAP_TYPE.BATTLE_FIELD then
+		bIsBattleField = true
+	elseif scene.dwMapID == 152 and player.bPrisonFlag == true then
+		bIsInPrison = true
+	end
+	local nInFightPlayerCount = scene.nInFightPlayerCount
+	local tReviveSetting = player.GetReviveCtrl()
+
+	-- 先计算原地复活惩罚等, 只在第一次计算
+	if bFristLaunch then
+		local tSituRevivePunish = {[0] = 15, [1] = 60, [2] = 90, [3] = 120, [4] = 150, [5] = 180}
+		local tSituRevivePunishClearTime = 15 * 60
+		if nCurrentTime - tSituRevivePunishClearTime > tReviveSetting.nLastSituReviveTime then
+			tReviveSetting.nSituReviveCount = 0
+		elseif tReviveSetting.nSituReviveCount >= 5 then
+			tReviveSetting.nSituReviveCount = 5
+		end
+		-- tReviveSetting.nReviveFrame 会持续的根据时间流逝修改自己, 一般只在死亡的最开始的一次设置
+		tReviveSetting.nReviveFrame = tSituRevivePunish[tReviveSetting.nSituReviveCount] * GLOBAL.GAME_FPS
+	end
+
+	local bCanRevive = tReviveSetting.nReviveFrame <= 0
+	-- 处理战场复活相关内容
+	if player.dwShapeShiftID ~= 0 then
+		tReviveSetting.bReviveInSitu = false
+		tReviveSetting.bReviveInAltar = false
+		tReviveSetting.nMessageID = 1
+		tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + 5 * GLOBAL.GAME_FPS
+	elseif bIsBattleField then
+		-- 计算离下一次周期还需要多少帧
+		if bFristLaunch then
+			tReviveSetting.nReviveFrame = (nBattleFieldReviveCycleSecond - nCurrentTime % nBattleFieldReviveCycleSecond) * 16
+		end
+		bCanRevive = tReviveSetting.nReviveFrame <= 0
+		tReviveSetting.bReviveInSitu = false
+		tReviveSetting.bReviveByPlayer = true
+		tReviveSetting.bReviveInAltar = bCanRevive
+		if bCanRevive then
+			tReviveSetting.nNextCheckReviveFrame = 0
+			tReviveSetting.nMessageID = 8
+		else
+			tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + tReviveSetting.nReviveFrame
+			tReviveSetting.nMessageID = 3
+		end
+	elseif bIsInDungeon then
+		--处理碧露丹还阳BUFF
+		local bufffenghuang = player.GetBuff(2313, 1)
+		local tPlayerlist = player.GetPartyMemberList()
+		if bufffenghuang then
+			if tPlayerlist then
+				local bHave = flase
+				local player2ID = bufffenghuang.dwSkillSrcID
+				local scene = player.GetScene()
+				for i = 1, #tPlayerlist do
+					local Memberplayer = GetPlayer(tPlayerlist[i])
+					if Memberplayer then
+						local scene2 = Memberplayer.GetScene()
+						if scene and scene2 then
+							if Memberplayer.dwID == player2ID then
+								if scene.dwID == scene2.dwID and scene.nCopyIndex == scene2.nCopyIndex then
+									tReviveSetting.bReviveInSitu = true    --原地复活YES
+									bHave = true
+								end
+							end
+						end
+					end
+				end
+				if bHave then
+					tReviveSetting.nMessageID = 6    -- 无时间显示
+				else
+					player.SendSystemMessage(GetEditorString(3, 9926))
+					tReviveSetting.bReviveInSitu = false
+					player.DelBuff(2313, 1)
+					tReviveSetting.nMessageID = 6    -- 无时间显示
+				end
+			else
+				if player.dwID == bufffenghuang.dwSkillSrcID then
+					tReviveSetting.bReviveInSitu = true			--原地复活YES
+					tReviveSetting.nMessageID = 6
+				else
+					player.SendSystemMessage(GetEditorString(3, 9926))
+					tReviveSetting.bReviveInSitu = false		--原地复活NO
+					player.DelBuff(2313, 1)
+					tReviveSetting.nMessageID = 6
+				end
+				--	tReviveSetting.bReviveInSitu = false		--原地复活NO
+				--	tReviveSetting.nMessageID = 6
+			end
+		else
+			tReviveSetting.bReviveInSitu = false		--原地复活NO
+			tReviveSetting.nMessageID = 6
+		end
+
+		tReviveSetting.bReviveByPlayer = true
+		if nInFightPlayerCount > 0 then
+			tReviveSetting.bReviveInAltar = false
+		else
+			tReviveSetting.bReviveInAltar = true
+		end
+		tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + GLOBAL.GAME_FPS
+	else
+		--处理碧露丹还阳BUFF
+		local bufffenghuang = player.GetBuff(2313, 1)
+		local buffwudu = player.GetBuff(2824, 1)
+		local tPlayerlist = player.GetPartyMemberList()
+		if bufffenghuang then
+			if tPlayerlist then
+				local bHave = flase
+				local player2ID = bufffenghuang.dwSkillSrcID
+				local scene = player.GetScene()
+				for i = 1, #tPlayerlist do
+					local Memberplayer = GetPlayer(tPlayerlist[i])
+					if Memberplayer then
+						local scene2 = Memberplayer.GetScene()
+						if scene and scene2 then
+							if Memberplayer.dwID == player2ID then
+								if scene.dwID == scene2.dwID and scene.nCopyIndex == scene2.nCopyIndex then
+									tReviveSetting.bReviveInSitu = true    --原地复活YES
+									bHave = true
+								end
+							end
+						end
+					end
+				end
+				if bHave then
+					tReviveSetting.nMessageID = 6    -- 无时间显示
+				else
+					player.SendSystemMessage(GetEditorString(3, 9926))
+					tReviveSetting.bReviveInSitu = bCanRevive
+					tReviveSetting.nMessageID = 1    -- 有时间显示
+				end
+			else
+				if player.dwID == bufffenghuang.dwSkillSrcID then
+					tReviveSetting.bReviveInSitu = true			--原地复活YES
+					tReviveSetting.nMessageID = 6
+				else
+					player.SendSystemMessage(GetEditorString(3, 9926))
+					tReviveSetting.bReviveInSitu = bCanRevive			--原地复活NO，可以被复活
+					player.DelBuff(2313, 1)
+					tReviveSetting.nMessageID = 1 -- 有时间显示
+				end
+			end
+		else
+			if buffwudu then
+				tReviveSetting.bReviveInSitu = true			--原地复活YES
+				tReviveSetting.nMessageID = 6
+			else
+				--	player.SendSystemMessage("为您释放“凤凰蛊”的玩家已经不在您的团队或者和您不在同一张场景中，该“凤凰蛊”将失效。")
+				tReviveSetting.bReviveInSitu = bCanRevive
+				tReviveSetting.nMessageID = 1 -- 有时间显示
+			end
+			tReviveSetting.nMessageID = 1
+			tReviveSetting.bReviveInSitu = bCanRevive
+		end
+
+		local nKillPointLevel = GetKillPointLevel(player)
+		if nKillPointLevel >= 3 then
+			if bIsInPrison then
+				tReviveSetting.bReviveByPlayer = true
+				tReviveSetting.bReviveInAltar = true
+			else
+				tReviveSetting.bReviveByPlayer = false
+				tReviveSetting.bReviveInAltar = false
+			end
+		else
+			tReviveSetting.bReviveByPlayer = true
+			tReviveSetting.bReviveInAltar = true
+		end
+
+		if tReviveSetting.nReviveFrame <= 0 then
+			tReviveSetting.nNextCheckReviveFrame = 0
+		else
+			tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + tReviveSetting.nReviveFrame
+		end
+		--处理五毒凤凰蛊BUFF
+	end
+
+	-- 处理陷空坳二人副本复活相关
+	if dwMapID == 57 or dwMapID == 55 or dwMapID == 53 then
+		tReviveSetting.bReviveInAltar = true
+	end
+	--处理悬壶济世
+	local XHbuff = player.GetBuff(7223, 1)
+	local bufffenghuang = player.GetBuff(2313, 1)
+	if XHbuff and bIsInDungeon and not bufffenghuang then
+		tReviveSetting.bReviveInSitu = false
+		local bCanRevive = tReviveSetting.nReviveFrame <= 0
+		if nInFightPlayerCount > 0 then
+			tReviveSetting.bReviveInAltar = false
+		else
+			tReviveSetting.bReviveInAltar = bCanRevive
+			if bCanRevive then
+				tReviveSetting.nNextCheckReviveFrame = 0
+				tReviveSetting.nMessageID = 8
+			else
+				tReviveSetting.nMessageID = 3
+				if bFristLaunch then
+					-- tReviveSetting.nReviveFrame 会持续的根据时间流逝修改自己, 一般只在死亡的最开始的一次设置
+					tReviveSetting.nReviveFrame = 6 * 16
+				end
+				tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + tReviveSetting.nReviveFrame
+			end
+		end
+	end
+
+	if bIsInDungeon and TongDungeonRaid.IsTongDungeonMap(scene) then
+		if bFristLaunch then
+			local tSituRevivePunish = {[0] = 1, [1] = 5, [2] = 10, [3] = 15, [4] = 20, [5] = 25}
+			local nTongDungeonDeathCount = 1
+			local buff_TongDungeonDeath = player.GetBuff(9315, 1)
+			local buff_fish = player.GetBuff(10100, 1)
+			if buff_TongDungeonDeath then
+				nTongDungeonDeathCount = buff_TongDungeonDeath.nCustomValue
+			end
+			local nReviveTime = tSituRevivePunish[nTongDungeonDeathCount]
+
+			if not nReviveTime then
+				nReviveTime = nTongDungeonDeathCount * 5
+			end
+			if buff_fish then
+				nReviveTime = math.ceil(nReviveTime / 2)
+			end
+			nReviveTime = math.min(nReviveTime, 600)
+			-- tReviveSetting.nReviveFrame 会持续的根据时间流逝修改自己, 一般只在死亡的最开始的一次设置
+			tReviveSetting.nReviveFrame = nReviveTime * GLOBAL.GAME_FPS
+		end
+		--Log("check can revive" .. tReviveSetting.nSituReviveCount .. ",time:" .. tReviveSetting.nReviveFrame)
+		if tReviveSetting.bReviveInSitu then
+			tReviveSetting.nMessageID = 6 --已经可以原地复活了
+		else
+			tReviveSetting.bReviveInSitu = bCanRevive
+			tReviveSetting.nMessageID = 1 -- 有时间显示
+		end
+		tReviveSetting.bReviveByPlayer = true
+		if nInFightPlayerCount > 0 then
+			tReviveSetting.bReviveInAltar = false
+		else
+			tReviveSetting.bReviveInAltar = true
+		end
+		tReviveSetting.nNextCheckReviveFrame = GetLogicFrameCount() + GLOBAL.GAME_FPS
+	end
+
+	--20150627大侠之路满级指引新手帮助复活处理
+	if not bIsInDungeon and not bIsBattleField then
+		local BUFF_daxiazhilu = player.GetBuff(9137, 1)
+		if BUFF_daxiazhilu then
+			if BUFF_daxiazhilu.nCustomValue ~= 1 then
+				tReviveSetting.bReviveInSitu = true
+				--tReviveSetting.bReviveInAltar = false
+				tReviveSetting.nMessageID = 6 --无时间显示
+			end
+		end
+		if player.nLevel <= 30 then
+			tReviveSetting.bReviveInSitu = true
+			--tReviveSetting.bReviveInAltar = false
+			tReviveSetting.nMessageID = 6
+		end
+
+		if player.GetBuff(11236, 0) then
+			player.SetTimer(9 * GLOBAL.GAME_FPS, "scripts/skill/Quest/霸刀场景/李令霞AOE完成任务.lua", 0, 0)
+			return
+		end
+	end
+	player.SetReviveCtrl(tReviveSetting)
+end
+
+function RevivePlayerCommon(player, nMode, tPosList)
+	CastleTrade.OnPlayerRevive(player)
+	CastleSupport.OnPlayerRevive(player)
+
+--	tPosList = EscortHead_ReplacePos(player, nMode, tPosList) or tPosList--押镖活动进行中时修改玩家在特定地图的复活点
+	local dwKillerID = player.dwKillerID	-- 取得杀掉玩家的目标ID
+	--	local dwReviverID = player.dwReviver	-- 取得复活玩家的目标ID	-- 定义未使用，注掉。20110902
+	local nReviveX = player.nReviveX		-- 取得玩家被人复活时应该复活的坐标 X
+	local nReviveY = player.nReviveY		-- 取得玩家被人复活时应该复活的坐标 Y
+	local nReviveZ = player.nReviveZ		-- 取得玩家被人复活时应该复活的坐标 Z
+	-- 处理强制不能原地复活BUFF
+	if player.GetBuff(5197, 1) then
+		player.DelBuff(5197, 1)
+	end
+
+	-- 去除 碧露丹还阳BUFF
+	local buffhuanyang = player.GetBuff(316, 1)	--还阳BUFF
+	if buffhuanyang then
+		player.DelBuff(316, 1)
+	end
+
+	-- 去除 五毒凤凰蛊BUFF
+	local bufffenghuang = player.GetBuff(2313, 1)	--凤凰蛊BUFF
+	if bufffenghuang then
+		player.DelBuff(2313, 1)
+	end
+
+	player.ClearAllThreat();
+
+	-- 复活玩家后设置相应的状态
+	if nMode == 2 then	-- 被技能复活的HP由技能决定
+		local tbuff = player.GetBuff(4009, 1) -- 轮回决特判加无敌
+		if tbuff then
+			player.AddBuff(0, 99, 3861, 1)
+			--player.AddBuff(0, 99, 1111, 1)
+		end
+		player.nCurrentLife = player.nReviveLife
+		player.nCurrentMana = player.nReviveMana
+		if tbuff then
+			local level = player.GetSkillLevel(259)
+			player.nCurrentLife = player.nMaxLife * 0.15 * level
+			player.nCurrentMana = player.nMaxMana * 0.15 * level
+		end
+		player.AddBuff(0, 99, 108, 1, 1, 16)
+
+		--长歌技能复活
+		local buff_CG = player.GetBuff(9298, 1)
+		if buff_CG then
+			--创建目标影子
+			if buff_CG.nCustomValue ~= 1 then
+				--RemoteCallToClient(player.dwID, "CallUIGlobalFunction", "rlcmd", "create shadow 0 60000 1 3")
+				--RemoteCallToClient(player.dwID, "CallUIGlobalFunction", "rlcmd", "set virtual 0 1")
+				buff_CG.nCustomValue = 1
+			end
+		end
+	else									-- 否则是其他复活方式
+		player.nCurrentLife = player.nMaxLife * 0.6				-- 复活玩家后恢复生命和内力
+		player.nCurrentMana = player.nMaxMana * 0.6
+		player.AddBuff(0, 99, 108, 1, 1, 80)
+
+		--长歌技能复活
+		local buff_CG = player.GetBuff(9298, 1)
+		if buff_CG then
+			--buff_CG.nCustomValue = 2
+			player.DelBuff(9298, 1)
+		end
+	end
+
+	-- 下面处理扣掉耐久度
+	local nKillPointLevel = GetKillPointLevel(player)
+	local nReviveMode = nMode
+	local nKillMode = 0
+
+	if player.nLevel <= 10 then			-- 自然死亡, 或者受保护的死亡
+		nKillMode = 0
+	elseif dwKillerID == 0 then			-- 没有击杀源, 被系统杀死
+		nKillMode = 2					-- 这里也是2是因为目前暂时和NPC杀死共用
+	elseif IsPlayer(dwKillerID) then	-- 被玩家杀死
+		nKillMode = 1
+	else								-- 其他情况都算是被NPC杀死
+		nKillMode = 2
+	end
+	local tAbrade = tAbradeEquipmentConfig[nKillMode] and
+	tAbradeEquipmentConfig[nKillMode][nKillPointLevel] and
+	tAbradeEquipmentConfig[nKillMode][nKillPointLevel][nReviveMode]
+
+	if tAbrade and tAbrade.Abrade and tAbrade.Abrade > 0 then
+		player.AbradeEquipmentOnDeath(INVENTORY_TYPE.EQUIPMENT, tAbrade.Abrade)
+		if tAbrade.AffectBag then
+			player.AbradeEquipmentOnDeath(INVENTORY_TYPE.PACKAGE, tAbrade.Abrade)
+			player.SendSystemMessage(string.format(GLOBAL_STRING_TABLE.DeathAbradeMessageAndBox, tAbrade.Abrade))
+		else
+			player.SendSystemMessage(string.format(GLOBAL_STRING_TABLE.DeathAbradeMessage, tAbrade.Abrade))
+		end
+	end
+	local scene = player.GetScene()
+	-- 下面是计算玩家复活后的坐标
+	if nMode == 0 then						-- 系统复活(被GM指令复活), 暂时不做处理
+	elseif nMode == 1 then					-- 原地复活, 不会处理坐标问题
+		player.AddBuff(1, 99, 772, 3, 1, 32)
+		player.AcquireAchievement(166)		-- 原地复活的成就
+		--长歌技能复活
+		local buff_CG = player.GetBuff(9298, 1)
+		if buff_CG then
+			--buff_CG.nCustomValue = 2
+			player.DelBuff(9298, 1)
+		end
+	elseif nMode == 2 then					-- 被玩家技能复活, 传送到复活者的位置
+		player.AddBuff(1, 99, 772, 3, 1, 32)
+		player.SetPosition(nReviveX, nReviveY, nReviveZ)
+		--长歌技能复活
+		local buff_CG = player.GetBuff(9298, 1)
+		if buff_CG then
+			buff_CG.nCustomValue = 1
+		end
+	elseif nMode == 3 then					-- 玩家选择到复活点复活, 暂时复活到最近的复活点, 实际上如果数据完善, 可以更加精确的复活岛指定位置
+		--	local scene = player.GetScene()	-- 变量scene重定义，注释掉 20110902
+		--长歌技能复活
+		local buff_CG = player.GetBuff(9298, 1)
+		if buff_CG then
+			--buff_CG.nCustomValue = 2
+			player.DelBuff(9298, 1)
+		end
+		local npcFH = scene.GetNpcByNickName("xuanhujishi")
+		local XHbuff = player.GetBuff(7223, 1)
+		if npcFH and XHbuff and GetCharacterDistance(player.dwID, npcFH.dwID) <= 60 * 64  then
+			player.AddBuff(1, 99, 772, 2, 1, 32)
+			player.SetPosition(npcFH.nX, npcFH.nY, npcFH.nZ)
+		else
+			player.AcquireAchievement(167)		-- 复活点复活的成就
+			-- 给玩家一个回神BUFF
+			player.AddBuff(1, 99, 772, 2)
+
+			--		local scene = player.GetScene()	-- 变量scene重定义，注释掉 20110902
+
+			--2010.10.30，按KRIS意思，由于复活点与BOSS位置关系（例如司空仲平距离恶人谷复活点较近)，避免玩家利用若神BUFF躲过敌对阵营玩家防守线迅速在BOSS区集结，暂时撤销，相讨更理想的方案再作复活点的调整。
+			--2010.10.29，为缓解被守复活点起不来的问题，如果在浩气盟或者恶人谷，玩家返回营地复活后给玩家添加多一个“若神”BUFF，无敌，加速60%，施法不维持，持续20S。
+			--[[
+			if scene and (scene.dwMapID == 25 or scene.dwMapID == 27) then
+			player.AddBuff(1, 99, 2228, 1)
+			end
+			--]]
+			local nX, nY, nZ = player.GetAbsoluteCoordinate()								-- 取得玩家的当前绝对坐标
+			nX = math.floor(nX / 3000);nY = math.floor(nY / 3000);nZ = math.floor(nZ / 24000)		-- 按照比例尺缩小
+			local nDistSqClosed =  - 1								-- 用来保存最短距离
+			local nDistIndexKey = 1									-- 用来保存复活点ID
+			local nRX, nRY, nRZ
+			for nListKey, tList in ipairs(tPosList) do
+				nRX = math.floor(tList.X / 3000);nRY = math.floor(tList.Y / 3000);nRZ = math.floor(tList.Z / 24000)
+				local nDistSq = GetDistanceSq(nX, nY, nZ, nRX, nRY, nRZ)					-- 计算距离平方值
+				-- 如果没有等级字段, 或者玩家等级高过等级字段的值, 则进行检索
+				if not tList.LevelMin or tList.LevelMin <= player.nLevel then
+					-- 下面判断复活阵营
+					local nCamp = CAMP.NEUTRAL
+					if tList.Camp and tList.Camp == CAMP.GOOD then
+						nCamp = CAMP.GOOD
+					elseif tList.Camp and tList.Camp == CAMP.EVIL then
+						nCamp = CAMP.EVIL
+					end
+					if nCamp == CAMP.NEUTRAL or player.nCamp == nCamp then
+						-- 完成了指定任务!
+						if not tList.QuestID or player.GetQuestPhase(tList.QuestID) == 3 then
+							-- 如果还没有记录任何点或者当前点比记录的距离短, 就直接记录此点
+							if nDistSqClosed ==  - 1 or nDistSq < nDistSqClosed then
+								nDistSqClosed = nDistSq
+								nDistIndexKey = nListKey
+							end
+						end
+					end
+				end
+			end
+			player.SetPosition(tPosList[nDistIndexKey].X, tPosList[nDistIndexKey].Y, tPosList[nDistIndexKey].Z)
+			player.TurnTo(tPosList[nDistIndexKey].Face)
+
+			if tPosList[nDistIndexKey].Npc and tPosList[nDistIndexKey].Npc ~= "" then
+				if scene then
+					local npc = scene.GetNpcByNickName(tPosList[nDistIndexKey].Npc)
+					if npc and tPosList[nDistIndexKey].Talk and tPosList[nDistIndexKey].Talk ~= "" then
+						npc.SayTo(player.dwID, tPosList[nDistIndexKey].Talk)
+					end
+				end
+			end
+		end
+	end
+
+	if player.nCamp ~= CAMP.NEUTRAL then
+		local nCount = 10 + Random(10)
+		player.AddBuff(0, 99, 7836, 1, nCount)		-- 全机制战阶防刷不产积分Buff
+	end
+
+	TongTrade.OnPlayerRevive(player)
+end
+
+-- 取得玩家对象的杀气等级
+function GetKillPointLevel(player)
+	local nKillPointLevel = player.nCurrentKillPoint
+	if player then
+		if nKillPointLevel == tKillPointLevelValue.level0 then
+			nKillPointLevel = 0
+		elseif nKillPointLevel < tKillPointLevelValue.level1 then
+			nKillPointLevel = 1
+		elseif nKillPointLevel < tKillPointLevelValue.level2 then
+			nKillPointLevel = 2
+		elseif nKillPointLevel < tKillPointLevelValue.level3 then
+			nKillPointLevel = 3
+		else
+			nKillPointLevel = 4
+		end
+	else
+		nKillPointLevel = 0
+	end
+
+	return nKillPointLevel
+end
+
+-- 用来处理玩家进入场景的保护, 如果不移动则无敌
+-- SetSceneEnterProtectCommon(player)
+function SetSceneEnterProtectCommon(player, scene)
+	if player then
+		player.AddBuff(1, 99, 961, 1)
+	end
+end
+
+
+
+function OnLeaveSceneCommon(player, scene)
+	Adventure_GirlInWind.OnLeaveScene(player, scene)
+end
+
+function OnLeaveSceneFindTeamSys(player, scene)
+	if not player or not scene then
+		return
+	end
+	-- 这里主要用来处理寻求组队系统中玩家离开副本的DEBUFF惩罚
+	local tPQ = GetScenePQ(scene)
+	if #tPQ < 1 then
+		return
+	end
+	local pq = tPQ[1]
+	if pq.bFinished then
+		return
+	end
+	local nPQType = pq.nOwnerType
+	if nPQType ~= PQ_OWNER_TYPE.QUEUED_DUNGEON then
+		return
+	end
+	--local nQueueID = pq.dwOwnerID3
+	player.AddBuff(0, 99, 1852, 1, 1, GLOBAL.GAME_FPS * 60 * 15)
+end
+
+local tChuanGong = {
+	[2] = 0,
+	[5] = 0,
+	[7] = 0,
+	[11] = 0,
+	[16] = 0,
+	[49] = 0,
+	[102] = 0,
+	[122] = 0,
+}
+local FZHDCJ = {
+	[104] = 1,
+	[105] = 1,
+	[101] = 1,
+	[100] = 1,
+	[21] = 1,
+	[13] = 1,
+}
+
+-- 2017年3月对这个函数进行分段处理
+function OnEnterSceneCommon(player, scene)
+	if not scene then
+		return 
+	end
+	player.SetCustomUnsigned1(PLAYER_CUSTOM_VALUE.PLAYER_ENTERSCENECOMMON_INDEX, 1)
+	local nStartIndex = BeginTimeStat()
+	OnEnterSceneCommon_CallNextFunc(player, scene)
+	EndTimeStat(nStartIndex, LOGIN_FUNC_TIME_LIMIT)
+end
+
+-----------------------------------------------------------------------------------
+
+----------------------------------------------------
+
+-- 用来返回50突破总任务是否被完成了, 决定交通点等其他功能
+function Is50to70PQFinished()
+	do
+		return true
+	end
+	local nGatherTotalPublicQuestID = 7
+	local tGatherPQID = GetPQByTemplate(nGatherTotalPublicQuestID)
+	local nGatherPQIndex = #tGatherPQID
+	local dwGatherPQID = tGatherPQID[nGatherPQIndex]
+	if nGatherPQIndex > 1 then
+		Log("[KLUA] Error dumped unique PublicQuest for PQTemplateID: 7")
+	end
+	if not dwGatherPQID then
+		Log("[KLUA] Error found GATHER PQ for PQTemplateID: 7")
+		return false
+	end
+
+	-- 判断开服时间
+	local nCurrentTime = GetCurrentTime()
+	local nServerStartTime = GetGlobalSystemValueCache().nGameWorldStartTime
+	if (nCurrentTime - nServerStartTime) < 2592000 then		-- 30天是 2592000
+		return false
+	end
+
+	local pq = GetPQ(dwGatherPQID)
+	if pq then
+		return pq.bFinished
+	end
+	return false
+end
+
+function OnKillPointUpdateOld(player)
+	if not player then
+		return
+	end
+
+	local bAbradeEquipmentDouble = false
+	local bAbradeEquipmentAll = false
+	local bCannotDialogWithNPC = false
+	local bOnlyReviveInSitu = false
+	local bAttackByGuard = false
+	local bRedName = false
+
+	local nKillPoint = player.nCurrentKillPoint;
+
+	if nKillPoint >= 1 then
+		bAbradeEquipmentDouble = true
+	end
+
+	if nKillPoint >= 101 then
+		bCannotDialogWithNPC = true
+	end
+
+	if nKillPoint >= 301 then
+		bOnlyReviveInSitu = true
+		bAttackByGuard = true
+		bRedName = true
+	end
+
+	if nKillPoint == 500 then
+		bAbradeEquipmentAll = true
+	end
+
+	player.bAbradeEquipmentDouble = bAbradeEquipmentDouble
+	player.bAbradeEquipmentAll = bAbradeEquipmentAll;
+	player.bAttackByGuard = bAttackByGuard
+
+	player.SetCannotDialogWithNPC(bCannotDialogWithNPC)
+	player.SetRedName(bRedName)
+	player.SetOnlyReviveInSitu(bOnlyReviveInSitu)
+end
+
+function OnKillPointUpdate(player)
+	if not player then
+		return
+	end
+
+	local bCannotDialogWithNPC = false -- 能与npc对话
+	local bAttackByGuard = false -- 不被卫兵攻击
+
+	local nKillPointLevel = GetKillPointLevel(player) -- 取得杀气值对应杀气等级
+	if nKillPointLevel < 3 then   -- 杀气值小于3级时删除全属性降低BUFF
+		if player.GetBuff(2127, 1) then
+			player.DelBuff(2127, 1)
+		end
+	end
+
+--[[if nKillPointLevel >= 3 then -- 大于3级杀气值不能要被卫兵攻击
+		if not player.GetBuff(2127, 1) then --添加全属性降低20%的惩罚BUFF
+			player.AddBuff(0, 99, 2127, 1, 1)
+		end
+	end
+--]]
+	local nKillPoint = player.nCurrentKillPoint
+	if nKillPoint < 100 then
+		player.SetRedName(false)
+	else
+		player.SetRedName(true)
+	end
+	local HunterTrinket = 4005  -- 捕快腰牌（京衙卫佩包）
+	if nKillPointLevel > 0 and (player.bHuntingFlag or player.dwWaistItemIndex == HunterTrinket) then  -- 玩家开启了捕快状态且当前装备的是京衙卫佩包
+		player.SelectPendent(EQUIPMENT_SUB.WAIST_EXTEND, 0)  -- 卸载京衙卫佩包
+		player.DelBuff(4857, 1)	-- 清除捕快Buff
+		if player.nFakeNameState == FAKE_NAME_STATE.HUNTER then
+			player.SetFakeNameState(FAKE_NAME_STATE.INVALID)	-- 卸载挂件、关闭捕快状态时，同时关闭名称隐藏
+		end
+	end
+
+	if nKillPointLevel > 3 then
+		local sence = player.GetScene()
+		if sence.dwMapID ~= 152 then	--大于3级杀气值且不在坐牢时，不能和NPC对话
+			bCannotDialogWithNPC = true
+		end
+	end
+
+	player.bAttackByGuard = bAttackByGuard
+	player.SetCannotDialogWithNPC(bCannotDialogWithNPC)
+end
+
+function AddKillPoint(player, nAddKillPoint)
+	local nKillPoint = player.nCurrentKillPoint;
+
+	nKillPoint = nKillPoint + nAddKillPoint;
+
+	if nKillPoint < 0 then
+		nKillPoint = 0;
+	end
+
+	if nKillPoint > 500 then --逻辑上限处理
+		nKillPoint = 500;
+	end
+
+	if player.bHuntingFlag then
+		player.SetHuntingFlag(false)  -- 关闭玩家捕快状态
+		player.DelBuff(4857, 1)	-- 清除捕快Buff
+		if player.GetBuff(4958, 1) then
+			player.DelBuff(4958, 1)	-- 清除面具Buff
+		end
+	end
+
+	player.SetCurrentKillPoint(nKillPoint)
+
+	if player.nCurrentKillPoint < 100 then
+		-- player.bPrisonFlag = false
+		player.SetRedName(false)
+	end
+
+	OnKillPointUpdate(player)
+end
+
+function SendSystemAnnounce(player, szAnnounce, bYellow)
+	if not player or not szAnnounce or szAnnounce == "" or #szAnnounce > 64 then
+		return
+	end
+	if bYellow then
+		RemoteCallToClient(player.dwID, "OnSendSystemAnnounce", szAnnounce, "yellow")
+	else
+		RemoteCallToClient(player.dwID, "OnSendSystemAnnounce", szAnnounce, "red")
+	end
+end
+
+function ClearSkillCD(player)
+	if not player then
+		return
+	end
+	for i = 1, #tCoolID do
+		player.ClearCDTime(tCoolID[i])
+	end
+end
+
+--获取本期科举考试的期号, 当前时间处于科考的哪个阶段, 距离下一个阶段的剩余时间
+-- 这里约定一个基准时间为第一期科考的理论起始时间为原始0点（第一期的周一晚上7点，省试预备）
+
+--function GetPromoteTime()
+--	--按1.6.8版本要求，科举会试时间修改为周六晚上8点到10点，会试奖励超过周一6点还不领取，由邮件发送。 2010.09.28
+--	--[[local tStepTime = {
+--	[1] = {nCycleTime = 3600}, 		--省试预备阶段的时间（1小时,周一19:00~周一20:00）
+--	[2] = {nCycleTime = 360000}, 	--省试进行阶段的时间（100小时,周一20:00~周五24:00）
+--	[3] = {nCycleTime = 68400}, 	--闲置阶段的时间（19小时, 周五24:00~周六19:00）
+--	[4] = {nCycleTime = 3600}, 		--殿试预备阶段的时间（1小时, 周六19:00~周六20:00）
+--	[5] = {nCycleTime = 14400}, 	--殿试进行阶段的时间（4小时, 周六20:00~周六24:00）
+--	[6] = {nCycleTime = 43200}, 	--闲置阶段的时间（14小时, 周六22:00~周日12:00）
+--	[7] = {nCycleTime = 108000}, 	--放榜阶段的时间（30小时, 周日12:00~周一18:00）
+--	[8] = {nCycleTime = 3600}, 		--闲置阶段的时间（1小时, 周一18:00~周一19:00）
+--	}	--]]
+--	-- 科举改造需求，将科举会试时间修改为到周日上午9点，会试放榜和领取奖励时间不变。2011-6-8
+--	-- 会试时间修改到周日24点，周一七点放榜。2012-4-12
+--	--[[
+--	local tStepTime = {
+--		[1] = {nCycleTime = 3600}, --省试预备阶段的时间（1小时,周二6:00~周二7:00）
+--		[2] = {nCycleTime = 320400}, --省试进行阶段的时间（89小时,周二7:00~周五24:00）
+--		[3] = {nCycleTime = 68400}, --闲置阶段的时间（19小时, 周五24:00~周六19:00）
+--		[4] = {nCycleTime = 3600}, --殿试预备阶段的时间（1小时, 周六19:00~周六20:00）
+--		[5] = {nCycleTime = 100800}, --殿试进行阶段的时间（28小时, 周六20:00~周日24:00）
+--		[6] = {nCycleTime = 25200}, --闲置阶段的时间（7小时, 周日24:00~周一7:00）
+--		[7] = {nCycleTime = 61200}, --放榜阶段的时间（17小时, 周一7:00~周一24:00）
+--		[8] = {nCycleTime = 21600}, --闲置阶段的时间（6小时, 周一24:00~周二6:00）
+--	}--]]
+--
+--	local tStepTime = {
+--		[1] = {nCycleTime = 1}, 		--省试预备阶段的时间（Monday 0.0.1）
+--		[2] = {nCycleTime = 5 * 24 * 3600 - 1}, 	--省试进行阶段的时间（,周1,0:00~周五24:00）
+--		[3] = {nCycleTime = 68400}, 	--闲置阶段的时间（19小时, 周五24:00~周六19:00）
+--		[4] = {nCycleTime = 3600}, 		--殿试预备阶段的时间（1小时, 周六19:00~周六20:00）
+--		[5] = {nCycleTime = 100800}, 	--殿试进行阶段的时间（28小时, 周六20:00~周日24:00）
+--	--	[6] = {nCycleTime = 25200}, 	--闲置阶段的时间（7小时, 周日24:00~周一7:00）
+--	--	[7] = {nCycleTime = 61200}, 	--放榜阶段的时间（17小时, 周一7:00~周一24:00）
+--	--	[8] = {nCycleTime = 21600}, 		--闲置阶段的时间（6小时, 周一24:00~周二6:00）
+--	}
+--
+--	local tStartTime = {nYear = 2010, nMonth = 5, nDay = 3, nHour = 0, nMinute = 0, nSecond = 0} --第一期科考的起始时间
+--	local nPeriod = 604800 --一个周期的时间，目前为7天
+--	local nStartTime = DateToTime(tStartTime.nYear, tStartTime.nMonth, tStartTime.nDay, tStartTime.nHour, tStartTime.nMinute, tStartTime.nSecond)
+--	local nCurrentTime = GetCurrentTime()
+--	local nPromoteTime = math.floor(((nCurrentTime - nStartTime) / nPeriod) + 1)
+--
+--	local nUsedTime = nCurrentTime - nStartTime - (nPromoteTime - 1) * nPeriod --当前时间已经过了本周期多少时间
+--	local nStep = 0	--当前时间处于本周期的哪个阶段
+--	local nNextStepTime = 1	--当前时间距离下一个阶段的剩余时间
+--
+--	local nTestType = 1	--1为省试，2为会试
+--
+--	if nCurrentTime < nStartTime then --如果当前时间比基准时间早
+--		nPromoteTime = 0
+--		nStep = 0
+--		nNextStepTime = nStartTime - nCurrentTime
+--		nTestType = 1
+--
+--		return nPromoteTime, nStep, nNextStepTime, nTestType
+--	end
+--
+--	for nIndex = 1, #tStepTime do
+--		if tStepTime[nIndex].nCycleTime > nUsedTime then
+--			nStep = nIndex
+--			nNextStepTime = tStepTime[nIndex].nCycleTime - nUsedTime
+--			break
+--		end
+--
+--		nUsedTime = nUsedTime - tStepTime[nIndex].nCycleTime
+--	end
+--
+--	if nStep > 3 then
+--		nTestType = 2
+--	end
+--
+--	nPromoteTime = math.mod(nPromoteTime - 1, #EXAM_QUEST_LIST) + 1
+--	return nPromoteTime, nStep, nNextStepTime, nTestType
+--end
+
+--获取玩家本期科考通过分数可获得的“牌子”数量
+--nTestType：科考类型，1为省试，2为会试
+function GetItemExchangeAmount(nScore, nTestType)
+	if nTestType == 1 then
+		return math.max(50, math.floor(nScore / (100 / 100)))
+	end
+	return math.max(100, math.floor(nScore / (100 / 200)))
+end
+
+--科举考试相关：过期不领会试奖励，则发送邮件给予奖励
+function CheckExamRewards_Modify(player)
+	local nPromoteTime, _, _ = GetPromoteTime()	--本期科考的期号
+	local nLastCommitTime = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_COMMITTIME) --最近一次参加科举考试并交了卷的期数
+	local nLastType = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_TYPE) --玩家最近一次有交卷的科考的考试类型（是省试还是会试）
+	local nLastScore = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_SCORE) --最近一次科举考试的分数
+
+	local buff = player.GetBuff(9179, 1)
+	if not buff then -- 还为领取会考奖励的标志
+		return
+	end
+	local nWeekday = GetCurrentWeekDay()
+	if (nPromoteTime == 1 and (nWeekday == 1 or nWeekday == 6 or nWeekday == 0)) or nPromoteTime ~= 1 and (nPromoteTime <= buff.nCustomValue or (nPromoteTime - 1 == buff.nCustomValue and nWeekday == 1)) then --本次会考并且是星期1 自己找NPC去领
+		return
+	end
+
+	player.SetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_TYPE, 3)
+
+	local tItemInfo = {
+		[1] = {nItemID = 10025, nAmount = 0},
+		[2] = {nItemID = 6255, nAmount = 0},
+		[3] = {nItemID = 6254, nAmount = 0},
+		[4] = {nItemID = 6346, nAmount = 0},
+	}
+
+	tItemInfo[1].nAmount = GetItemExchangeAmount(nLastScore, 2) 	--获取玩家本期会试获得的奖励牌子的数目
+
+	local bWinExam = false	--检查玩家分数是否位于前10名，逾期奖励邮件不算十甲
+
+	if bWinExam then
+		tItemInfo[2].nAmount = 3
+		tItemInfo[4].nAmount = 3
+
+	elseif nLastScore == 100 then
+		tItemInfo[3].nAmount = 3
+		tItemInfo[4].nAmount = 3
+
+	elseif nLastScore >= 80 and nLastScore <= 99 then
+		tItemInfo[3].nAmount = 2
+		tItemInfo[4].nAmount = 2
+
+	elseif nLastScore >= 60 and nLastScore <= 79 then
+		tItemInfo[3].nAmount = 1
+		tItemInfo[4].nAmount = 1
+	end
+
+	local tMailItemInfo = {
+		--{ITEM_TABLE_TYPE.OTHER, 6414, 1, 0},
+	}
+	local nItemIndex = 1
+
+	for nIndex = 1, #tItemInfo do
+		if tItemInfo[nIndex].nAmount > 0 then
+			tMailItemInfo[nItemIndex] = {ITEM_TABLE_TYPE.OTHER, tItemInfo[nIndex].nItemID, tItemInfo[nIndex].nAmount, 0}
+			nItemIndex = nItemIndex + 1
+		end
+	end
+
+	local szMailContent = GLOBAL_STRING_TABLE.EXAM_STRING.EXAM_REWARDS_MAIL.TEXT:format(tostring(nLastScore))
+	if nLastScore <= 0 then
+		szMailContent = GLOBAL_STRING_TABLE.EXAM_STRING.EXAM_REWARDS_MAIL.ZERO_TEXT
+	end
+	player.DelBuff(9179, 1)
+	SendSystemMail(GLOBAL_STRING_TABLE.EXAM_STRING.EXAM_REWARDS_MAIL.SENDER_NAME, player.szName, GLOBAL_STRING_TABLE.EXAM_STRING.EXAM_REWARDS_MAIL.MAIL_TITLE, szMailContent, 0, tMailItemInfo)
+end
+
+function GetPromoteTime(player)
+	--按1.6.8版本要求，科举会试时间修改为周六晚上8点到10点，会试奖励超过周一6点还不领取，由邮件发送。 2010.09.28
+	-- 科举改造需求，将科举会试时间修改为到周日上午9点，会试放榜和领取奖励时间不变。2011-6-8
+	-- 会试时间修改到周日24点，周一七点放榜。2012-4-12
+	--[[
+	local tStepTime = {
+		[1] = {nCycleTime = 3600}, 		--省试预备阶段的时间（1小时,周二6:00~周二7:00）
+		[2] = {nCycleTime = 320400}, 	--省试进行阶段的时间（89小时,周二7:00~周五24:00）
+		[3] = {nCycleTime = 68400}, 	--闲置阶段的时间（19小时, 周五24:00~周六19:00）
+		[4] = {nCycleTime = 3600}, 		--殿试预备阶段的时间（1小时, 周六19:00~周六20:00）
+		[5] = {nCycleTime = 100800}, 	--殿试进行阶段的时间（28小时, 周六20:00~周日24:00）
+		[6] = {nCycleTime = 25200}, 	--闲置阶段的时间（7小时, 周日24:00~周一7:00）
+		[7] = {nCycleTime = 61200}, 	--放榜阶段的时间（17小时, 周一7:00~周一24:00）
+		[8] = {nCycleTime = 21600}, 		--闲置阶段的时间（6小时, 周一24:00~周二6:00）
+	}
+	--]]
+	local tStepTime = {
+		[1] = {nCycleTime = 1}, -- 省试预备阶段的时间（Monday 0.0.1）
+		[2] = {nCycleTime = 5 * 24 * 3600 - 1}, --省试进行阶段的时间（,周1,0:00~周五24:00）
+		[3] = {nCycleTime = 68400}, --闲置阶段的时间（19小时, 周五24:00~周六19:00）
+		[4] = {nCycleTime = 3600}, -- 殿试预备阶段的时间（1小时, 周六19:00~周六20:00）
+		[5] = {nCycleTime = 100800}, --殿试进行阶段的时间（28小时, 周六20:00~周日24:00）
+		--	[6] = {nCycleTime = 25200}, 	--闲置阶段的时间（7小时, 周日24:00~周一7:00）
+		--	[7] = {nCycleTime = 61200}, 	--放榜阶段的时间（17小时, 周一7:00~周一24:00）
+		--	[8] = {nCycleTime = 21600}, 		--闲置阶段的时间（6小时, 周一24:00~周二6:00）
+	}
+
+	local tStartTime = {nYear = 2010, nMonth = 5, nDay = 3, nHour = 0, nMinute = 0, nSecond = 0} --第一期科考的起始时间
+	local nPeriod = 604800 --一个周期的时间，目前为7天
+	local nStartTime = DateToTime(tStartTime.nYear, tStartTime.nMonth, tStartTime.nDay, tStartTime.nHour, tStartTime.nMinute, tStartTime.nSecond)
+	local nCurrentTime = GetCurrentTime()
+	local nPromoteTime = math.floor(((nCurrentTime - nStartTime) / nPeriod) + 1)
+
+	local nUsedTime = nCurrentTime - nStartTime - (nPromoteTime - 1) * nPeriod --当前时间已经过了本周期多少时间
+	local nStep = 0	--当前时间处于本周期的哪个阶段
+	local nNextStepTime = 1	--当前时间距离下一个阶段的剩余时间
+
+	local nTestType = 1	--1为省试，2为会试
+
+	if nCurrentTime < nStartTime then --如果当前时间比基准时间早
+		nPromoteTime = 0
+		nStep = 0
+		nNextStepTime = nStartTime - nCurrentTime
+		--nTestType = 1
+		return nPromoteTime, nStep, nNextStepTime, nTestType
+	end
+
+	for nIndex = 1, #tStepTime do
+		if tStepTime[nIndex].nCycleTime > nUsedTime then
+			nStep = nIndex
+			nNextStepTime = tStepTime[nIndex].nCycleTime - nUsedTime
+			break
+		end
+
+		nUsedTime = nUsedTime - tStepTime[nIndex].nCycleTime
+	end
+	nPromoteTime = math.mod(nPromoteTime - 1, #EXAM_QUEST_LIST) + 1
+
+--[[
+	if nStep > 3 then
+		nTestType = 2
+	end
+
+	if player and player.GetBuff(9143, 1) then -- 省考的BUFF, 开始考试时加上，考试结束后删除。
+		nTestType = 1
+	else
+		nTestType = 2
+	end--]]
+	if player then
+		local nLastCommitTime = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_COMMITTIME) --最近一次参加科举考试并交了卷的期数
+		local nLastType = player.GetCustomUnsigned1(PLAYER_CUSTOM_VALUE.CIVILSERVICEEXAM_LAST_TYPE) --玩家最近一次有交卷的科考的考试类型（是省试还是会试）
+		local StateInfo = GetActivityState(197)
+
+		if StateInfo and (StateInfo == ACTIVITY_STATE.NORMAL_ON or StateInfo == ACTIVITY_STATE.RECOVER_ON)
+			and nLastType >= 1 and nLastCommitTime == nPromoteTime then -- 考过省考并且省考时间
+			nTestType = 2
+		end
+	end
+
+	return nPromoteTime, nStep, nNextStepTime, nTestType
+end
+
+function IsCampFight(player)
+	local bResult = false
+
+	if not player then
+		return bResult
+	end
+
+	local scene = player.GetScene()
+	if not scene then
+		return bResult
+	end
+
+	if scene.dwMapID == 25 then			-- 浩气盟
+		bResult = scene.GetCustomBoolean(SCENE_CUSTOM_VALUE_NAME.HAOQIMENG.CAMP_FIGHT_FLAG)
+	elseif scene.dwMapID == 27 then		-- 恶人谷
+		bResult = scene.GetCustomBoolean(SCENE_CUSTOM_VALUE_NAME.ERRENGU.CAMP_FIGHT_FLAG)
+	end
+
+	return bResult
+end
+
+function OnCheckTongRandomQuestRequest(player, scene)
+	if IsRemotePlayer(player.dwID) or player.nLevel < player.nMaxLevel then
+		return
+	end
+	if player.dwTongID == 0 or #player.GetQuestList() >= QUEST_COUNT.MAX_ACCEPT_QUEST_COUNT then
+		return
+	end
+	-- 先通过场景判断
+	local scene_Tong = GetSceneByMapIDAndIndex(74, player.dwTongID)
+	if not scene_Tong then
+		RemoteCallToCenter("On_Tong_GetZhouErFuShiRequest", player.dwID, scene.dwMapID)
+		return
+	end
+	local nValue = scene_Tong.GetCustomInteger1(491)
+	SetPlayerTongRandomQuest(player, scene.dwMapID, nValue)
+end
+
+function SetPlayerTongRandomQuest(player, dwMapID, nValue)
+	if nValue <= 0 then
+		return
+	end
+	--[[
+	BUFF标记的有关说明，BUFF持续时间为此时到下周一，下周一自动消失。BUFFID :3351
+	nBuffValue == 1 		: 周而复始一级产生的任务完成
+	nBuffValue == 10 		: 周而复始二级产生的任务完成
+	nBuffValue == 100 	: 周而复始三级产生的任务完成
+	nBuffValue == 1000 	: 周而复始四级产生的任务完成
+	通过相加产生的不同的值，来决定哪个任务处于已完成状态。
+	--]]
+	local tQuestList = {	-- 以下任务顺序必须和scripts/RandomQuest/帮会任务随机.lua中的tQuestList中的任务顺序一样
+		[1] = {		-- 周而复始节点等级
+			[0] = {11999, 12004, 12005, 12000, 12001}, -- 中立
+			[1] = {11999, 12004, 12005, 12000, 12001}, -- 浩气盟
+			[2] = {11999, 12004, 12005, 12000, 12001}, -- 恶人谷
+		},
+		[2] = {[1] = {6480}, [2] = {6480}},
+		[3] = {
+			[0] = {12006, 12009, 12007, 12002, 12003},
+			[1] = {12006, 12009, 12007, 12002, 12003},
+			[2] = {12006, 12009, 12007, 12002, 12003},
+		},
+		[4] = {
+			[1] = {6584, 6576, 6581, 6578, 6579, 11191},
+			[2] = {6570, 6571, 6572, 6573, 6574, 6583},
+		},
+	}
+	local tBuffValue = {
+		[1] = 1,
+		[2] = 10,
+		[3] = 100,
+		[4] = 1000,
+	}
+	local tQuestMap = {	-- 任务ID为Key，对应MapID为Value
+		[7510] = 119, [7531] = 68, [7511] = 119, [7529] = 68, [7512] = 69, [7527] = 109,
+		[7513] = 69, [7514] = 109, [7528] = 68, [7495] = 70, [7497] = 70, [7493] = 118,
+		[7491] = 118, [7530] = 70, [6584] = 27, [6576] = 27, [6581] = 27, [6578] = 27, [11191] = 27,
+		[6579] = 27, [6580] = 27, [6570] = 25, [6571] = 25, [6572] = 25, [6573] = 25, [6574] = 25, [6583] = 25,
+		[9865] = 140, [9866] = 140, [9867] = 140, [9868] = 140, [9869] = 140,
+		[9870] = 133, [9871] = 133, [9872] = 133, [9873] = 133, [9874] = 133, [9875] = 133, [9876] = 133,
+		[10979] = 160, [10980] = 160, [10981] = 160, [10982] = 160, [10983] = 160,
+		[10984] = 164, [10985] = 164, [10986] = 164, [10987] = 164, [10988] = 164, [10989] = 164,
+		[10990] = 171, [10991] = 171, [10992] = 171, [10993] = 171, [10994] = 171,
+		[10995] = 165, [10996] = 165, [10997] = 165, [10998] = 165, [10999] = 165, [11000] = 165,
+		[12006] = 176, [12009] = 176, [12007] = 176, [12002] = 176, [12003] = 176,
+		[11999] = 175, [12004] = 175, [12005] = 175, [12000] = 175, [12001] = 175,
+	}
+
+	local nWeekth = 1
+	local bAccepted, bContinue, nQuestID
+	for i = 1, nValue do
+
+		bContinue = false
+		if not (tQuestList[i] and tQuestList[i][player.nCamp]) then
+			bContinue = true
+		end
+
+		if not bContinue then
+			nWeekth = OnGetTongRandomWeekth(#tQuestList[i][player.nCamp])
+			if not tQuestList[i][player.nCamp][nWeekth] then
+				bContinue = true
+			end
+		end
+
+		if not bContinue then
+			nQuestID = tQuestList[i][player.nCamp][nWeekth]
+			if tQuestMap[nQuestID] ~= dwMapID then
+				bContinue = true
+			end
+		end
+
+		if not bContinue then
+			bAccepted = CheckTongQuestBeAccepted(player, tQuestList[i][player.nCamp]) or CheckTongQuestBeFinished(player, i, tBuffValue)
+			if not bAccepted then
+				player.AcceptQuest(TARGET.NO_TARGET, 1, nQuestID, 1)
+			end
+		end
+
+	end
+end
+
+-- 检查玩家是否已经接受tQuestList中的任务，是则true，否则false
+function CheckTongQuestBeAccepted(player, tQuestList)
+	if #tQuestList <= 0 then
+		return false
+	end
+
+	for i = 1, #tQuestList do
+		if player.GetQuestIndex(tQuestList[i]) then
+			return true
+		end
+	end
+
+	return false
+end
+
+-- 检查玩家本周是否完成过周而复始等级为nTreeValue的任务，是则true，否则false
+function CheckTongQuestBeFinished(player, nTreeValue, tBuffValue)
+	if nTreeValue <= 0 then
+		return false
+	end
+	local buff = player.GetBuff(3351, 1)
+	if not buff then
+		return false
+	end
+	local szBuffValue = tostring(buff.nCustomValue)
+	local nLenth = string.len(szBuffValue)
+	if nLenth < nTreeValue then
+		return false
+	elseif nLenth == nTreeValue then
+		return true
+	elseif string.sub(szBuffValue, nLenth + 1 - nTreeValue, nLenth + 1 - nTreeValue) ~= tostring(1) then
+		return false
+	end
+
+	return true
+end
+
+-- 各种擂台使用
+function DelDuelForbidBuffInfo(player)
+	-- 删除明教隐身buff
+	for i = 1, 3 do
+		if player.GetBuff(4052, i) then
+			player.DelBuff(4052, i)
+			break
+		end
+	end
+	-- 删除唐门隐身buff
+	for i = 1, 4 do
+		if player.GetBuff(3203, i) then
+			player.DelBuff(3203, i)
+			break
+		end
+	end
+end
+
+
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

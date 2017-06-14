@@ -1,0 +1,5 @@
+id	ui	type
+0	Handle_Item	left_to_right
+1		right_to_left
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

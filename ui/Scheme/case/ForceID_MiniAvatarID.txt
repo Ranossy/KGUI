@@ -1,0 +1,17 @@
+ForceID	MiniAvatarID
+0	0
+1	1
+2	3
+3	5
+4	14
+5	8
+6	10
+7	11
+8	15
+9	23
+10	21
+21	37
+22	43
+23	47
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

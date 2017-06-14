@@ -1,0 +1,127 @@
+RoleType	FilePath	Icon	Name	Des	IsDefault	CanUseInCreate
+0					0	1
+1	Data\public\Face\M2DefaultFace.ini	6018	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+1	Data\public\Face\M2\M2_001.ini	5512			0	1
+1	Data\public\Face\M2\M2_002.ini	5513			0	1
+1	Data\public\Face\M2\M2_003.ini	5514			0	1
+1	Data\public\Face\M2\M2_004.ini	5515			0	1
+1	Data\public\Face\M2\M2_005.ini	5516			0	1
+1	Data\public\Face\M2\M2_006.ini	5517			0	0
+1	Data\public\Face\M2\M2_007.ini	5518			0	1
+1	Data\public\Face\M2\M2_008.ini	5519			0	1
+1	Data\public\Face\M2\M2_013.ini	5520			0	1
+1	Data\public\Face\M2\M2_014.ini	5521			0	0
+1	Data\public\Face\M2\M2_015.ini	5522			0	0
+1	Data\public\Face\M2\M2_016.ini	5523			0	1
+1	Data\public\Face\M2\M2_017.ini	5524			0	0
+1	Data\public\Face\M2\M2_017x.ini	5525			0	0
+1	Data\public\Face\M2\M2_018.ini	5526			0	1
+1	Data\public\Face\M2\M2_019.ini	5527			0	1
+1	Data\public\Face\M2\M2_020.ini	5528			0	1
+1	Data\public\Face\M2\M2_021.ini	5529			0	1
+1	Data\public\Face\M2\M2_022.ini	5530			0	1
+1	Data\public\Face\M2\M2_023.ini	5531			0	1
+1	Data\public\Face\M2\M2_024.ini	5532			0	0
+1	Data\public\Face\M2\M2_025.ini	5533			0	1
+1	Data\public\Face\M2\M2_026.ini	5534			0	1
+1	Data\public\Face\M2\M2_027.ini	5535			0	0
+1	Data\public\Face\M2\M2_028.ini	5536			0	1
+1	Data\public\Face\M2\M2_029.ini	5537			0	1
+2	Data\public\Face\F2DefaultFace.ini	6019	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+2	Data\public\Face\F2\F2_035.ini	6916	红络by活捉一只喜子（一等奖）	寄语：贴吧搜院长的名字“活捉一只喜纸”有更多的脸型分享给你们，多多光临我的整容康复科啦！ 	0	0
+2	Data\public\Face\F2\F2_036.ini	6917	媚娘by狂奔的南风君（二等奖）	寄语：脸型灵感来自于媚娘，参照范爷做模版，媚眼丹唇，眼尾上俏，非常古风。	0	0
+2	Data\public\Face\F2\F2_037.ini	6918	秋水by爱的战士小光头（三等奖）	寄语：心无执着，喻如墙壁。 	0	0
+2	Data\public\Face\F2\F2_001.ini	5455			0	1
+2	Data\public\Face\F2\F2_002.ini	5456			0	1
+2	Data\public\Face\F2\F2_003.ini	5457			0	1
+2	Data\public\Face\F2\F2_004.ini	5458			0	1
+2	Data\public\Face\F2\F2_005.ini	5459			0	1
+2	Data\public\Face\F2\F2_006.ini	5460			0	1
+2	Data\public\Face\F2\F2_007.ini	5461			0	1
+2	Data\public\Face\F2\F2_008.ini	5462			0	1
+2	Data\public\Face\F2\F2_009.ini	5463			0	1
+2	Data\public\Face\F2\F2_010.ini	5465			0	0
+2	Data\public\Face\F2\F2_011.ini	5466			0	0
+2	Data\public\Face\F2\F2_012.ini	5467			0	0
+2	Data\public\Face\F2\F2_013.ini	5468			0	1
+2	Data\public\Face\F2\F2_014.ini	5469			0	1
+2	Data\public\Face\F2\F2_015.ini	5470			0	1
+2	Data\public\Face\F2\F2_016.ini	5484			0	1
+2	Data\public\Face\F2\F2_017.ini	5471			0	0
+2	Data\public\Face\F2\F2_018.ini	5472			0	0
+2	Data\public\Face\F2\F2_019.ini	5473			0	1
+2	Data\public\Face\F2\F2_020.ini	5474			0	1
+2	Data\public\Face\F2\F2_021.ini	5475			0	1
+2	Data\public\Face\F2\F2_022.ini	5476			0	1
+2	Data\public\Face\F2\F2_023.ini	5477			0	0
+2	Data\public\Face\F2\F2_024.ini	5478			0	1
+2	Data\public\Face\F2\F2_025.ini	5479			0	0
+2	Data\public\Face\F2\F2_026.ini	5480			0	1
+2	Data\public\Face\F2\F2_027.ini	5481			0	0
+2	Data\public\Face\F2\F2_028.ini	5482			0	1
+2	Data\public\Face\F2\F2_029.ini	5483			0	1
+2	Data\public\Face\F2\F2_030.ini	5465			0	0
+2	Data\public\Face\F2\F2_031.ini	5485			0	0
+2	Data\public\Face\F2\F2_034.ini	5840			0	1
+5	Data\public\Face\M1DefaultFace.ini	5486	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+5	Data\public\Face\M1\M1_027.ini	6919	初衣-少真君by初衣啦（三等奖）	寄语：皈依佛，皈依法，皈依僧，皈依我。	0	0
+5	Data\public\Face\M1\M1_002.ini	5487			0	1
+5	Data\public\Face\M1\M1_003.ini	5488			0	1
+5	Data\public\Face\M1\M1_004.ini	5489			0	0
+5	Data\public\Face\M1\M1_005.ini	5490			0	1
+5	Data\public\Face\M1\M1_006.ini	5491			0	1
+5	Data\public\Face\M1\M1_007.ini	5492			0	1
+5	Data\public\Face\M1\M1_008.ini	5493			0	1
+5	Data\public\Face\M1\M1_009.ini	5494			0	1
+5	Data\public\Face\M1\M1_010.ini	5495			0	1
+5	Data\public\Face\M1\M1_011.ini	5496			0	1
+5	Data\public\Face\M1\M1_012.ini	5497			0	0
+5	Data\public\Face\M1\M1_013.ini	5498			0	1
+5	Data\public\Face\M1\M1_014.ini	5499			0	1
+5	Data\public\Face\M1\M1_015.ini	5500			0	0
+5	Data\public\Face\M1\M1_016.ini	5501			0	1
+5	Data\public\Face\M1\M1_017.ini	5502			0	1
+5	Data\public\Face\M1\M1_018.ini	5503			0	0
+5	Data\public\Face\M1\M1_019.ini	5504			0	1
+5	Data\public\Face\M1\M1_020.ini	5505			0	1
+5	Data\public\Face\M1\M1_021.ini	5506			0	0
+5	Data\public\Face\M1\M1_022.ini	5507			0	1
+5	Data\public\Face\M1\M1_023.ini	5508			0	0
+5	Data\public\Face\M1\M1_024.ini	5509			0	1
+5	Data\public\Face\M1\M1_025.ini	5510			0	1
+5	Data\public\Face\M1\M1_026.ini	5511			0	1
+6	Data\public\Face\F1DefaultFace.ini	5425	默认	创建角色时的默认脸型，可免费购买。如果您已经拥有则无法购买该脸型。	1	1
+6	Data\public\Face\F1\F1_031.ini	6913	青黛by清蒸蒸QwQ（二等奖)	寄语：青黛画眉红锦靴，道字不正娇唱歌。玳瑁筵中怀里醉，芙蓉帐底奈君何。	0	0
+6	Data\public\Face\F1\F1_032.ini	6914	圆嘟嘟by慢慢的粉条君（三等奖）	寄语： 这是一个小圆脸的萝莉，乖巧可爱，很有特色。虽然脸超圆，但谁让她是圆嘟嘟呢！	0	0
+6	Data\public\Face\F1\F1_033.ini	6915	雪见by三次元才不绝望呢（三等奖) 	寄语：雪见是十一月的别称，到了这时候天地间会突然变的寂静，有种在等待一场大雪的感觉。	0	0
+6	Data\public\Face\F1\F1_002.ini	5426			0	1
+6	Data\public\Face\F1\F1_003.ini	5427			0	0
+6	Data\public\Face\F1\F1_004.ini	5428			0	1
+6	Data\public\Face\F1\F1_005.ini	5429			0	1
+6	Data\public\Face\F1\F1_006.ini	5430			0	1
+6	Data\public\Face\F1\F1_007.ini	5431			0	1
+6	Data\public\Face\F1\F1_008.ini	5432			0	1
+6	Data\public\Face\F1\F1_009.ini	5433			0	0
+6	Data\public\Face\F1\F1_010.ini	5434			0	0
+6	Data\public\Face\F1\F1_011.ini	5435			0	0
+6	Data\public\Face\F1\F1_012.ini	5436			0	1
+6	Data\public\Face\F1\F1_013.ini	5437			0	1
+6	Data\public\Face\F1\F1_014.ini	5438			0	1
+6	Data\public\Face\F1\F1_015.ini	5439			0	1
+6	Data\public\Face\F1\F1_016.ini	5440			0	1
+6	Data\public\Face\F1\F1_017.ini	5441			0	0
+6	Data\public\Face\F1\F1_018.ini	5442			0	1
+6	Data\public\Face\F1\F1_019.ini	5443			0	1
+6	Data\public\Face\F1\F1_020.ini	5444			0	1
+6	Data\public\Face\F1\F1_021.ini	5445			0	1
+6	Data\public\Face\F1\F1_022.ini	5446			0	1
+6	Data\public\Face\F1\F1_023.ini	5447			0	0
+6	Data\public\Face\F1\F1_024.ini	5448			0	1
+6	Data\public\Face\F1\F1_025.ini	5449			0	0
+6	Data\public\Face\F1\F1_026.ini	5450			0	1
+6	Data\public\Face\F1\F1_027.ini	5451			0	1
+6	Data\public\Face\F1\F1_028.ini	5452			0	1
+6	Data\public\Face\F1\F1_029.ini	5453			0	1
+6	Data\public\Face\F1\F1_030.ini	5454			0	1
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

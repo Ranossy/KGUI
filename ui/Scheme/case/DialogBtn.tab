@@ -1,0 +1,18 @@
+ID	IniPath	ModName	BgPath	BgNormal	BgHighLight	BgDisable	TitlePath	SFXPath
+0				0	0	0		
+1	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/shimen.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+2	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/cangjian.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+3	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/chunyang.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+4	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/gaibang.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+5	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/mingjiao.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+6	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/qixiu.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+7	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/shaolin.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+8	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/tangmen.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+9	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/tiance.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+10	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/wanhua.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+11	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/wudu.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+12	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/cangyun.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+13	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/changge.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+14	ui/Config/Default/bigBtn.ini	Handle_Button	ui/Image/UICommon/BigBtn.UITex	0	1	3	ui/Image/button/badao.tga	data/source/other/新特效/其他/Pss/UI_加入门派01.pss
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

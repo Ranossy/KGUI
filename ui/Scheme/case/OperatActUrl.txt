@@ -1,0 +1,12 @@
+dwID	szButtonName	szUrl
+0		
+1	Btn_CheckDetail2	KnowInsurance
+2	Btn_CheckDetail	KnowInsurance
+3	Btn_OffcialWeb1	RechargeGifts
+4	Btn_OffcialWeb	RechargeGifts
+5	Btn_ChargeNow	Recharge
+6	Btn_PayPath	Recharge
+7	Btn_ToGuanWang	Hero
+8	Btn_ToGuanWang2	Endorsement
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

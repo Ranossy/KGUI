@@ -1,0 +1,32 @@
+ID	DoodadName(≥Ã–Ú≤ª∂¡)	DoodadTemplateID	CostThew	ProfessionID	RequireLevel	DoodadLevel	ToolItemType	ToolItemIndex	PowerfulToolItemType	PowerfulToolItemIndex	EquipmentType	Exp	PrepareFrame	ExpertiseDrop	ExpertiseRate	ExpertiseMinCount	ExpertiseMaxCount	Lv0_Drop0	Lv0_Rate0	Lv0_Drop1	Lv0_Rate1	Lv0_Drop2	Lv0_Rate2	Lv0_Drop3	Lv0_Rate3	Lv0_MinCount	Lv0_MaxCount	Lv1_Drop0	Lv1_Rate0	Lv1_Drop1	Lv1_Rate1	Lv1_Drop2	Lv1_Rate2	Lv1_Drop3	Lv1_Rate3	Lv1_MinCount	Lv1_MaxCount	Lv2_Drop0	Lv2_Rate0	Lv2_Drop1	Lv2_Rate1	Lv2_Drop2	Lv2_Rate2	Lv2_Drop3	Lv2_Rate3	Lv2_MinCount	Lv2_MaxCount	Lv3_Drop0	Lv3_Rate0	Lv3_Drop1	Lv3_Rate1	Lv3_Drop2	Lv3_Rate2	Lv3_Drop3	Lv3_Rate3	Lv3_MinCount	Lv3_MaxCount
+0	Œ¥÷™ŒÔº˛	0	0	0	0	0	0	0	0	0	0	0	0																																												
+1001	∏ ≤›	1001	10	2	20	20	0	0	0	0	0	20	80	≤›“©\gancao_byproduct.tab	256	1	1	≤›“©\gancao.tab	1024							2	4	≤›“©\gancao.tab	1024							1	3	≤›“©\gancao.tab	1024							1	2	≤›“©\gancao.tab	1024							1	1
+1002	¥Ûª∆	1002	10	2	20	20	0	0	0	0	0	20	80	≤›“©\lushui.tab	256	1	1	≤›“©\dahuang.tab	1024							2	4	≤›“©\dahuang.tab	1024							1	3	≤›“©\dahuang.tab	1024							1	2	≤›“©\dahuang.tab	1024							1	1
+1003	…÷“©	1003	10	2	20	20	0	0	0	0	0	20	80	≤›“©\lushui.tab	256	1	1	≤›“©\shaoyao.tab	1024							2	4	≤›“©\shaoyao.tab	1024							1	3	≤›“©\shaoyao.tab	1024							1	2	≤›“©\shaoyao.tab	1024							1	1
+1004	¿º≤›	1004	10	2	20	20	0	0	0	0	0	20	80	≤›“©\lushui.tab	256	1	1	≤›“©\lancao.tab	1024							2	4	≤›“©\lancao.tab	1024							1	3	≤›“©\lancao.tab	1024							1	2	≤›“©\lancao.tab	1024							1	1
+1005	œ‡Àº◊”	1005	15	2	30	30	0	0	0	0	0	25	80	≤›“©\xiangsizi_byproduct.tab	256	1	1	≤›“©\xiangsizi.tab	1024							2	4	≤›“©\xiangsizi.tab	1024							1	3	≤›“©\xiangsizi.tab	1024							1	2	≤›“©\xiangsizi.tab	1024							1	1
+1006	≥µ«∞≤›	1006	15	2	30	30	0	0	0	0	0	25	80	≤›“©\lushui.tab	256	1	1	≤›“©\cheqiancao.tab	1024							2	4	≤›“©\cheqiancao.tab	1024							1	3	≤›“©\cheqiancao.tab	1024							1	2	≤›“©\cheqiancao.tab	1024							1	1
+1007	ÃÏ√˚æ´	1007	20	2	40	40	0	0	0	0	0	30	80	≤›“©\lushui.tab	256	1	1	≤›“©\tianmingjing.tab	1024							2	4	≤›“©\tianmingjing.tab	1024							1	3	≤›“©\tianmingjing.tab	1024							1	2	≤›“©\tianmingjing.tab	1024							1	1
+1008	∑¿∑Á	1008	20	2	40	40	0	0	0	0	0	30	80	≤›“©\fangfeng_byproduct.tab	256	1	1	≤›“©\fangfeng.tab	1024							2	4	≤›“©\fangfeng.tab	1024							1	3	≤›“©\fangfeng.tab	1024							1	2	≤›“©\fangfeng.tab	1024							1	1
+1009	ŒÂŒ∂◊”	1009	25	2	50	50	0	0	0	0	0	35	80	≤›“©\lushui.tab	256	1	1	≤›“©\wuweizi.tab	1024							2	4	≤›“©\wuweizi.tab	1024							1	3	≤›“©\wuweizi.tab	1024							1	2	≤›“©\wuweizi.tab	1024							1	1
+1010	Ω“¯ª®	1010	25	2	50	50	0	0	0	0	0	35	80	≤›“©\lushui.tab	256	1	1	≤›“©\jinyinhua.tab	1024							2	4	≤›“©\jinyinhua.tab	1024							1	3	≤›“©\jinyinhua.tab	1024							1	2	≤›“©\jinyinhua.tab	1024							1	1
+1011	Ω¥¥–°≤›	1011	25	2	50	50	0	0	0	0	0	35	80	≤›“©\lushui.tab	256	1	1	≤›“©\jinchuangxiaocao.tab	1024							2	4	≤›“©\jinchuangxiaocao.tab	1024							1	3	≤›“©\jinchuangxiaocao.tab	1024							1	2	≤›“©\jinchuangxiaocao.tab	1024							1	1
+1012	Ë€ËΩ	1012	30	2	60	60	0	0	0	0	0	40	80	≤›“©\gouqi_byproduct.tab	256	1	1	≤›“©\gouqi.tab	1024							2	4	≤›“©\gouqi.tab	1024							1	3	≤›“©\gouqi.tab	1024							1	2	≤›“©\gouqi.tab	1024							1	1
+1015	«ß¿Ôœ„	1015	10	2	20	20	0	0	0	0	0	40	80	≤›“©\lushui.tab	256	1	1	≤›“©\qianlixiang.tab	1024							2	4	≤›“©\qianlixiang.tab	1024							1	3	≤›“©\qianlixiang.tab	1024							1	2	≤›“©\qianlixiang.tab	1024							1	1
+1016	ÃÔ∆ﬂ	1016	30	2	60	60	0	0	0	0	0	40	80	≤›“©\lushui.tab	256	1	1	≤›“©\tianqi.tab	1024							2	4	≤›“©\tianqi.tab	1024							1	3	≤›“©\tianqi.tab	1024							1	2	≤›“©\tianqi.tab	1024							1	1
+1017	ÃÏ¬È	1017	30	2	60	60	0	0	0	0	0	40	80	≤›“©\lushui.tab	256	1	1	≤›“©\tianma.tab	1024							2	4	≤›“©\tianma.tab	1024							1	3	≤›“©\tianma.tab	1024							1	2	≤›“©\tianma.tab	1024							1	1
+1018	‘∂÷æ	1018	35	2	70	70	0	0	0	0	0	45	80	≤›“©\lushui.tab	256	1	1	≤›“©\yuanzhi.tab	1024							2	4	≤›“©\yuanzhi.tab	1024							1	3	≤›“©\yuanzhi.tab	1024							1	2	≤›“©\yuanzhi.tab	1024							1	1
+1019	œ…√©	1019	35	2	70	70	0	0	0	0	0	45	80	≤›“©\lushui.tab	256	1	1	≤›“©\xianmao.tab	1024							2	4	≤›“©\xianmao.tab	1024							1	3	≤›“©\xianmao.tab	1024							1	2	≤›“©\xianmao.tab	1024							1	1
+2643	¬Û∂¨	2643	40	2	80	80	0	0	0	0	0	50	80	≤›“©\lushui.tab	256	1	1	≤›“©\maidong.tab	1024							2	4	≤›“©\maidong.tab	1024							1	3	≤›“©\maidong.tab	1024							1	2	≤›“©\maidong.tab	1024							1	1
+2641	¥®±¥	2641	40	2	80	80	0	0	0	0	0	50	80	≤›“©\expertise1.tab	128	1	1	≤›“©\chuanbei.tab	1024							2	4	≤›“©\chuanbei.tab	1024							1	3	≤›“©\chuanbei.tab	1024							1	2	≤›“©\chuanbei.tab	1024							1	1
+2642	≥Ê≤›	2642	40	2	80	80	0	0	0	0	0	50	80	≤›“©\expertise1.tab	128	1	1	≤›“©\chongcao.tab	1024							2	4	≤›“©\chongcao.tab	1024							1	3	≤›“©\chongcao.tab	1024							1	2	≤›“©\chongcao.tab	1024							1	1
+4227	 Ø¡´ª®	4227	40	2	90	90	0	0	0	0	0	50	80	≤›“©\expertise1.tab	256	1	1	≤›“©\shilianhua.tab	1024							2	4	≤›“©\shilianhua.tab	1024							1	3	≤›“©\shilianhua.tab	1024							1	2	≤›“©\shilianhua.tab	1024							1	1
+4228	±À∞∂ª®	4228	40	2	90	90	0	0	0	0	0	50	80	≤›“©\expertise1.tab	256	1	1	≤›“©\bianhua.tab	1024							2	4	≤›“©\bianhua.tab	1024							1	3	≤›“©\bianhua.tab	1024							1	2	≤›“©\bianhua.tab	1024							1	1
+3358	≤›¡œ_∞Ÿ¬ˆ∏˘	3358	5	2	20	20	0	0	0	0	0	20	80					≤›¡œ\baimaigen.tab	1024							1	5	≤›¡œ\baimaigen.tab	1024							1	5	≤›¡œ\baimaigen.tab	1024							1	5	≤›¡œ\baimaigen.tab	1024							1	5
+3361	≤›¡œ_◊œª®‹Ÿﬁ£	3361	30	2	40	40	0	0	0	0	0	30	80					≤›¡œ\zihuamuxu.tab	1024							1	5	≤›¡œ\zihuamuxu.tab	1024							1	5	≤›¡œ\zihuamuxu.tab	1024							1	5	≤›¡œ\zihuamuxu.tab	1024							1	5
+3360	≤›¡œ_ÃœÛ≤›	3360	75	2	60	60	0	0	0	0	0	40	80					≤›¡œ\tianxiangcao.tab	1024							1	5	≤›¡œ\tianxiangcao.tab	1024							1	5	≤›¡œ\tianxiangcao.tab	1024							1	5	≤›¡œ\tianxiangcao.tab	1024							1	5
+3359	≤›¡œ_ª ÷Ò≤›	3359	100	2	70	70	0	0	0	0	0	45	80					≤›¡œ\huangzhucao.tab	1024							1	3	≤›¡œ\huangzhucao.tab	1024							1	3	≤›¡œ\huangzhucao.tab	1024							1	3	≤›¡œ\huangzhucao.tab	1024							1	3
+5659	∞◊ ı	5659	40	2	95	95	0	0	0	0	0	64	80	≤›“©\expertise.tab	306	1	1	≤›“©\Lv95_shennong1.tab	1024							6	8	≤›“©\Lv95_shennong1.tab	1024							4	6	≤›“©\Lv95_shennong1.tab	1024							2	4	≤›“©\Lv95_shennong1.tab	1024							1	1
+5660	◊œÀ’	5660	40	2	95	95	0	0	0	0	0	64	80	≤›“©\expertise.tab	306	1	1	≤›“©\Lv95_shennong2.tab	1024							6	8	≤›“©\Lv95_shennong2.tab	1024							4	6	≤›“©\Lv95_shennong2.tab	1024							2	4	≤›“©\Lv95_shennong2.tab	1024							1	1
+
+ -- by √øÃÏ’«Õ£@√ŒΩ≠ƒœ $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

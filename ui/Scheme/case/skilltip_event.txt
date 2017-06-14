@@ -1,0 +1,103 @@
+EVENT_ID	DESCRIPTION	CONDITION_ID	SKILL_ID	SKILL_LEVEL	SHOW_TYPE	MAX_TIME	SFX_PATH	SCALE	SHOW_ONCE
+0	Default			1	FLASH_BOX				
+1	碧水滔天	8;1	131	1	SHOW_TIP				
+2	花语酥心	2;1	134	1	SHOW_TIP				
+3	玉石俱焚	3;4;5	182	1	SHOW_TIP				
+4	听风吹雪	6;1	2663	1	SHOW_TIP				
+5	乱洒青荷_阳明指	7;1	179	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+6	乱洒青荷_钟林毓秀	7;1	189	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+7	乱洒青荷_兰摧玉折	7	190	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+8	满豆无我无剑	9;1	365	1	SHOW_TIP				
+9	八荒归元	10;1	2699	1	SHOW_TIP				
+10	转乾坤_生太极	11;1	358	1	FLASH_BOX	1			
+11	转乾坤_吞日月	11;1	363	1	FLASH_BOX	1			
+12	转乾坤_凌太虚	11;1	361	1	FLASH_BOX	1			
+13	转乾坤_化三清	11;1	357	1	FLASH_BOX	1			
+14	转乾坤_碎星辰	11;1	362	1	FLASH_BOX	1			
+15	水月无间_阳明指	1;12	179	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+16	水月无间_钟林毓秀	1;12	189	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+17	水月无间_兰摧玉折	12	190	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+18	水月无间_长针	1;12	142	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+19	水月无间_彼针	1;12	140	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+20	水月无间_提针	1;12	138	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+21	行气血_长针	1;13	142	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+22	行气血_彼针	1;13	140	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+23	行气血_提针	1;13	138	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕万花01.sfx		1
+24	满豆两仪化形	9;1	301	1	SHOW_TIP				
+25	抱元守缺	8;1	316	1	SHOW_TIP				
+26	转乾坤	2;1	372	1	FLASH_BOX				
+27	镇山河	2;1	371	1	FLASH_BOX				
+28	致残_龙牙	14;1	415	1	SHOW_TIP				
+29	致残_破坚阵	14;1	426	1	FLASH_BOX				
+30	啸如虎	2;1	422	1	FLASH_BOX				
+31	徐如林	8;1	405	1	FLASH_BOX				
+32	御奔突_破坚阵	15	426	1	FLASH_BOX	1			
+33	御奔突_断魂刺	15	428	1	FLASH_BOX	1			
+34	御奔突_任驰骋	15	433	1	FLASH_BOX	1			
+35	御奔突_裂苍穹	15	479	1	FLASH_BOX	1			
+36	掠如火_定军	16	402	1	FLASH_BOX	1			
+37	渊	6;1	2628	1	FLASH_BOX	10			
+38	满豆韦陀献杵	17;1	233	1	SHOW_TIP				
+39	满豆立地成佛	17;1	246	1	SHOW_TIP				
+40	瞬发捉影	18;1	242	1	FLASH_BOX				
+41	亦枯亦荣	8;17;1	251	1	FLASH_BOX				
+42	轮回诀	19;1	259	1	SHOW_TIP				
+43	三世诸佛	20;1	2581	1	SHOW_TIP				
+44	拿云式	10;17;1	243	1	SHOW_TIP				
+45	风袖低昂	6;1	555	1	FLASH_BOX				
+46	天地低昂	2;1	557	1	FLASH_BOX				
+47	邻里曲_蝶弄足	21	574	1	FLASH_BOX				
+48	邻里曲_龙池乐	21	548	1	FLASH_BOX				
+49	剑破虚空	22;1	2716	1	SHOW_TIP				
+50	剑气长江	23;1	561	1	FLASH_BOX	6			
+51	瞬发冰蚕牵丝	24;1	2232	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕五毒01.sfx		1
+52	女娲补天	2;1	2230	1	FLASH_BOX				
+53	蛊虫狂暴	2;1	2227	1	FLASH_BOX				
+54	圣手织天	6;1	2957	1	FLASH_BOX				
+55	瞬发追命箭	25;1	3096	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕唐门01.sfx		1
+56	惊鸿游龙	2;1	3114	1	FLASH_BOX				
+57	浮光掠影	26;1	3112	1	SHOW_TIP				
+58	隐身追命箭	27;1	3096	1	SHOW_TIP				
+59	瞬发蚀肌弹	28;1	3105	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕唐门01.sfx		1
+60	追命箭	44;1	3096	1	FLASH_BOX				
+61	泉凝月	2;1	1666	1	FLASH_BOX				
+62	云栖松	2;1	1668	1	FLASH_BOX				
+63	瞬发云飞玉皇	30;1	1593	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕藏剑01.sfx		1
+64	瞬发夕照雷锋	31;1	1600	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕藏剑01.sfx		1
+65	舍身诀	6;1	258	1	FLASH_BOX				
+66	玉石俱焚CD好了	3;4;5;1;32	182	1	SHOW_TIP				
+67	藏剑可以放断潮	33;1	1651	1	SHOW_TIP				
+68	剑纯瞬发生太极	34;1	358	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+69	剑纯瞬发吞日月	34;1	363	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+70	剑纯瞬发凌太虚	34;1	361	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+71	剑纯瞬发化三清	34;1	357	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+72	剑纯瞬发碎星辰	34;1	362	1	FLASH_BOX		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+73	四象瞬发	35;1	367	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+74	净世破魔击·日	36;1	3967	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕明教02.sfx		1
+75	净世破魔击·月	37;1	3967	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕明教01.sfx		1
+76	生死劫·日	36;1	3966	1	SHOW_TIP				
+77	生死劫·月	37;1	3966	1	SHOW_TIP				
+78	圣明佑·日	36;1	3965	1	SHOW_TIP				
+79	圣明佑·月	37;1	3965	1	SHOW_TIP				
+80	低血量贪魔体	2;1	3973	1	FLASH_BOX				
+81	低血量性命海	2;1	3983	1	FLASH_BOX				
+82	流光囚影额外一次	40;1	3977	1	FLASH_BOX				
+83	暗尘弥散cd刷新	38;1	3974	1	FLASH_BOX				
+84	怖畏暗刑cd刷新	38;1	3975	1	FLASH_BOX				
+85	业海罪缚cd刷新	38;1	3976	1	FLASH_BOX				
+86	流光囚影cd刷新	38;1	3977	1	FLASH_BOX				
+87	贪魔体cd刷新	39;1	3973	1	FLASH_BOX				
+89	瞬发万世不竭	41;1	6901	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕纯阳01.sfx		1
+90	瞬发夺魄箭	42;1	3095	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕唐门01.sfx		1
+91	释放盾猛	43;1	13046	1	SHOW_TIP				
+92	释放盾压	43;1	13045	1	SHOW_TIP				
+93	释放斩刀	43;1	13054	1	SHOW_TIP				
+94	释放绝刀	43;1	13055	1	SHOW_TIP				
+95	碎江天	45;1	16304	1	SHOW_TIP				
+96	刀啸风吟	46;1	16027	1	SHOW_TIP				
+97	坚壁清野二段	47;1	16910	1	SHOW_TIP				
+98	拿云式	48;17;1	243	1	SHOW_TIP				
+99	飞星瞬发追命箭	49;1	3096	1	SHOW_TIP		\data\source\other\特效\技能\SFX\释放\释放_屏幕唐门01.sfx		1
+100	飞星瞬发千机变	50;1	3109	1	SHOW_TIP				
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com

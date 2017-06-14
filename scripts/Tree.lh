@@ -1,0 +1,60 @@
+
+g_nCallStack = 0;
+
+function Tree(Root, szBase)
+
+    if not szBase then
+        szBase = "";
+    end
+
+    if type(Root) ~= "table" then
+		Log(tostring(Root));
+		return;
+	end
+    
+    if g_nCallStack > 16 then
+        Log("Lua tree up to limit(16)\n");
+        return;
+    end
+    
+    g_nCallStack = g_nCallStack + 1;    
+	
+	local nSize  = 0;
+	local nCount = 1;
+    
+    for k, v in pairs(Root) do
+        nSize = nSize + 1;
+    end
+	
+	for k, v in pairs(Root) do		
+    
+		local szNode;
+        
+        if type(v) == "table" then
+            szNode = tostring(k);
+        else
+            szNode = tostring(k)..":"..tostring(v);
+        end
+		
+		if nCount < nSize then
+			Log(""..szBase.."├─"..szNode.."");
+		else
+			Log(""..szBase.."└─"..szNode.."");
+		end
+		
+	    if type(v) == "table" then
+			if nCount < nSize then
+				Tree(v, ""..szBase.."│  ");
+			else 
+				Tree(v, ""..szBase.."    ");
+			end
+		end	
+
+        nCount = nCount + 1;
+	end		
+    
+    g_nCallStack = g_nCallStack - 1;        
+    
+end
+
+ -- by 每天涨停@梦江南 $ Jx3UnPack-PAKV3 jx3.mail@gmail.com
